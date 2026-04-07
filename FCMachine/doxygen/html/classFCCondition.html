@@ -1,0 +1,1028 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Класс FCCondition</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="classFCCondition-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс FCCondition</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для компактного хранения и управления составным состоянием устройства.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FCCondition_8h_source.html">FCCondition.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a4389a9275e758515c66cd2b9d5853f98" id="r_a4389a9275e758515c66cd2b9d5853f98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4389a9275e758515c66cd2b9d5853f98">FCCondition</a> (ReadyState <a class="el" href="classFCRange.html">ready</a>=ReadyState::NotReady, PlayState play=PlayState::Stop, ChangedState <a class="el" href="classFCRange.html">changed</a>=ChangedState::NotChanged, ErrorType error=ErrorType::NoError, PanelState <a class="el" href="classFCRange.html">panel</a>=PanelState::Main, VisibilityState <a class="el" href="classFCRange.html">visibility</a>=VisibilityState::Hide) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a4389a9275e758515c66cd2b9d5853f98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с полной инициализацией всех полей состояния.  <br /></td></tr>
+<tr class="separator:a4389a9275e758515c66cd2b9d5853f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e7de9c763e4cbecab1e212f850f34af" id="r_a0e7de9c763e4cbecab1e212f850f34af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e7de9c763e4cbecab1e212f850f34af">FCCondition</a> (ReadyState <a class="el" href="classFCRange.html">ready</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a0e7de9c763e4cbecab1e212f850f34af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор из состояния готовности (остальные поля = 0).  <br /></td></tr>
+<tr class="separator:a0e7de9c763e4cbecab1e212f850f34af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9797b652bc55d028edd61da219fe4ef" id="r_af9797b652bc55d028edd61da219fe4ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9797b652bc55d028edd61da219fe4ef">FCCondition</a> (PlayState play) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:af9797b652bc55d028edd61da219fe4ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор из состояния воспроизведения (остальные поля = 0).  <br /></td></tr>
+<tr class="separator:af9797b652bc55d028edd61da219fe4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4b085cab130bd4ffa49c165a7dccd80" id="r_ad4b085cab130bd4ffa49c165a7dccd80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4b085cab130bd4ffa49c165a7dccd80">FCCondition</a> (ChangedState <a class="el" href="classFCRange.html">changed</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ad4b085cab130bd4ffa49c165a7dccd80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор из флага изменения (остальные поля = 0).  <br /></td></tr>
+<tr class="separator:ad4b085cab130bd4ffa49c165a7dccd80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3523a5e438217e81d26e06c3efaa1323" id="r_a3523a5e438217e81d26e06c3efaa1323"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3523a5e438217e81d26e06c3efaa1323">FCCondition</a> (ErrorType error) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a3523a5e438217e81d26e06c3efaa1323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор из типа ошибки (остальные поля = 0).  <br /></td></tr>
+<tr class="separator:a3523a5e438217e81d26e06c3efaa1323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d3ea72a274c63a4a7da20936eb49b0c" id="r_a8d3ea72a274c63a4a7da20936eb49b0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d3ea72a274c63a4a7da20936eb49b0c">FCCondition</a> (PanelState <a class="el" href="classFCRange.html">panel</a>, VisibilityState <a class="el" href="classFCRange.html">visibility</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a8d3ea72a274c63a4a7da20936eb49b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор из состояния панели и видимости (остальные поля = 0).  <br /></td></tr>
+<tr class="separator:a8d3ea72a274c63a4a7da20936eb49b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e5402dbb439fc9124e98de8fbd7d3d8" id="r_a9e5402dbb439fc9124e98de8fbd7d3d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e5402dbb439fc9124e98de8fbd7d3d8">FCCondition</a> (VisibilityState <a class="el" href="classFCRange.html">visibility</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a9e5402dbb439fc9124e98de8fbd7d3d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор из состояния видимости (остальные поля = 0).  <br /></td></tr>
+<tr class="separator:a9e5402dbb439fc9124e98de8fbd7d3d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdd85f7167ba4994a45767e5165b79a9" id="r_acdd85f7167ba4994a45767e5165b79a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdd85f7167ba4994a45767e5165b79a9">set</a> (ReadyState <a class="el" href="classFCRange.html">value</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:acdd85f7167ba4994a45767e5165b79a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое состояние готовности.  <br /></td></tr>
+<tr class="separator:acdd85f7167ba4994a45767e5165b79a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0457f0964077ca1e40d3216d7c7db804" id="r_a0457f0964077ca1e40d3216d7c7db804"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0457f0964077ca1e40d3216d7c7db804">set</a> (PlayState <a class="el" href="classFCRange.html">value</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a0457f0964077ca1e40d3216d7c7db804"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое состояние воспроизведения.  <br /></td></tr>
+<tr class="separator:a0457f0964077ca1e40d3216d7c7db804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa80d9dc056d5ca5888873dfa2dabc618" id="r_aa80d9dc056d5ca5888873dfa2dabc618"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa80d9dc056d5ca5888873dfa2dabc618">set</a> (ChangedState <a class="el" href="classFCRange.html">value</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aa80d9dc056d5ca5888873dfa2dabc618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает флаг изменения состояния.  <br /></td></tr>
+<tr class="separator:aa80d9dc056d5ca5888873dfa2dabc618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80cc32a18200f8c05123bed6a8580b2b" id="r_a80cc32a18200f8c05123bed6a8580b2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80cc32a18200f8c05123bed6a8580b2b">set</a> (ErrorType <a class="el" href="classFCRange.html">value</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a80cc32a18200f8c05123bed6a8580b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает тип ошибки.  <br /></td></tr>
+<tr class="separator:a80cc32a18200f8c05123bed6a8580b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fc03f1b734722e9ab2bf9e7fbf28ca1" id="r_a0fc03f1b734722e9ab2bf9e7fbf28ca1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fc03f1b734722e9ab2bf9e7fbf28ca1">set</a> (PanelState <a class="el" href="classFCRange.html">value</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a0fc03f1b734722e9ab2bf9e7fbf28ca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает текущую панель интерфейса.  <br /></td></tr>
+<tr class="separator:a0fc03f1b734722e9ab2bf9e7fbf28ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7acdda0491100ed83f6655feb362d0ac" id="r_a7acdda0491100ed83f6655feb362d0ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7acdda0491100ed83f6655feb362d0ac">set</a> (VisibilityState <a class="el" href="classFCRange.html">value</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a7acdda0491100ed83f6655feb362d0ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает состояние видимости элемента.  <br /></td></tr>
+<tr class="separator:a7acdda0491100ed83f6655feb362d0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af23587e7196837c4ff3bc9bd5e9c4ad8" id="r_af23587e7196837c4ff3bc9bd5e9c4ad8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af23587e7196837c4ff3bc9bd5e9c4ad8">set</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:af23587e7196837c4ff3bc9bd5e9c4ad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает все поля состояния из другого объекта.  <br /></td></tr>
+<tr class="separator:af23587e7196837c4ff3bc9bd5e9c4ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e64803f32cf29521c850dbf2fd254bd" id="r_a1e64803f32cf29521c850dbf2fd254bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e64803f32cf29521c850dbf2fd254bd">is</a> (ReadyState <a class="el" href="classFCRange.html">value</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a1e64803f32cf29521c850dbf2fd254bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, соответствует ли состояние готовности заданному значению.  <br /></td></tr>
+<tr class="separator:a1e64803f32cf29521c850dbf2fd254bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa4a54e13bc4cbbed2e046716164f4cd" id="r_afa4a54e13bc4cbbed2e046716164f4cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa4a54e13bc4cbbed2e046716164f4cd">is</a> (PlayState <a class="el" href="classFCRange.html">value</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:afa4a54e13bc4cbbed2e046716164f4cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, соответствует ли состояние воспроизведения заданному значению.  <br /></td></tr>
+<tr class="separator:afa4a54e13bc4cbbed2e046716164f4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afded35a39d3113e6827c79cdbf188689" id="r_afded35a39d3113e6827c79cdbf188689"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afded35a39d3113e6827c79cdbf188689">is</a> (ChangedState <a class="el" href="classFCRange.html">value</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:afded35a39d3113e6827c79cdbf188689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, соответствует ли флаг изменения заданному значению.  <br /></td></tr>
+<tr class="separator:afded35a39d3113e6827c79cdbf188689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c15ac988b56b7162e3a35b6e832179b" id="r_a0c15ac988b56b7162e3a35b6e832179b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c15ac988b56b7162e3a35b6e832179b">is</a> (ErrorType <a class="el" href="classFCRange.html">value</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a0c15ac988b56b7162e3a35b6e832179b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, соответствует ли тип ошибки заданному значению.  <br /></td></tr>
+<tr class="separator:a0c15ac988b56b7162e3a35b6e832179b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a533023ae6ac62421e0ed0ba6b60b4ce3" id="r_a533023ae6ac62421e0ed0ba6b60b4ce3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a533023ae6ac62421e0ed0ba6b60b4ce3">is</a> (PanelState <a class="el" href="classFCRange.html">value</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a533023ae6ac62421e0ed0ba6b60b4ce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, соответствует ли текущая панель заданному значению.  <br /></td></tr>
+<tr class="separator:a533023ae6ac62421e0ed0ba6b60b4ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bf96ed3355e038d79310297d2444893" id="r_a5bf96ed3355e038d79310297d2444893"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5bf96ed3355e038d79310297d2444893">is</a> (VisibilityState <a class="el" href="classFCRange.html">value</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a5bf96ed3355e038d79310297d2444893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, соответствует ли состояние видимости заданному значению.  <br /></td></tr>
+<tr class="separator:a5bf96ed3355e038d79310297d2444893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaa1fe957e5f095f5adcb9f77c8b0652" id="r_aeaa1fe957e5f095f5adcb9f77c8b0652"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeaa1fe957e5f095f5adcb9f77c8b0652">raw</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aeaa1fe957e5f095f5adcb9f77c8b0652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает сырое 16-битное представление состояния.  <br /></td></tr>
+<tr class="separator:aeaa1fe957e5f095f5adcb9f77c8b0652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88fa0616cbeea2dc794a3e85c5693037" id="r_a88fa0616cbeea2dc794a3e85c5693037"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88fa0616cbeea2dc794a3e85c5693037">operator==</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a88fa0616cbeea2dc794a3e85c5693037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения на равенство.  <br /></td></tr>
+<tr class="separator:a88fa0616cbeea2dc794a3e85c5693037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11c5cc32a1063a204211d50c313d99f4" id="r_a11c5cc32a1063a204211d50c313d99f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11c5cc32a1063a204211d50c313d99f4">operator!=</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a11c5cc32a1063a204211d50c313d99f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения на неравенство.  <br /></td></tr>
+<tr class="separator:a11c5cc32a1063a204211d50c313d99f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a88c0801180553f89291b81f395708a0a" id="r_a88c0801180553f89291b81f395708a0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">static</a> <a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCCondition.html">FCCondition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88c0801180553f89291b81f395708a0a">fromRaw</a> (<a class="el" href="classFCRange.html">uint16_t</a> <a class="el" href="classFCRange.html">value</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a88c0801180553f89291b81f395708a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт объект из сырого 16-битного значения.  <br /></td></tr>
+<tr class="separator:a88c0801180553f89291b81f395708a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для компактного хранения и управления составным состоянием устройства. </p>
+<p>Объединяет шесть независимых состояний в единое 16-битное битовое поле:</p><ul>
+<li>Готовность (ReadyState) — биты 0-1 (2 бита),</li>
+<li>Воспроизведение (PlayState) — биты 2-3 (2 бита),</li>
+<li>Изменение (ChangedState) — бит 4 (1 бит),</li>
+<li>Ошибка (ErrorType) — биты 5-9 (5 бит),</li>
+<li>Панель (PanelState) — биты 10-11 (2 бита),</li>
+<li>Видимость (VisibilityState) — бит 12 (1 бит),</li>
+<li>Зарезервировано — биты 13-15 (3 бита, всегда 0).</li>
+</ul>
+<p>Преимущества:</p><ul>
+<li>Минимальный размер (ровно 2 байта),</li>
+<li>Атомарное чтение/запись состояния (важно для многопоточных систем),</li>
+<li>Эффективная сериализация для передачи по сети или сохранения в память,</li>
+<li>Тривиальная копируемость (trivially copyable) для использования в встраиваемых системах.</li>
+</ul>
+<dl class="section note"><dt>Заметки</dt><dd>Класс спроектирован для использования в ресурсоограниченных средах (включая микроконтроллеры). Все операции реализованы как constexpr и noexcept для максимальной эффективности. </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Зарезервированные биты (13-15) всегда очищаются при десериализации для обеспечения совместимости между версиями. </dd></dl>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a4389a9275e758515c66cd2b9d5853f98" name="a4389a9275e758515c66cd2b9d5853f98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4389a9275e758515c66cd2b9d5853f98">&#9670;&#160;</a></span>FCCondition() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FCCondition::FCCondition </td>
+          <td>(</td>
+          <td class="paramtype">ReadyState</td>          <td class="paramname"><span class="paramname"><em>ready</em><span class="paramdefsep"> = </span><span class="paramdefval">ReadyState::NotReady</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PlayState</td>          <td class="paramname"><span class="paramname"><em>play</em><span class="paramdefsep"> = </span><span class="paramdefval">PlayState::Stop</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ChangedState</td>          <td class="paramname"><span class="paramname"><em>changed</em><span class="paramdefsep"> = </span><span class="paramdefval">ChangedState::NotChanged</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ErrorType</td>          <td class="paramname"><span class="paramname"><em>error</em><span class="paramdefsep"> = </span><span class="paramdefval">ErrorType::NoError</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PanelState</td>          <td class="paramname"><span class="paramname"><em>panel</em><span class="paramdefsep"> = </span><span class="paramdefval">PanelState::Main</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VisibilityState</td>          <td class="paramname"><span class="paramname"><em>visibility</em><span class="paramdefsep"> = </span><span class="paramdefval">VisibilityState::Hide</span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор с полной инициализацией всех полей состояния. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ready</td><td>Состояние готовности (по умолчанию NotReady). </td></tr>
+    <tr><td class="paramname">play</td><td>Состояние воспроизведения (по умолчанию Stop). </td></tr>
+    <tr><td class="paramname">changed</td><td>Флаг изменения (по умолчанию NotChanged). </td></tr>
+    <tr><td class="paramname">error</td><td>Тип ошибки (по умолчанию NoError). </td></tr>
+    <tr><td class="paramname">panel</td><td>Текущая панель интерфейса (по умолчанию Main). </td></tr>
+    <tr><td class="paramname">visibility</td><td>Состояние видимости (по умолчанию Hide). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Все значения автоматически обрезаются до допустимого количества битов. </dd></dl>
+
+</div>
+</div>
+<a id="a0e7de9c763e4cbecab1e212f850f34af" name="a0e7de9c763e4cbecab1e212f850f34af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e7de9c763e4cbecab1e212f850f34af">&#9670;&#160;</a></span>FCCondition() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FCCondition::FCCondition </td>
+          <td>(</td>
+          <td class="paramtype">ReadyState</td>          <td class="paramname"><span class="paramname"><em>ready</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор из состояния готовности (остальные поля = 0). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ready</td><td>Состояние готовности. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af9797b652bc55d028edd61da219fe4ef" name="af9797b652bc55d028edd61da219fe4ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9797b652bc55d028edd61da219fe4ef">&#9670;&#160;</a></span>FCCondition() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FCCondition::FCCondition </td>
+          <td>(</td>
+          <td class="paramtype">PlayState</td>          <td class="paramname"><span class="paramname"><em>play</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор из состояния воспроизведения (остальные поля = 0). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">play</td><td>Состояние воспроизведения. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad4b085cab130bd4ffa49c165a7dccd80" name="ad4b085cab130bd4ffa49c165a7dccd80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4b085cab130bd4ffa49c165a7dccd80">&#9670;&#160;</a></span>FCCondition() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FCCondition::FCCondition </td>
+          <td>(</td>
+          <td class="paramtype">ChangedState</td>          <td class="paramname"><span class="paramname"><em>changed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор из флага изменения (остальные поля = 0). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">changed</td><td>Флаг изменения состояния. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3523a5e438217e81d26e06c3efaa1323" name="a3523a5e438217e81d26e06c3efaa1323"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3523a5e438217e81d26e06c3efaa1323">&#9670;&#160;</a></span>FCCondition() <span class="overload">[5/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FCCondition::FCCondition </td>
+          <td>(</td>
+          <td class="paramtype">ErrorType</td>          <td class="paramname"><span class="paramname"><em>error</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор из типа ошибки (остальные поля = 0). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error</td><td>Тип ошибки. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8d3ea72a274c63a4a7da20936eb49b0c" name="a8d3ea72a274c63a4a7da20936eb49b0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d3ea72a274c63a4a7da20936eb49b0c">&#9670;&#160;</a></span>FCCondition() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FCCondition::FCCondition </td>
+          <td>(</td>
+          <td class="paramtype">PanelState</td>          <td class="paramname"><span class="paramname"><em>panel</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VisibilityState</td>          <td class="paramname"><span class="paramname"><em>visibility</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор из состояния панели и видимости (остальные поля = 0). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">panel</td><td>Текущая панель интерфейса. </td></tr>
+    <tr><td class="paramname">visibility</td><td>Состояние видимости элемента. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9e5402dbb439fc9124e98de8fbd7d3d8" name="a9e5402dbb439fc9124e98de8fbd7d3d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e5402dbb439fc9124e98de8fbd7d3d8">&#9670;&#160;</a></span>FCCondition() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FCCondition::FCCondition </td>
+          <td>(</td>
+          <td class="paramtype">VisibilityState</td>          <td class="paramname"><span class="paramname"><em>visibility</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор из состояния видимости (остальные поля = 0). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visibility</td><td>Состояние видимости элемента. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a88c0801180553f89291b81f395708a0a" name="a88c0801180553f89291b81f395708a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88c0801180553f89291b81f395708a0a">&#9670;&#160;</a></span>fromRaw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">static</a> <a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCCondition.html">FCCondition</a> FCCondition::fromRaw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">uint16_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создаёт объект из сырого 16-битного значения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Исходное битовое поле. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Объект <a class="el" href="classFCCondition.html" title="Класс для компактного хранения и управления составным состоянием устройства.">FCCondition</a> с установленными полями. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Зарезервированные биты (13-15) автоматически очищаются для обеспечения совместимости и предотвращения неопределённого поведения. </dd></dl>
+
+</div>
+</div>
+<a id="afded35a39d3113e6827c79cdbf188689" name="afded35a39d3113e6827c79cdbf188689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afded35a39d3113e6827c79cdbf188689">&#9670;&#160;</a></span>is() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCCondition::is </td>
+          <td>(</td>
+          <td class="paramtype">ChangedState</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, соответствует ли флаг изменения заданному значению. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Ожидаемое значение ChangedState. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если текущий флаг изменения равен value; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a0c15ac988b56b7162e3a35b6e832179b" name="a0c15ac988b56b7162e3a35b6e832179b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c15ac988b56b7162e3a35b6e832179b">&#9670;&#160;</a></span>is() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCCondition::is </td>
+          <td>(</td>
+          <td class="paramtype">ErrorType</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, соответствует ли тип ошибки заданному значению. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Ожидаемое значение ErrorType. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если текущий тип ошибки равен value; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a533023ae6ac62421e0ed0ba6b60b4ce3" name="a533023ae6ac62421e0ed0ba6b60b4ce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a533023ae6ac62421e0ed0ba6b60b4ce3">&#9670;&#160;</a></span>is() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCCondition::is </td>
+          <td>(</td>
+          <td class="paramtype">PanelState</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, соответствует ли текущая панель заданному значению. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Ожидаемое значение PanelState. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если текущая панель равна value; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="afa4a54e13bc4cbbed2e046716164f4cd" name="afa4a54e13bc4cbbed2e046716164f4cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa4a54e13bc4cbbed2e046716164f4cd">&#9670;&#160;</a></span>is() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCCondition::is </td>
+          <td>(</td>
+          <td class="paramtype">PlayState</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, соответствует ли состояние воспроизведения заданному значению. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Ожидаемое значение PlayState. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если текущее состояние воспроизведения равно value; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a1e64803f32cf29521c850dbf2fd254bd" name="a1e64803f32cf29521c850dbf2fd254bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e64803f32cf29521c850dbf2fd254bd">&#9670;&#160;</a></span>is() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCCondition::is </td>
+          <td>(</td>
+          <td class="paramtype">ReadyState</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, соответствует ли состояние готовности заданному значению. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Ожидаемое значение ReadyState. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если текущее состояние готовности равно value; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a5bf96ed3355e038d79310297d2444893" name="a5bf96ed3355e038d79310297d2444893"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bf96ed3355e038d79310297d2444893">&#9670;&#160;</a></span>is() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCCondition::is </td>
+          <td>(</td>
+          <td class="paramtype">VisibilityState</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, соответствует ли состояние видимости заданному значению. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Ожидаемое значение VisibilityState. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если текущее состояние видимости равно value; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a11c5cc32a1063a204211d50c313d99f4" name="a11c5cc32a1063a204211d50c313d99f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11c5cc32a1063a204211d50c313d99f4">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCCondition::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сравнения на неравенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другой объект для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если состояния различаются хотя бы по одному биту; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a88fa0616cbeea2dc794a3e85c5693037" name="a88fa0616cbeea2dc794a3e85c5693037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88fa0616cbeea2dc794a3e85c5693037">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCCondition::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сравнения на равенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другой объект для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если все биты состояния идентичны; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="aeaa1fe957e5f095f5adcb9f77c8b0652" name="aeaa1fe957e5f095f5adcb9f77c8b0652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaa1fe957e5f095f5adcb9f77c8b0652">&#9670;&#160;</a></span>raw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">uint16_t</a> FCCondition::raw </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает сырое 16-битное представление состояния. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение битового поля (зарезервированные биты 13-15 всегда равны 0). </dd></dl>
+
+</div>
+</div>
+<a id="aa80d9dc056d5ca5888873dfa2dabc618" name="aa80d9dc056d5ca5888873dfa2dabc618"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa80d9dc056d5ca5888873dfa2dabc618">&#9670;&#160;</a></span>set() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FCCondition::set </td>
+          <td>(</td>
+          <td class="paramtype">ChangedState</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает флаг изменения состояния. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Новое значение ChangedState. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af23587e7196837c4ff3bc9bd5e9c4ad8" name="af23587e7196837c4ff3bc9bd5e9c4ad8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af23587e7196837c4ff3bc9bd5e9c4ad8">&#9670;&#160;</a></span>set() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FCCondition::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает все поля состояния из другого объекта. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Источник копирования состояния. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a80cc32a18200f8c05123bed6a8580b2b" name="a80cc32a18200f8c05123bed6a8580b2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80cc32a18200f8c05123bed6a8580b2b">&#9670;&#160;</a></span>set() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FCCondition::set </td>
+          <td>(</td>
+          <td class="paramtype">ErrorType</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает тип ошибки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Новое значение ErrorType. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0fc03f1b734722e9ab2bf9e7fbf28ca1" name="a0fc03f1b734722e9ab2bf9e7fbf28ca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fc03f1b734722e9ab2bf9e7fbf28ca1">&#9670;&#160;</a></span>set() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FCCondition::set </td>
+          <td>(</td>
+          <td class="paramtype">PanelState</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает текущую панель интерфейса. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Новое значение PanelState. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0457f0964077ca1e40d3216d7c7db804" name="a0457f0964077ca1e40d3216d7c7db804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0457f0964077ca1e40d3216d7c7db804">&#9670;&#160;</a></span>set() <span class="overload">[5/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FCCondition::set </td>
+          <td>(</td>
+          <td class="paramtype">PlayState</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое состояние воспроизведения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Новое значение PlayState. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acdd85f7167ba4994a45767e5165b79a9" name="acdd85f7167ba4994a45767e5165b79a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdd85f7167ba4994a45767e5165b79a9">&#9670;&#160;</a></span>set() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FCCondition::set </td>
+          <td>(</td>
+          <td class="paramtype">ReadyState</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое состояние готовности. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Новое значение ReadyState. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7acdda0491100ed83f6655feb362d0ac" name="a7acdda0491100ed83f6655feb362d0ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7acdda0491100ed83f6655feb362d0ac">&#9670;&#160;</a></span>set() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FCCondition::set </td>
+          <td>(</td>
+          <td class="paramtype">VisibilityState</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает состояние видимости элемента. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Новое значение VisibilityState. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>FCTypes/FCConditionObject/FCCondition/<a class="el" href="FCCondition_8h_source.html">FCCondition.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

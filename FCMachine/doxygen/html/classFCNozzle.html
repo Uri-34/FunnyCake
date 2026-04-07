@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Класс FCNozzle</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classFCNozzle-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс FCNozzle</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для описания параметров отдельного сопла печатающей головки.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FCNozzle_8h_source.html">FCNozzle.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aa822a5ec20925455716e3f662c07b388" id="r_aa822a5ec20925455716e3f662c07b388"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa822a5ec20925455716e3f662c07b388">FCNozzle</a> () <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aa822a5ec20925455716e3f662c07b388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор по умолчанию. Создаёт сопло в начале координат с типичными параметрами.  <br /></td></tr>
+<tr class="separator:aa822a5ec20925455716e3f662c07b388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a265a7f05adf3295f37f80a8b20f876d6" id="r_a265a7f05adf3295f37f80a8b20f876d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a265a7f05adf3295f37f80a8b20f876d6">FCNozzle</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp;<a class="el" href="#acd6d1998f495e2798f79b0f9cefcc291">position</a>, <a class="el" href="classFCRange.html">float</a> <a class="el" href="#a73c3d3d6d616c8a22f8b90559721c5b1">diameter</a>, <a class="el" href="classFCRange.html">float</a> <a class="el" href="classFCRange.html">rate</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a265a7f05adf3295f37f80a8b20f876d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с параметрами.  <br /></td></tr>
+<tr class="separator:a265a7f05adf3295f37f80a8b20f876d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d8689ea058f8c892385d3a5dbd89ec5" id="r_a1d8689ea058f8c892385d3a5dbd89ec5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d8689ea058f8c892385d3a5dbd89ec5">crossSectionArea</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a1d8689ea058f8c892385d3a5dbd89ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает площадь поперечного сечения сопла (мм²).  <br /></td></tr>
+<tr class="separator:a1d8689ea058f8c892385d3a5dbd89ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ae92703115f235da584cecd516b4d9" id="r_a48ae92703115f235da584cecd516b4d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48ae92703115f235da584cecd516b4d9">materialVelocity</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a48ae92703115f235da584cecd516b4d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает теоретическую скорость движения материала на выходе из сопла (мм/с).  <br /></td></tr>
+<tr class="separator:a48ae92703115f235da584cecd516b4d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4509605dfefc8dc3782c4a478944491" id="r_ae4509605dfefc8dc3782c4a478944491"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4509605dfefc8dc3782c4a478944491">isValid</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ae4509605dfefc8dc3782c4a478944491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет валидность параметров сопла.  <br /></td></tr>
+<tr class="separator:ae4509605dfefc8dc3782c4a478944491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4249856932ec7dc587dd3549bb2e0be6" id="r_a4249856932ec7dc587dd3549bb2e0be6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4249856932ec7dc587dd3549bb2e0be6">operator==</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCNozzle.html">FCNozzle</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a4249856932ec7dc587dd3549bb2e0be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения на равенство.  <br /></td></tr>
+<tr class="separator:a4249856932ec7dc587dd3549bb2e0be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6ceb69b8d436e3e933c48d51b3b94f5" id="r_aa6ceb69b8d436e3e933c48d51b3b94f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6ceb69b8d436e3e933c48d51b3b94f5">operator!=</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCNozzle.html">FCNozzle</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aa6ceb69b8d436e3e933c48d51b3b94f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения на неравенство.  <br /></td></tr>
+<tr class="separator:aa6ceb69b8d436e3e933c48d51b3b94f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd6d1998f495e2798f79b0f9cefcc291" id="r_acd6d1998f495e2798f79b0f9cefcc291"><td class="memItemLeft" align="right" valign="top"><a id="acd6d1998f495e2798f79b0f9cefcc291" name="acd6d1998f495e2798f79b0f9cefcc291"></a>
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><b>position</b> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:acd6d1998f495e2798f79b0f9cefcc291"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод возвращающий позицию. <br /></td></tr>
+<tr class="separator:acd6d1998f495e2798f79b0f9cefcc291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c3d3d6d616c8a22f8b90559721c5b1" id="r_a73c3d3d6d616c8a22f8b90559721c5b1"><td class="memItemLeft" align="right" valign="top"><a id="a73c3d3d6d616c8a22f8b90559721c5b1" name="a73c3d3d6d616c8a22f8b90559721c5b1"></a>
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><b>diameter</b> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a73c3d3d6d616c8a22f8b90559721c5b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод возвращающий диаметр. <br /></td></tr>
+<tr class="separator:a73c3d3d6d616c8a22f8b90559721c5b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для описания параметров отдельного сопла печатающей головки. </p>
+<p>Представляет физическое сопло плоттера с геометрическими и гидродинамическими характеристиками:</p><ul>
+<li>Позиция сопла в локальной системе координат головки (мм),</li>
+<li>Диаметр отверстия сопла (мм),</li>
+<li>Скорость потока материала (мм³/с).</li>
+</ul>
+<p>Особенности реализации:</p><ul>
+<li>Является простым классом данных для максимальной эффективности,</li>
+<li>Не содержит логики управления — только хранение параметров,</li>
+<li>Поддерживает тривиальную копируемость (trivially copyable) для использования в контейнерах и сериализации.</li>
+</ul>
+<p>Типичные конфигурации сопел в промышленных плоттерах:</p><ul>
+<li>Тонкое сопло: диаметр <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.2</a>–0.4 мм для детализированных линий и текста,</li>
+<li>Среднее сопло: диаметр <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.5</a>–0.7 мм для универсального нанесения,</li>
+<li>Широкое сопло: диаметр <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">1.0</a>–2.0 мм для быстрой заливки больших площадей.</li>
+</ul>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Критически важно:<ul>
+<li>Диаметр сопла ДОЛЖЕН быть строго положительным (&gt; 0) — нулевой или отрицательный диаметр приведёт к делению на ноль при расчёте площади сечения,</li>
+<li>Позиция сопла задаётся в локальной системе координат головки, а не в глобальной системе плоттера — преобразование координат выполняется внешними компонентами. </li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Для встраиваемых систем (Raspberry Pi 4 + Buildroot):<ul>
+<li>Класс занимает ровно 24 байта (2×float для позиции + 2×float для диаметра/потока) на 32-битных платформах, что оптимально для выравнивания памяти,</li>
+<li>Все операции с экземплярами структуры являются максимально эффективными (без виртуальных вызовов, динамического выделения памяти или сложной логики),</li>
+<li>Рекомендуется передавать экземпляры по константной ссылке в функции для избегания копирования. </li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classFCHead.html" title="Класс управления печатающей головкой плоттера с множественными соплами.">FCHead</a> для управления группой сопел в составе печатающей головки </dd>
+<dd>
+<a class="el" href="classFCPlotter.html" title="Класс управления промышленным плоттером в отдельном потоке выполнения.">FCPlotter</a> для использования сопел в процессе нанесения изображений </dd></dl>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="aa822a5ec20925455716e3f662c07b388" name="aa822a5ec20925455716e3f662c07b388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa822a5ec20925455716e3f662c07b388">&#9670;&#160;</a></span>FCNozzle() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FCNozzle::FCNozzle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор по умолчанию. Создаёт сопло в начале координат с типичными параметрами. </p>
+<dl class="section note"><dt>Заметки</dt><dd>Параметры по умолчанию соответствуют стандартному соплу для детализированной печати:<ul>
+<li>позиция: (0, 0) мм,</li>
+<li>диаметр: <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.4</a> мм,</li>
+<li>скорость потока: <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.0</a> мм³/с (неактивно до включения подачи). </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a265a7f05adf3295f37f80a8b20f876d6" name="a265a7f05adf3295f37f80a8b20f876d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a265a7f05adf3295f37f80a8b20f876d6">&#9670;&#160;</a></span>FCNozzle() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FCNozzle::FCNozzle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>position</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">float</a></td>          <td class="paramname"><span class="paramname"><em>diameter</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">float</a></td>          <td class="paramname"><span class="paramname"><em>rate</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор с параметрами. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Позиция центра сопла в локальной системе координат головки (мм). </td></tr>
+    <tr><td class="paramname">diam</td><td>Диаметр отверстия сопла (мм). Должен быть &gt; 0. </td></tr>
+    <tr><td class="paramname">rate</td><td>Скорость потока материала (мм³/с). Может быть 0 для неактивного сопла. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>При передаче недопустимого диаметра (≤ 0) автоматически устанавливается значение <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.1</a> мм для предотвращения деления на ноль в расчётах. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a1d8689ea058f8c892385d3a5dbd89ec5" name="a1d8689ea058f8c892385d3a5dbd89ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d8689ea058f8c892385d3a5dbd89ec5">&#9670;&#160;</a></span>crossSectionArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">float</a> FCNozzle::crossSectionArea </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает площадь поперечного сечения сопла (мм²). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение π × (диаметр/2)². </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Используется для расчёта объёма подаваемого материала и скорости движения головки. </dd></dl>
+
+</div>
+</div>
+<a id="ae4509605dfefc8dc3782c4a478944491" name="ae4509605dfefc8dc3782c4a478944491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4509605dfefc8dc3782c4a478944491">&#9670;&#160;</a></span>isValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCNozzle::isValid </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет валидность параметров сопла. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true если диаметр &gt; 0 и поток ≥ 0; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a48ae92703115f235da584cecd516b4d9" name="a48ae92703115f235da584cecd516b4d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48ae92703115f235da584cecd516b4d9">&#9670;&#160;</a></span>materialVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">float</a> FCNozzle::materialVelocity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает теоретическую скорость движения материала на выходе из сопла (мм/с). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение потока / площадь сечения. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>При нулевой площади сечения возвращает <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.0</a> для предотвращения деления на ноль. </dd></dl>
+
+</div>
+</div>
+<a id="aa6ceb69b8d436e3e933c48d51b3b94f5" name="aa6ceb69b8d436e3e933c48d51b3b94f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6ceb69b8d436e3e933c48d51b3b94f5">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCNozzle::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCNozzle.html">FCNozzle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сравнения на неравенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другое сопло для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если сопла различаются хотя бы по одному параметру; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a4249856932ec7dc587dd3549bb2e0be6" name="a4249856932ec7dc587dd3549bb2e0be6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4249856932ec7dc587dd3549bb2e0be6">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCNozzle::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCNozzle.html">FCNozzle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сравнения на равенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другое сопло для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если все поля идентичны с точностью до <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.01</a> мм; иначе — false. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Используется допуск <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.01</a> мм для учёта ошибок округления при расчётах с плавающей точкой. </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>FCPlotter/FCDevice/FCI2CDevice/FCHead/FCNozzle/<a class="el" href="FCNozzle_8h_source.html">FCNozzle.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

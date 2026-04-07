@@ -1,0 +1,11 @@
+<map id="FCPCF8575Indicator" name="FCPCF8575Indicator">
+<area shape="rect" id="Node000001" title="&lt; класс для I²C&#45;управляемых с PCF8575 помощью индикаторов (LED)." alt="" coords="5,299,159,324"/>
+<area shape="rect" id="Node000002" href="$classFCI2CDevice.html" title="&lt; базовый класс для I²C&#45;устройств." alt="" coords="29,225,135,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,264,85,299,79,299,79,264"/>
+<area shape="rect" id="Node000003" href="$classFCDevice.html" title="абстрактный базовый класс для аппаратных устройств." alt="" coords="40,152,124,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,191,85,225,79,225,79,191"/>
+<area shape="rect" id="Node000004" href="$classFCConditionObject.html" title="&lt; базовый класс для объектов с управляемым состоянием (готовность, воспроизведение,..." alt="" coords="11,79,153,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="85,118,85,152,79,152,79,118"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="45,5,119,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="85,44,85,79,79,79,79,44"/>
+</map>

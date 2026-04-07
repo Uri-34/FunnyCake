@@ -1,0 +1,15 @@
+<map id="FCI2CCOBRGBLEDStrip" name="FCI2CCOBRGBLEDStrip">
+<area shape="rect" id="Node000001" title="&lt; класс FCI2CCOBRGBLEDStrip &#45; описывающий состояние цветной светодиодной ленты" alt="" coords="5,445,176,471"/>
+<area shape="rect" id="Node000002" href="$classFCI2CColorIndicator.html" title="тип список датчиков температуры для удовства" alt="" coords="15,372,166,397"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,411,93,445,88,445,88,411"/>
+<area shape="rect" id="Node000003" href="$classFCI2CRunedDevice.html" title="&lt; класс для запускаемых в отдельных потоках устройств I²C." alt="" coords="17,299,164,324"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="93,338,93,372,88,372,88,338"/>
+<area shape="rect" id="Node000004" href="$classFCI2CDevice.html" title="Базовый класс для I²C&#45;устройств." alt="" coords="38,225,143,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="93,264,93,299,88,299,88,264"/>
+<area shape="rect" id="Node000005" href="$classFCDevice.html" title="абстрактный базовый класс для аппаратных устройств." alt="" coords="49,152,133,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="93,191,93,225,88,225,88,191"/>
+<area shape="rect" id="Node000006" href="$classFCConditionObject.html" title="Базовый класс для объектов с управляемым состоянием (готовность, воспроизведение, ошибки)." alt="" coords="19,79,162,104"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="93,118,93,152,88,152,88,118"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="53,5,128,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="93,44,93,79,88,79,88,44"/>
+</map>

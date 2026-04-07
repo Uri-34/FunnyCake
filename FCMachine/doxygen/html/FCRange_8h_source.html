@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Исходный файл FCTypes/FCRange/FCRange.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_095319a0a42fa4deb6343e81a7cff0f0.html">FCTypes</a></li><li class="navelem"><a class="el" href="dir_dbf21b45ce48b6f08f2f04ac6b5e9193.html">FCRange</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FCRange.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FC_RANGE_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FC_RANGE_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtGlobal&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;algorithm&gt;</span>  <span class="comment">// Для std::clamp (требуется C++17)</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classFCRange.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="classFCRange.html">FCRange</a></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// Статическая проверка: только арифметические типы разрешены</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">static_assert</span>(<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::is_arithmetic_v&lt;T&gt;</a>, <span class="stringliteral">&quot;FCRange требует арифметический тип (целочисленный или с плавающей точкой)&quot;</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classFCRange.html#a7f4a9c8ddea0352e84326fb70bd080c4">   40</a></span>    <span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">_type</a> = <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">T</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">// --- константы по умолчанию ---</span></div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classFCRange.html#a6f37a3956c709eb8f0ce6e4211a9b7d2">   47</a></span>    [[<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">nodiscard</a>]] <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_function" href="classFCRange.html#a6f37a3956c709eb8f0ce6e4211a9b7d2">defaultMin</a>() <a class="code hl_class" href="classFCRange.html">noexcept</a></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::is_floating_point_v&lt;T&gt;</a>) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classFCRange.html">T</a><span class="keyword">&gt;</span>(-10000.0);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classFCRange.html">T</a><span class="keyword">&gt;</span>(-10000);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classFCRange.html#ae031870568b98307b99b3fa31ee60518">   60</a></span>    [[<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">nodiscard</a>]] <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_function" href="classFCRange.html#ae031870568b98307b99b3fa31ee60518">defaultMax</a>() <a class="code hl_class" href="classFCRange.html">noexcept</a></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::is_floating_point_v&lt;T&gt;</a>) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classFCRange.html">T</a><span class="keyword">&gt;</span>(10000.0);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classFCRange.html">T</a><span class="keyword">&gt;</span>(10000);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// --- конструкторы ---</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">   75</a></span>    <span class="keyword">constexpr</span> <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">FCRange</a>(<a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_function" href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">min</a> = <a class="code hl_function" href="classFCRange.html#a6f37a3956c709eb8f0ce6e4211a9b7d2">defaultMin</a>(), <a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_function" href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">max</a> = <a class="code hl_function" href="classFCRange.html#ae031870568b98307b99b3fa31ee60518">defaultMax</a>()) <a class="code hl_class" href="classFCRange.html">noexcept</a></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        : m_min{<a class="code hl_function" href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">min</a> &lt;= <a class="code hl_function" href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">max</a> ? <a class="code hl_function" href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">min</a> : <a class="code hl_function" href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">max</a>}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        , m_max{<a class="code hl_function" href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">min</a> &lt;= <a class="code hl_function" href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">max</a> ? <a class="code hl_function" href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">max</a> : <a class="code hl_function" href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">min</a>}</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    {}</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classFCRange.html#a355eaffe9ffe0aade7056db05f1b72a7">   81</a></span>    <span class="keyword">constexpr</span> <a class="code hl_function" href="classFCRange.html#a355eaffe9ffe0aade7056db05f1b72a7">FCRange</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">FCRange</a>&amp;) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classFCRange.html#acb07542d13f92467680410848991d0a3">   84</a></span>    <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">FCRange</a>&amp; <a class="code hl_function" href="classFCRange.html#acb07542d13f92467680410848991d0a3">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">FCRange</a>&amp;) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classFCRange.html#aff2c3412e205c748dc618e0a8d782ed6">   87</a></span>    <a class="code hl_function" href="classFCRange.html#aff2c3412e205c748dc618e0a8d782ed6">~FCRange</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">// --- геттеры ---</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">   92</a></span>    [[<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_function" href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">min</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> m_min; }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">   96</a></span>    [[<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_function" href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">max</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> m_max; }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classFCRange.html#a32a1fcc6ac5aac10c0ec0a01991d62bf">  101</a></span>    [[<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_function" href="classFCRange.html#a32a1fcc6ac5aac10c0ec0a01991d62bf">width</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> m_max - m_min; }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classFCRange.html#ad41c2a8d6eed22899610d01e76b50cb3">  107</a></span>    [[<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_function" href="classFCRange.html#ad41c2a8d6eed22899610d01e76b50cb3">center</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> (m_min + m_max) / <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classFCRange.html">T</a><span class="keyword">&gt;</span>(2); }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="comment">// --- логические операции ---</span></div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classFCRange.html#ad9a54a454b911bce174c7eeb392bb33b">  113</a></span>    [[<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCRange.html#ad9a54a454b911bce174c7eeb392bb33b">contains</a>(<a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_class" href="classFCRange.html">value</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFCRange.html">value</a> &gt;= m_min &amp;&amp; <a class="code hl_class" href="classFCRange.html">value</a> &lt;= m_max;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
+</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classFCRange.html#ac785b78aaa2970d7ec8b544089e43577">  122</a></span>    [[<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCRange.html#ac785b78aaa2970d7ec8b544089e43577">excludes</a>(<a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_class" href="classFCRange.html">value</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">return</span> !<a class="code hl_function" href="classFCRange.html#ad9a54a454b911bce174c7eeb392bb33b">contains</a>(<a class="code hl_class" href="classFCRange.html">value</a>);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="foldopen" id="foldopen00134" data-start="{" data-end="}">
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classFCRange.html#a0197ab62a359b84cbc4795082463b4b1">  134</a></span>    [[<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_function" href="classFCRange.html#a0197ab62a359b84cbc4795082463b4b1">clamped</a>(<a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_class" href="classFCRange.html">value</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::clamp</a>(<a class="code hl_class" href="classFCRange.html">value</a>, m_min, m_max);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
+</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="foldopen" id="foldopen00143" data-start="{" data-end="}">
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classFCRange.html#a951dbb3528206c6f80b726b5fadb55ff">  143</a></span>    [[<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCRange.html#a951dbb3528206c6f80b726b5fadb55ff">intersects</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">FCRange</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">return</span> m_min &lt;= <a class="code hl_class" href="classFCRange.html">other</a>.m_max &amp;&amp; <a class="code hl_class" href="classFCRange.html">other</a>.m_min &lt;= m_max;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="comment">// --- модификаторы ---</span></div>
+<div class="foldopen" id="foldopen00154" data-start="{" data-end="}">
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="classFCRange.html#a6602da4745ba85ebc5f16e94c6478ab3">  154</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFCRange.html#a6602da4745ba85ebc5f16e94c6478ab3">set</a>(<a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_function" href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">min</a>, <a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_function" href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">max</a>) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">min</a> &lt;= <a class="code hl_function" href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">max</a>) {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            m_min = <a class="code hl_function" href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">min</a>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            m_max = <a class="code hl_function" href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">max</a>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            m_min = <a class="code hl_function" href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">max</a>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            m_max = <a class="code hl_function" href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">min</a>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    }</div>
+</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="foldopen" id="foldopen00168" data-start="{" data-end="}">
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="classFCRange.html#a5d3e77645be5b26e22050a93bef773ef">  168</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFCRange.html#a5d3e77645be5b26e22050a93bef773ef">translate</a>(<a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_class" href="classFCRange.html">offset</a>) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        m_min += <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">offset</a>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        m_max += <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">offset</a>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="foldopen" id="foldopen00178" data-start="{" data-end="}">
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="classFCRange.html#a0c69fa244980498827b94ec887504d47">  178</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFCRange.html#a0c69fa244980498827b94ec887504d47">scaleFromCenter</a>(<a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_class" href="classFCRange.html">factor</a>) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_class" href="classFCRange.html">c</a> = <a class="code hl_function" href="classFCRange.html#ad41c2a8d6eed22899610d01e76b50cb3">center</a>();</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">T</a> <a class="code hl_class" href="classFCRange.html">half</a> = <a class="code hl_function" href="classFCRange.html#a32a1fcc6ac5aac10c0ec0a01991d62bf">width</a>() / <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classFCRange.html">T</a><span class="keyword">&gt;</span>(2) * <a class="code hl_class" href="classFCRange.html">factor</a>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        m_min = <a class="code hl_class" href="classFCRange.html">c</a> - <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">half</a>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        m_max = <a class="code hl_class" href="classFCRange.html">c</a> + <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">half</a>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    }</div>
+</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="comment">// --- операторы сравнения ---</span></div>
+<div class="foldopen" id="foldopen00190" data-start="{" data-end="}">
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classFCRange.html#a0a1465f1f16a19903799b521e94c79a0">  190</a></span>    [[<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCRange.html#a0a1465f1f16a19903799b521e94c79a0">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">FCRange</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keywordflow">return</span> m_min == <a class="code hl_class" href="classFCRange.html">other</a>.m_min &amp;&amp; m_max == <a class="code hl_class" href="classFCRange.html">other</a>.m_max;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    }</div>
+</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="foldopen" id="foldopen00198" data-start="{" data-end="}">
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="classFCRange.html#a82f07ab632f1495ebe936114691ea19b">  198</a></span>    [[<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCRange.html#a82f07ab632f1495ebe936114691ea19b">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">FCRange</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">other</a>);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    }</div>
+</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <a class="code hl_class" href="classFCRange.html">T</a> m_min;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <a class="code hl_class" href="classFCRange.html">T</a> m_max;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>};</div>
+</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="comment">// --- псевдонимы для часто используемых типов ---</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">FCRangeInt</a> = <a class="code hl_class" href="classFCRange.html">FCRange&lt;int&gt;</a>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">FCRangeQReal</a> = <a class="code hl_class" href="classFCRange.html">FCRange&lt;qreal&gt;</a>;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">FCRangeDouble</a> = <a class="code hl_class" href="classFCRange.html">FCRange&lt;double&gt;</a>;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment">// --- поддержка системы мета-объектов Qt (опционально) ---</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="comment">// Раскомментируйте при необходимости использования в QVariant, моделях и сигналах/слотах:</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="comment">#include &lt;QMetaType&gt;</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="comment">Q_DECLARE_METATYPE(FCRangeInt)</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="comment">Q_DECLARE_METATYPE(FCRangeQReal)</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="comment">Q_DECLARE_METATYPE(FCRangeDouble)</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="comment">// --- проверки компиляции ---</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment">// Гарантирует тривиальную копируемость для использования в встраиваемых системах</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::is_trivially_copyable_v&lt;FCRange&lt;int&gt;</a>&gt;, <span class="stringliteral">&quot;FCRange&lt;int&gt; должен быть тривиально копируемым типом&quot;</span>);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::is_trivially_copyable_v&lt;FCRange&lt;float&gt;</a>&gt;, <span class="stringliteral">&quot;FCRange&lt;float&gt; должен быть тривиально копируемым типом&quot;</span>);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="comment">// Проверка корректности значений по умолчанию</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="classFCRange.html#a6f37a3956c709eb8f0ce6e4211a9b7d2">FCRange&lt;int&gt;::defaultMin</a>() == -10000, <span class="stringliteral">&quot;defaultMin() для int должен быть -10000&quot;</span>);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="keyword">static_assert</span>(<a class="code hl_function" href="classFCRange.html#ae031870568b98307b99b3fa31ee60518">FCRange&lt;int&gt;::defaultMax</a>() == 10000, <span class="stringliteral">&quot;defaultMax() для int должен быть 10000&quot;</span>);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">#endif </span><span class="comment">// FC_RANGE_H</span></div>
+<div class="ttc" id="aclassFCRange_html"><div class="ttname"><a href="classFCRange.html">FCRange</a></div><div class="ttdoc">Шаблонный класс для представления числового диапазона [min, max] с гарантией корректности.</div><div class="ttdef"><b>Definition</b> FCRange.h:34</div></div>
+<div class="ttc" id="aclassFCRange_html_a0197ab62a359b84cbc4795082463b4b1"><div class="ttname"><a href="classFCRange.html#a0197ab62a359b84cbc4795082463b4b1">FCRange::clamped</a></div><div class="ttdeci">constexpr T clamped(T value) const noexcept</div><div class="ttdoc">Ограничивает значение границами диапазона.</div><div class="ttdef"><b>Definition</b> FCRange.h:134</div></div>
+<div class="ttc" id="aclassFCRange_html_a0a1465f1f16a19903799b521e94c79a0"><div class="ttname"><a href="classFCRange.html#a0a1465f1f16a19903799b521e94c79a0">FCRange::operator==</a></div><div class="ttdeci">constexpr bool operator==(const FCRange &amp;other) const noexcept</div><div class="ttdoc">Оператор сравнения на равенство.</div><div class="ttdef"><b>Definition</b> FCRange.h:190</div></div>
+<div class="ttc" id="aclassFCRange_html_a0c69fa244980498827b94ec887504d47"><div class="ttname"><a href="classFCRange.html#a0c69fa244980498827b94ec887504d47">FCRange::scaleFromCenter</a></div><div class="ttdeci">constexpr void scaleFromCenter(T factor) noexcept</div><div class="ttdoc">Масштабирует диапазон относительно его центра.</div><div class="ttdef"><b>Definition</b> FCRange.h:178</div></div>
+<div class="ttc" id="aclassFCRange_html_a32a1fcc6ac5aac10c0ec0a01991d62bf"><div class="ttname"><a href="classFCRange.html#a32a1fcc6ac5aac10c0ec0a01991d62bf">FCRange::width</a></div><div class="ttdeci">constexpr T width() const noexcept</div><div class="ttdoc">Вычисляет ширину диапазона (разность границ).</div><div class="ttdef"><b>Definition</b> FCRange.h:101</div></div>
+<div class="ttc" id="aclassFCRange_html_a355eaffe9ffe0aade7056db05f1b72a7"><div class="ttname"><a href="classFCRange.html#a355eaffe9ffe0aade7056db05f1b72a7">FCRange::FCRange</a></div><div class="ttdeci">constexpr FCRange(const FCRange &amp;) noexcept=default</div><div class="ttdoc">Конструктор копирования (тривиальный).</div></div>
+<div class="ttc" id="aclassFCRange_html_a5d3e77645be5b26e22050a93bef773ef"><div class="ttname"><a href="classFCRange.html#a5d3e77645be5b26e22050a93bef773ef">FCRange::translate</a></div><div class="ttdeci">constexpr void translate(T offset) noexcept</div><div class="ttdoc">Сдвигает диапазон на заданное смещение.</div><div class="ttdef"><b>Definition</b> FCRange.h:168</div></div>
+<div class="ttc" id="aclassFCRange_html_a6602da4745ba85ebc5f16e94c6478ab3"><div class="ttname"><a href="classFCRange.html#a6602da4745ba85ebc5f16e94c6478ab3">FCRange::set</a></div><div class="ttdeci">constexpr void set(T min, T max) noexcept</div><div class="ttdoc">Устанавливает новые границы диапазона.</div><div class="ttdef"><b>Definition</b> FCRange.h:154</div></div>
+<div class="ttc" id="aclassFCRange_html_a6f37a3956c709eb8f0ce6e4211a9b7d2"><div class="ttname"><a href="classFCRange.html#a6f37a3956c709eb8f0ce6e4211a9b7d2">FCRange::defaultMin</a></div><div class="ttdeci">static constexpr T defaultMin() noexcept</div><div class="ttdoc">Возвращает минимальное значение по умолчанию для типа T.</div><div class="ttdef"><b>Definition</b> FCRange.h:47</div></div>
+<div class="ttc" id="aclassFCRange_html_a82f07ab632f1495ebe936114691ea19b"><div class="ttname"><a href="classFCRange.html#a82f07ab632f1495ebe936114691ea19b">FCRange::operator!=</a></div><div class="ttdeci">constexpr bool operator!=(const FCRange &amp;other) const noexcept</div><div class="ttdoc">Оператор сравнения на неравенство.</div><div class="ttdef"><b>Definition</b> FCRange.h:198</div></div>
+<div class="ttc" id="aclassFCRange_html_a951dbb3528206c6f80b726b5fadb55ff"><div class="ttname"><a href="classFCRange.html#a951dbb3528206c6f80b726b5fadb55ff">FCRange::intersects</a></div><div class="ttdeci">constexpr bool intersects(const FCRange &amp;other) const noexcept</div><div class="ttdoc">Проверяет пересечение с другим диапазоном.</div><div class="ttdef"><b>Definition</b> FCRange.h:143</div></div>
+<div class="ttc" id="aclassFCRange_html_ac785b78aaa2970d7ec8b544089e43577"><div class="ttname"><a href="classFCRange.html#ac785b78aaa2970d7ec8b544089e43577">FCRange::excludes</a></div><div class="ttdeci">constexpr bool excludes(T value) const noexcept</div><div class="ttdoc">Проверяет, находится ли значение вне диапазона.</div><div class="ttdef"><b>Definition</b> FCRange.h:122</div></div>
+<div class="ttc" id="aclassFCRange_html_acb07542d13f92467680410848991d0a3"><div class="ttname"><a href="classFCRange.html#acb07542d13f92467680410848991d0a3">FCRange::operator=</a></div><div class="ttdeci">constexpr FCRange &amp; operator=(const FCRange &amp;) noexcept=default</div><div class="ttdoc">Оператор присваивания копированием (тривиальный).</div></div>
+<div class="ttc" id="aclassFCRange_html_aceee53b9131a8276ad7a96994e413113"><div class="ttname"><a href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">FCRange::max</a></div><div class="ttdeci">constexpr T max() const noexcept</div><div class="ttdoc">Возвращает максимальную границу диапазона.</div><div class="ttdef"><b>Definition</b> FCRange.h:96</div></div>
+<div class="ttc" id="aclassFCRange_html_ad41c2a8d6eed22899610d01e76b50cb3"><div class="ttname"><a href="classFCRange.html#ad41c2a8d6eed22899610d01e76b50cb3">FCRange::center</a></div><div class="ttdeci">constexpr T center() const noexcept</div><div class="ttdoc">Вычисляет центр диапазона.</div><div class="ttdef"><b>Definition</b> FCRange.h:107</div></div>
+<div class="ttc" id="aclassFCRange_html_ad62ce8b493badeb340c00d26fa3c2a0e"><div class="ttname"><a href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">FCRange::min</a></div><div class="ttdeci">constexpr T min() const noexcept</div><div class="ttdoc">Возвращает минимальную границу диапазона.</div><div class="ttdef"><b>Definition</b> FCRange.h:92</div></div>
+<div class="ttc" id="aclassFCRange_html_ad64748aa407cd3708dd078c9e8789152"><div class="ttname"><a href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">FCRange::FCRange</a></div><div class="ttdeci">constexpr FCRange(T min=defaultMin(), T max=defaultMax()) noexcept</div><div class="ttdoc">Конструктор с параметрами.</div><div class="ttdef"><b>Definition</b> FCRange.h:75</div></div>
+<div class="ttc" id="aclassFCRange_html_ad9a54a454b911bce174c7eeb392bb33b"><div class="ttname"><a href="classFCRange.html#ad9a54a454b911bce174c7eeb392bb33b">FCRange::contains</a></div><div class="ttdeci">constexpr bool contains(T value) const noexcept</div><div class="ttdoc">Проверяет, принадлежит ли значение диапазону [min, max] (включая границы).</div><div class="ttdef"><b>Definition</b> FCRange.h:113</div></div>
+<div class="ttc" id="aclassFCRange_html_ae031870568b98307b99b3fa31ee60518"><div class="ttname"><a href="classFCRange.html#ae031870568b98307b99b3fa31ee60518">FCRange::defaultMax</a></div><div class="ttdeci">static constexpr T defaultMax() noexcept</div><div class="ttdoc">Возвращает максимальное значение по умолчанию для типа T.</div><div class="ttdef"><b>Definition</b> FCRange.h:60</div></div>
+<div class="ttc" id="aclassFCRange_html_aff2c3412e205c748dc618e0a8d782ed6"><div class="ttname"><a href="classFCRange.html#aff2c3412e205c748dc618e0a8d782ed6">FCRange::~FCRange</a></div><div class="ttdeci">~FCRange()=default</div><div class="ttdoc">Деструктор (тривиальный).</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

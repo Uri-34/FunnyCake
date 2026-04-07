@@ -1,0 +1,9 @@
+<map id="FCMarlinController" name="FCMarlinController">
+<area shape="rect" id="Node000001" title="Низкоуровневый драйвер управления контроллером на базе прошивки Marlin 2.1.2.4." alt="" coords="5,225,149,251"/>
+<area shape="rect" id="Node000002" href="$classFCDevice.html" title="Абстрактный базовый класс для управления аппаратными устройствами в системе." alt="" coords="35,152,119,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,191,80,225,75,225,75,191"/>
+<area shape="rect" id="Node000003" href="$classFCConditionObject.html" title="Базовый класс для объектов с управляемым составным состоянием и уведомлениями об изменениях." alt="" coords="6,79,149,104"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,118,80,152,75,152,75,118"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="40,5,115,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="80,44,80,79,75,79,75,44"/>
+</map>

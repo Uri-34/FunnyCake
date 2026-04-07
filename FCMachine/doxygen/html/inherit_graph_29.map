@@ -1,0 +1,47 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,399,80,424"/>
+<area shape="rect" id="Node000001" href="$classFCConditionObject.html" title="&lt; базовый класс для объектов с управляемым состоянием (готовность, воспроизведение,..." alt="" coords="128,399,271,424"/>
+<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="94,409,128,409,128,414,94,414"/>
+<area shape="rect" id="Node000002" href="$classFCDevice.html" title="абстрактный базовый класс для аппаратных устройств." alt="" coords="352,251,436,276"/>
+<area shape="poly" id="edge9_Node000001_Node000002" title=" " alt="" coords="216,386,258,336,286,310,317,286,351,271,353,276,320,291,290,314,262,340,220,389"/>
+<area shape="rect" id="Node000017" href="$classFCDisplayCondition.html" title="&lt; класс FCDisplayCondition &#45; состояние класса FCDisplay" alt="" coords="319,300,469,325"/>
+<area shape="poly" id="edge24_Node000001_Node000017" title=" " alt="" coords="228,389,269,362,318,336,349,323,351,328,320,340,272,366,231,393"/>
+<area shape="rect" id="Node000018" href="$classFCGCoder.html" title="Генератор G&#45;code из SVG&#45;данных." alt="" coords="351,349,437,375"/>
+<area shape="poly" id="edge25_Node000001_Node000018" title=" " alt="" coords="263,393,350,370,351,375,264,398"/>
+<area shape="rect" id="Node000019" href="$classFCI2CBus.html" title=" " alt="" coords="352,399,436,424"/>
+<area shape="poly" id="edge26_Node000001_Node000019" title=" " alt="" coords="285,409,352,409,352,414,285,414"/>
+<area shape="rect" id="Node000020" href="$classFCPlotter.html" title="&lt; класс управления плоттером" alt="" coords="353,448,435,473"/>
+<area shape="poly" id="edge27_Node000001_Node000020" title=" " alt="" coords="264,425,353,448,352,453,263,430"/>
+<area shape="rect" id="Node000021" href="$classFCSVGImageParser.html" title="&lt; парсер SVG&#45;файлов для 3D&#45;сетки." alt="" coords="321,497,467,523"/>
+<area shape="poly" id="edge28_Node000001_Node000021" title=" " alt="" coords="230,430,272,457,320,484,348,495,346,500,318,488,269,462,227,434"/>
+<area shape="rect" id="Node000022" href="$classFCSVGLayer.html" title="&lt; класс для представления одного слоя SVG (Z&#45;уровня)." alt="" coords="343,547,445,572"/>
+<area shape="poly" id="edge29_Node000001_Node000022" title=" " alt="" coords="220,434,262,484,290,510,320,533,344,544,341,549,317,538,286,514,258,488,216,437"/>
+<area shape="rect" id="Node000003" href="$classFCGPIODevice.html" title=" " alt="" coords="520,55,636,80"/>
+<area shape="poly" id="edge10_Node000002_Node000003" title=" " alt="" coords="414,239,563,79,566,82,418,242"/>
+<area shape="rect" id="Node000007" href="$classFCI2CDevice.html" title="&lt; базовый класс для I²C&#45;устройств." alt="" coords="525,227,631,252"/>
+<area shape="poly" id="edge14_Node000002_Node000007" title=" " alt="" coords="449,254,525,244,525,249,450,259"/>
+<area shape="rect" id="Node000014" href="$classFCSPIDevice.html" title="абстрактный класс FCSPIIndicator &#45; описывающий состояние индикатора" alt="" coords="526,276,630,301"/>
+<area shape="poly" id="edge21_Node000002_Node000014" title=" " alt="" coords="450,268,526,279,525,284,449,274"/>
+<area shape="rect" id="Node000015" href="$classFCSerialDevice.html" title="&lt; базовый класс для устройств использующих последовательную шину" alt="" coords="517,375,639,400"/>
+<area shape="poly" id="edge22_Node000002_Node000015" title=" " alt="" coords="450,276,471,286,501,307,528,331,568,373,564,376,524,335,497,311,468,291,448,281"/>
+<area shape="rect" id="Node000004" href="$classFCGPIOColorIndicator.html" title="тип список датчиков температуры для удовства" alt="" coords="704,5,867,31"/>
+<area shape="poly" id="edge11_Node000003_Node000004" title=" " alt="" coords="645,49,730,28,732,33,646,54"/>
+<area shape="rect" id="Node000006" href="$classFCGPIORunedDevice.html" title="&lt; класс для запускаемых в отдельных потоках устройств GPIO." alt="" coords="707,55,864,80"/>
+<area shape="poly" id="edge13_Node000003_Node000006" title=" " alt="" coords="650,65,707,65,707,70,650,70"/>
+<area shape="rect" id="Node000005" href="$classFCWS281XLEDStrip.html" title="&lt; класс FCI2CCOBRGBLEDStrip &#45; описывающий состояние цветной светодиодной ленты" alt="" coords="932,5,1080,31"/>
+<area shape="poly" id="edge12_Node000004_Node000005" title=" " alt="" coords="881,15,932,15,932,21,881,21"/>
+<area shape="rect" id="Node000008" href="$classFCHead.html" title="&lt; Головка плоттера." alt="" coords="749,104,822,129"/>
+<area shape="poly" id="edge15_Node000007_Node000008" title=" " alt="" coords="597,214,635,176,685,140,717,127,748,119,749,124,718,132,688,144,639,180,601,218"/>
+<area shape="rect" id="Node000009" href="$classFCI2COnTimeRunedDevice.html" title="Базовый класс для I²C&#45;устройств работающих по таймеру." alt="" coords="687,153,884,179"/>
+<area shape="poly" id="edge16_Node000007_Node000009" title=" " alt="" coords="616,218,686,189,728,176,729,181,688,194,618,223"/>
+<area shape="rect" id="Node000010" href="$classFCI2CRunedDevice.html" title="&lt; класс для запускаемых в отдельных потоках устройств I²C." alt="" coords="712,203,859,228"/>
+<area shape="poly" id="edge17_Node000007_Node000010" title=" " alt="" coords="644,229,712,221,712,226,645,234"/>
+<area shape="rect" id="Node000011" href="$classFCLM75AThermometer.html" title="&lt; I²C LM75A &#45; термометр." alt="" coords="700,252,871,277"/>
+<area shape="poly" id="edge18_Node000007_Node000011" title=" " alt="" coords="645,245,700,252,699,257,644,250"/>
+<area shape="rect" id="Node000012" href="$classFCPCF8575Indicator.html" title="&lt; класс для I²C&#45;управляемых с PCF8575 помощью индикаторов (LED)." alt="" coords="709,301,862,327"/>
+<area shape="poly" id="edge19_Node000007_Node000012" title=" " alt="" coords="624,255,640,262,664,276,688,288,723,299,722,304,686,292,661,280,637,267,622,260"/>
+<area shape="rect" id="Node000013" href="$classFCPumpRamp.html" title="&lt; контроллер насосов и термодатчика рампы." alt="" coords="728,351,843,376"/>
+<area shape="poly" id="edge20_Node000007_Node000013" title=" " alt="" coords="632,256,640,263,657,282,664,302,672,320,688,337,707,348,729,354,727,360,705,353,685,341,668,323,659,304,652,285,637,267,629,261"/>
+<area shape="rect" id="Node000016" href="$classFCMarlinController.html" title="&lt; класс описывает общий интерфейс для платы управления плоттером" alt="" coords="713,400,857,425"/>
+<area shape="poly" id="edge23_Node000015_Node000016" title=" " alt="" coords="653,394,714,401,713,407,652,399"/>
+</map>

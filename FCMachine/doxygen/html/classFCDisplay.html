@@ -1,0 +1,968 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Класс FCDisplay</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Открытые слоты</a> &#124;
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="classFCDisplay-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс FCDisplay</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Главное окно графического интерфейса системы управления плоттером (встраиваемая система).  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FCDisplay_8h_source.html">FCDisplay.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:FCDisplay:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFCDisplay__inherit__graph.png" border="0" usemap="#aFCDisplay_inherit__map" alt="Inheritance graph"/></div>
+<map name="aFCDisplay_inherit__map" id="aFCDisplay_inherit__map">
+<area shape="rect" title="Главное окно графического интерфейса системы управления плоттером (встраиваемая система)." alt="" coords="19,79,107,104"/>
+<area shape="rect" title=" " alt="" coords="5,5,121,31"/>
+<area shape="poly" title=" " alt="" coords="66,44,66,79,61,79,61,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса FCDisplay:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFCDisplay__coll__graph.png" border="0" usemap="#aFCDisplay_coll__map" alt="Collaboration graph"/></div>
+<map name="aFCDisplay_coll__map" id="aFCDisplay_coll__map">
+<area shape="rect" title="Главное окно графического интерфейса системы управления плоттером (встраиваемая система)." alt="" coords="19,79,107,104"/>
+<area shape="rect" title=" " alt="" coords="5,5,121,31"/>
+<area shape="poly" title=" " alt="" coords="66,44,66,79,61,79,61,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Открытые слоты</h2></td></tr>
+<tr class="memitem:a928c1681cc76c3edc174c105fd6fb641" id="r_a928c1681cc76c3edc174c105fd6fb641"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a928c1681cc76c3edc174c105fd6fb641">receiveMessage</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;name, <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;<a class="el" href="classFCRange.html">message</a>)</td></tr>
+<tr class="memdesc:a928c1681cc76c3edc174c105fd6fb641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает входящее диагностическое сообщение для отображения в консоли.  <br /></td></tr>
+<tr class="separator:a928c1681cc76c3edc174c105fd6fb641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:a43d6fef8ee325cfbb632ef1d6e5ff7f2" id="r_a43d6fef8ee325cfbb632ef1d6e5ff7f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43d6fef8ee325cfbb632ef1d6e5ff7f2">conditionChanged</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;name, <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;<a class="el" href="#a1a44901c078678f4efee85aae00a15af">condition</a>)</td></tr>
+<tr class="memdesc:a43d6fef8ee325cfbb632ef1d6e5ff7f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сигнал изменения составного состояния интерфейса.  <br /></td></tr>
+<tr class="separator:a43d6fef8ee325cfbb632ef1d6e5ff7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb9ae365040b419a47bc612c2b0fd554" id="r_abb9ae365040b419a47bc612c2b0fd554"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb9ae365040b419a47bc612c2b0fd554">play</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;<a class="el" href="classFCRange.html">model</a>)</td></tr>
+<tr class="memdesc:abb9ae365040b419a47bc612c2b0fd554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сигнал запуска выполнения выбранной модели на активном плоттере.  <br /></td></tr>
+<tr class="separator:abb9ae365040b419a47bc612c2b0fd554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdd3a490d30bbbde269d24a01355c1ee" id="r_abdd3a490d30bbbde269d24a01355c1ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdd3a490d30bbbde269d24a01355c1ee">pause</a> ()</td></tr>
+<tr class="memdesc:abdd3a490d30bbbde269d24a01355c1ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сигнал приостановки текущей операции на плоттере.  <br /></td></tr>
+<tr class="separator:abdd3a490d30bbbde269d24a01355c1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf6ad478bf1fee7e082d194f17952230" id="r_acf6ad478bf1fee7e082d194f17952230"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf6ad478bf1fee7e082d194f17952230">stop</a> ()</td></tr>
+<tr class="memdesc:acf6ad478bf1fee7e082d194f17952230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сигнал остановки текущей операции и возврата в исходное состояние.  <br /></td></tr>
+<tr class="separator:acf6ad478bf1fee7e082d194f17952230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aff7847fcc3296d0adbac5dd1463e5ae1" id="r_aff7847fcc3296d0adbac5dd1463e5ae1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff7847fcc3296d0adbac5dd1463e5ae1">FCDisplay</a> (<a class="el" href="classFCRange.html">QWidget</a> *<a class="el" href="classFCRange.html">parent</a>=<a class="el" href="classFCRange.html">nullptr</a>)</td></tr>
+<tr class="memdesc:aff7847fcc3296d0adbac5dd1463e5ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор главного окна с инициализацией интерфейса и состояния.  <br /></td></tr>
+<tr class="separator:aff7847fcc3296d0adbac5dd1463e5ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20261d1d7296e3d7d3e209e26d7dc856" id="r_a20261d1d7296e3d7d3e209e26d7dc856"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20261d1d7296e3d7d3e209e26d7dc856">~FCDisplay</a> () <a class="el" href="classFCRange.html">override</a></td></tr>
+<tr class="memdesc:a20261d1d7296e3d7d3e209e26d7dc856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор главного окна.  <br /></td></tr>
+<tr class="separator:a20261d1d7296e3d7d3e209e26d7dc856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abff34fbf4f3ee83619da1c0dd4e5364e" id="r_abff34fbf4f3ee83619da1c0dd4e5364e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCDisplay.html">FCDisplay</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abff34fbf4f3ee83619da1c0dd4e5364e">operator=</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCDisplay.html">FCDisplay</a> &amp;)=<a class="el" href="classFCRange.html">delete</a></td></tr>
+<tr class="memdesc:abff34fbf4f3ee83619da1c0dd4e5364e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присваивания (запрещён для предотвращения копирования состояния).  <br /></td></tr>
+<tr class="separator:abff34fbf4f3ee83619da1c0dd4e5364e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ed04f711fd3f84ad9b8278fcb6e97d6" id="r_a9ed04f711fd3f84ad9b8278fcb6e97d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ed04f711fd3f84ad9b8278fcb6e97d6">is</a> (ReadyState <a class="el" href="classFCRange.html">state</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a9ed04f711fd3f84ad9b8278fcb6e97d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет текущее состояние готовности устройства.  <br /></td></tr>
+<tr class="separator:a9ed04f711fd3f84ad9b8278fcb6e97d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5007ecbfaaee4f54f530ae5005bd8e37" id="r_a5007ecbfaaee4f54f530ae5005bd8e37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5007ecbfaaee4f54f530ae5005bd8e37">is</a> (PlayState <a class="el" href="classFCRange.html">state</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a5007ecbfaaee4f54f530ae5005bd8e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет текущий режим воспроизведения.  <br /></td></tr>
+<tr class="separator:a5007ecbfaaee4f54f530ae5005bd8e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e296129d889b27cfc1cbf320de4bdbd" id="r_a9e296129d889b27cfc1cbf320de4bdbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e296129d889b27cfc1cbf320de4bdbd">is</a> (ChangedState <a class="el" href="classFCRange.html">state</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a9e296129d889b27cfc1cbf320de4bdbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет флаг изменения состояния.  <br /></td></tr>
+<tr class="separator:a9e296129d889b27cfc1cbf320de4bdbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c9d5bd4f540d9ff871d3f6a86383741" id="r_a4c9d5bd4f540d9ff871d3f6a86383741"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c9d5bd4f540d9ff871d3f6a86383741">is</a> (ErrorType type) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a4c9d5bd4f540d9ff871d3f6a86383741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет текущий тип ошибки.  <br /></td></tr>
+<tr class="separator:a4c9d5bd4f540d9ff871d3f6a86383741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b0b081de0cebb6753c3b88897e7a392" id="r_a7b0b081de0cebb6753c3b88897e7a392"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b0b081de0cebb6753c3b88897e7a392">is</a> (PanelState <a class="el" href="classFCRange.html">panel</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a7b0b081de0cebb6753c3b88897e7a392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет текущую активную панель интерфейса.  <br /></td></tr>
+<tr class="separator:a7b0b081de0cebb6753c3b88897e7a392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af89ad4684f3cbf98bae32246a21ce916" id="r_af89ad4684f3cbf98bae32246a21ce916"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af89ad4684f3cbf98bae32246a21ce916">is</a> (VisibilityState <a class="el" href="classFCRange.html">visibility</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:af89ad4684f3cbf98bae32246a21ce916"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет состояние видимости элементов интерфейса.  <br /></td></tr>
+<tr class="separator:af89ad4684f3cbf98bae32246a21ce916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a44901c078678f4efee85aae00a15af" id="r_a1a44901c078678f4efee85aae00a15af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a44901c078678f4efee85aae00a15af">condition</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a1a44901c078678f4efee85aae00a15af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает полную структуру составного состояния.  <br /></td></tr>
+<tr class="separator:a1a44901c078678f4efee85aae00a15af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bb9246635ed1585262a7077216e4bce" id="r_a7bb9246635ed1585262a7077216e4bce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bb9246635ed1585262a7077216e4bce">set</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;<a class="el" href="#a1a44901c078678f4efee85aae00a15af">condition</a>)</td></tr>
+<tr class="memdesc:a7bb9246635ed1585262a7077216e4bce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое составное состояние.  <br /></td></tr>
+<tr class="separator:a7bb9246635ed1585262a7077216e4bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af88bfb9f087ee31e9f9ebef3d92507c4" id="r_af88bfb9f087ee31e9f9ebef3d92507c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af88bfb9f087ee31e9f9ebef3d92507c4">set</a> (ReadyState <a class="el" href="classFCRange.html">state</a>)</td></tr>
+<tr class="memdesc:af88bfb9f087ee31e9f9ebef3d92507c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает состояние готовности.  <br /></td></tr>
+<tr class="separator:af88bfb9f087ee31e9f9ebef3d92507c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafbb0b89bcb7ed073215fc10f0fd657b" id="r_aafbb0b89bcb7ed073215fc10f0fd657b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafbb0b89bcb7ed073215fc10f0fd657b">set</a> (PlayState <a class="el" href="classFCRange.html">state</a>)</td></tr>
+<tr class="memdesc:aafbb0b89bcb7ed073215fc10f0fd657b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает режим воспроизведения.  <br /></td></tr>
+<tr class="separator:aafbb0b89bcb7ed073215fc10f0fd657b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3df1b3350956e2b4485573d7eb1b7b98" id="r_a3df1b3350956e2b4485573d7eb1b7b98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3df1b3350956e2b4485573d7eb1b7b98">set</a> (ErrorType type)</td></tr>
+<tr class="memdesc:a3df1b3350956e2b4485573d7eb1b7b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает тип ошибки.  <br /></td></tr>
+<tr class="separator:a3df1b3350956e2b4485573d7eb1b7b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cac10a8aa41be93be70c2d213c2d42c" id="r_a0cac10a8aa41be93be70c2d213c2d42c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cac10a8aa41be93be70c2d213c2d42c">set</a> (PanelState <a class="el" href="classFCRange.html">panel</a>)</td></tr>
+<tr class="memdesc:a0cac10a8aa41be93be70c2d213c2d42c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает активную панель интерфейса.  <br /></td></tr>
+<tr class="separator:a0cac10a8aa41be93be70c2d213c2d42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa10bf91eb1178e6e07d97838b1849ab4" id="r_aa10bf91eb1178e6e07d97838b1849ab4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa10bf91eb1178e6e07d97838b1849ab4">set</a> (VisibilityState <a class="el" href="classFCRange.html">visibility</a>)</td></tr>
+<tr class="memdesc:aa10bf91eb1178e6e07d97838b1849ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает состояние видимости.  <br /></td></tr>
+<tr class="separator:aa10bf91eb1178e6e07d97838b1849ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a70ea938174aa27a3d70473197f5f2247" id="r_a70ea938174aa27a3d70473197f5f2247"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70ea938174aa27a3d70473197f5f2247">event</a> (<a class="el" href="classFCRange.html">QEvent</a> *event) <a class="el" href="classFCRange.html">override</a></td></tr>
+<tr class="memdesc:a70ea938174aa27a3d70473197f5f2247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переопределённый обработчик событий для поддержки сенсорного ввода.  <br /></td></tr>
+<tr class="separator:a70ea938174aa27a3d70473197f5f2247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Главное окно графического интерфейса системы управления плоттером (встраиваемая система). </p>
+<p>Является центральным компонентом пользовательского интерфейса для встраиваемой платформы (Raspberry Pi + Buildroot). Обеспечивает:</p><ul>
+<li>Управление состоянием устройства через композицию с <a class="el" href="classFCConditionObject.html" title="Базовый класс для объектов с управляемым составным состоянием и уведомлениями об изменениях.">FCConditionObject</a>,</li>
+<li>Отображение списка моделей (SVG) с возможностью выбора и предпросмотра,</li>
+<li>Контроль выполнения операций (старт/пауза/стоп),</li>
+<li>Переключение между плоттерами через динамическое меню,</li>
+<li>Экранную заставку при бездействии (таймаут 1 минута),</li>
+<li>Консоль для отображения диагностических сообщений,</li>
+<li>Модальные диалоги подтверждения и ошибок.</li>
+</ul>
+<p>Архитектурные особенности:</p><ul>
+<li>Единая точка управления состоянием через механизм сигналов/слотов Qt,</li>
+<li>Разделение ответственности: интерфейс (<a class="el" href="classFCDisplay.html" title="Главное окно графического интерфейса системы управления плоттером (встраиваемая система).">FCDisplay</a>) ↔ логика (внешние контроллеры),</li>
+<li>Поддержка сенсорного ввода через переопределение обработки событий,</li>
+<li>Автоматическое управление ресурсами через родительские связи QObject.</li>
+</ul>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Класс НЕ является потокобезопасным — все операции с интерфейсом должны выполняться ТОЛЬКО в основном потоке (потоке событий Qt). Для взаимодействия с фоновыми потоками используйте сигналы/слоты с очередью соединений (<a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">Qt::QueuedConnection</a>). </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Для встраиваемых систем с ограниченными ресурсами:<ul>
+<li>Избегайте частых перерисовок интерфейса (особенно при анимациях),</li>
+<li>Ограничьте количество одновременно загруженных моделей в памяти,</li>
+<li>Используйте кэширование изображений для ускорения отображения. </li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classFCConditionObject.html" title="Базовый класс для объектов с управляемым составным состоянием и уведомлениями об изменениях.">FCConditionObject</a> для управления составным состоянием </dd>
+<dd>
+<a class="el" href="classFCConfigFile.html" title="Класс-одиночка (Singleton) для централизованного управления конфигурацией приложения.">FCConfigFile</a> для загрузки путей к ресурсам </dd></dl>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="aff7847fcc3296d0adbac5dd1463e5ae1" name="aff7847fcc3296d0adbac5dd1463e5ae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff7847fcc3296d0adbac5dd1463e5ae1">&#9670;&#160;</a></span>FCDisplay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCDisplay::FCDisplay </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">QWidget</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classFCRange.html">nullptr</a></span></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор главного окна с инициализацией интерфейса и состояния. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Родительский виджет (обычно nullptr для главного окна). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>При создании автоматически:<ul>
+<li>Загружается конфигурация через <a class="el" href="classFCConfigFile.html#a06317de3246a305e3145025d1cc434b4" title="Возвращает единственный экземпляр класса (ленивая инициализация).">FCConfigFile::instance()</a>,</li>
+<li>Создаётся интерфейс через Qt Designer (setupUi),</li>
+<li>Инициализируются диалоги подтверждения и ошибок,</li>
+<li>Запускается таймер экранной заставки. </li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Объект должен создаваться в основном потоке приложения. </dd></dl>
+
+</div>
+</div>
+<a id="a20261d1d7296e3d7d3e209e26d7dc856" name="a20261d1d7296e3d7d3e209e26d7dc856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20261d1d7296e3d7d3e209e26d7dc856">&#9670;&#160;</a></span>~FCDisplay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCDisplay::~FCDisplay </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Деструктор главного окна. </p>
+<dl class="section note"><dt>Заметки</dt><dd>Автоматически освобождает все ресурсы интерфейса через механизм родительства Qt. Дочерние виджеты (включая _ui) удаляются автоматически при уничтожении родителя. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a1a44901c078678f4efee85aae00a15af" name="a1a44901c078678f4efee85aae00a15af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a44901c078678f4efee85aae00a15af">&#9670;&#160;</a></span>condition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp; FCDisplay::condition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает полную структуру составного состояния. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Константная ссылка на внутренний объект состояния. </dd></dl>
+
+</div>
+</div>
+<a id="a43d6fef8ee325cfbb632ef1d6e5ff7f2" name="a43d6fef8ee325cfbb632ef1d6e5ff7f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43d6fef8ee325cfbb632ef1d6e5ff7f2">&#9670;&#160;</a></span>conditionChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">void</a> FCDisplay::conditionChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>condition</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сигнал изменения составного состояния интерфейса. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Имя объекта (всегда "display" для главного окна). </td></tr>
+    <tr><td class="paramname">condition</td><td>Новое составное состояние после изменения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Проксирует сигнал из внутреннего объекта _condition. </dd></dl>
+
+</div>
+</div>
+<a id="a70ea938174aa27a3d70473197f5f2247" name="a70ea938174aa27a3d70473197f5f2247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70ea938174aa27a3d70473197f5f2247">&#9670;&#160;</a></span>event()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">bool</a> FCDisplay::event </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">QEvent</a> *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Переопределённый обработчик событий для поддержки сенсорного ввода. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Указатель на объект события. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если событие обработано, иначе — результат базового класса. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Обрабатывает:<ul>
+<li>События касания (QTouchEvent) для эмуляции кликов,</li>
+<li>Движения пальца для прокрутки списков,</li>
+<li>Сброс таймера заставки при любом взаимодействии. </li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Требует включения поддержки сенсорного ввода на уровне ОС и драйверов. </dd></dl>
+
+</div>
+</div>
+<a id="a9e296129d889b27cfc1cbf320de4bdbd" name="a9e296129d889b27cfc1cbf320de4bdbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e296129d889b27cfc1cbf320de4bdbd">&#9670;&#160;</a></span>is() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">bool</a> FCDisplay::is </td>
+          <td>(</td>
+          <td class="paramtype">ChangedState</td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет флаг изменения состояния. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Ожидаемое значение ChangedState. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если флаг изменения равен заданному; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a4c9d5bd4f540d9ff871d3f6a86383741" name="a4c9d5bd4f540d9ff871d3f6a86383741"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c9d5bd4f540d9ff871d3f6a86383741">&#9670;&#160;</a></span>is() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">bool</a> FCDisplay::is </td>
+          <td>(</td>
+          <td class="paramtype">ErrorType</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет текущий тип ошибки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Ожидаемое значение ErrorType. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если текущий тип ошибки равен заданному; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a7b0b081de0cebb6753c3b88897e7a392" name="a7b0b081de0cebb6753c3b88897e7a392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b0b081de0cebb6753c3b88897e7a392">&#9670;&#160;</a></span>is() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">bool</a> FCDisplay::is </td>
+          <td>(</td>
+          <td class="paramtype">PanelState</td>          <td class="paramname"><span class="paramname"><em>panel</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет текущую активную панель интерфейса. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">panel</td><td>Ожидаемое значение PanelState. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если текущая панель равна заданной; иначе — false. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Использует прямое сравнение через геттер panel(), так как перегрузка is(PanelState) может отсутствовать в некоторых версиях <a class="el" href="classFCConditionObject.html" title="Базовый класс для объектов с управляемым составным состоянием и уведомлениями об изменениях.">FCConditionObject</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a5007ecbfaaee4f54f530ae5005bd8e37" name="a5007ecbfaaee4f54f530ae5005bd8e37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5007ecbfaaee4f54f530ae5005bd8e37">&#9670;&#160;</a></span>is() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">bool</a> FCDisplay::is </td>
+          <td>(</td>
+          <td class="paramtype">PlayState</td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет текущий режим воспроизведения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Ожидаемое значение PlayState. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если текущий режим воспроизведения равен заданному; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a9ed04f711fd3f84ad9b8278fcb6e97d6" name="a9ed04f711fd3f84ad9b8278fcb6e97d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ed04f711fd3f84ad9b8278fcb6e97d6">&#9670;&#160;</a></span>is() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">bool</a> FCDisplay::is </td>
+          <td>(</td>
+          <td class="paramtype">ReadyState</td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет текущее состояние готовности устройства. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Ожидаемое значение ReadyState. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если текущее состояние готовности равно заданному; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="af89ad4684f3cbf98bae32246a21ce916" name="af89ad4684f3cbf98bae32246a21ce916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af89ad4684f3cbf98bae32246a21ce916">&#9670;&#160;</a></span>is() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">bool</a> FCDisplay::is </td>
+          <td>(</td>
+          <td class="paramtype">VisibilityState</td>          <td class="paramname"><span class="paramname"><em>visibility</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет состояние видимости элементов интерфейса. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visibility</td><td>Ожидаемое значение VisibilityState. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если состояние видимости равно заданному; иначе — false. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Использует прямое сравнение через геттер visibility(), так как перегрузка is(VisibilityState) может отсутствовать в некоторых версиях <a class="el" href="classFCConditionObject.html" title="Базовый класс для объектов с управляемым составным состоянием и уведомлениями об изменениях.">FCConditionObject</a>. </dd></dl>
+
+</div>
+</div>
+<a id="abff34fbf4f3ee83619da1c0dd4e5364e" name="abff34fbf4f3ee83619da1c0dd4e5364e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abff34fbf4f3ee83619da1c0dd4e5364e">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCDisplay.html">FCDisplay</a> &amp; FCDisplay::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCDisplay.html">FCDisplay</a> &amp;</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор присваивания (запрещён для предотвращения копирования состояния). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Никогда не вызывается — операция запрещена на этапе компиляции. </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Копирование главного окна недопустимо из-за сложной иерархии ресурсов и управления состоянием. Используйте единственный экземпляр. </dd></dl>
+
+</div>
+</div>
+<a id="abdd3a490d30bbbde269d24a01355c1ee" name="abdd3a490d30bbbde269d24a01355c1ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdd3a490d30bbbde269d24a01355c1ee">&#9670;&#160;</a></span>pause</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">void</a> FCDisplay::pause </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сигнал приостановки текущей операции на плоттере. </p>
+<dl class="section note"><dt>Заметки</dt><dd>Эмитируется при нажатии кнопки "Pause" во время активного выполнения. Приёмник должен отправить команду паузы в устройство и обновить состояние. </dd></dl>
+
+</div>
+</div>
+<a id="abb9ae365040b419a47bc612c2b0fd554" name="abb9ae365040b419a47bc612c2b0fd554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb9ae365040b419a47bc612c2b0fd554">&#9670;&#160;</a></span>play</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">void</a> FCDisplay::play </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>model</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сигнал запуска выполнения выбранной модели на активном плоттере. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">model</td><td>Путь к файлу модели относительно каталога моделей. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Эмитируется при нажатии кнопки "Play" с валидной выбранной моделью. Приёмник должен обеспечить загрузку и выполнение управляющего кода. </dd></dl>
+
+</div>
+</div>
+<a id="a928c1681cc76c3edc174c105fd6fb641" name="a928c1681cc76c3edc174c105fd6fb641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a928c1681cc76c3edc174c105fd6fb641">&#9670;&#160;</a></span>receiveMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">void</a> FCDisplay::receiveMessage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обрабатывает входящее диагностическое сообщение для отображения в консоли. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Имя источника сообщения (например, "Plotter0", "Parser"). </td></tr>
+    <tr><td class="paramname">message</td><td>Текст сообщения для отображения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Сообщение добавляется в консоль с временной меткой и автоматической прокруткой. При переполнении консоли старые сообщения удаляются. </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Не вызывать напрямую из фоновых потоков — использовать сигналы/слоты. </dd></dl>
+
+</div>
+</div>
+<a id="a7bb9246635ed1585262a7077216e4bce" name="a7bb9246635ed1585262a7077216e4bce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bb9246635ed1585262a7077216e4bce">&#9670;&#160;</a></span>set() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">void</a> FCDisplay::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>condition</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое составное состояние. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">condition</td><td>Новое состояние для установки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>При изменении состояния эмитируется сигнал <a class="el" href="#a43d6fef8ee325cfbb632ef1d6e5ff7f2" title="Сигнал изменения составного состояния интерфейса.">conditionChanged()</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a3df1b3350956e2b4485573d7eb1b7b98" name="a3df1b3350956e2b4485573d7eb1b7b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3df1b3350956e2b4485573d7eb1b7b98">&#9670;&#160;</a></span>set() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">void</a> FCDisplay::set </td>
+          <td>(</td>
+          <td class="paramtype">ErrorType</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает тип ошибки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Новое значение ErrorType. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0cac10a8aa41be93be70c2d213c2d42c" name="a0cac10a8aa41be93be70c2d213c2d42c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cac10a8aa41be93be70c2d213c2d42c">&#9670;&#160;</a></span>set() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">void</a> FCDisplay::set </td>
+          <td>(</td>
+          <td class="paramtype">PanelState</td>          <td class="paramname"><span class="paramname"><em>panel</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает активную панель интерфейса. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">panel</td><td>Новое значение PanelState. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aafbb0b89bcb7ed073215fc10f0fd657b" name="aafbb0b89bcb7ed073215fc10f0fd657b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafbb0b89bcb7ed073215fc10f0fd657b">&#9670;&#160;</a></span>set() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">void</a> FCDisplay::set </td>
+          <td>(</td>
+          <td class="paramtype">PlayState</td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает режим воспроизведения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Новое значение PlayState. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af88bfb9f087ee31e9f9ebef3d92507c4" name="af88bfb9f087ee31e9f9ebef3d92507c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af88bfb9f087ee31e9f9ebef3d92507c4">&#9670;&#160;</a></span>set() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">void</a> FCDisplay::set </td>
+          <td>(</td>
+          <td class="paramtype">ReadyState</td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает состояние готовности. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Новое значение ReadyState. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa10bf91eb1178e6e07d97838b1849ab4" name="aa10bf91eb1178e6e07d97838b1849ab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa10bf91eb1178e6e07d97838b1849ab4">&#9670;&#160;</a></span>set() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">void</a> FCDisplay::set </td>
+          <td>(</td>
+          <td class="paramtype">VisibilityState</td>          <td class="paramname"><span class="paramname"><em>visibility</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает состояние видимости. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visibility</td><td>Новое значение VisibilityState. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acf6ad478bf1fee7e082d194f17952230" name="acf6ad478bf1fee7e082d194f17952230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf6ad478bf1fee7e082d194f17952230">&#9670;&#160;</a></span>stop</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">void</a> FCDisplay::stop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сигнал остановки текущей операции и возврата в исходное состояние. </p>
+<dl class="section note"><dt>Заметки</dt><dd>Эмитируется при нажатии кнопки "Stop" или аварийной остановке. Приёмник должен прервать выполнение, сбросить состояние и подготовить устройство к новой операции. </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>FCDisplay/<a class="el" href="FCDisplay_8h_source.html">FCDisplay.h</a></li>
+<li>FCDisplay/<b>FCDisplay.cpp</b></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

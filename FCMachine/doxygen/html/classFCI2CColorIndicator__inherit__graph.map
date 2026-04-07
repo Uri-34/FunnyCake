@@ -1,0 +1,17 @@
+<map id="FCI2CColorIndicator" name="FCI2CColorIndicator">
+<area shape="rect" id="Node000001" title="тип список датчиков температуры для удовства" alt="" coords="107,372,258,397"/>
+<area shape="rect" id="Node000007" href="$classFCI2CCOBRGBLEDStrip.html" title="&lt; класс FCI2CCOBRGBLEDStrip &#45; описывающий состояние цветной светодиодной ленты" alt="" coords="5,445,176,471"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="159,408,107,447,104,443,156,403"/>
+<area shape="rect" id="Node000008" href="$classFCWS281XLEDStrip.html" title="&lt; класс FCI2CCOBRGBLEDStrip &#45; описывающий состояние цветной светодиодной ленты" alt="" coords="201,445,349,471"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="210,403,261,443,258,447,206,408"/>
+<area shape="rect" id="Node000002" href="$classFCI2CRunedDevice.html" title="&lt; класс для запускаемых в отдельных потоках устройств I²C." alt="" coords="109,299,256,324"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,338,185,372,180,372,180,338"/>
+<area shape="rect" id="Node000003" href="$classFCI2CDevice.html" title="Базовый класс для I²C&#45;устройств." alt="" coords="130,225,235,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,264,185,299,180,299,180,264"/>
+<area shape="rect" id="Node000004" href="$classFCDevice.html" title="абстрактный базовый класс для аппаратных устройств." alt="" coords="141,152,225,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="185,191,185,225,180,225,180,191"/>
+<area shape="rect" id="Node000005" href="$classFCConditionObject.html" title="Базовый класс для объектов с управляемым состоянием (готовность, воспроизведение, ошибки)." alt="" coords="111,79,254,104"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="185,118,185,152,180,152,180,118"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="145,5,220,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="185,44,185,79,180,79,180,44"/>
+</map>

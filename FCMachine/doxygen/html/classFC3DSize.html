@@ -1,0 +1,862 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Класс FC3DSize</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="classFC3DSize-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс FC3DSize</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для представления трёхмерного размера (ширина × высота × глубина).  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FC3DSize_8h_source.html">FC3DSize.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a5bef38bcbfa2a6ba2d018f732fa4de4c" id="r_a5bef38bcbfa2a6ba2d018f732fa4de4c"><td class="memItemLeft" align="right" valign="top"><a id="a5bef38bcbfa2a6ba2d018f732fa4de4c" name="a5bef38bcbfa2a6ba2d018f732fa4de4c"></a>
+<a class="el" href="classFCRange.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_type</b> = <a class="el" href="classFCRange.html">float</a></td></tr>
+<tr class="memdesc:a5bef38bcbfa2a6ba2d018f732fa4de4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тип данных, используемый для хранения размеров (по умолчанию — float). <br /></td></tr>
+<tr class="separator:a5bef38bcbfa2a6ba2d018f732fa4de4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a9b837dbd5668a0ea2cdba4619732aebc" id="r_a9b837dbd5668a0ea2cdba4619732aebc"><td class="memItemLeft" align="right" valign="top"><a id="a9b837dbd5668a0ea2cdba4619732aebc" name="a9b837dbd5668a0ea2cdba4619732aebc"></a>
+<a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FC3DSize</b> () <a class="el" href="classFCRange.html">noexcept</a>=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a9b837dbd5668a0ea2cdba4619732aebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор по умолчанию. Создаёт размер с нулевыми значениями (0, 0, 0). <br /></td></tr>
+<tr class="separator:a9b837dbd5668a0ea2cdba4619732aebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a936e77993cc789e120a696f33a7c0edc" id="r_a936e77993cc789e120a696f33a7c0edc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a936e77993cc789e120a696f33a7c0edc">FC3DSize</a> (<a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> <a class="el" href="classFCRange.html">w</a>, <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> <a class="el" href="classFCRange.html">h</a>, <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> <a class="el" href="classFCRange.html">d</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a936e77993cc789e120a696f33a7c0edc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с параметрами.  <br /></td></tr>
+<tr class="separator:a936e77993cc789e120a696f33a7c0edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee089d6934a5999a8e08f2716a9fc301" id="r_aee089d6934a5999a8e08f2716a9fc301"><td class="memItemLeft" align="right" valign="top"><a id="aee089d6934a5999a8e08f2716a9fc301" name="aee089d6934a5999a8e08f2716a9fc301"></a>
+<a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FC3DSize</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;) <a class="el" href="classFCRange.html">noexcept</a>=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:aee089d6934a5999a8e08f2716a9fc301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор копирования (тривиальный). <br /></td></tr>
+<tr class="separator:aee089d6934a5999a8e08f2716a9fc301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97433c43555f693c9888da6451bb179c" id="r_a97433c43555f693c9888da6451bb179c"><td class="memItemLeft" align="right" valign="top"><a id="a97433c43555f693c9888da6451bb179c" name="a97433c43555f693c9888da6451bb179c"></a>
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;) <a class="el" href="classFCRange.html">noexcept</a>=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a97433c43555f693c9888da6451bb179c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присваивания копированием (тривиальный). <br /></td></tr>
+<tr class="separator:a97433c43555f693c9888da6451bb179c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ababbcccf66e179b55735e9967d519dd8" id="r_ababbcccf66e179b55735e9967d519dd8"><td class="memItemLeft" align="right" valign="top"><a id="ababbcccf66e179b55735e9967d519dd8" name="ababbcccf66e179b55735e9967d519dd8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~FC3DSize</b> ()=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:ababbcccf66e179b55735e9967d519dd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор (тривиальный). <br /></td></tr>
+<tr class="separator:ababbcccf66e179b55735e9967d519dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328060e57a1683970110c1703387bb93" id="r_a328060e57a1683970110c1703387bb93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a328060e57a1683970110c1703387bb93">width</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a328060e57a1683970110c1703387bb93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает ширину размера.  <br /></td></tr>
+<tr class="separator:a328060e57a1683970110c1703387bb93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6d2836eab22b125ea03803629a898aa" id="r_ac6d2836eab22b125ea03803629a898aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6d2836eab22b125ea03803629a898aa">height</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ac6d2836eab22b125ea03803629a898aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает высоту размера.  <br /></td></tr>
+<tr class="separator:ac6d2836eab22b125ea03803629a898aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39b8c787a9218d8f4be97a428bbf3798" id="r_a39b8c787a9218d8f4be97a428bbf3798"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39b8c787a9218d8f4be97a428bbf3798">depth</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a39b8c787a9218d8f4be97a428bbf3798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает глубину размера.  <br /></td></tr>
+<tr class="separator:a39b8c787a9218d8f4be97a428bbf3798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c32d1d52ce8604398e6a0ab1a2b8e56" id="r_a3c32d1d52ce8604398e6a0ab1a2b8e56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c32d1d52ce8604398e6a0ab1a2b8e56">setWidth</a> (<a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> <a class="el" href="classFCRange.html">w</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a3c32d1d52ce8604398e6a0ab1a2b8e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое значение ширины.  <br /></td></tr>
+<tr class="separator:a3c32d1d52ce8604398e6a0ab1a2b8e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4da9514cb844cc28a009c128a602026" id="r_ae4da9514cb844cc28a009c128a602026"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4da9514cb844cc28a009c128a602026">setHeight</a> (<a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> <a class="el" href="classFCRange.html">h</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ae4da9514cb844cc28a009c128a602026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое значение высоты.  <br /></td></tr>
+<tr class="separator:ae4da9514cb844cc28a009c128a602026"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24731f2974dac72613f0aad49a4cd5ac" id="r_a24731f2974dac72613f0aad49a4cd5ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24731f2974dac72613f0aad49a4cd5ac">setDepth</a> (<a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> <a class="el" href="classFCRange.html">d</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a24731f2974dac72613f0aad49a4cd5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое значение глубины.  <br /></td></tr>
+<tr class="separator:a24731f2974dac72613f0aad49a4cd5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef7c775dc2820a7eae9716d2294c11d9" id="r_aef7c775dc2820a7eae9716d2294c11d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef7c775dc2820a7eae9716d2294c11d9">setWidthHeightDepth</a> (<a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> <a class="el" href="classFCRange.html">w</a>, <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> <a class="el" href="classFCRange.html">h</a>, <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> <a class="el" href="classFCRange.html">d</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aef7c775dc2820a7eae9716d2294c11d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает все три размера одновременно.  <br /></td></tr>
+<tr class="separator:aef7c775dc2820a7eae9716d2294c11d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08ab0140f022774c576e2cae7a3d3143" id="r_a08ab0140f022774c576e2cae7a3d3143"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08ab0140f022774c576e2cae7a3d3143">toPoint</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a08ab0140f022774c576e2cae7a3d3143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразует размер в точку, интерпретируя компоненты как координаты.  <br /></td></tr>
+<tr class="separator:a08ab0140f022774c576e2cae7a3d3143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e38644b3faf00d33df0ac3636e67f0f" id="r_a3e38644b3faf00d33df0ac3636e67f0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e38644b3faf00d33df0ac3636e67f0f">isEmpty</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a3e38644b3faf00d33df0ac3636e67f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, является ли размер пустым (неположительное значение хотя бы по одной оси).  <br /></td></tr>
+<tr class="separator:a3e38644b3faf00d33df0ac3636e67f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a585ec5547a2ea4680eb9ead6deda4eb0" id="r_a585ec5547a2ea4680eb9ead6deda4eb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a585ec5547a2ea4680eb9ead6deda4eb0">isNull</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a585ec5547a2ea4680eb9ead6deda4eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, является ли размер нулевым (все компоненты точно равны нулю).  <br /></td></tr>
+<tr class="separator:a585ec5547a2ea4680eb9ead6deda4eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae30969b87ba086601c8c335b4c041fcc" id="r_ae30969b87ba086601c8c335b4c041fcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae30969b87ba086601c8c335b4c041fcc">volume</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ae30969b87ba086601c8c335b4c041fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет объём параллелепипеда с заданным размером.  <br /></td></tr>
+<tr class="separator:ae30969b87ba086601c8c335b4c041fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf1c43859e0d52d6a8552778aea07564" id="r_abf1c43859e0d52d6a8552778aea07564"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf1c43859e0d52d6a8552778aea07564">diagonal</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:abf1c43859e0d52d6a8552778aea07564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет длину пространственной диагонали параллелепипеда.  <br /></td></tr>
+<tr class="separator:abf1c43859e0d52d6a8552778aea07564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb6e0d597be0884ab156deadbd838352" id="r_aeb6e0d597be0884ab156deadbd838352"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb6e0d597be0884ab156deadbd838352">operator==</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aeb6e0d597be0884ab156deadbd838352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения на равенство.  <br /></td></tr>
+<tr class="separator:aeb6e0d597be0884ab156deadbd838352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6e6fa83c4156366561cfd0be0ca9523" id="r_ac6e6fa83c4156366561cfd0be0ca9523"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6e6fa83c4156366561cfd0be0ca9523">operator!=</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ac6e6fa83c4156366561cfd0be0ca9523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения на неравенство.  <br /></td></tr>
+<tr class="separator:ac6e6fa83c4156366561cfd0be0ca9523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4434e2ed69c169d9bd27202feab6e4c" id="r_ae4434e2ed69c169d9bd27202feab6e4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4434e2ed69c169d9bd27202feab6e4c">operator+=</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ae4434e2ed69c169d9bd27202feab6e4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор составного сложения размеров (покомпонентное сложение).  <br /></td></tr>
+<tr class="separator:ae4434e2ed69c169d9bd27202feab6e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ff971a6a37d9785d809a33e9c750285" id="r_a2ff971a6a37d9785d809a33e9c750285"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DSize.html">FC3DSize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ff971a6a37d9785d809a33e9c750285">operator+</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a2ff971a6a37d9785d809a33e9c750285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сложения размеров (покомпонентное сложение).  <br /></td></tr>
+<tr class="separator:a2ff971a6a37d9785d809a33e9c750285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46ea50ba9e768e9f4a30b5aa74791f5a" id="r_a46ea50ba9e768e9f4a30b5aa74791f5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DSize.html">FC3DSize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46ea50ba9e768e9f4a30b5aa74791f5a">scaled</a> (<a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> <a class="el" href="classFCRange.html">factor</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a46ea50ba9e768e9f4a30b5aa74791f5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает размер, масштабированный единым коэффициентом.  <br /></td></tr>
+<tr class="separator:a46ea50ba9e768e9f4a30b5aa74791f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f553ba0a8b9424db56cb9f8cdbb7f00" id="r_a0f553ba0a8b9424db56cb9f8cdbb7f00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DSize.html">FC3DSize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f553ba0a8b9424db56cb9f8cdbb7f00">scaled</a> (<a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> <a class="el" href="classFCRange.html">fx</a>, <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> <a class="el" href="classFCRange.html">fy</a>, <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> <a class="el" href="classFCRange.html">fz</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a0f553ba0a8b9424db56cb9f8cdbb7f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает размер, масштабированный разными коэффициентами по осям.  <br /></td></tr>
+<tr class="separator:a0f553ba0a8b9424db56cb9f8cdbb7f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:ac6498b35534a82255e7abf215458b2d9" id="r_ac6498b35534a82255e7abf215458b2d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">static</a> <a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DSize.html">FC3DSize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6498b35534a82255e7abf215458b2d9">fromPoint</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;<a class="el" href="classFCRange.html">p</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ac6498b35534a82255e7abf215458b2d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт размер из точки, интерпретируя координаты как компоненты размера.  <br /></td></tr>
+<tr class="separator:ac6498b35534a82255e7abf215458b2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для представления трёхмерного размера (ширина × высота × глубина). </p>
+<p>Семантически отличается от точки (<a class="el" href="classFC3DPoint.html" title="Класс для представления трёхмерной точки с координатами (x, y, z).">FC3DPoint</a>):</p><ul>
+<li>координата X интерпретируется как ширина (width),</li>
+<li>координата Y интерпретируется как высота (height),</li>
+<li>координата Z интерпретируется как глубина (depth).</li>
+</ul>
+<p>Не наследует <a class="el" href="classFC3DPoint.html" title="Класс для представления трёхмерной точки с координатами (x, y, z).">FC3DPoint</a> — это отдельная концептуальная сущность с собственной семантикой. Класс спроектирован как тривиальный (trivially copyable) для эффективной работы в контейнерах и возможности использования в высокопроизводительных сценариях, включая встраиваемые системы. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a936e77993cc789e120a696f33a7c0edc" name="a936e77993cc789e120a696f33a7c0edc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a936e77993cc789e120a696f33a7c0edc">&#9670;&#160;</a></span>FC3DSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FC3DSize::FC3DSize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a></td>          <td class="paramname"><span class="paramname"><em>w</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a></td>          <td class="paramname"><span class="paramname"><em>h</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a></td>          <td class="paramname"><span class="paramname"><em>d</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор с параметрами. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>Ширина (значение по оси X). </td></tr>
+    <tr><td class="paramname">h</td><td>Высота (значение по оси Y). </td></tr>
+    <tr><td class="paramname">d</td><td>Глубина (значение по оси Z). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a39b8c787a9218d8f4be97a428bbf3798" name="a39b8c787a9218d8f4be97a428bbf3798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39b8c787a9218d8f4be97a428bbf3798">&#9670;&#160;</a></span>depth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> FC3DSize::depth </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает глубину размера. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение глубины (компонента по оси Z). </dd></dl>
+
+</div>
+</div>
+<a id="abf1c43859e0d52d6a8552778aea07564" name="abf1c43859e0d52d6a8552778aea07564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf1c43859e0d52d6a8552778aea07564">&#9670;&#160;</a></span>diagonal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> FC3DSize::diagonal </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисляет длину пространственной диагонали параллелепипеда. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Евклидово расстояние от (0,0,0) до (width, height, depth). </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Требует C++23 для constexpr-контекста из-за <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">std::hypot</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ac6498b35534a82255e7abf215458b2d9" name="ac6498b35534a82255e7abf215458b2d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6498b35534a82255e7abf215458b2d9">&#9670;&#160;</a></span>fromPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> FC3DSize::fromPoint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создаёт размер из точки, интерпретируя координаты как компоненты размера. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Исходная точка (координаты интерпретируются как width = x, height = y, depth = z). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новый размер на основе координат точки. </dd></dl>
+
+</div>
+</div>
+<a id="ac6d2836eab22b125ea03803629a898aa" name="ac6d2836eab22b125ea03803629a898aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6d2836eab22b125ea03803629a898aa">&#9670;&#160;</a></span>height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> FC3DSize::height </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает высоту размера. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение высоты (компонента по оси Y). </dd></dl>
+
+</div>
+</div>
+<a id="a3e38644b3faf00d33df0ac3636e67f0f" name="a3e38644b3faf00d33df0ac3636e67f0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e38644b3faf00d33df0ac3636e67f0f">&#9670;&#160;</a></span>isEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FC3DSize::isEmpty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, является ли размер пустым (неположительное значение хотя бы по одной оси). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если ширина ≤ 0 или высота ≤ 0 или глубина ≤ 0; иначе — false. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Семантика соответствует QSize::isEmpty() в Qt: любая неположительная компонента делает размер пустым. </dd></dl>
+
+</div>
+</div>
+<a id="a585ec5547a2ea4680eb9ead6deda4eb0" name="a585ec5547a2ea4680eb9ead6deda4eb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a585ec5547a2ea4680eb9ead6deda4eb0">&#9670;&#160;</a></span>isNull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FC3DSize::isNull </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, является ли размер нулевым (все компоненты точно равны нулю). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если ширина = 0 и высота = 0 и глубина = 0; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="ac6e6fa83c4156366561cfd0be0ca9523" name="ac6e6fa83c4156366561cfd0be0ca9523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6e6fa83c4156366561cfd0be0ca9523">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FC3DSize::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сравнения на неравенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другой размер для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если размеры различаются хотя бы по одной компоненте; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a2ff971a6a37d9785d809a33e9c750285" name="a2ff971a6a37d9785d809a33e9c750285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ff971a6a37d9785d809a33e9c750285">&#9670;&#160;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> FC3DSize::operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сложения размеров (покомпонентное сложение). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Добавляемый размер. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новый размер с суммой соответствующих компонентов. </dd></dl>
+
+</div>
+</div>
+<a id="ae4434e2ed69c169d9bd27202feab6e4c" name="ae4434e2ed69c169d9bd27202feab6e4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4434e2ed69c169d9bd27202feab6e4c">&#9670;&#160;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp; FC3DSize::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор составного сложения размеров (покомпонентное сложение). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Добавляемый размер. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Ссылка на текущий объект после модификации. </dd></dl>
+
+</div>
+</div>
+<a id="aeb6e0d597be0884ab156deadbd838352" name="aeb6e0d597be0884ab156deadbd838352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb6e0d597be0884ab156deadbd838352">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FC3DSize::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сравнения на равенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другой размер для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если все три компоненты идентичны; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a46ea50ba9e768e9f4a30b5aa74791f5a" name="a46ea50ba9e768e9f4a30b5aa74791f5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46ea50ba9e768e9f4a30b5aa74791f5a">&#9670;&#160;</a></span>scaled() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> FC3DSize::scaled </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a></td>          <td class="paramname"><span class="paramname"><em>factor</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает размер, масштабированный единым коэффициентом. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">factor</td><td>Коэффициент масштабирования для всех осей. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новый размер с умноженными на фактор компонентами. </dd></dl>
+
+</div>
+</div>
+<a id="a0f553ba0a8b9424db56cb9f8cdbb7f00" name="a0f553ba0a8b9424db56cb9f8cdbb7f00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f553ba0a8b9424db56cb9f8cdbb7f00">&#9670;&#160;</a></span>scaled() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> FC3DSize::scaled </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a></td>          <td class="paramname"><span class="paramname"><em>fx</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a></td>          <td class="paramname"><span class="paramname"><em>fy</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a></td>          <td class="paramname"><span class="paramname"><em>fz</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает размер, масштабированный разными коэффициентами по осям. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fx</td><td>Коэффициент масштабирования по оси X (ширина). </td></tr>
+    <tr><td class="paramname">fy</td><td>Коэффициент масштабирования по оси Y (высота). </td></tr>
+    <tr><td class="paramname">fz</td><td>Коэффициент масштабирования по оси Z (глубина). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новый размер с независимо масштабированными компонентами. </dd></dl>
+
+</div>
+</div>
+<a id="a24731f2974dac72613f0aad49a4cd5ac" name="a24731f2974dac72613f0aad49a4cd5ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24731f2974dac72613f0aad49a4cd5ac">&#9670;&#160;</a></span>setDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FC3DSize::setDepth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a></td>          <td class="paramname"><span class="paramname"><em>d</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое значение глубины. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>Новое значение глубины. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae4da9514cb844cc28a009c128a602026" name="ae4da9514cb844cc28a009c128a602026"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4da9514cb844cc28a009c128a602026">&#9670;&#160;</a></span>setHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FC3DSize::setHeight </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a></td>          <td class="paramname"><span class="paramname"><em>h</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое значение высоты. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Новое значение высоты. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3c32d1d52ce8604398e6a0ab1a2b8e56" name="a3c32d1d52ce8604398e6a0ab1a2b8e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c32d1d52ce8604398e6a0ab1a2b8e56">&#9670;&#160;</a></span>setWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FC3DSize::setWidth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a></td>          <td class="paramname"><span class="paramname"><em>w</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое значение ширины. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>Новое значение ширины. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aef7c775dc2820a7eae9716d2294c11d9" name="aef7c775dc2820a7eae9716d2294c11d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef7c775dc2820a7eae9716d2294c11d9">&#9670;&#160;</a></span>setWidthHeightDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FC3DSize::setWidthHeightDepth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a></td>          <td class="paramname"><span class="paramname"><em>w</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a></td>          <td class="paramname"><span class="paramname"><em>h</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a></td>          <td class="paramname"><span class="paramname"><em>d</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает все три размера одновременно. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>Новое значение ширины. </td></tr>
+    <tr><td class="paramname">h</td><td>Новое значение высоты. </td></tr>
+    <tr><td class="paramname">d</td><td>Новое значение глубины. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a08ab0140f022774c576e2cae7a3d3143" name="a08ab0140f022774c576e2cae7a3d3143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08ab0140f022774c576e2cae7a3d3143">&#9670;&#160;</a></span>toPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DSize::toPoint </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Преобразует размер в точку, интерпретируя компоненты как координаты. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Точка с координатами (width, height, depth). </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Определение находится после объявления <a class="el" href="classFC3DPoint.html" title="Класс для представления трёхмерной точки с координатами (x, y, z).">FC3DPoint</a> (из-за циклической зависимости). </dd></dl>
+
+</div>
+</div>
+<a id="ae30969b87ba086601c8c335b4c041fcc" name="ae30969b87ba086601c8c335b4c041fcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae30969b87ba086601c8c335b4c041fcc">&#9670;&#160;</a></span>volume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> FC3DSize::volume </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисляет объём параллелепипеда с заданным размером. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Произведение ширины × высоты × глубины. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Результат может быть отрицательным, если одна или три компоненты отрицательны. </dd></dl>
+
+</div>
+</div>
+<a id="a328060e57a1683970110c1703387bb93" name="a328060e57a1683970110c1703387bb93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a328060e57a1683970110c1703387bb93">&#9670;&#160;</a></span>width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> FC3DSize::width </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает ширину размера. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение ширины (компонента по оси X). </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>FCTypes/FC3DArea/FC3DSize/<a class="el" href="FC3DSize_8h_source.html">FC3DSize.h</a></li>
+<li>FCTypes/FC3DArea/FC3DSize/<b>FC3DSize.cpp</b></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

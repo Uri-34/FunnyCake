@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Исходный файл FCPlotter/FCDevice/FCI2CDevice/FCHead/FCHead.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_dcfbaeab36b027cae77235f4e38c274a.html">FCPlotter</a></li><li class="navelem"><a class="el" href="dir_dc3ba5ac427b695d6a0e19650f09833f.html">FCDevice</a></li><li class="navelem"><a class="el" href="dir_69a3fc6c302c5a04f0ff925aa4288251.html">FCI2CDevice</a></li><li class="navelem"><a class="el" href="dir_340d5f829b1bc8f2ad4e08286464f959.html">FCHead</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FCHead.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FC_HEAD_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FC_HEAD_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;FC2DCell.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;FCRange.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;FCI2CDevice.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;FCNozzle.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classFCHead.html">   50</a></span><span class="keyword">class </span><a class="code hl_class" href="classFCHead.html">FCHead</a></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    : <span class="keyword">public</span> <a class="code hl_class" href="classFCI2CDevice.html">FCI2CDevice</a></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>Q_OBJECT</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// --- константы топологии головки ---</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classFCHead.html#a4dd5a27836e3ae03e1f134af4a70aa01">   57</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classFCHead.html#a4dd5a27836e3ae03e1f134af4a70aa01">ROWS</a> = 1;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classFCHead.html#a29eee75d82474c2259466e2c5d8a79cc">   59</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classFCHead.html#a29eee75d82474c2259466e2c5d8a79cc">COLS</a> = 3;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classFCHead.html#aa074136efa6b0b8dd948a0dbc37f4c2e">   61</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classFCHead.html#aa074136efa6b0b8dd948a0dbc37f4c2e">NOZZLE_COUNT</a> = <a class="code hl_variable" href="classFCHead.html#a4dd5a27836e3ae03e1f134af4a70aa01">ROWS</a> * <a class="code hl_variable" href="classFCHead.html#a29eee75d82474c2259466e2c5d8a79cc">COLS</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// --- конструкторы и деструктор ---</span></div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classFCHead.html#a3eab398667f60a09c9d8bbfc3c586de8">   73</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classFCHead.html#a3eab398667f60a09c9d8bbfc3c586de8">FCHead</a>(<a class="code hl_class" href="classFCI2CBus.html">FCI2CBus</a> *<a class="code hl_function" href="classFCI2CDevice.html#a37b815519a619ee964ccf70998b12c95">bus</a>, uint8_t <a class="code hl_function" href="classFCI2CDevice.html#a90554081a0d85ada4cb2ea5df3d66f89">address</a> = 0, <span class="keyword">const</span> QString &amp;name = QString(), QObject *parent = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        : <a class="code hl_class" href="classFCI2CDevice.html">FCI2CDevice</a>(<a class="code hl_function" href="classFCI2CDevice.html#a37b815519a619ee964ccf70998b12c95">bus</a>, <a class="code hl_function" href="classFCI2CDevice.html#a90554081a0d85ada4cb2ea5df3d66f89">address</a>, name, parent)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="comment">// Инициализация списка сопел с фиксированной конфигурацией</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        _nozzles.reserve(<a class="code hl_variable" href="classFCHead.html#aa074136efa6b0b8dd948a0dbc37f4c2e">NOZZLE_COUNT</a>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        _nozzles.append(<a class="code hl_class" href="classFCNozzle.html">FCNozzle</a>(<a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>(5, 5), 0.4f, 0.0f));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        _nozzles.append(<a class="code hl_class" href="classFCNozzle.html">FCNozzle</a>(<a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>(15, 5), 0.7f, 0.0f));</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        _nozzles.append(<a class="code hl_class" href="classFCNozzle.html">FCNozzle</a>(<a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>(5, 15), 0.5f, 0.0f));</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classFCHead.html#a5d1e3987d75d69d8f513b302f92153b5">   85</a></span>    <a class="code hl_function" href="classFCHead.html#a5d1e3987d75d69d8f513b302f92153b5">~FCHead</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="comment">// --- доступ к соплам ---</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classFCHead.html#a0129d31ab8f3e6897c331827483eb11f">   90</a></span>    [[nodiscard]] <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classFCHead.html#a0129d31ab8f3e6897c331827483eb11f">nozzleCount</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="classFCHead.html#aa074136efa6b0b8dd948a0dbc37f4c2e">NOZZLE_COUNT</a>; }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classFCHead.html#a7b65f6ebcdb68810725a2b894fba904c">   99</a></span>    [[nodiscard]] <span class="keyword">const</span> <a class="code hl_class" href="classFCNozzle.html">FCNozzle</a>&amp; <a class="code hl_function" href="classFCHead.html#a7b65f6ebcdb68810725a2b894fba904c">nozzle</a>(<span class="keywordtype">int</span> index) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="comment">// Безопасное ограничение индекса в диапазоне [0, NOZZLE_COUNT - 1]</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> clampedIndex = <a class="code hl_class" href="classFCRange.html">FCRange&lt;int&gt;</a>(0, <a class="code hl_variable" href="classFCHead.html#aa074136efa6b0b8dd948a0dbc37f4c2e">NOZZLE_COUNT</a> - 1).<a class="code hl_function" href="classFCRange.html#a0197ab62a359b84cbc4795082463b4b1">clamped</a>(<a class="code hl_class" href="classFCRange.html">index</a>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">return</span> _nozzles[<a class="code hl_class" href="classFCRange.html">clampedIndex</a>];</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classFCHead.html#a097074366d56144faffad4130c936368">  109</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCHead.html#a097074366d56144faffad4130c936368">isValidNozzleIndex</a>(<span class="keywordtype">int</span> <a class="code hl_class" href="classFCRange.html">index</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFCRange.html">FCRange&lt;int&gt;</a>(0, <a class="code hl_variable" href="classFCHead.html#aa074136efa6b0b8dd948a0dbc37f4c2e">NOZZLE_COUNT</a> - 1).<a class="code hl_function" href="classFCRange.html#ad9a54a454b911bce174c7eeb392bb33b">contains</a>(<a class="code hl_class" href="classFCRange.html">index</a>);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
+</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classFCHead.html#a6aa87746a8efb6c58ef73c1f0960ab47">  117</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">const</span> FCNozzleList&amp; <a class="code hl_function" href="classFCHead.html#a6aa87746a8efb6c58ef73c1f0960ab47">nozzles</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _nozzles; }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="comment">// --- геометрические методы ---</span></div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classFCHead.html#a1f57990cbd98d1a14ca35aa9711190c0">  123</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <a class="code hl_class" href="classFC2DCell.html">FC2DCell</a> <a class="code hl_function" href="classFCHead.html#a1f57990cbd98d1a14ca35aa9711190c0">boundingBox</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">if</span>(_nozzles.isEmpty())</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordflow">return</span> FC2DCellError;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="comment">// Инициализация границ первым соплом</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordtype">float</span> <a class="code hl_class" href="classFCRange.html">minX</a> = _nozzles[0].position().x() - _nozzles[0].diameter() / 2.0f;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordtype">float</span> <a class="code hl_class" href="classFCRange.html">maxX</a> = _nozzles[0].position().x() + _nozzles[0].diameter() / 2.0f;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordtype">float</span> <a class="code hl_class" href="classFCRange.html">minY</a> = _nozzles[0].position().y() - _nozzles[0].diameter() / 2.0f;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keywordtype">float</span> <a class="code hl_class" href="classFCRange.html">maxY</a> = _nozzles[0].position().y() + _nozzles[0].diameter() / 2.0f;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="comment">// Расширение границ для остальных сопел</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code hl_class" href="classFCRange.html">i</a> = 1; <a class="code hl_class" href="classFCRange.html">i</a> &lt; _nozzles.size(); ++<a class="code hl_class" href="classFCRange.html">i</a>)</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_class" href="classFCRange.html">left</a> = _nozzles[<a class="code hl_class" href="classFCRange.html">i</a>].position().x() - _nozzles[<a class="code hl_class" href="classFCRange.html">i</a>].diameter() / 2.0f;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_class" href="classFCRange.html">right</a> = _nozzles[<a class="code hl_class" href="classFCRange.html">i</a>].position().x() + _nozzles[<a class="code hl_class" href="classFCRange.html">i</a>].diameter() / 2.0f;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_class" href="classFCRange.html">top</a> = _nozzles[<a class="code hl_class" href="classFCRange.html">i</a>].position().y() - _nozzles[<a class="code hl_class" href="classFCRange.html">i</a>].diameter() / 2.0f;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_class" href="classFCRange.html">bottom</a> = _nozzles[<a class="code hl_class" href="classFCRange.html">i</a>].position().y() + _nozzles[<a class="code hl_class" href="classFCRange.html">i</a>].diameter() / 2.0f;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            <a class="code hl_class" href="classFCRange.html">minX</a> = <a class="code hl_function" href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">std::min</a>(<a class="code hl_class" href="classFCRange.html">minX</a>, <a class="code hl_class" href="classFCRange.html">left</a>);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <a class="code hl_class" href="classFCRange.html">maxX</a> = <a class="code hl_function" href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">std::max</a>(<a class="code hl_class" href="classFCRange.html">maxX</a>, <a class="code hl_class" href="classFCRange.html">right</a>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <a class="code hl_class" href="classFCRange.html">minY</a> = <a class="code hl_function" href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">std::min</a>(<a class="code hl_class" href="classFCRange.html">minY</a>, <a class="code hl_class" href="classFCRange.html">top</a>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <a class="code hl_class" href="classFCRange.html">maxY</a> = <a class="code hl_function" href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">std::max</a>(<a class="code hl_class" href="classFCRange.html">maxY</a>, <a class="code hl_class" href="classFCRange.html">bottom</a>);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DCell.html">FC2DCell</a>(<a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>(<a class="code hl_class" href="classFCRange.html">minX</a>, <a class="code hl_class" href="classFCRange.html">minY</a>), <a class="code hl_class" href="classFC2DSize.html">FC2DSize</a>(<a class="code hl_class" href="classFCRange.html">maxX</a> - <a class="code hl_class" href="classFCRange.html">minX</a>, <a class="code hl_class" href="classFCRange.html">maxY</a> - <a class="code hl_class" href="classFCRange.html">minY</a>));</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    FCNozzleList _nozzles;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>};</div>
+</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#endif </span><span class="comment">// FC_HEAD_H</span></div>
+<div class="ttc" id="aclassFC2DCell_html"><div class="ttname"><a href="classFC2DCell.html">FC2DCell</a></div><div class="ttdoc">Класс для представления двумерной ячейки (прямоугольной области) с заданной позицией и размером.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:21</div></div>
+<div class="ttc" id="aclassFC2DPoint_html"><div class="ttname"><a href="classFC2DPoint.html">FC2DPoint</a></div><div class="ttdoc">Класс для представления двумерной точки с координатами (x, y).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:23</div></div>
+<div class="ttc" id="aclassFC2DSize_html"><div class="ttname"><a href="classFC2DSize.html">FC2DSize</a></div><div class="ttdoc">Класс для представления двумерного размера (ширина × высота).</div><div class="ttdef"><b>Definition</b> FC2DSize.h:23</div></div>
+<div class="ttc" id="aclassFCHead_html"><div class="ttname"><a href="classFCHead.html">FCHead</a></div><div class="ttdoc">Класс управления печатающей головкой плоттера с множественными соплами.</div><div class="ttdef"><b>Definition</b> FCHead.h:52</div></div>
+<div class="ttc" id="aclassFCHead_html_a0129d31ab8f3e6897c331827483eb11f"><div class="ttname"><a href="classFCHead.html#a0129d31ab8f3e6897c331827483eb11f">FCHead::nozzleCount</a></div><div class="ttdeci">constexpr int nozzleCount() const noexcept</div><div class="ttdoc">Возвращает количество сопел в головке.</div><div class="ttdef"><b>Definition</b> FCHead.h:90</div></div>
+<div class="ttc" id="aclassFCHead_html_a097074366d56144faffad4130c936368"><div class="ttname"><a href="classFCHead.html#a097074366d56144faffad4130c936368">FCHead::isValidNozzleIndex</a></div><div class="ttdeci">constexpr bool isValidNozzleIndex(int index) const noexcept</div><div class="ttdoc">Проверяет валидность индекса сопла.</div><div class="ttdef"><b>Definition</b> FCHead.h:109</div></div>
+<div class="ttc" id="aclassFCHead_html_a1f57990cbd98d1a14ca35aa9711190c0"><div class="ttname"><a href="classFCHead.html#a1f57990cbd98d1a14ca35aa9711190c0">FCHead::boundingBox</a></div><div class="ttdeci">FC2DCell boundingBox() const noexcept</div><div class="ttdoc">Возвращает ограничивающий прямоугольник всех сопел в локальной системе координат.</div><div class="ttdef"><b>Definition</b> FCHead.h:123</div></div>
+<div class="ttc" id="aclassFCHead_html_a29eee75d82474c2259466e2c5d8a79cc"><div class="ttname"><a href="classFCHead.html#a29eee75d82474c2259466e2c5d8a79cc">FCHead::COLS</a></div><div class="ttdeci">static constexpr int COLS</div><div class="ttdoc">Количество столбцов сопел в головке (всегда 3 для текущей конфигурации).</div><div class="ttdef"><b>Definition</b> FCHead.h:59</div></div>
+<div class="ttc" id="aclassFCHead_html_a3eab398667f60a09c9d8bbfc3c586de8"><div class="ttname"><a href="classFCHead.html#a3eab398667f60a09c9d8bbfc3c586de8">FCHead::FCHead</a></div><div class="ttdeci">FCHead(FCI2CBus *bus, uint8_t address=0, const QString &amp;name=QString(), QObject *parent=nullptr)</div><div class="ttdoc">Конструктор головки с привязкой к шине I2C.</div><div class="ttdef"><b>Definition</b> FCHead.h:73</div></div>
+<div class="ttc" id="aclassFCHead_html_a4dd5a27836e3ae03e1f134af4a70aa01"><div class="ttname"><a href="classFCHead.html#a4dd5a27836e3ae03e1f134af4a70aa01">FCHead::ROWS</a></div><div class="ttdeci">static constexpr int ROWS</div><div class="ttdoc">Количество рядов сопел в головке (всегда 1 для текущей конфигурации).</div><div class="ttdef"><b>Definition</b> FCHead.h:57</div></div>
+<div class="ttc" id="aclassFCHead_html_a5d1e3987d75d69d8f513b302f92153b5"><div class="ttname"><a href="classFCHead.html#a5d1e3987d75d69d8f513b302f92153b5">FCHead::~FCHead</a></div><div class="ttdeci">~FCHead() override=default</div><div class="ttdoc">Деструктор головки.</div></div>
+<div class="ttc" id="aclassFCHead_html_a6aa87746a8efb6c58ef73c1f0960ab47"><div class="ttname"><a href="classFCHead.html#a6aa87746a8efb6c58ef73c1f0960ab47">FCHead::nozzles</a></div><div class="ttdeci">const FCNozzleList &amp; nozzles() const noexcept</div><div class="ttdoc">Возвращает список всех сопел головки.</div><div class="ttdef"><b>Definition</b> FCHead.h:117</div></div>
+<div class="ttc" id="aclassFCHead_html_a7b65f6ebcdb68810725a2b894fba904c"><div class="ttname"><a href="classFCHead.html#a7b65f6ebcdb68810725a2b894fba904c">FCHead::nozzle</a></div><div class="ttdeci">const FCNozzle &amp; nozzle(int index) const noexcept</div><div class="ttdoc">Возвращает сопло по индексу с автоматической проверкой границ.</div><div class="ttdef"><b>Definition</b> FCHead.h:99</div></div>
+<div class="ttc" id="aclassFCHead_html_aa074136efa6b0b8dd948a0dbc37f4c2e"><div class="ttname"><a href="classFCHead.html#aa074136efa6b0b8dd948a0dbc37f4c2e">FCHead::NOZZLE_COUNT</a></div><div class="ttdeci">static constexpr int NOZZLE_COUNT</div><div class="ttdoc">Общее количество сопел в головке (произведение ROWS × COLS).</div><div class="ttdef"><b>Definition</b> FCHead.h:61</div></div>
+<div class="ttc" id="aclassFCI2CBus_html"><div class="ttname"><a href="classFCI2CBus.html">FCI2CBus</a></div><div class="ttdef"><b>Definition</b> FCI2CBus.h:62</div></div>
+<div class="ttc" id="aclassFCI2CDevice_html"><div class="ttname"><a href="classFCI2CDevice.html">FCI2CDevice</a></div><div class="ttdoc">Базовый класс для всех устройств, подключаемых по шине I²C.</div><div class="ttdef"><b>Definition</b> FCI2CDevice.h:51</div></div>
+<div class="ttc" id="aclassFCI2CDevice_html_a37b815519a619ee964ccf70998b12c95"><div class="ttname"><a href="classFCI2CDevice.html#a37b815519a619ee964ccf70998b12c95">FCI2CDevice::bus</a></div><div class="ttdeci">FCI2CBus * bus() const noexcept</div><div class="ttdoc">Возвращает указатель на шину I²C.</div><div class="ttdef"><b>Definition</b> FCI2CDevice.h:88</div></div>
+<div class="ttc" id="aclassFCI2CDevice_html_a90554081a0d85ada4cb2ea5df3d66f89"><div class="ttname"><a href="classFCI2CDevice.html#a90554081a0d85ada4cb2ea5df3d66f89">FCI2CDevice::address</a></div><div class="ttdeci">uint8_t address() const noexcept</div><div class="ttdoc">Возвращает 7-битный адрес устройства на шине I²C.</div><div class="ttdef"><b>Definition</b> FCI2CDevice.h:91</div></div>
+<div class="ttc" id="aclassFCNozzle_html"><div class="ttname"><a href="classFCNozzle.html">FCNozzle</a></div><div class="ttdoc">Класс для описания параметров отдельного сопла печатающей головки.</div><div class="ttdef"><b>Definition</b> FCNozzle.h:43</div></div>
+<div class="ttc" id="aclassFCRange_html"><div class="ttname"><a href="classFCRange.html">FCRange</a></div><div class="ttdoc">Шаблонный класс для представления числового диапазона [min, max] с гарантией корректности.</div><div class="ttdef"><b>Definition</b> FCRange.h:34</div></div>
+<div class="ttc" id="aclassFCRange_html_a0197ab62a359b84cbc4795082463b4b1"><div class="ttname"><a href="classFCRange.html#a0197ab62a359b84cbc4795082463b4b1">FCRange::clamped</a></div><div class="ttdeci">constexpr T clamped(T value) const noexcept</div><div class="ttdoc">Ограничивает значение границами диапазона.</div><div class="ttdef"><b>Definition</b> FCRange.h:134</div></div>
+<div class="ttc" id="aclassFCRange_html_aceee53b9131a8276ad7a96994e413113"><div class="ttname"><a href="classFCRange.html#aceee53b9131a8276ad7a96994e413113">FCRange::max</a></div><div class="ttdeci">constexpr T max() const noexcept</div><div class="ttdoc">Возвращает максимальную границу диапазона.</div><div class="ttdef"><b>Definition</b> FCRange.h:96</div></div>
+<div class="ttc" id="aclassFCRange_html_ad62ce8b493badeb340c00d26fa3c2a0e"><div class="ttname"><a href="classFCRange.html#ad62ce8b493badeb340c00d26fa3c2a0e">FCRange::min</a></div><div class="ttdeci">constexpr T min() const noexcept</div><div class="ttdoc">Возвращает минимальную границу диапазона.</div><div class="ttdef"><b>Definition</b> FCRange.h:92</div></div>
+<div class="ttc" id="aclassFCRange_html_ad9a54a454b911bce174c7eeb392bb33b"><div class="ttname"><a href="classFCRange.html#ad9a54a454b911bce174c7eeb392bb33b">FCRange::contains</a></div><div class="ttdeci">constexpr bool contains(T value) const noexcept</div><div class="ttdoc">Проверяет, принадлежит ли значение диапазону [min, max] (включая границы).</div><div class="ttdef"><b>Definition</b> FCRange.h:113</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

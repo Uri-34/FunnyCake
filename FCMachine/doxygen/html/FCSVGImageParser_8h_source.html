@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Исходный файл FCSVGImageParser/FCSVGImageParser.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_02d1a21c36f0c37d8730b9e2e1cab8ac.html">FCSVGImageParser</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FCSVGImageParser.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FC_SVG_IMAGE_PARSER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FC_SVG_IMAGE_PARSER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QFile&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QFutureWatcher&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;FCSVGFigure.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;FCSVGLayer.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;FC3DArea.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;FCConditionObject.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;FCRange.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classFCSVGImageParser.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classFCSVGImageParser.html">FCSVGImageParser</a></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    : <span class="keyword">public</span> <a class="code hl_class" href="classFCConditionObject.html">FCConditionObject</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><a class="code hl_class" href="classFCRange.html">Q_OBJECT</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classFCSVGImageParser.html#a4a03518cefe4d239ced422634d90a973">   22</a></span>    <a class="code hl_function" href="classFCSVGImageParser.html#a4a03518cefe4d239ced422634d90a973">FCSVGImageParser</a>(QObject *<a class="code hl_class" href="classFCRange.html">parent</a> = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        : <a class="code hl_class" href="classFCConditionObject.html">FCConditionObject</a>(<span class="stringliteral">&quot;parcer&quot;</span>, <a class="code hl_class" href="classFCRange.html">parent</a>)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        connect(&amp;_watcher, &amp;<a class="code hl_class" href="classFCRange.html">QFutureWatcher&lt;bool&gt;::finished</a>, <span class="keyword">this</span>, &amp;FCSVGImageParser::onParsingFinished);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">// ...progress сигналы (если поддерживается)</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="classFCSVGImageParser.html#a4a03518cefe4d239ced422634d90a973">FCSVGImageParser</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCSVGImageParser.html">FCSVGImageParser</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classFCSVGImageParser.html#a9ab2afe895c475d5b801d1b415b6ecea">   32</a></span>    <a class="code hl_class" href="classFCSVGImageParser.html">FCSVGImageParser</a>&amp; <a class="code hl_function" href="classFCSVGImageParser.html#a9ab2afe895c475d5b801d1b415b6ecea">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCSVGImageParser.html">FCSVGImageParser</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classFCSVGImageParser.html#a61a0db4759bf03d1dcec6c43a7e619bb">   35</a></span>    <a class="code hl_function" href="classFCSVGImageParser.html#a61a0db4759bf03d1dcec6c43a7e619bb">~FCSVGImageParser</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_slot" href="classFCSVGImageParser.html#ae5c2b458a081b14955e0d07dc4da8024">stop</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classFCSVGImageParser.html#aa00c17249ffe2fa4ba24391c00348a9a">   41</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="classFCRange.html">uint16_t</a> <a class="code hl_function" href="classFCSVGImageParser.html#aa00c17249ffe2fa4ba24391c00348a9a">layers</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _image.size(); }</div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classFCSVGImageParser.html#ad16f77fcf151b79a3b424e429dd6f7bc">   43</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="classFCRange.html">uint16_t</a> <a class="code hl_function" href="classFCSVGImageParser.html#ad16f77fcf151b79a3b424e429dd6f7bc">figures</a>(<a class="code hl_class" href="classFCRange.html">uint16_t</a> <a class="code hl_class" href="classFCRange.html">layer</a>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _image.at(<a class="code hl_class" href="classFCRange.html">layer</a>).size(); }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a>&amp; figure(<a class="code hl_class" href="classFCRange.html">uint16_t</a> <a class="code hl_class" href="classFCRange.html">layer</a>, <a class="code hl_class" href="classFCRange.html">uint16_t</a> figure)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> _image.at(<a class="code hl_class" href="classFCRange.html">FCRange&lt;int&gt;</a>(0, _image.size()).<a class="code hl_function" href="classFCRange.html#a0197ab62a359b84cbc4795082463b4b1">clamped</a>(<a class="code hl_class" href="classFCRange.html">layer</a>)).at(<a class="code hl_class" href="classFCRange.html">FCRange&lt;int&gt;</a>(0, _image.size()).<a class="code hl_function" href="classFCRange.html#a0197ab62a359b84cbc4795082463b4b1">clamped</a>(figure));</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">public</span> <a class="code hl_class" href="classFCRange.html">slots</a>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classFCSVGImageParser.html#a09619b66c92e91402d018d5b8e558519">start</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QString</a> &amp;<a class="code hl_class" href="classFCRange.html">file</a>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classFCSVGImageParser.html#ae5c2b458a081b14955e0d07dc4da8024">stop</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> clear();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><a class="code hl_class" href="classFCRange.html">signals</a>:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classFCSVGImageParser.html#a51a29ee5c6334b56267f2fdc6676d4c3">   60</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCSVGImageParser.html#a51a29ee5c6334b56267f2fdc6676d4c3">progress</a>(<span class="keywordtype">int</span> <a class="code hl_class" href="classFCRange.html">percent</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_class" href="classFCRange.html">FCSVGFigureList</a> _image;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_class" href="classFCRange.html">QFutureWatcher&lt;bool&gt;</a> _watcher;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif </span><span class="comment">// FC_SVG_IMAGE_PARSER_H</span></div>
+</div>
+</div>
+</div>
+<div class="ttc" id="aclassFCConditionObject_html"><div class="ttname"><a href="classFCConditionObject.html">FCConditionObject</a></div><div class="ttdoc">Базовый класс для объектов с управляемым составным состоянием и уведомлениями об изменениях.</div><div class="ttdef"><b>Definition</b> FCConditionObject.h:29</div></div>
+<div class="ttc" id="aclassFCRange_html"><div class="ttname"><a href="classFCRange.html">FCRange</a></div><div class="ttdoc">Шаблонный класс для представления числового диапазона [min, max] с гарантией корректности.</div><div class="ttdef"><b>Definition</b> FCRange.h:34</div></div>
+<div class="ttc" id="aclassFCRange_html_a0197ab62a359b84cbc4795082463b4b1"><div class="ttname"><a href="classFCRange.html#a0197ab62a359b84cbc4795082463b4b1">FCRange::clamped</a></div><div class="ttdeci">constexpr T clamped(T value) const noexcept</div><div class="ttdoc">Ограничивает значение границами диапазона.</div><div class="ttdef"><b>Definition</b> FCRange.h:134</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html"><div class="ttname"><a href="classFCSVGFigure.html">FCSVGFigure</a></div><div class="ttdoc">&lt; класс для представления фигуры в SVG (имя + стиль + путь).</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:12</div></div>
+<div class="ttc" id="aclassFCSVGImageParser_html"><div class="ttname"><a href="classFCSVGImageParser.html">FCSVGImageParser</a></div><div class="ttdoc">&lt; парсер SVG-файлов для 3D-сетки.</div><div class="ttdef"><b>Definition</b> FCSVGImageParser.h:18</div></div>
+<div class="ttc" id="aclassFCSVGImageParser_html_a09619b66c92e91402d018d5b8e558519"><div class="ttname"><a href="classFCSVGImageParser.html#a09619b66c92e91402d018d5b8e558519">FCSVGImageParser::start</a></div><div class="ttdeci">void start(const QString &amp;file)</div><div class="ttdoc">&lt; запустить парсинг SVG-файла.</div><div class="ttdef"><b>Definition</b> FCSVGImageParser.cpp:5</div></div>
+<div class="ttc" id="aclassFCSVGImageParser_html_a4a03518cefe4d239ced422634d90a973"><div class="ttname"><a href="classFCSVGImageParser.html#a4a03518cefe4d239ced422634d90a973">FCSVGImageParser::FCSVGImageParser</a></div><div class="ttdeci">FCSVGImageParser(QObject *parent=nullptr)</div><div class="ttdoc">&lt; конструктор.</div><div class="ttdef"><b>Definition</b> FCSVGImageParser.h:22</div></div>
+<div class="ttc" id="aclassFCSVGImageParser_html_a51a29ee5c6334b56267f2fdc6676d4c3"><div class="ttname"><a href="classFCSVGImageParser.html#a51a29ee5c6334b56267f2fdc6676d4c3">FCSVGImageParser::progress</a></div><div class="ttdeci">void progress(int percent)</div><div class="ttdoc">&lt; прогресс (0–100%).</div></div>
+<div class="ttc" id="aclassFCSVGImageParser_html_a61a0db4759bf03d1dcec6c43a7e619bb"><div class="ttname"><a href="classFCSVGImageParser.html#a61a0db4759bf03d1dcec6c43a7e619bb">FCSVGImageParser::~FCSVGImageParser</a></div><div class="ttdeci">~FCSVGImageParser() override</div><div class="ttdoc">возвращает количество слоев.</div><div class="ttdef"><b>Definition</b> FCSVGImageParser.h:35</div></div>
+<div class="ttc" id="aclassFCSVGImageParser_html_a9ab2afe895c475d5b801d1b415b6ecea"><div class="ttname"><a href="classFCSVGImageParser.html#a9ab2afe895c475d5b801d1b415b6ecea">FCSVGImageParser::operator=</a></div><div class="ttdeci">FCSVGImageParser &amp; operator=(const FCSVGImageParser &amp;)=delete</div><div class="ttdoc">деструктор.</div></div>
+<div class="ttc" id="aclassFCSVGImageParser_html_aa00c17249ffe2fa4ba24391c00348a9a"><div class="ttname"><a href="classFCSVGImageParser.html#aa00c17249ffe2fa4ba24391c00348a9a">FCSVGImageParser::layers</a></div><div class="ttdeci">uint16_t layers() const</div><div class="ttdoc">возвращает количество фигур в слое по номеру слоя.</div><div class="ttdef"><b>Definition</b> FCSVGImageParser.h:41</div></div>
+<div class="ttc" id="aclassFCSVGImageParser_html_ad16f77fcf151b79a3b424e429dd6f7bc"><div class="ttname"><a href="classFCSVGImageParser.html#ad16f77fcf151b79a3b424e429dd6f7bc">FCSVGImageParser::figures</a></div><div class="ttdeci">uint16_t figures(uint16_t layer) const</div><div class="ttdoc">получить number фигуру текущего слоя (number - от 0, до size()).</div><div class="ttdef"><b>Definition</b> FCSVGImageParser.h:43</div></div>
+<div class="ttc" id="aclassFCSVGImageParser_html_ae5c2b458a081b14955e0d07dc4da8024"><div class="ttname"><a href="classFCSVGImageParser.html#ae5c2b458a081b14955e0d07dc4da8024">FCSVGImageParser::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">очистить парсер.</div><div class="ttdef"><b>Definition</b> FCSVGImageParser.cpp:20</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

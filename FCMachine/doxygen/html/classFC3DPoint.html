@@ -1,0 +1,1330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Класс FC3DPoint</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="classFC3DPoint-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс FC3DPoint</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для представления трёхмерной точки с координатами (x, y, z).  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FC3DPoint_8h_source.html">FC3DPoint.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a5290239916990b70308aef6dd75f262e" id="r_a5290239916990b70308aef6dd75f262e"><td class="memItemLeft" align="right" valign="top"><a id="a5290239916990b70308aef6dd75f262e" name="a5290239916990b70308aef6dd75f262e"></a>
+<a class="el" href="classFCRange.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_type</b> = <a class="el" href="classFCRange.html">float</a></td></tr>
+<tr class="memdesc:a5290239916990b70308aef6dd75f262e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тип данных, используемый для хранения координат (по умолчанию — float). <br /></td></tr>
+<tr class="separator:a5290239916990b70308aef6dd75f262e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a3b52b46858d6cb47d32331e7d6e2d718" id="r_a3b52b46858d6cb47d32331e7d6e2d718"><td class="memItemLeft" align="right" valign="top"><a id="a3b52b46858d6cb47d32331e7d6e2d718" name="a3b52b46858d6cb47d32331e7d6e2d718"></a>
+<a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FC3DPoint</b> () <a class="el" href="classFCRange.html">noexcept</a>=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a3b52b46858d6cb47d32331e7d6e2d718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор по умолчанию. Создаёт точку с координатами (0, 0, 0). <br /></td></tr>
+<tr class="separator:a3b52b46858d6cb47d32331e7d6e2d718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2ff29d33579a4032b61f09ea8d4b9eb" id="r_aa2ff29d33579a4032b61f09ea8d4b9eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2ff29d33579a4032b61f09ea8d4b9eb">FC3DPoint</a> (<a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="#a3c7a22a3d900b9394356156be62fbf8a">x</a>, <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="#a0cf12881c4be4f39fd094b70dc5ce04f">y</a>, <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="#a357a24ae8681669e8d6d9e2affdfd1fc">z</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aa2ff29d33579a4032b61f09ea8d4b9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с параметрами.  <br /></td></tr>
+<tr class="separator:aa2ff29d33579a4032b61f09ea8d4b9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cf373ddcf60f5f726782ab327d5bd98" id="r_a5cf373ddcf60f5f726782ab327d5bd98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cf373ddcf60f5f726782ab327d5bd98">FC3DPoint</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp;<a class="el" href="classFCRange.html">point</a>, <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="#a357a24ae8681669e8d6d9e2affdfd1fc">z</a>=0) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a5cf373ddcf60f5f726782ab327d5bd98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор преобразования из 2D-точки с добавлением координаты Z.  <br /></td></tr>
+<tr class="separator:a5cf373ddcf60f5f726782ab327d5bd98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dfeef3ea6cdd0c8fa1d3c8d672397f1" id="r_a7dfeef3ea6cdd0c8fa1d3c8d672397f1"><td class="memItemLeft" align="right" valign="top"><a id="a7dfeef3ea6cdd0c8fa1d3c8d672397f1" name="a7dfeef3ea6cdd0c8fa1d3c8d672397f1"></a>
+<a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FC3DPoint</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;) <a class="el" href="classFCRange.html">noexcept</a>=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a7dfeef3ea6cdd0c8fa1d3c8d672397f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор копирования (тривиальный). <br /></td></tr>
+<tr class="separator:a7dfeef3ea6cdd0c8fa1d3c8d672397f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56b09b28717329c38ee147a758c0681f" id="r_a56b09b28717329c38ee147a758c0681f"><td class="memItemLeft" align="right" valign="top"><a id="a56b09b28717329c38ee147a758c0681f" name="a56b09b28717329c38ee147a758c0681f"></a>
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;) <a class="el" href="classFCRange.html">noexcept</a>=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a56b09b28717329c38ee147a758c0681f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присваивания копированием (тривиальный). <br /></td></tr>
+<tr class="separator:a56b09b28717329c38ee147a758c0681f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b38846bcecb583fcdde249a6551f2cb" id="r_a5b38846bcecb583fcdde249a6551f2cb"><td class="memItemLeft" align="right" valign="top"><a id="a5b38846bcecb583fcdde249a6551f2cb" name="a5b38846bcecb583fcdde249a6551f2cb"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~FC3DPoint</b> ()=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a5b38846bcecb583fcdde249a6551f2cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор (тривиальный). <br /></td></tr>
+<tr class="separator:a5b38846bcecb583fcdde249a6551f2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c7a22a3d900b9394356156be62fbf8a" id="r_a3c7a22a3d900b9394356156be62fbf8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c7a22a3d900b9394356156be62fbf8a">x</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a3c7a22a3d900b9394356156be62fbf8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает координату X точки.  <br /></td></tr>
+<tr class="separator:a3c7a22a3d900b9394356156be62fbf8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf12881c4be4f39fd094b70dc5ce04f" id="r_a0cf12881c4be4f39fd094b70dc5ce04f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cf12881c4be4f39fd094b70dc5ce04f">y</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a0cf12881c4be4f39fd094b70dc5ce04f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает координату Y точки.  <br /></td></tr>
+<tr class="separator:a0cf12881c4be4f39fd094b70dc5ce04f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a357a24ae8681669e8d6d9e2affdfd1fc" id="r_a357a24ae8681669e8d6d9e2affdfd1fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a357a24ae8681669e8d6d9e2affdfd1fc">z</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a357a24ae8681669e8d6d9e2affdfd1fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает координату Z точки.  <br /></td></tr>
+<tr class="separator:a357a24ae8681669e8d6d9e2affdfd1fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6995f5d862165a55fb22d8093b202a32" id="r_a6995f5d862165a55fb22d8093b202a32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6995f5d862165a55fb22d8093b202a32">setX</a> (<a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="#a3c7a22a3d900b9394356156be62fbf8a">x</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a6995f5d862165a55fb22d8093b202a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое значение координаты X.  <br /></td></tr>
+<tr class="separator:a6995f5d862165a55fb22d8093b202a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5402059fc4b67585cd4b5e7ff66f9b5a" id="r_a5402059fc4b67585cd4b5e7ff66f9b5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5402059fc4b67585cd4b5e7ff66f9b5a">setY</a> (<a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="#a0cf12881c4be4f39fd094b70dc5ce04f">y</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a5402059fc4b67585cd4b5e7ff66f9b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое значение координаты Y.  <br /></td></tr>
+<tr class="separator:a5402059fc4b67585cd4b5e7ff66f9b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa65715aaa4658035802a48497225119b" id="r_aa65715aaa4658035802a48497225119b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa65715aaa4658035802a48497225119b">setZ</a> (<a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="#a357a24ae8681669e8d6d9e2affdfd1fc">z</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aa65715aaa4658035802a48497225119b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое значение координаты Z.  <br /></td></tr>
+<tr class="separator:aa65715aaa4658035802a48497225119b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf66b68869646f1a2a362b54147540bf" id="r_aaf66b68869646f1a2a362b54147540bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf66b68869646f1a2a362b54147540bf">setXYZ</a> (<a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="#a3c7a22a3d900b9394356156be62fbf8a">x</a>, <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="#a0cf12881c4be4f39fd094b70dc5ce04f">y</a>, <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="#a357a24ae8681669e8d6d9e2affdfd1fc">z</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aaf66b68869646f1a2a362b54147540bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает все три координаты одновременно.  <br /></td></tr>
+<tr class="separator:aaf66b68869646f1a2a362b54147540bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae64f80c7ce06f14f6d53069aed400aae" id="r_ae64f80c7ce06f14f6d53069aed400aae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae64f80c7ce06f14f6d53069aed400aae">to2D</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ae64f80c7ce06f14f6d53069aed400aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проекция точки на XY-плоскость (координата Z игнорируется).  <br /></td></tr>
+<tr class="separator:ae64f80c7ce06f14f6d53069aed400aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e934cc5b7bdb7a65e395a9e71cdbcd" id="r_a59e934cc5b7bdb7a65e395a9e71cdbcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DSize.html">FC3DSize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59e934cc5b7bdb7a65e395a9e71cdbcd">toSize</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a59e934cc5b7bdb7a65e395a9e71cdbcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразует точку в 3D-размер, интерпретируя координаты как компоненты размера.  <br /></td></tr>
+<tr class="separator:a59e934cc5b7bdb7a65e395a9e71cdbcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32b90b9746df8cd4987fa23abf84fd85" id="r_a32b90b9746df8cd4987fa23abf84fd85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32b90b9746df8cd4987fa23abf84fd85">distanceTo</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a32b90b9746df8cd4987fa23abf84fd85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет евклидово расстояние до другой точки.  <br /></td></tr>
+<tr class="separator:a32b90b9746df8cd4987fa23abf84fd85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08c81dc19bc07f84e89795878f5cc24" id="r_aa08c81dc19bc07f84e89795878f5cc24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa08c81dc19bc07f84e89795878f5cc24">distanceSquaredTo</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aa08c81dc19bc07f84e89795878f5cc24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет квадрат расстояния до другой точки (без извлечения корня).  <br /></td></tr>
+<tr class="separator:aa08c81dc19bc07f84e89795878f5cc24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93f18b12c6589577b5f2907d32f06ce0" id="r_a93f18b12c6589577b5f2907d32f06ce0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93f18b12c6589577b5f2907d32f06ce0">translated</a> (<a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="classFCRange.html">dx</a>, <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="classFCRange.html">dy</a>, <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="classFCRange.html">dz</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a93f18b12c6589577b5f2907d32f06ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает точку, смещённую на заданный вектор (dx, dy, dz).  <br /></td></tr>
+<tr class="separator:a93f18b12c6589577b5f2907d32f06ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e592f65becb23a546b385282a330d6e" id="r_a1e592f65becb23a546b385282a330d6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e592f65becb23a546b385282a330d6e">translated</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;<a class="el" href="classFCRange.html">delta</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a1e592f65becb23a546b385282a330d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает точку, смещённую на вектор, заданный другой точкой.  <br /></td></tr>
+<tr class="separator:a1e592f65becb23a546b385282a330d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae65262f3b89e67a723604c96f483224c" id="r_ae65262f3b89e67a723604c96f483224c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae65262f3b89e67a723604c96f483224c">scaled</a> (<a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="classFCRange.html">scaleX</a>, <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="classFCRange.html">scaleY</a>, <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="classFCRange.html">scaleZ</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ae65262f3b89e67a723604c96f483224c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает точку, масштабированную относительно начала координат.  <br /></td></tr>
+<tr class="separator:ae65262f3b89e67a723604c96f483224c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa45b1a8910aa06f8eba36cae6275bfd6" id="r_aa45b1a8910aa06f8eba36cae6275bfd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa45b1a8910aa06f8eba36cae6275bfd6">scaled</a> (<a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="classFCRange.html">factor</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aa45b1a8910aa06f8eba36cae6275bfd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает точку, масштабированную относительно начала координат с одинаковым коэффициентом.  <br /></td></tr>
+<tr class="separator:aa45b1a8910aa06f8eba36cae6275bfd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0533c861a92b3a51193c8705fad97e6b" id="r_a0533c861a92b3a51193c8705fad97e6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0533c861a92b3a51193c8705fad97e6b">rotatedX</a> (<a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> angle) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a0533c861a92b3a51193c8705fad97e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает точку, повёрнутую вокруг оси X.  <br /></td></tr>
+<tr class="separator:a0533c861a92b3a51193c8705fad97e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74590364e6b979c73bae58b9f4bfae25" id="r_a74590364e6b979c73bae58b9f4bfae25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74590364e6b979c73bae58b9f4bfae25">rotatedY</a> (<a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> angle) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a74590364e6b979c73bae58b9f4bfae25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает точку, повёрнутую вокруг оси Y.  <br /></td></tr>
+<tr class="separator:a74590364e6b979c73bae58b9f4bfae25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3305d9637ca4ad9c3a762bed114dcf3c" id="r_a3305d9637ca4ad9c3a762bed114dcf3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3305d9637ca4ad9c3a762bed114dcf3c">rotatedZ</a> (<a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> angle) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a3305d9637ca4ad9c3a762bed114dcf3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает точку, повёрнутую вокруг оси Z.  <br /></td></tr>
+<tr class="separator:a3305d9637ca4ad9c3a762bed114dcf3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa490486c9937d57a6a8d2380474a898f" id="r_aa490486c9937d57a6a8d2380474a898f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa490486c9937d57a6a8d2380474a898f">operator==</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aa490486c9937d57a6a8d2380474a898f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения на равенство.  <br /></td></tr>
+<tr class="separator:aa490486c9937d57a6a8d2380474a898f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ce935fd4f635939b72f0e70787d86df" id="r_a0ce935fd4f635939b72f0e70787d86df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ce935fd4f635939b72f0e70787d86df">operator!=</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a0ce935fd4f635939b72f0e70787d86df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения на неравенство.  <br /></td></tr>
+<tr class="separator:a0ce935fd4f635939b72f0e70787d86df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8816116a4a2dc4071d420cc4537fbdea" id="r_a8816116a4a2dc4071d420cc4537fbdea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8816116a4a2dc4071d420cc4537fbdea">operator+</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a8816116a4a2dc4071d420cc4537fbdea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сложения точек (покомпонентное сложение).  <br /></td></tr>
+<tr class="separator:a8816116a4a2dc4071d420cc4537fbdea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eb72ba374974cd6bf1402eeef1ec7ce" id="r_a8eb72ba374974cd6bf1402eeef1ec7ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8eb72ba374974cd6bf1402eeef1ec7ce">operator-</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a8eb72ba374974cd6bf1402eeef1ec7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор вычитания точек (покомпонентное вычитание).  <br /></td></tr>
+<tr class="separator:a8eb72ba374974cd6bf1402eeef1ec7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1da9c4a565d10c725b9de21147a6a0bb" id="r_a1da9c4a565d10c725b9de21147a6a0bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1da9c4a565d10c725b9de21147a6a0bb">operator+=</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a1da9c4a565d10c725b9de21147a6a0bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор составного сложения (+=).  <br /></td></tr>
+<tr class="separator:a1da9c4a565d10c725b9de21147a6a0bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3b7241d5ec9223ac4d7269cdb45a822" id="r_af3b7241d5ec9223ac4d7269cdb45a822"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3b7241d5ec9223ac4d7269cdb45a822">operator-=</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:af3b7241d5ec9223ac4d7269cdb45a822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор составного вычитания (-=).  <br /></td></tr>
+<tr class="separator:af3b7241d5ec9223ac4d7269cdb45a822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaff1a5db4ddd49ed25ce72408dbc96d5" id="r_aaff1a5db4ddd49ed25ce72408dbc96d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaff1a5db4ddd49ed25ce72408dbc96d5">operator-</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aaff1a5db4ddd49ed25ce72408dbc96d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Унарный оператор минус (инверсия всех координат).  <br /></td></tr>
+<tr class="separator:aaff1a5db4ddd49ed25ce72408dbc96d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a398a184946637ceb3110049396de5436" id="r_a398a184946637ceb3110049396de5436"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a398a184946637ceb3110049396de5436">operator*</a> (<a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="classFCRange.html">factor</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a398a184946637ceb3110049396de5436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор умножения на скаляр.  <br /></td></tr>
+<tr class="separator:a398a184946637ceb3110049396de5436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a020d6c9aa41718b083e5ed53634b6d8e" id="r_a020d6c9aa41718b083e5ed53634b6d8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a020d6c9aa41718b083e5ed53634b6d8e">operator/</a> (<a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> <a class="el" href="classFCRange.html">divisor</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a020d6c9aa41718b083e5ed53634b6d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор деления на скаляр.  <br /></td></tr>
+<tr class="separator:a020d6c9aa41718b083e5ed53634b6d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81aeb3e3a040e644d38581b840b74b95" id="r_a81aeb3e3a040e644d38581b840b74b95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81aeb3e3a040e644d38581b840b74b95">dotProduct</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a81aeb3e3a040e644d38581b840b74b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет скалярное (векторное dot) произведение двух точек.  <br /></td></tr>
+<tr class="separator:a81aeb3e3a040e644d38581b840b74b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc9f42dfd97e8fc4eeaaae6c086d5d1" id="r_a6bc9f42dfd97e8fc4eeaaae6c086d5d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bc9f42dfd97e8fc4eeaaae6c086d5d1">crossProduct</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a6bc9f42dfd97e8fc4eeaaae6c086d5d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет векторное (cross) произведение двух точек.  <br /></td></tr>
+<tr class="separator:a6bc9f42dfd97e8fc4eeaaae6c086d5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:acd7a82d8786b346de28715b939001bc8" id="r_acd7a82d8786b346de28715b939001bc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">static</a> <a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd7a82d8786b346de28715b939001bc8">fromSize</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;size) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:acd7a82d8786b346de28715b939001bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт точку из 3D-размера, интерпретируя компоненты размера как координаты.  <br /></td></tr>
+<tr class="separator:acd7a82d8786b346de28715b939001bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для представления трёхмерной точки с координатами (x, y, z). </p>
+<p>Предоставляет функционал для геометрических операций в 3D-пространстве: вычисление расстояний, повороты вокруг осей, смещения, масштабирование. Класс спроектирован как полностью автономный (не наследует 2D-классы) для чёткого разделения ответственности и предотвращения неоднозначностей.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Класс является тривиальным (trivially copyable), что позволяет эффективно использовать его в контейнерах и встраиваемых системах (включая среды с ограничениями памяти). </dd></dl>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="aa2ff29d33579a4032b61f09ea8d4b9eb" name="aa2ff29d33579a4032b61f09ea8d4b9eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2ff29d33579a4032b61f09ea8d4b9eb">&#9670;&#160;</a></span>FC3DPoint() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FC3DPoint::FC3DPoint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>x</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>y</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>z</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор с параметрами. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Координата по оси X. </td></tr>
+    <tr><td class="paramname">y</td><td>Координата по оси Y. </td></tr>
+    <tr><td class="paramname">z</td><td>Координата по оси Z. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5cf373ddcf60f5f726782ab327d5bd98" name="a5cf373ddcf60f5f726782ab327d5bd98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cf373ddcf60f5f726782ab327d5bd98">&#9670;&#160;</a></span>FC3DPoint() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FC3DPoint::FC3DPoint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>z</em><span class="paramdefsep"> = </span><span class="paramdefval">0</span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор преобразования из 2D-точки с добавлением координаты Z. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Исходная 2D-точка (координаты интерпретируются как X и Y). </td></tr>
+    <tr><td class="paramname">z</td><td>Значение координаты по оси Z (по умолчанию 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a6bc9f42dfd97e8fc4eeaaae6c086d5d1" name="a6bc9f42dfd97e8fc4eeaaae6c086d5d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc9f42dfd97e8fc4eeaaae6c086d5d1">&#9670;&#160;</a></span>crossProduct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::crossProduct </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисляет векторное (cross) произведение двух точек. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другая точка (второй вектор). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Векторное произведение: (y1*z2 - z1*y2, z1*x2 - x1*z2, x1*y2 - y1*x2). </dd></dl>
+
+</div>
+</div>
+<a id="aa08c81dc19bc07f84e89795878f5cc24" name="aa08c81dc19bc07f84e89795878f5cc24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08c81dc19bc07f84e89795878f5cc24">&#9670;&#160;</a></span>distanceSquaredTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> FC3DPoint::distanceSquaredTo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисляет квадрат расстояния до другой точки (без извлечения корня). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другая точка. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Квадрат расстояния между точками. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Более производительная альтернатива <a class="el" href="#a32b90b9746df8cd4987fa23abf84fd85" title="Вычисляет евклидово расстояние до другой точки.">distanceTo()</a> для сравнений. </dd></dl>
+
+</div>
+</div>
+<a id="a32b90b9746df8cd4987fa23abf84fd85" name="a32b90b9746df8cd4987fa23abf84fd85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32b90b9746df8cd4987fa23abf84fd85">&#9670;&#160;</a></span>distanceTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> FC3DPoint::distanceTo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисляет евклидово расстояние до другой точки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другая точка. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Расстояние между точками. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Требует C++23 для constexpr-контекста из-за <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">std::hypot</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a81aeb3e3a040e644d38581b840b74b95" name="a81aeb3e3a040e644d38581b840b74b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81aeb3e3a040e644d38581b840b74b95">&#9670;&#160;</a></span>dotProduct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> FC3DPoint::dotProduct </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисляет скалярное (векторное dot) произведение двух точек. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другая точка (второй вектор). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Скалярное произведение: x1*x2 + y1*y2 + z1*z2. </dd></dl>
+
+</div>
+</div>
+<a id="acd7a82d8786b346de28715b939001bc8" name="acd7a82d8786b346de28715b939001bc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd7a82d8786b346de28715b939001bc8">&#9670;&#160;</a></span>fromSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::fromSize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создаёт точку из 3D-размера, интерпретируя компоненты размера как координаты. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>Исходный размер (компоненты интерпретируются как x = width, y = height, z = depth). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новая точка на основе компонентов размера. </dd></dl>
+
+</div>
+</div>
+<a id="a0ce935fd4f635939b72f0e70787d86df" name="a0ce935fd4f635939b72f0e70787d86df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ce935fd4f635939b72f0e70787d86df">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FC3DPoint::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сравнения на неравенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другая точка для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если точки различаются хотя бы по одной координате; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a398a184946637ceb3110049396de5436" name="a398a184946637ceb3110049396de5436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a398a184946637ceb3110049396de5436">&#9670;&#160;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::operator* </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>factor</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор умножения на скаляр. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">factor</td><td>Множитель. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новая точка с координатами, умноженными на скаляр. </dd></dl>
+
+</div>
+</div>
+<a id="a8816116a4a2dc4071d420cc4537fbdea" name="a8816116a4a2dc4071d420cc4537fbdea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8816116a4a2dc4071d420cc4537fbdea">&#9670;&#160;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сложения точек (покомпонентное сложение). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Точка-слагаемое. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новая точка с суммой координат. </dd></dl>
+
+</div>
+</div>
+<a id="a1da9c4a565d10c725b9de21147a6a0bb" name="a1da9c4a565d10c725b9de21147a6a0bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1da9c4a565d10c725b9de21147a6a0bb">&#9670;&#160;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp; FC3DPoint::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор составного сложения (+=). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Точка-слагаемое. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Ссылка на текущий объект после модификации. </dd></dl>
+
+</div>
+</div>
+<a id="aaff1a5db4ddd49ed25ce72408dbc96d5" name="aaff1a5db4ddd49ed25ce72408dbc96d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff1a5db4ddd49ed25ce72408dbc96d5">&#9670;&#160;</a></span>operator-() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::operator- </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Унарный оператор минус (инверсия всех координат). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Новая точка с координатами (-x, -y, -z). </dd></dl>
+
+</div>
+</div>
+<a id="a8eb72ba374974cd6bf1402eeef1ec7ce" name="a8eb72ba374974cd6bf1402eeef1ec7ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eb72ba374974cd6bf1402eeef1ec7ce">&#9670;&#160;</a></span>operator-() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::operator- </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор вычитания точек (покомпонентное вычитание). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Вычитаемая точка. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новая точка с разностью координат. </dd></dl>
+
+</div>
+</div>
+<a id="af3b7241d5ec9223ac4d7269cdb45a822" name="af3b7241d5ec9223ac4d7269cdb45a822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3b7241d5ec9223ac4d7269cdb45a822">&#9670;&#160;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp; FC3DPoint::operator-= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор составного вычитания (-=). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Вычитаемая точка. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Ссылка на текущий объект после модификации. </dd></dl>
+
+</div>
+</div>
+<a id="a020d6c9aa41718b083e5ed53634b6d8e" name="a020d6c9aa41718b083e5ed53634b6d8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a020d6c9aa41718b083e5ed53634b6d8e">&#9670;&#160;</a></span>operator/()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::operator/ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>divisor</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор деления на скаляр. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">divisor</td><td>Делитель (должен быть ненулевым). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новая точка с координатами, разделёнными на скаляр. </dd></dl>
+
+</div>
+</div>
+<a id="aa490486c9937d57a6a8d2380474a898f" name="aa490486c9937d57a6a8d2380474a898f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa490486c9937d57a6a8d2380474a898f">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FC3DPoint::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сравнения на равенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другая точка для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если все три координаты совпадают; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a0533c861a92b3a51193c8705fad97e6b" name="a0533c861a92b3a51193c8705fad97e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0533c861a92b3a51193c8705fad97e6b">&#9670;&#160;</a></span>rotatedX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::rotatedX </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>angle</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает точку, повёрнутую вокруг оси X. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">angle</td><td>Угол поворота в радианах (положительное значение — против часовой стрелки при взгляде с +X). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новая точка после поворота. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Требует C++23 для constexpr-контекста из-за <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">std::cos</a>/std::sin. </dd></dl>
+
+</div>
+</div>
+<a id="a74590364e6b979c73bae58b9f4bfae25" name="a74590364e6b979c73bae58b9f4bfae25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74590364e6b979c73bae58b9f4bfae25">&#9670;&#160;</a></span>rotatedY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::rotatedY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>angle</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает точку, повёрнутую вокруг оси Y. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">angle</td><td>Угол поворота в радианах (положительное значение — против часовой стрелки при взгляде с +Y). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новая точка после поворота. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Требует C++23 для constexpr-контекста из-за <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">std::cos</a>/std::sin. </dd></dl>
+
+</div>
+</div>
+<a id="a3305d9637ca4ad9c3a762bed114dcf3c" name="a3305d9637ca4ad9c3a762bed114dcf3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3305d9637ca4ad9c3a762bed114dcf3c">&#9670;&#160;</a></span>rotatedZ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::rotatedZ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>angle</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает точку, повёрнутую вокруг оси Z. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">angle</td><td>Угол поворота в радианах (положительное значение — против часовой стрелки при взгляде с +Z). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новая точка после поворота. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Требует C++23 для constexpr-контекста из-за <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">std::cos</a>/std::sin. </dd></dl>
+
+</div>
+</div>
+<a id="aa45b1a8910aa06f8eba36cae6275bfd6" name="aa45b1a8910aa06f8eba36cae6275bfd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa45b1a8910aa06f8eba36cae6275bfd6">&#9670;&#160;</a></span>scaled() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::scaled </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>factor</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает точку, масштабированную относительно начала координат с одинаковым коэффициентом. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">factor</td><td>Единый коэффициент масштабирования для всех осей. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новая точка с умноженными координатами. </dd></dl>
+
+</div>
+</div>
+<a id="ae65262f3b89e67a723604c96f483224c" name="ae65262f3b89e67a723604c96f483224c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae65262f3b89e67a723604c96f483224c">&#9670;&#160;</a></span>scaled() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::scaled </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>scaleX</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>scaleY</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>scaleZ</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает точку, масштабированную относительно начала координат. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scaleX</td><td>Коэффициент масштабирования по оси X. </td></tr>
+    <tr><td class="paramname">scaleY</td><td>Коэффициент масштабирования по оси Y. </td></tr>
+    <tr><td class="paramname">scaleZ</td><td>Коэффициент масштабирования по оси Z. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новая точка с умноженными координатами. </dd></dl>
+
+</div>
+</div>
+<a id="a6995f5d862165a55fb22d8093b202a32" name="a6995f5d862165a55fb22d8093b202a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6995f5d862165a55fb22d8093b202a32">&#9670;&#160;</a></span>setX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FC3DPoint::setX </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое значение координаты X. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Новое значение координаты по оси X. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaf66b68869646f1a2a362b54147540bf" name="aaf66b68869646f1a2a362b54147540bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf66b68869646f1a2a362b54147540bf">&#9670;&#160;</a></span>setXYZ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FC3DPoint::setXYZ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>x</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>y</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>z</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает все три координаты одновременно. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Новое значение координаты по оси X. </td></tr>
+    <tr><td class="paramname">y</td><td>Новое значение координаты по оси Y. </td></tr>
+    <tr><td class="paramname">z</td><td>Новое значение координаты по оси Z. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5402059fc4b67585cd4b5e7ff66f9b5a" name="a5402059fc4b67585cd4b5e7ff66f9b5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5402059fc4b67585cd4b5e7ff66f9b5a">&#9670;&#160;</a></span>setY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FC3DPoint::setY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое значение координаты Y. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>Новое значение координаты по оси Y. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa65715aaa4658035802a48497225119b" name="aa65715aaa4658035802a48497225119b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa65715aaa4658035802a48497225119b">&#9670;&#160;</a></span>setZ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FC3DPoint::setZ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>z</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое значение координаты Z. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">z</td><td>Новое значение координаты по оси Z. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae64f80c7ce06f14f6d53069aed400aae" name="ae64f80c7ce06f14f6d53069aed400aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae64f80c7ce06f14f6d53069aed400aae">&#9670;&#160;</a></span>to2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> FC3DPoint::to2D </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проекция точки на XY-плоскость (координата Z игнорируется). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>2D-точка с координатами (x, y). </dd></dl>
+
+</div>
+</div>
+<a id="a59e934cc5b7bdb7a65e395a9e71cdbcd" name="a59e934cc5b7bdb7a65e395a9e71cdbcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59e934cc5b7bdb7a65e395a9e71cdbcd">&#9670;&#160;</a></span>toSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DSize.html">FC3DSize</a> FC3DPoint::toSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Преобразует точку в 3D-размер, интерпретируя координаты как компоненты размера. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Объект размера, где width = x, height = y, depth = z. </dd></dl>
+
+</div>
+</div>
+<a id="a93f18b12c6589577b5f2907d32f06ce0" name="a93f18b12c6589577b5f2907d32f06ce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93f18b12c6589577b5f2907d32f06ce0">&#9670;&#160;</a></span>translated() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::translated </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>dx</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>dy</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a></td>          <td class="paramname"><span class="paramname"><em>dz</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает точку, смещённую на заданный вектор (dx, dy, dz). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dx</td><td>Смещение по оси X. </td></tr>
+    <tr><td class="paramname">dy</td><td>Смещение по оси Y. </td></tr>
+    <tr><td class="paramname">dz</td><td>Смещение по оси Z. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новая точка с прибавленными координатами. </dd></dl>
+
+</div>
+</div>
+<a id="a1e592f65becb23a546b385282a330d6e" name="a1e592f65becb23a546b385282a330d6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e592f65becb23a546b385282a330d6e">&#9670;&#160;</a></span>translated() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> FC3DPoint::translated </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>delta</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает точку, смещённую на вектор, заданный другой точкой. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delta</td><td>Вектор смещения (координаты интерпретируются как dx, dy, dz). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новая точка с прибавленными координатами. </dd></dl>
+
+</div>
+</div>
+<a id="a3c7a22a3d900b9394356156be62fbf8a" name="a3c7a22a3d900b9394356156be62fbf8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c7a22a3d900b9394356156be62fbf8a">&#9670;&#160;</a></span>x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> FC3DPoint::x </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает координату X точки. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение координаты по оси X. </dd></dl>
+
+</div>
+</div>
+<a id="a0cf12881c4be4f39fd094b70dc5ce04f" name="a0cf12881c4be4f39fd094b70dc5ce04f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cf12881c4be4f39fd094b70dc5ce04f">&#9670;&#160;</a></span>y()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> FC3DPoint::y </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает координату Y точки. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение координаты по оси Y. </dd></dl>
+
+</div>
+</div>
+<a id="a357a24ae8681669e8d6d9e2affdfd1fc" name="a357a24ae8681669e8d6d9e2affdfd1fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a357a24ae8681669e8d6d9e2affdfd1fc">&#9670;&#160;</a></span>z()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a5290239916990b70308aef6dd75f262e">_type</a> FC3DPoint::z </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает координату Z точки. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение координаты по оси Z. </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>FCTypes/FC3DArea/FC3DPoint/<a class="el" href="FC3DPoint_8h_source.html">FC3DPoint.h</a></li>
+<li>FCTypes/FC3DArea/FC3DPoint/<b>FC3DPoint.cpp</b></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

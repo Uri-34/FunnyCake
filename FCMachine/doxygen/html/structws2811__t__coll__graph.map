@@ -1,0 +1,11 @@
+<map id="ws2811_t" name="ws2811_t">
+<area shape="rect" id="Node000001" title=" " alt="" coords="153,181,237,207"/>
+<area shape="rect" id="Node000002" href="$structws2811__device.html" title=" " alt="" coords="9,93,132,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,125,143,155,178,179,175,183,140,160,96,129"/>
+<area shape="rect" id="Node000003" href="$structvideocore__mbox.html" title=" " alt="" coords="5,5,136,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="73,45,73,93,68,93,68,45"/>
+<area shape="rect" id="Node000004" href="$structrpi__hw__t.html" title=" " alt="" coords="156,93,233,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="197,133,197,181,192,181,192,133"/>
+<area shape="rect" id="Node000005" href="$structws2811__channel__t.html" title=" " alt="" coords="258,93,401,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="301,128,214,183,212,179,298,124"/>
+</map>

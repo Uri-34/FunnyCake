@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Класс FCDisplayState</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classFCDisplayState-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс FCDisplayState</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Граф наследования:FCDisplayState:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFCDisplayState__inherit__graph.png" border="0" usemap="#aFCDisplayState_inherit__map" alt="Inheritance graph"/></div>
+<map name="aFCDisplayState_inherit__map" id="aFCDisplayState_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,79,128,104"/>
+<area shape="rect" href="structCondition.html" title=" " alt="" coords="25,5,109,31"/>
+<area shape="poly" title=" " alt="" coords="69,44,69,79,64,79,64,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса FCDisplayState:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFCDisplayState__coll__graph.png" border="0" usemap="#aFCDisplayState_coll__map" alt="Collaboration graph"/></div>
+<map name="aFCDisplayState_coll__map" id="aFCDisplayState_coll__map">
+<area shape="rect" title=" " alt="" coords="5,79,128,104"/>
+<area shape="rect" href="structCondition.html" title=" " alt="" coords="25,5,109,31"/>
+<area shape="poly" title=" " alt="" coords="69,44,69,79,64,79,64,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a70952161961b99e6cc80f8b3bdefdf28" id="r_a70952161961b99e6cc80f8b3bdefdf28"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28">Panel</a> { <a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28aba794dec32e32b3c2c72cb77ac865d2d">Main</a> = 0
+, <a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28a004e1bab5693f14c9d7fafb9856ae022">Statistics</a> = 1
+, <a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28a4e8fce15a9887823ccb8a20395eb8bfc">ScreenSaver</a> = 2
+ }</td></tr>
+<tr class="memdesc:a70952161961b99e6cc80f8b3bdefdf28"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; рабочие панели  <a href="#a70952161961b99e6cc80f8b3bdefdf28">Подробнее...</a><br /></td></tr>
+<tr class="separator:a70952161961b99e6cc80f8b3bdefdf28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aded2c08fe4eeba489d8140a49bb1f83c" id="r_aded2c08fe4eeba489d8140a49bb1f83c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aded2c08fe4eeba489d8140a49bb1f83c">Visibility</a> { <a class="el" href="#aded2c08fe4eeba489d8140a49bb1f83ca64d669f20dd2c0e71e67a36f31c007f1">Show</a>
+, <a class="el" href="#aded2c08fe4eeba489d8140a49bb1f83ca48ae5756c51ea46394b37177290aec3c">Hide</a>
+ }</td></tr>
+<tr class="separator:aded2c08fe4eeba489d8140a49bb1f83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ac608dbaf35c18748f18df0365382fca1" id="r_ac608dbaf35c18748f18df0365382fca1"><td class="memItemLeft" align="right" valign="top"><a id="ac608dbaf35c18748f18df0365382fca1" name="ac608dbaf35c18748f18df0365382fca1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>FCDisplayState</b> (const <a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28">Panel</a> &amp;activePanel=<a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28aba794dec32e32b3c2c72cb77ac865d2d">Main</a>, const <a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28">Panel</a> &amp;previousPanel=<a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28aba794dec32e32b3c2c72cb77ac865d2d">Main</a>, const <a class="el" href="#aded2c08fe4eeba489d8140a49bb1f83c">Visibility</a> &amp;visibility=<a class="el" href="#aded2c08fe4eeba489d8140a49bb1f83ca48ae5756c51ea46394b37177290aec3c">Hide</a>)</td></tr>
+<tr class="separator:ac608dbaf35c18748f18df0365382fca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a928cc71f142274c380b9ce9f9d16534c" id="r_a928cc71f142274c380b9ce9f9d16534c"><td class="memItemLeft" align="right" valign="top"><a id="a928cc71f142274c380b9ce9f9d16534c" name="a928cc71f142274c380b9ce9f9d16534c"></a>
+const <a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28">Panel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const <a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28">Panel</a> &amp;panel)</td></tr>
+<tr class="separator:a928cc71f142274c380b9ce9f9d16534c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3801f7ffe6804ead506a751b4d335b9e" id="r_a3801f7ffe6804ead506a751b4d335b9e"><td class="memItemLeft" align="right" valign="top"><a id="a3801f7ffe6804ead506a751b4d335b9e" name="a3801f7ffe6804ead506a751b4d335b9e"></a>
+<a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28">Panel</a>&#160;</td><td class="memItemRight" valign="bottom"><b>active</b> () const</td></tr>
+<tr class="separator:a3801f7ffe6804ead506a751b4d335b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac67d4ee7b89952b4cafba7ece6ee0fa3" id="r_ac67d4ee7b89952b4cafba7ece6ee0fa3"><td class="memItemLeft" align="right" valign="top"><a id="ac67d4ee7b89952b4cafba7ece6ee0fa3" name="ac67d4ee7b89952b4cafba7ece6ee0fa3"></a>
+<a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28">Panel</a>&#160;</td><td class="memItemRight" valign="bottom"><b>previous</b> () const</td></tr>
+<tr class="separator:ac67d4ee7b89952b4cafba7ece6ee0fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a3fc870f3b27e6154435238560a4c5c" id="r_a4a3fc870f3b27e6154435238560a4c5c"><td class="memItemLeft" align="right" valign="top"><a id="a4a3fc870f3b27e6154435238560a4c5c" name="a4a3fc870f3b27e6154435238560a4c5c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const <a class="el" href="#aded2c08fe4eeba489d8140a49bb1f83c">Visibility</a> &amp;visibility)</td></tr>
+<tr class="separator:a4a3fc870f3b27e6154435238560a4c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af343446dba0f62c9039c7bb413493fc2" id="r_af343446dba0f62c9039c7bb413493fc2"><td class="memItemLeft" align="right" valign="top"><a id="af343446dba0f62c9039c7bb413493fc2" name="af343446dba0f62c9039c7bb413493fc2"></a>
+const <a class="el" href="#aded2c08fe4eeba489d8140a49bb1f83c">Visibility</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>visibility</b> () const</td></tr>
+<tr class="separator:af343446dba0f62c9039c7bb413493fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e1417c29c9d2711ecb61c5b9ab6d7e" id="r_a59e1417c29c9d2711ecb61c5b9ab6d7e"><td class="memItemLeft" align="right" valign="top"><a id="a59e1417c29c9d2711ecb61c5b9ab6d7e" name="a59e1417c29c9d2711ecb61c5b9ab6d7e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const <a class="el" href="classFCDisplayState.html">FCDisplayState</a> &amp;state)</td></tr>
+<tr class="separator:a59e1417c29c9d2711ecb61c5b9ab6d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75c50dca92e0c37303322bb2b37b48d4" id="r_a75c50dca92e0c37303322bb2b37b48d4"><td class="memItemLeft" align="right" valign="top"><a id="a75c50dca92e0c37303322bb2b37b48d4" name="a75c50dca92e0c37303322bb2b37b48d4"></a>
+const <a class="el" href="classFCDisplayState.html">FCDisplayState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>state</b> () const</td></tr>
+<tr class="separator:a75c50dca92e0c37303322bb2b37b48d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d685470879b4ea4e12096423cb71823" id="r_a7d685470879b4ea4e12096423cb71823"><td class="memItemLeft" align="right" valign="top"><a id="a7d685470879b4ea4e12096423cb71823" name="a7d685470879b4ea4e12096423cb71823"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (const <a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28">Panel</a> &amp;panel)</td></tr>
+<tr class="separator:a7d685470879b4ea4e12096423cb71823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32653d53c8ae4b4c5949494008105387" id="r_a32653d53c8ae4b4c5949494008105387"><td class="memItemLeft" align="right" valign="top"><a id="a32653d53c8ae4b4c5949494008105387" name="a32653d53c8ae4b4c5949494008105387"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (const <a class="el" href="#aded2c08fe4eeba489d8140a49bb1f83c">Visibility</a> &amp;visibility) const</td></tr>
+<tr class="separator:a32653d53c8ae4b4c5949494008105387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21867b04320adda54eea8d03a7e160ac" id="r_a21867b04320adda54eea8d03a7e160ac"><td class="memItemLeft" align="right" valign="top"><a id="a21867b04320adda54eea8d03a7e160ac" name="a21867b04320adda54eea8d03a7e160ac"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (const <a class="el" href="classFCDisplayState.html">FCDisplayState</a> &amp;state)</td></tr>
+<tr class="separator:a21867b04320adda54eea8d03a7e160ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9edf37fd3df950b87b852df39120571f" id="r_a9edf37fd3df950b87b852df39120571f"><td class="memItemLeft" align="right" valign="top"><a id="a9edf37fd3df950b87b852df39120571f" name="a9edf37fd3df950b87b852df39120571f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classFCDisplayState.html">FCDisplayState</a> &amp;state)</td></tr>
+<tr class="separator:a9edf37fd3df950b87b852df39120571f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca78cc7c7e549ffd578ac018382871df" id="r_aca78cc7c7e549ffd578ac018382871df"><td class="memItemLeft" align="right" valign="top"><a id="aca78cc7c7e549ffd578ac018382871df" name="aca78cc7c7e549ffd578ac018382871df"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classFCDisplayState.html">FCDisplayState</a> &amp;state)</td></tr>
+<tr class="separator:aca78cc7c7e549ffd578ac018382871df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a804949ea433bca08350c8f36c48691a9" id="r_a804949ea433bca08350c8f36c48691a9"><td class="memItemLeft" align="right" valign="top"><a id="a804949ea433bca08350c8f36c48691a9" name="a804949ea433bca08350c8f36c48691a9"></a>
+<a class="el" href="classFCDisplayState.html">FCDisplayState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classFCDisplayState.html">FCDisplayState</a> &amp;state)</td></tr>
+<tr class="separator:a804949ea433bca08350c8f36c48691a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2046ad89f50d7e2865dc304daf4d5778" id="r_a2046ad89f50d7e2865dc304daf4d5778"><td class="memItemLeft" align="right" valign="top"><a id="a2046ad89f50d7e2865dc304daf4d5778" name="a2046ad89f50d7e2865dc304daf4d5778"></a>
+const <a class="el" href="classFCDisplayState.html">FCDisplayState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28">Panel</a> &amp;panel)</td></tr>
+<tr class="separator:a2046ad89f50d7e2865dc304daf4d5778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e671fd4227488541ad7b5cec55953d4" id="r_a8e671fd4227488541ad7b5cec55953d4"><td class="memItemLeft" align="right" valign="top"><a id="a8e671fd4227488541ad7b5cec55953d4" name="a8e671fd4227488541ad7b5cec55953d4"></a>
+const <a class="el" href="classFCDisplayState.html">FCDisplayState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="#aded2c08fe4eeba489d8140a49bb1f83c">Visibility</a> &amp;visibility)</td></tr>
+<tr class="separator:a8e671fd4227488541ad7b5cec55953d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7e69e0ddb91bee763afdb6953f58b05" id="r_ac7e69e0ddb91bee763afdb6953f58b05"><td class="memItemLeft" align="right" valign="top"><a id="ac7e69e0ddb91bee763afdb6953f58b05" name="ac7e69e0ddb91bee763afdb6953f58b05"></a>
+const <a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28">Panel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>activePanel</b> () const</td></tr>
+<tr class="separator:ac7e69e0ddb91bee763afdb6953f58b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb085319ea0e8164771541b68ee0566d" id="r_afb085319ea0e8164771541b68ee0566d"><td class="memItemLeft" align="right" valign="top"><a id="afb085319ea0e8164771541b68ee0566d" name="afb085319ea0e8164771541b68ee0566d"></a>
+const <a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28">Panel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>previousPanel</b> () const</td></tr>
+<tr class="separator:afb085319ea0e8164771541b68ee0566d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_structCondition"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_structCondition')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="structCondition.html">Condition</a></td></tr>
+<tr class="memitem:a0745f2afc3299636fa54ccb941ad9cac inherit pub_methods_structCondition" id="r_a0745f2afc3299636fa54ccb941ad9cac"><td class="memItemLeft" align="right" valign="top">
+constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>Condition</b> (ReadyState ready=ReadyState::NotReady, PlayState play=PlayState::Stop, ChangedState changed=ChangedState::NotChanged, ErrorType error=ErrorType::NoError) noexcept</td></tr>
+<tr class="separator:a0745f2afc3299636fa54ccb941ad9cac inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6d2cbfd466d4f6da7d5250da4203cf1 inherit pub_methods_structCondition" id="r_ae6d2cbfd466d4f6da7d5250da4203cf1"><td class="memItemLeft" align="right" valign="top">
+constexpr ReadyState&#160;</td><td class="memItemRight" valign="bottom"><b>ready</b> () const</td></tr>
+<tr class="separator:ae6d2cbfd466d4f6da7d5250da4203cf1 inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a904b2b3298ad78af48630589bcdc1b00 inherit pub_methods_structCondition" id="r_a904b2b3298ad78af48630589bcdc1b00"><td class="memItemLeft" align="right" valign="top">
+constexpr PlayState&#160;</td><td class="memItemRight" valign="bottom"><b>play</b> () const</td></tr>
+<tr class="separator:a904b2b3298ad78af48630589bcdc1b00 inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a495fbe5579b06db505332be6855c4ab1 inherit pub_methods_structCondition" id="r_a495fbe5579b06db505332be6855c4ab1"><td class="memItemLeft" align="right" valign="top">
+constexpr ChangedState&#160;</td><td class="memItemRight" valign="bottom"><b>changed</b> () const</td></tr>
+<tr class="separator:a495fbe5579b06db505332be6855c4ab1 inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeb62ac232a91fb973f3648031865b95 inherit pub_methods_structCondition" id="r_aaeb62ac232a91fb973f3648031865b95"><td class="memItemLeft" align="right" valign="top">
+constexpr ErrorType&#160;</td><td class="memItemRight" valign="bottom"><b>error</b> () const</td></tr>
+<tr class="separator:aaeb62ac232a91fb973f3648031865b95 inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b3e29f5800d5b46aca7abb63057a46f inherit pub_methods_structCondition" id="r_a2b3e29f5800d5b46aca7abb63057a46f"><td class="memItemLeft" align="right" valign="top">
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (ReadyState value)</td></tr>
+<tr class="separator:a2b3e29f5800d5b46aca7abb63057a46f inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a362474f0965a7994ab90cebd5139a043 inherit pub_methods_structCondition" id="r_a362474f0965a7994ab90cebd5139a043"><td class="memItemLeft" align="right" valign="top">
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (PlayState value)</td></tr>
+<tr class="separator:a362474f0965a7994ab90cebd5139a043 inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc1b64197db4bf5e7318e7c236d5522 inherit pub_methods_structCondition" id="r_abbc1b64197db4bf5e7318e7c236d5522"><td class="memItemLeft" align="right" valign="top">
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (ChangedState value)</td></tr>
+<tr class="separator:abbc1b64197db4bf5e7318e7c236d5522 inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab564a6b61e081123f28e6854038f9623 inherit pub_methods_structCondition" id="r_ab564a6b61e081123f28e6854038f9623"><td class="memItemLeft" align="right" valign="top">
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (ErrorType value)</td></tr>
+<tr class="separator:ab564a6b61e081123f28e6854038f9623 inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84cbf51475cf26918ad80b1d2cb0bab0 inherit pub_methods_structCondition" id="r_a84cbf51475cf26918ad80b1d2cb0bab0"><td class="memItemLeft" align="right" valign="top">
+constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>raw</b> () const</td></tr>
+<tr class="separator:a84cbf51475cf26918ad80b1d2cb0bab0 inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e34354436859f3029758b235489bf71 inherit pub_methods_structCondition" id="r_a4e34354436859f3029758b235489bf71"><td class="memItemLeft" align="right" valign="top">
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (const <a class="el" href="structCondition.html">Condition</a> &amp;other) const</td></tr>
+<tr class="separator:a4e34354436859f3029758b235489bf71 inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2799e2d00a7d4630710dd2e7a85736f2 inherit pub_methods_structCondition" id="r_a2799e2d00a7d4630710dd2e7a85736f2"><td class="memItemLeft" align="right" valign="top">
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (const ReadyState &amp;value) const</td></tr>
+<tr class="separator:a2799e2d00a7d4630710dd2e7a85736f2 inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a267f2f51ba6cb9c16a79ec7d666dd1af inherit pub_methods_structCondition" id="r_a267f2f51ba6cb9c16a79ec7d666dd1af"><td class="memItemLeft" align="right" valign="top">
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (const PlayState value) const</td></tr>
+<tr class="separator:a267f2f51ba6cb9c16a79ec7d666dd1af inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21be08985ece08b48b517efb61819b6d inherit pub_methods_structCondition" id="r_a21be08985ece08b48b517efb61819b6d"><td class="memItemLeft" align="right" valign="top">
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (const ChangedState value) const</td></tr>
+<tr class="separator:a21be08985ece08b48b517efb61819b6d inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40fc86af72f6596ab76fa4255c408c91 inherit pub_methods_structCondition" id="r_a40fc86af72f6596ab76fa4255c408c91"><td class="memItemLeft" align="right" valign="top">
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (const ErrorType value) const</td></tr>
+<tr class="separator:a40fc86af72f6596ab76fa4255c408c91 inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acefb785f4612f06c048632be168ea818 inherit pub_methods_structCondition" id="r_acefb785f4612f06c048632be168ea818"><td class="memItemLeft" align="right" valign="top">
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="structCondition.html">Condition</a> &amp;other) const</td></tr>
+<tr class="separator:acefb785f4612f06c048632be168ea818 inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aded756f8cd5fe8fe0b85ea1b924967ce inherit pub_methods_structCondition" id="r_aded756f8cd5fe8fe0b85ea1b924967ce"><td class="memItemLeft" align="right" valign="top">
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="structCondition.html">Condition</a> &amp;other) const</td></tr>
+<tr class="separator:aded756f8cd5fe8fe0b85ea1b924967ce inherit pub_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pub_static_methods_structCondition"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_structCondition')"><img src="closed.png" alt="-"/>&#160;Открытые статические члены унаследованные от <a class="el" href="structCondition.html">Condition</a></td></tr>
+<tr class="memitem:ac441e7876fc113f3c31a5d362c4bbcce inherit pub_static_methods_structCondition" id="r_ac441e7876fc113f3c31a5d362c4bbcce"><td class="memItemLeft" align="right" valign="top">
+static constexpr <a class="el" href="structCondition.html">Condition</a>&#160;</td><td class="memItemRight" valign="bottom"><b>fromRaw</b> (uint16_t value)</td></tr>
+<tr class="separator:ac441e7876fc113f3c31a5d362c4bbcce inherit pub_static_methods_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_structCondition"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_structCondition')"><img src="closed.png" alt="-"/>&#160;Открытые атрибуты унаследованные от <a class="el" href="structCondition.html">Condition</a></td></tr>
+<tr class="memitem:a062a8a4faae25e1f41795a2779f08cb4 inherit pub_attribs_structCondition" id="r_a062a8a4faae25e1f41795a2779f08cb4"><td class="memItemLeft" align="right" valign="top">
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>_data</b> = 0</td></tr>
+<tr class="separator:a062a8a4faae25e1f41795a2779f08cb4 inherit pub_attribs_structCondition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Перечисления</h2>
+<a id="a70952161961b99e6cc80f8b3bdefdf28" name="a70952161961b99e6cc80f8b3bdefdf28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70952161961b99e6cc80f8b3bdefdf28">&#9670;&#160;</a></span>Panel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a70952161961b99e6cc80f8b3bdefdf28">FCDisplayState::Panel</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&lt; рабочие панели </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a70952161961b99e6cc80f8b3bdefdf28aba794dec32e32b3c2c72cb77ac865d2d" name="a70952161961b99e6cc80f8b3bdefdf28aba794dec32e32b3c2c72cb77ac865d2d"></a>Main&#160;</td><td class="fielddoc"><p>основная панель управления линией плоттеров </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a70952161961b99e6cc80f8b3bdefdf28a004e1bab5693f14c9d7fafb9856ae022" name="a70952161961b99e6cc80f8b3bdefdf28a004e1bab5693f14c9d7fafb9856ae022"></a>Statistics&#160;</td><td class="fielddoc"><p>панель статистики работы линии плоттеров </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a70952161961b99e6cc80f8b3bdefdf28a4e8fce15a9887823ccb8a20395eb8bfc" name="a70952161961b99e6cc80f8b3bdefdf28a4e8fce15a9887823ccb8a20395eb8bfc"></a>ScreenSaver&#160;</td><td class="fielddoc"><p>панель хранителя экрана </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="aded2c08fe4eeba489d8140a49bb1f83c" name="aded2c08fe4eeba489d8140a49bb1f83c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aded2c08fe4eeba489d8140a49bb1f83c">&#9670;&#160;</a></span>Visibility</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#aded2c08fe4eeba489d8140a49bb1f83c">FCDisplayState::Visibility</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="aded2c08fe4eeba489d8140a49bb1f83ca64d669f20dd2c0e71e67a36f31c007f1" name="aded2c08fe4eeba489d8140a49bb1f83ca64d669f20dd2c0e71e67a36f31c007f1"></a>Show&#160;</td><td class="fielddoc"><p>видимый </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aded2c08fe4eeba489d8140a49bb1f83ca48ae5756c51ea46394b37177290aec3c" name="aded2c08fe4eeba489d8140a49bb1f83ca48ae5756c51ea46394b37177290aec3c"></a>Hide&#160;</td><td class="fielddoc"><p>скрытый </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>FCDisplay/<a class="el" href="FCDisplay_8h_source.html">FCDisplay.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Класс FCPlottingArea</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classFCPlottingArea-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс FCPlottingArea</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Область построения для 3D-плоттера: общие размеры + сетка ячеек.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FCPlottingArea_8h_source.html">FCPlottingArea.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a4cbd4128a2462aa5e6a78ed4c10cfdeb" id="r_a4cbd4128a2462aa5e6a78ed4c10cfdeb"><td class="memItemLeft" align="right" valign="top"><a id="a4cbd4128a2462aa5e6a78ed4c10cfdeb" name="a4cbd4128a2462aa5e6a78ed4c10cfdeb"></a>
+constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>FCPlottingArea</b> () noexcept=default</td></tr>
+<tr class="memdesc:a4cbd4128a2462aa5e6a78ed4c10cfdeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор по умолчанию: 0×0×0 мм, 0×0×0 ячеек. <br /></td></tr>
+<tr class="separator:a4cbd4128a2462aa5e6a78ed4c10cfdeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bcedc5fb3098bc45173237c718df66b" id="r_a0bcedc5fb3098bc45173237c718df66b"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bcedc5fb3098bc45173237c718df66b">FCPlottingArea</a> (const <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;totalSize, const GridSize &amp;gridSize) noexcept</td></tr>
+<tr class="memdesc:a0bcedc5fb3098bc45173237c718df66b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор из общих размеров и количества ячеек.  <br /></td></tr>
+<tr class="separator:a0bcedc5fb3098bc45173237c718df66b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e7513f2ca54f348d1432f80bc61f096" id="r_a7e7513f2ca54f348d1432f80bc61f096"><td class="memItemLeft" align="right" valign="top"><a id="a7e7513f2ca54f348d1432f80bc61f096" name="a7e7513f2ca54f348d1432f80bc61f096"></a>
+constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>FCPlottingArea</b> (const <a class="el" href="classFCPlottingArea.html">FCPlottingArea</a> &amp;) noexcept=default</td></tr>
+<tr class="separator:a7e7513f2ca54f348d1432f80bc61f096"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a437f4ef0c0aba4b597532352429194e9" id="r_a437f4ef0c0aba4b597532352429194e9"><td class="memItemLeft" align="right" valign="top"><a id="a437f4ef0c0aba4b597532352429194e9" name="a437f4ef0c0aba4b597532352429194e9"></a>
+constexpr <a class="el" href="classFCPlottingArea.html">FCPlottingArea</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classFCPlottingArea.html">FCPlottingArea</a> &amp;) noexcept=default</td></tr>
+<tr class="separator:a437f4ef0c0aba4b597532352429194e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45919127e91101112f6d598307248fda" id="r_a45919127e91101112f6d598307248fda"><td class="memItemLeft" align="right" valign="top"><a id="a45919127e91101112f6d598307248fda" name="a45919127e91101112f6d598307248fda"></a>
+constexpr const <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>totalSize</b> () const noexcept</td></tr>
+<tr class="separator:a45919127e91101112f6d598307248fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51e9704a06277127f8c17b85a98177c2" id="r_a51e9704a06277127f8c17b85a98177c2"><td class="memItemLeft" align="right" valign="top"><a id="a51e9704a06277127f8c17b85a98177c2" name="a51e9704a06277127f8c17b85a98177c2"></a>
+constexpr const GridSize &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>gridSize</b> () const noexcept</td></tr>
+<tr class="separator:a51e9704a06277127f8c17b85a98177c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8fcf58e03ff38af07686a08948e3d07" id="r_af8fcf58e03ff38af07686a08948e3d07"><td class="memItemLeft" align="right" valign="top"><a id="af8fcf58e03ff38af07686a08948e3d07" name="af8fcf58e03ff38af07686a08948e3d07"></a>
+constexpr qreal&#160;</td><td class="memItemRight" valign="bottom"><b>width</b> () const noexcept</td></tr>
+<tr class="separator:af8fcf58e03ff38af07686a08948e3d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0bf59f44e708fd3116020e33e6a512b" id="r_ac0bf59f44e708fd3116020e33e6a512b"><td class="memItemLeft" align="right" valign="top"><a id="ac0bf59f44e708fd3116020e33e6a512b" name="ac0bf59f44e708fd3116020e33e6a512b"></a>
+constexpr qreal&#160;</td><td class="memItemRight" valign="bottom"><b>height</b> () const noexcept</td></tr>
+<tr class="separator:ac0bf59f44e708fd3116020e33e6a512b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5717a57f3267e9c21ca266b82574df52" id="r_a5717a57f3267e9c21ca266b82574df52"><td class="memItemLeft" align="right" valign="top"><a id="a5717a57f3267e9c21ca266b82574df52" name="a5717a57f3267e9c21ca266b82574df52"></a>
+constexpr qreal&#160;</td><td class="memItemRight" valign="bottom"><b>depth</b> () const noexcept</td></tr>
+<tr class="separator:a5717a57f3267e9c21ca266b82574df52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44221bc59742451996032caad1606941" id="r_a44221bc59742451996032caad1606941"><td class="memItemLeft" align="right" valign="top"><a id="a44221bc59742451996032caad1606941" name="a44221bc59742451996032caad1606941"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>cellCountX</b> () const noexcept</td></tr>
+<tr class="separator:a44221bc59742451996032caad1606941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc52af858c120b2b0f39fea763b690a" id="r_affc52af858c120b2b0f39fea763b690a"><td class="memItemLeft" align="right" valign="top"><a id="affc52af858c120b2b0f39fea763b690a" name="affc52af858c120b2b0f39fea763b690a"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>cellCountY</b> () const noexcept</td></tr>
+<tr class="separator:affc52af858c120b2b0f39fea763b690a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a760f795f486c21a9d712bfcf5bcf068f" id="r_a760f795f486c21a9d712bfcf5bcf068f"><td class="memItemLeft" align="right" valign="top"><a id="a760f795f486c21a9d712bfcf5bcf068f" name="a760f795f486c21a9d712bfcf5bcf068f"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>cellCountZ</b> () const noexcept</td></tr>
+<tr class="separator:a760f795f486c21a9d712bfcf5bcf068f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a051f2da235e6a86776923a8c72521b78" id="r_a051f2da235e6a86776923a8c72521b78"><td class="memItemLeft" align="right" valign="top"><a id="a051f2da235e6a86776923a8c72521b78" name="a051f2da235e6a86776923a8c72521b78"></a>
+constexpr long long&#160;</td><td class="memItemRight" valign="bottom"><b>totalCellCount</b> () const noexcept</td></tr>
+<tr class="memdesc:a051f2da235e6a86776923a8c72521b78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Общее количество ячеек. <br /></td></tr>
+<tr class="separator:a051f2da235e6a86776923a8c72521b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1bd9dd760005ddf34f99d89ca97b4c9" id="r_ab1bd9dd760005ddf34f99d89ca97b4c9"><td class="memItemLeft" align="right" valign="top"><a id="ab1bd9dd760005ddf34f99d89ca97b4c9" name="ab1bd9dd760005ddf34f99d89ca97b4c9"></a>
+constexpr <a class="el" href="classFC3DSize.html">FC3DSize</a>&#160;</td><td class="memItemRight" valign="bottom"><b>cellSize</b> () const noexcept</td></tr>
+<tr class="memdesc:ab1bd9dd760005ddf34f99d89ca97b4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер одной ячейки. <br /></td></tr>
+<tr class="separator:ab1bd9dd760005ddf34f99d89ca97b4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b7d474d1f4ff3539cb38c08db44e135" id="r_a9b7d474d1f4ff3539cb38c08db44e135"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classFC3DCell.html">FC3DCell</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b7d474d1f4ff3539cb38c08db44e135">cellAt</a> (long long index) const noexcept</td></tr>
+<tr class="memdesc:a9b7d474d1f4ff3539cb38c08db44e135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает ячейку по линейному индексу [0, <a class="el" href="#a051f2da235e6a86776923a8c72521b78" title="Общее количество ячеек.">totalCellCount()</a>).  <br /></td></tr>
+<tr class="separator:a9b7d474d1f4ff3539cb38c08db44e135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90afcdc15c648902b1ad89385d8f13f4" id="r_a90afcdc15c648902b1ad89385d8f13f4"><td class="memItemLeft" align="right" valign="top"><a id="a90afcdc15c648902b1ad89385d8f13f4" name="a90afcdc15c648902b1ad89385d8f13f4"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>contains</b> (const <a class="el" href="classFC3DPoint.html">FC3DPoint</a> &amp;point) const noexcept</td></tr>
+<tr class="memdesc:a90afcdc15c648902b1ad89385d8f13f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Попадает ли точка в область построения. <br /></td></tr>
+<tr class="separator:a90afcdc15c648902b1ad89385d8f13f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3a29e9b62ad1f118cf794c6c7ef16da" id="r_af3a29e9b62ad1f118cf794c6c7ef16da"><td class="memItemLeft" align="right" valign="top"><a id="af3a29e9b62ad1f118cf794c6c7ef16da" name="af3a29e9b62ad1f118cf794c6c7ef16da"></a>
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>setTotalSize</b> (const <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;size) noexcept</td></tr>
+<tr class="separator:af3a29e9b62ad1f118cf794c6c7ef16da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab08354f99e0bb78d7fc5b70e8ea92d41" id="r_ab08354f99e0bb78d7fc5b70e8ea92d41"><td class="memItemLeft" align="right" valign="top"><a id="ab08354f99e0bb78d7fc5b70e8ea92d41" name="ab08354f99e0bb78d7fc5b70e8ea92d41"></a>
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>setGridSize</b> (const GridSize &amp;size) noexcept</td></tr>
+<tr class="separator:ab08354f99e0bb78d7fc5b70e8ea92d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c753c0084329e8e173fc7b53360df92" id="r_a3c753c0084329e8e173fc7b53360df92"><td class="memItemLeft" align="right" valign="top"><a id="a3c753c0084329e8e173fc7b53360df92" name="a3c753c0084329e8e173fc7b53360df92"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classFCPlottingArea.html">FCPlottingArea</a> &amp;other) const noexcept</td></tr>
+<tr class="separator:a3c753c0084329e8e173fc7b53360df92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ba268f536af9fd1ec49a4ca302579f4" id="r_a4ba268f536af9fd1ec49a4ca302579f4"><td class="memItemLeft" align="right" valign="top"><a id="a4ba268f536af9fd1ec49a4ca302579f4" name="a4ba268f536af9fd1ec49a4ca302579f4"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classFCPlottingArea.html">FCPlottingArea</a> &amp;other) const noexcept</td></tr>
+<tr class="separator:a4ba268f536af9fd1ec49a4ca302579f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Область построения для 3D-плоттера: общие размеры + сетка ячеек. </p>
+<p>Семантика:</p><ul>
+<li>totalSize() = (W, H, D) в мм — общие размеры области,</li>
+<li>gridSize() = (Nx, Ny, Nz) — количество ячеек по осям,</li>
+<li><a class="el" href="#ab1bd9dd760005ddf34f99d89ca97b4c9" title="Размер одной ячейки.">cellSize()</a> = (W/Nx, H/Ny, D/Nz) — размер одной ячейки.</li>
+</ul>
+<p>Пример: область 100×50×20 мм, сетка 10×5×2 → ячейка 10×10×10 мм. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a0bcedc5fb3098bc45173237c718df66b" name="a0bcedc5fb3098bc45173237c718df66b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bcedc5fb3098bc45173237c718df66b">&#9670;&#160;</a></span>FCPlottingArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr FCPlottingArea::FCPlottingArea </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classFC3DSize.html">FC3DSize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>totalSize</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const GridSize &amp;</td>          <td class="paramname"><span class="paramname"><em>gridSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор из общих размеров и количества ячеек. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">totalSize</td><td>Общие размеры области (мм). </td></tr>
+    <tr><td class="paramname">gridSize</td><td>Количество ячеек по осям. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a9b7d474d1f4ff3539cb38c08db44e135" name="a9b7d474d1f4ff3539cb38c08db44e135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b7d474d1f4ff3539cb38c08db44e135">&#9670;&#160;</a></span>cellAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classFC3DCell.html">FC3DCell</a> FCPlottingArea::cellAt </td>
+          <td>(</td>
+          <td class="paramtype">long long</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает ячейку по линейному индексу [0, <a class="el" href="#a051f2da235e6a86776923a8c72521b78" title="Общее количество ячеек.">totalCellCount()</a>). </p>
+<dl class="section pre"><dt>Предусловие</dt><dd>0 ≤ index &lt; <a class="el" href="#a051f2da235e6a86776923a8c72521b78" title="Общее количество ячеек.">totalCellCount()</a> </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Координаты: X меняется быстрее всего, затем Y, затем Z (row-major). </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>FCPlotter/FCPlottingArea/<a class="el" href="FCPlottingArea_8h_source.html">FCPlottingArea.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

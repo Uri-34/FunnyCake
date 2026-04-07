@@ -1,0 +1,13 @@
+<map id="FCPumpRampController" name="FCPumpRampController">
+<area shape="rect" id="Node000001" title="&lt; контроллер насосов и термодатчика рампы." alt="" coords="5,372,184,397"/>
+<area shape="rect" id="Node000002" href="$classFCI2CRunedDevice.html" title="&lt; класс для запускаемых в отдельных потоках устройств I²C." alt="" coords="21,299,168,324"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,338,97,372,92,372,92,338"/>
+<area shape="rect" id="Node000003" href="$classFCI2CDevice.html" title="Базовый класс для I²C&#45;устройств." alt="" coords="42,225,147,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="97,264,97,299,92,299,92,264"/>
+<area shape="rect" id="Node000004" href="$classFCDevice.html" title="абстрактный базовый класс для аппаратных устройств." alt="" coords="53,152,137,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="97,191,97,225,92,225,92,191"/>
+<area shape="rect" id="Node000005" href="$classFCConditionObject.html" title="Базовый класс для объектов с управляемым состоянием (готовность, воспроизведение, ошибки)." alt="" coords="23,79,166,104"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="97,118,97,152,92,152,92,118"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="57,5,132,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="97,44,97,79,92,79,92,44"/>
+</map>

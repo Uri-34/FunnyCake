@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Структура FCCondition</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="structFCCondition-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Структура FCCondition</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Базовый класс для объектов с управляемым состоянием (готовность, воспроизведение, ошибки).  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FCCondition_8h_source.html">FCCondition.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ad15e14bf03fa753d7210f73ce9c6f5f8" id="r_ad15e14bf03fa753d7210f73ce9c6f5f8"><td class="memItemLeft" align="right" valign="top"><a id="ad15e14bf03fa753d7210f73ce9c6f5f8" name="ad15e14bf03fa753d7210f73ce9c6f5f8"></a>
+constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>FCCondition</b> (ReadyState ready=ReadyState::NotReady, PlayState play=PlayState::Stop, ChangedState changed=ChangedState::NotChanged, ErrorType error=ErrorType::NoError) noexcept</td></tr>
+<tr class="separator:ad15e14bf03fa753d7210f73ce9c6f5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad45e1bdbd01a275f11cdb1136f228cfe" id="r_ad45e1bdbd01a275f11cdb1136f228cfe"><td class="memItemLeft" align="right" valign="top"><a id="ad45e1bdbd01a275f11cdb1136f228cfe" name="ad45e1bdbd01a275f11cdb1136f228cfe"></a>
+constexpr ReadyState&#160;</td><td class="memItemRight" valign="bottom"><b>ready</b> () const</td></tr>
+<tr class="separator:ad45e1bdbd01a275f11cdb1136f228cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee525046a6d28212ffa247a4ec72b95" id="r_a0ee525046a6d28212ffa247a4ec72b95"><td class="memItemLeft" align="right" valign="top"><a id="a0ee525046a6d28212ffa247a4ec72b95" name="a0ee525046a6d28212ffa247a4ec72b95"></a>
+constexpr PlayState&#160;</td><td class="memItemRight" valign="bottom"><b>play</b> () const</td></tr>
+<tr class="separator:a0ee525046a6d28212ffa247a4ec72b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af68c8ea85aa5a8f4f3ee03c26e73f976" id="r_af68c8ea85aa5a8f4f3ee03c26e73f976"><td class="memItemLeft" align="right" valign="top"><a id="af68c8ea85aa5a8f4f3ee03c26e73f976" name="af68c8ea85aa5a8f4f3ee03c26e73f976"></a>
+constexpr ChangedState&#160;</td><td class="memItemRight" valign="bottom"><b>changed</b> () const</td></tr>
+<tr class="separator:af68c8ea85aa5a8f4f3ee03c26e73f976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a1658011845c842100ac3aa0e5efa4d" id="r_a5a1658011845c842100ac3aa0e5efa4d"><td class="memItemLeft" align="right" valign="top"><a id="a5a1658011845c842100ac3aa0e5efa4d" name="a5a1658011845c842100ac3aa0e5efa4d"></a>
+constexpr ErrorType&#160;</td><td class="memItemRight" valign="bottom"><b>error</b> () const</td></tr>
+<tr class="separator:a5a1658011845c842100ac3aa0e5efa4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6732717d33fa8a7d2b534265071d4ecf" id="r_a6732717d33fa8a7d2b534265071d4ecf"><td class="memItemLeft" align="right" valign="top"><a id="a6732717d33fa8a7d2b534265071d4ecf" name="a6732717d33fa8a7d2b534265071d4ecf"></a>
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (ReadyState value)</td></tr>
+<tr class="separator:a6732717d33fa8a7d2b534265071d4ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a096def2b43c57dec74417bc20de4f58b" id="r_a096def2b43c57dec74417bc20de4f58b"><td class="memItemLeft" align="right" valign="top"><a id="a096def2b43c57dec74417bc20de4f58b" name="a096def2b43c57dec74417bc20de4f58b"></a>
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (PlayState value)</td></tr>
+<tr class="separator:a096def2b43c57dec74417bc20de4f58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0f67396f705cb1a77c4992de37ddaca" id="r_af0f67396f705cb1a77c4992de37ddaca"><td class="memItemLeft" align="right" valign="top"><a id="af0f67396f705cb1a77c4992de37ddaca" name="af0f67396f705cb1a77c4992de37ddaca"></a>
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (ChangedState value)</td></tr>
+<tr class="separator:af0f67396f705cb1a77c4992de37ddaca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f3978c89816f34b863b8cdd3126213e" id="r_a2f3978c89816f34b863b8cdd3126213e"><td class="memItemLeft" align="right" valign="top"><a id="a2f3978c89816f34b863b8cdd3126213e" name="a2f3978c89816f34b863b8cdd3126213e"></a>
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (ErrorType value)</td></tr>
+<tr class="separator:a2f3978c89816f34b863b8cdd3126213e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61bab82ee42a278ceb1b67c43a9b0fc6" id="r_a61bab82ee42a278ceb1b67c43a9b0fc6"><td class="memItemLeft" align="right" valign="top"><a id="a61bab82ee42a278ceb1b67c43a9b0fc6" name="a61bab82ee42a278ceb1b67c43a9b0fc6"></a>
+constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>raw</b> () const</td></tr>
+<tr class="separator:a61bab82ee42a278ceb1b67c43a9b0fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d6166c93eb827261309cdbc4dedca17" id="r_a1d6166c93eb827261309cdbc4dedca17"><td class="memItemLeft" align="right" valign="top"><a id="a1d6166c93eb827261309cdbc4dedca17" name="a1d6166c93eb827261309cdbc4dedca17"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (const <a class="el" href="structFCCondition.html">FCCondition</a> &amp;other) const</td></tr>
+<tr class="separator:a1d6166c93eb827261309cdbc4dedca17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a35d1d2b014405c8b6fc2e0dbdf841b" id="r_a9a35d1d2b014405c8b6fc2e0dbdf841b"><td class="memItemLeft" align="right" valign="top"><a id="a9a35d1d2b014405c8b6fc2e0dbdf841b" name="a9a35d1d2b014405c8b6fc2e0dbdf841b"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (const ReadyState &amp;value) const</td></tr>
+<tr class="separator:a9a35d1d2b014405c8b6fc2e0dbdf841b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643e778b25339c5ac10f501c7fcfb08b" id="r_a643e778b25339c5ac10f501c7fcfb08b"><td class="memItemLeft" align="right" valign="top"><a id="a643e778b25339c5ac10f501c7fcfb08b" name="a643e778b25339c5ac10f501c7fcfb08b"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (const PlayState value) const</td></tr>
+<tr class="separator:a643e778b25339c5ac10f501c7fcfb08b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad961284f0e5483dc13c9a5a8b632236f" id="r_ad961284f0e5483dc13c9a5a8b632236f"><td class="memItemLeft" align="right" valign="top"><a id="ad961284f0e5483dc13c9a5a8b632236f" name="ad961284f0e5483dc13c9a5a8b632236f"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (const ChangedState value) const</td></tr>
+<tr class="separator:ad961284f0e5483dc13c9a5a8b632236f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0571f79ad9c50e16937d2c8196c9032" id="r_ae0571f79ad9c50e16937d2c8196c9032"><td class="memItemLeft" align="right" valign="top"><a id="ae0571f79ad9c50e16937d2c8196c9032" name="ae0571f79ad9c50e16937d2c8196c9032"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (const ErrorType value) const</td></tr>
+<tr class="separator:ae0571f79ad9c50e16937d2c8196c9032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17727ef9f8d9ed6a0d2e395caeb3f51c" id="r_a17727ef9f8d9ed6a0d2e395caeb3f51c"><td class="memItemLeft" align="right" valign="top"><a id="a17727ef9f8d9ed6a0d2e395caeb3f51c" name="a17727ef9f8d9ed6a0d2e395caeb3f51c"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="structFCCondition.html">FCCondition</a> &amp;other) const</td></tr>
+<tr class="separator:a17727ef9f8d9ed6a0d2e395caeb3f51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5c4c6b15c1b55e3d289197df6df27e2" id="r_ab5c4c6b15c1b55e3d289197df6df27e2"><td class="memItemLeft" align="right" valign="top"><a id="ab5c4c6b15c1b55e3d289197df6df27e2" name="ab5c4c6b15c1b55e3d289197df6df27e2"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="structFCCondition.html">FCCondition</a> &amp;other) const</td></tr>
+<tr class="separator:ab5c4c6b15c1b55e3d289197df6df27e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a4161caebbbcce941cd4070984365c919" id="r_a4161caebbbcce941cd4070984365c919"><td class="memItemLeft" align="right" valign="top"><a id="a4161caebbbcce941cd4070984365c919" name="a4161caebbbcce941cd4070984365c919"></a>
+static constexpr <a class="el" href="structFCCondition.html">FCCondition</a>&#160;</td><td class="memItemRight" valign="bottom"><b>fromRaw</b> (uint16_t value)</td></tr>
+<tr class="separator:a4161caebbbcce941cd4070984365c919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:aa825f38f7ff5376b7d77afd0ee95ec82" id="r_aa825f38f7ff5376b7d77afd0ee95ec82"><td class="memItemLeft" align="right" valign="top"><a id="aa825f38f7ff5376b7d77afd0ee95ec82" name="aa825f38f7ff5376b7d77afd0ee95ec82"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>_data</b> = 0</td></tr>
+<tr class="separator:aa825f38f7ff5376b7d77afd0ee95ec82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Базовый класс для объектов с управляемым состоянием (готовность, воспроизведение, ошибки). </p>
+<p>Предоставляет:</p><ul>
+<li>Единый интерфейс состояния через <code><a class="el" href="structFCCondition.html" title="Базовый класс для объектов с управляемым состоянием (готовность, воспроизведение, ошибки).">FCCondition</a></code>,</li>
+<li>Типобезопасные геттеры/сеттеры с проверкой изменений,</li>
+<li>Сигнал <code>conditionChanged()</code> для реактивного UI, </li>
+</ul>
+</div><hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li>FCTypes/FCStates/FCCondition/<a class="el" href="FCCondition_8h_source.html">FCCondition.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

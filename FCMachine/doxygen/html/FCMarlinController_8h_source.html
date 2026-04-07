@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Исходный файл FCPlotter/FCDevice/FCMarlinController/FCMarlinController.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_dcfbaeab36b027cae77235f4e38c274a.html">FCPlotter</a></li><li class="navelem"><a class="el" href="dir_dc3ba5ac427b695d6a0e19650f09833f.html">FCDevice</a></li><li class="navelem"><a class="el" href="dir_6a953720c62ed91ead57ae09f647361e.html">FCMarlinController</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FCMarlinController.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FC_MARLIN_CONTROLLER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FC_MARLIN_CONTROLLER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QSerialPort&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QSerialPortInfo&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QColor&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QMutex&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;FCDevice.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;FCI2CBus.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;FCM115.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;FCCommand.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;FCHead.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classFCMarlinController.html">   58</a></span><span class="keyword">class </span><a class="code hl_class" href="classFCMarlinController.html">FCMarlinController</a></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    : <span class="keyword">public</span> <a class="code hl_class" href="classFCDevice.html">FCDevice</a></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>{</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><a class="code hl_class" href="classFCRange.html">Q_OBJECT</a></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classFCMarlinController.html#afac93f950c3b81ba6c231a0a78cd9832">FCMarlinController</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QString</a> &amp;<a class="code hl_class" href="classFCRange.html">portName</a>, <a class="code hl_class" href="classFCI2CBus.html">FCI2CBus</a> *bus, QObject *<a class="code hl_class" href="classFCRange.html">parent</a> = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_function" href="classFCMarlinController.html#a0b2cca11e53edd476cb7cd8f10fe124f">~FCMarlinController</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="comment">// --- управление соединением ---</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCMarlinController.html#ab8414dfa1ebd4491982d5ab95a836655">connect</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCMarlinController.html#abafadc13e66e6901ca36ee1faf38a15c">disconnect</a>();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCMarlinController.html#a952289af3c8e070fcd9109592e21ddc7">isConnected</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCMarlinController.html#abd3a38a3fbb6664b0a52974a532d717e">checkConnection</a>();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="comment">// --- получение диагностических данных ---</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classFCMarlinController.html#a98eba7649b9849f5166fb39bdececa01">  110</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">const</span> <a class="code hl_class" href="classFCM115.html">FCM115</a>&amp; <a class="code hl_function" href="classFCMarlinController.html#a98eba7649b9849f5166fb39bdececa01">firmwareData</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _m115; }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="comment">// --- отправка команд ---</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCMarlinController.html#a1581fde7ff0a08f5838622c41172e514">sendCommand</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QString</a> &amp;<a class="code hl_class" href="classFCRange.html">command</a>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCMarlinController.html#aac09bc8c0a63df5f0d357066ed69970b">sendCommands</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QStringList</a> &amp;<a class="code hl_class" href="classFCRange.html">commands</a>);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCMarlinController.html#a40e65b1699c38778f5fff446b56fd8b9">sendCommandAndWait</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QString</a> &amp;<a class="code hl_class" href="classFCRange.html">command</a>, <span class="keywordtype">int</span> <a class="code hl_class" href="classFCRange.html">timeoutMs</a> = 1000);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="comment">// --- управление периферией ---</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCMarlinController.html#a518cee45f46e5dee47a3fffe351877b0">setLed</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QList&lt;QColor&gt;</a> &amp;<a class="code hl_class" href="classFCRange.html">colors</a>, <a class="code hl_class" href="classFCRange.html">uint8_t</a> <a class="code hl_class" href="classFCRange.html">brightness</a> = 255);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="comment">// --- аварийное управление ---</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCMarlinController.html#a621135e44d29311e762b961be0e47d3a">emergencyStop</a>();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCMarlinController.html#a0a53d9758bd70ce01118bc9438b50c5e">disableMotors</a>();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCMarlinController.html#a95ecdc640441aa4b4e011830964cf352">rebootController</a>();</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="keyword">private</span> <a class="code hl_class" href="classFCRange.html">slots</a>:</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordtype">void</span> onReadyRead();</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">bool</span> setupPortParameters();</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordtype">void</span> flushPortBuffers();</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">bool</span> parseResponse(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QString</a> &amp;<a class="code hl_class" href="classFCRange.html">response</a>);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordtype">void</span> parseFirmwareData(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QString</a> &amp;<a class="code hl_class" href="classFCRange.html">response</a>);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="comment">// --- внутренние ресурсы ---</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <a class="code hl_class" href="classFCRange.html">QString</a> _portName;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    QSerialPort *_port = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <a class="code hl_class" href="classFCI2CBus.html">FCI2CBus</a> *_bus = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <a class="code hl_class" href="classFCHead.html">FCHead</a> *_head = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <a class="code hl_class" href="classFCM115.html">FCM115</a> _m115;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <a class="code hl_class" href="classFCRange.html">QString</a> _responseBuffer;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keyword">mutable</span> <a class="code hl_class" href="classFCRange.html">QMutex</a> _portMutex;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keywordtype">bool</span> _connected = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> MAX_RETRIES = 3;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> DEFAULT_TIMEOUT_MS = 1000;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>};</div>
+</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="comment">// --- псевдонимы типов ---</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">FCColorList</a> = <a class="code hl_class" href="classFCRange.html">QList&lt;QColor&gt;</a>;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">FCMarlinControllerPtrList</a> = <a class="code hl_class" href="classFCRange.html">QList&lt;FCMarlinController*&gt;</a>;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="preprocessor">#endif </span><span class="comment">// FC_MARLIN_CONTROLLER_H</span></div>
+<div class="ttc" id="aclassFCDevice_html"><div class="ttname"><a href="classFCDevice.html">FCDevice</a></div><div class="ttdoc">Абстрактный базовый класс для управления аппаратными устройствами в системе.</div><div class="ttdef"><b>Definition</b> FCDevice.h:29</div></div>
+<div class="ttc" id="aclassFCHead_html"><div class="ttname"><a href="classFCHead.html">FCHead</a></div><div class="ttdoc">Класс управления печатающей головкой плоттера с множественными соплами.</div><div class="ttdef"><b>Definition</b> FCHead.h:52</div></div>
+<div class="ttc" id="aclassFCI2CBus_html"><div class="ttname"><a href="classFCI2CBus.html">FCI2CBus</a></div><div class="ttdef"><b>Definition</b> FCI2CBus.h:62</div></div>
+<div class="ttc" id="aclassFCM115_html"><div class="ttname"><a href="classFCM115.html">FCM115</a></div><div class="ttdoc">Контейнер данных диагностической информации прошивки Marlin (команда M115).</div><div class="ttdef"><b>Definition</b> FCM115.h:31</div></div>
+<div class="ttc" id="aclassFCMarlinController_html"><div class="ttname"><a href="classFCMarlinController.html">FCMarlinController</a></div><div class="ttdoc">Низкоуровневый драйвер управления контроллером на базе прошивки Marlin 2.1.2.4.</div><div class="ttdef"><b>Definition</b> FCMarlinController.h:60</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_a0a53d9758bd70ce01118bc9438b50c5e"><div class="ttname"><a href="classFCMarlinController.html#a0a53d9758bd70ce01118bc9438b50c5e">FCMarlinController::disableMotors</a></div><div class="ttdeci">void disableMotors()</div><div class="ttdoc">Отключает все шаговые двигатели контроллера.</div><div class="ttdef"><b>Definition</b> FCMarlinController.cpp:376</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_a0b2cca11e53edd476cb7cd8f10fe124f"><div class="ttname"><a href="classFCMarlinController.html#a0b2cca11e53edd476cb7cd8f10fe124f">FCMarlinController::~FCMarlinController</a></div><div class="ttdeci">~FCMarlinController() override</div><div class="ttdoc">Деструктор контроллера.</div><div class="ttdef"><b>Definition</b> FCMarlinController.cpp:37</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_a1581fde7ff0a08f5838622c41172e514"><div class="ttname"><a href="classFCMarlinController.html#a1581fde7ff0a08f5838622c41172e514">FCMarlinController::sendCommand</a></div><div class="ttdeci">bool sendCommand(const QString &amp;command)</div><div class="ttdoc">Отправляет одиночную G-code/M-code команду в контроллер.</div><div class="ttdef"><b>Definition</b> FCMarlinController.cpp:208</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_a40e65b1699c38778f5fff446b56fd8b9"><div class="ttname"><a href="classFCMarlinController.html#a40e65b1699c38778f5fff446b56fd8b9">FCMarlinController::sendCommandAndWait</a></div><div class="ttdeci">bool sendCommandAndWait(const QString &amp;command, int timeoutMs=1000)</div><div class="ttdoc">Отправляет команду с синхронным ожиданием подтверждения.</div><div class="ttdef"><b>Definition</b> FCMarlinController.cpp:253</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_a518cee45f46e5dee47a3fffe351877b0"><div class="ttname"><a href="classFCMarlinController.html#a518cee45f46e5dee47a3fffe351877b0">FCMarlinController::setLed</a></div><div class="ttdeci">bool setLed(const QList&lt; QColor &gt; &amp;colors, uint8_t brightness=255)</div><div class="ttdoc">Управляет светодиодной лентой через команды контроллера.</div><div class="ttdef"><b>Definition</b> FCMarlinController.cpp:321</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_a621135e44d29311e762b961be0e47d3a"><div class="ttname"><a href="classFCMarlinController.html#a621135e44d29311e762b961be0e47d3a">FCMarlinController::emergencyStop</a></div><div class="ttdeci">void emergencyStop()</div><div class="ttdoc">Выполняет экстренную остановку всех операций контроллера.</div><div class="ttdef"><b>Definition</b> FCMarlinController.cpp:350</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_a952289af3c8e070fcd9109592e21ddc7"><div class="ttname"><a href="classFCMarlinController.html#a952289af3c8e070fcd9109592e21ddc7">FCMarlinController::isConnected</a></div><div class="ttdeci">bool isConnected() const noexcept</div><div class="ttdoc">Проверяет текущее состояние соединения с контроллером.</div><div class="ttdef"><b>Definition</b> FCMarlinController.cpp:154</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_a95ecdc640441aa4b4e011830964cf352"><div class="ttname"><a href="classFCMarlinController.html#a95ecdc640441aa4b4e011830964cf352">FCMarlinController::rebootController</a></div><div class="ttdeci">void rebootController()</div><div class="ttdoc">Выполняет программную перезагрузку контроллера.</div><div class="ttdef"><b>Definition</b> FCMarlinController.cpp:381</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_a98eba7649b9849f5166fb39bdececa01"><div class="ttname"><a href="classFCMarlinController.html#a98eba7649b9849f5166fb39bdececa01">FCMarlinController::firmwareData</a></div><div class="ttdeci">const FCM115 &amp; firmwareData() const noexcept</div><div class="ttdoc">Возвращает структуру с диагностическими данными из прошивки контроллера.</div><div class="ttdef"><b>Definition</b> FCMarlinController.h:110</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_aac09bc8c0a63df5f0d357066ed69970b"><div class="ttname"><a href="classFCMarlinController.html#aac09bc8c0a63df5f0d357066ed69970b">FCMarlinController::sendCommands</a></div><div class="ttdeci">bool sendCommands(const QStringList &amp;commands)</div><div class="ttdoc">Отправляет список G-code команд последовательно.</div><div class="ttdef"><b>Definition</b> FCMarlinController.cpp:237</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_ab8414dfa1ebd4491982d5ab95a836655"><div class="ttname"><a href="classFCMarlinController.html#ab8414dfa1ebd4491982d5ab95a836655">FCMarlinController::connect</a></div><div class="ttdeci">bool connect()</div><div class="ttdoc">Устанавливает соединение с контроллером через последовательный порт.</div><div class="ttdef"><b>Definition</b> FCMarlinController.cpp:53</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_abafadc13e66e6901ca36ee1faf38a15c"><div class="ttname"><a href="classFCMarlinController.html#abafadc13e66e6901ca36ee1faf38a15c">FCMarlinController::disconnect</a></div><div class="ttdeci">void disconnect()</div><div class="ttdoc">Разрывает соединение с контроллером и закрывает последовательный порт.</div><div class="ttdef"><b>Definition</b> FCMarlinController.cpp:124</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_abd3a38a3fbb6664b0a52974a532d717e"><div class="ttname"><a href="classFCMarlinController.html#abd3a38a3fbb6664b0a52974a532d717e">FCMarlinController::checkConnection</a></div><div class="ttdeci">bool checkConnection()</div><div class="ttdoc">Проверяет связь с контроллером отправкой тестовой команды.</div><div class="ttdef"><b>Definition</b> FCMarlinController.cpp:160</div></div>
+<div class="ttc" id="aclassFCMarlinController_html_afac93f950c3b81ba6c231a0a78cd9832"><div class="ttname"><a href="classFCMarlinController.html#afac93f950c3b81ba6c231a0a78cd9832">FCMarlinController::FCMarlinController</a></div><div class="ttdeci">FCMarlinController(const QString &amp;portName, FCI2CBus *bus, QObject *parent=nullptr)</div><div class="ttdoc">Конструктор контроллера с указанием порта и шины I2C.</div><div class="ttdef"><b>Definition</b> FCMarlinController.cpp:17</div></div>
+<div class="ttc" id="aclassFCRange_html"><div class="ttname"><a href="classFCRange.html">FCRange</a></div><div class="ttdoc">Шаблонный класс для представления числового диапазона [min, max] с гарантией корректности.</div><div class="ttdef"><b>Definition</b> FCRange.h:34</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/img">
+        <file alias="fnf.svg">FCImages/fnf.svg</file>
+        <file alias="change-plotter.svg">FCImages/change-plotter.svg</file>
+        <file alias="chevron-left.svg">FCImages/chevron-left.svg</file>
+        <file alias="chevron-right.svg">FCImages/chevron-right.svg</file>
+        <file alias="ok.svg">FCImages/ok.svg</file>
+        <file alias="pause.svg">FCImages/pause.svg</file>
+        <file alias="play.svg">FCImages/play.svg</file>
+        <file alias="question.svg">FCImages/question.svg</file>
+        <file alias="stop.svg">FCImages/stop.svg</file>
+        <file alias="yes.svg">FCImages/yes.svg</file>
+        <file alias="no.svg">FCImages/no.svg</file>
+    </qresource>
+    <qresource prefix="/"/>
+</RCC>

@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Исходный файл FCTypes/FCStates/FCStatedObject.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_095319a0a42fa4deb6343e81a7cff0f0.html">FCTypes</a></li><li class="navelem"><a class="el" href="dir_ea06b63236cbfd26ce881baef18afac4.html">FCStates</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FCStatedObject.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FC_STATED_OBJECT_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FC_STATED_OBJECT_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;FCCondition.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classFCStatedObject.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="classFCStatedObject.html">FCStatedObject</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>Q_OBJECT</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// Свойства для Qt Designer, QML и binding-систем</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//    Q_PROPERTY(ReadyState ready READ ready WRITE setReady NOTIFY conditionChanged)</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">//    Q_PROPERTY(PlayState play READ play WRITE setPlay NOTIFY conditionChanged)</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//    Q_PROPERTY(ChangedState changed READ changed WRITE setChanged NOTIFY conditionChanged)</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">//    Q_PROPERTY(ErrorType error READ error WRITE setError NOTIFY conditionChanged)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// --- конструкторы ---</span></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#ac528bd2feac8c1a0fd4ade7434755ced">   36</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classFCStatedObject.html#ac528bd2feac8c1a0fd4ade7434755ced">FCStatedObject</a>(QObject *parent = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        : QObject(parent)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {}</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#afe9c134e139916d3f96cee007ee27dca">   47</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classFCStatedObject.html#afe9c134e139916d3f96cee007ee27dca">FCStatedObject</a>(<span class="keyword">const</span> QString &amp;name, QObject *parent = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        : QObject(parent)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        setObjectName(name);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// --- геттеры ---</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#a66dc89e15372b45e5e9f0ae0c87b3675">   58</a></span>    <span class="keyword">inline</span> ReadyState <a class="code hl_function" href="classFCStatedObject.html#a66dc89e15372b45e5e9f0ae0c87b3675">ready</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _condition.ready(); }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#ad803b9570684c1e2627c1c450ac3127e">   64</a></span>    <span class="keyword">inline</span> PlayState <a class="code hl_function" href="classFCStatedObject.html#ad803b9570684c1e2627c1c450ac3127e">play</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _condition.play(); }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#ac480deaefcc8ae5c099aa97cd673a19d">   70</a></span>    <span class="keyword">inline</span> ChangedState <a class="code hl_function" href="classFCStatedObject.html#ac480deaefcc8ae5c099aa97cd673a19d">changed</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _condition.changed(); }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#aeb0c3f43cbb48e8f1300f1ff30f8577e">   76</a></span>    <span class="keyword">inline</span> ErrorType <a class="code hl_function" href="classFCStatedObject.html#aeb0c3f43cbb48e8f1300f1ff30f8577e">error</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _condition.error(); }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#a8eca40c17a05c3ffd6e90e9866869344">   82</a></span>    <span class="keyword">inline</span> <a class="code hl_struct" href="structCondition.html">Condition</a> <a class="code hl_function" href="classFCStatedObject.html#a8eca40c17a05c3ffd6e90e9866869344">condition</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _condition; }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="comment">// --- сеттеры ---</span></div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#a09b8fcd086d2bef8796da1e435b6a186">   90</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCStatedObject.html#a09b8fcd086d2bef8796da1e435b6a186">set</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structCondition.html">Condition</a> <a class="code hl_function" href="classFCStatedObject.html#a8eca40c17a05c3ffd6e90e9866869344">condition</a>)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">if</span>(_condition != <a class="code hl_function" href="classFCStatedObject.html#a8eca40c17a05c3ffd6e90e9866869344">condition</a>)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            _condition = <a class="code hl_function" href="classFCStatedObject.html#a8eca40c17a05c3ffd6e90e9866869344">condition</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            emit <a class="code hl_signal" href="classFCStatedObject.html#a6ed5be111df83ac47b516733ca34ccfa">conditionChanged</a>(objectName());</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#a1831a57950b83e2d8d507ee15adbdffd">  103</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCStatedObject.html#a1831a57950b83e2d8d507ee15adbdffd">set</a>(<span class="keyword">const</span> ReadyState state)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">if</span>(_condition.ready() != state)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            _condition.setReady(state);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            emit <a class="code hl_signal" href="classFCStatedObject.html#a6ed5be111df83ac47b516733ca34ccfa">conditionChanged</a>(objectName());</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#aae9c1c59b9a8ee727e1d368af6822845">  116</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCStatedObject.html#aae9c1c59b9a8ee727e1d368af6822845">set</a>(<span class="keyword">const</span> PlayState state)</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">if</span>(_condition.play() != state)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            _condition.setPlay(state);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            emit <a class="code hl_signal" href="classFCStatedObject.html#a6ed5be111df83ac47b516733ca34ccfa">conditionChanged</a>(objectName());</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
+</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="}">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#a4c34f76ce10127ce94504eaaa87db126">  129</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCStatedObject.html#a4c34f76ce10127ce94504eaaa87db126">set</a>(<span class="keyword">const</span> ChangedState state)</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordflow">if</span>(_condition.changed() != state)</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            _condition.setChanged(state);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            emit <a class="code hl_signal" href="classFCStatedObject.html#a6ed5be111df83ac47b516733ca34ccfa">conditionChanged</a>(objectName());</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
+</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#ae1cd50a2feaf55fb81dc1512d35c8c4f">  142</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCStatedObject.html#ae1cd50a2feaf55fb81dc1512d35c8c4f">set</a>(<span class="keyword">const</span> ErrorType type)</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">if</span>(_condition.error() != type)</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            _condition.setError(type);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            emit <a class="code hl_signal" href="classFCStatedObject.html#a6ed5be111df83ac47b516733ca34ccfa">conditionChanged</a>(objectName());</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
+</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="comment">// --- проверки &quot;is&quot; ---</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#ac76f9868820af20f23f4d7a1d5edf5fd">  157</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCStatedObject.html#ac76f9868820af20f23f4d7a1d5edf5fd">is</a>(<span class="keyword">const</span> ReadyState state)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _condition.ready() == state; }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#a117353ec8c65b1668b745a28c9d91a19">  164</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCStatedObject.html#a117353ec8c65b1668b745a28c9d91a19">is</a>(<span class="keyword">const</span> PlayState state)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _condition.play() == state; }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#a5163f22d2aa2c886ad59be5f414c8aa0">  171</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCStatedObject.html#a5163f22d2aa2c886ad59be5f414c8aa0">is</a>(<span class="keyword">const</span> ChangedState state)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _condition.changed() == state; }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#a5503405fa64b1bc28f527e5956004e22">  178</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCStatedObject.html#a5503405fa64b1bc28f527e5956004e22">is</a>(<span class="keyword">const</span> ErrorType type)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _condition.error() == type; }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="foldopen" id="foldopen00184" data-start="{" data-end="}">
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classFCStatedObject.html#a9ec896674f461096a2488ce6c42af844">  184</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCStatedObject.html#a9ec896674f461096a2488ce6c42af844">isEmpty</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classFCStatedObject.html#ac76f9868820af20f23f4d7a1d5edf5fd">is</a>(ReadyState::NotReady) &amp;&amp; <a class="code hl_function" href="classFCStatedObject.html#ac76f9868820af20f23f4d7a1d5edf5fd">is</a>(PlayState::Stop) &amp;&amp; <a class="code hl_function" href="classFCStatedObject.html#ac76f9868820af20f23f4d7a1d5edf5fd">is</a>(ChangedState::NotChanged) &amp;&amp; <a class="code hl_function" href="classFCStatedObject.html#ac76f9868820af20f23f4d7a1d5edf5fd">is</a>(ErrorType::NoError);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    }</div>
+</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>signals:</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCStatedObject.html#a6ed5be111df83ac47b516733ca34ccfa">conditionChanged</a>(<span class="keyword">const</span> QString &amp;name);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <a class="code hl_struct" href="structCondition.html">Condition</a> _condition; </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>};</div>
+</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="preprocessor">#endif </span><span class="comment">// FC_STATED_OBJECT_H</span></div>
+<div class="ttc" id="aclassFCStatedObject_html"><div class="ttname"><a href="classFCStatedObject.html">FCStatedObject</a></div><div class="ttdoc">Базовый класс для объектов с управляемым состоянием (готовность, воспроизведение, ошибки).</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:21</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_a09b8fcd086d2bef8796da1e435b6a186"><div class="ttname"><a href="classFCStatedObject.html#a09b8fcd086d2bef8796da1e435b6a186">FCStatedObject::set</a></div><div class="ttdeci">void set(const Condition condition)</div><div class="ttdoc">Устанавливает полное состояние и эмитит conditionChanged(), если изменилось.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:90</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_a117353ec8c65b1668b745a28c9d91a19"><div class="ttname"><a href="classFCStatedObject.html#a117353ec8c65b1668b745a28c9d91a19">FCStatedObject::is</a></div><div class="ttdeci">bool is(const PlayState state) const</div><div class="ttdoc">Проверяет, равен ли режим воспроизведения заданному.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:164</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_a1831a57950b83e2d8d507ee15adbdffd"><div class="ttname"><a href="classFCStatedObject.html#a1831a57950b83e2d8d507ee15adbdffd">FCStatedObject::set</a></div><div class="ttdeci">void set(const ReadyState state)</div><div class="ttdoc">Устанавливает состояние готовности (без сигналов).</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:103</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_a4c34f76ce10127ce94504eaaa87db126"><div class="ttname"><a href="classFCStatedObject.html#a4c34f76ce10127ce94504eaaa87db126">FCStatedObject::set</a></div><div class="ttdeci">void set(const ChangedState state)</div><div class="ttdoc">Устанавливает флаг изменений (без сигналов).</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:129</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_a5163f22d2aa2c886ad59be5f414c8aa0"><div class="ttname"><a href="classFCStatedObject.html#a5163f22d2aa2c886ad59be5f414c8aa0">FCStatedObject::is</a></div><div class="ttdeci">bool is(const ChangedState state) const</div><div class="ttdoc">Проверяет, равен ли флаг изменений заданному.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:171</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_a5503405fa64b1bc28f527e5956004e22"><div class="ttname"><a href="classFCStatedObject.html#a5503405fa64b1bc28f527e5956004e22">FCStatedObject::is</a></div><div class="ttdeci">bool is(const ErrorType type) const</div><div class="ttdoc">Проверяет, равен ли тип ошибки заданному.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:178</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_a66dc89e15372b45e5e9f0ae0c87b3675"><div class="ttname"><a href="classFCStatedObject.html#a66dc89e15372b45e5e9f0ae0c87b3675">FCStatedObject::ready</a></div><div class="ttdeci">ReadyState ready() const</div><div class="ttdoc">Возвращает текущее состояние готовности.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:58</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_a6ed5be111df83ac47b516733ca34ccfa"><div class="ttname"><a href="classFCStatedObject.html#a6ed5be111df83ac47b516733ca34ccfa">FCStatedObject::conditionChanged</a></div><div class="ttdeci">void conditionChanged(const QString &amp;name)</div><div class="ttdoc">Сигнализирует об изменении состояния (ready, play, changed, error).</div><div class="ttdef"><b>Definition</b> moc_FCStatedObject.cpp:129</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_a8eca40c17a05c3ffd6e90e9866869344"><div class="ttname"><a href="classFCStatedObject.html#a8eca40c17a05c3ffd6e90e9866869344">FCStatedObject::condition</a></div><div class="ttdeci">Condition condition() const</div><div class="ttdoc">Возвращает полную структуру состояния.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:82</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_a9ec896674f461096a2488ce6c42af844"><div class="ttname"><a href="classFCStatedObject.html#a9ec896674f461096a2488ce6c42af844">FCStatedObject::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">Проверяет, находится ли обьект в базовом (исходном) состоянии.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:184</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_aae9c1c59b9a8ee727e1d368af6822845"><div class="ttname"><a href="classFCStatedObject.html#aae9c1c59b9a8ee727e1d368af6822845">FCStatedObject::set</a></div><div class="ttdeci">void set(const PlayState state)</div><div class="ttdoc">Устанавливает режим воспроизведения.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:116</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_ac480deaefcc8ae5c099aa97cd673a19d"><div class="ttname"><a href="classFCStatedObject.html#ac480deaefcc8ae5c099aa97cd673a19d">FCStatedObject::changed</a></div><div class="ttdeci">ChangedState changed() const</div><div class="ttdoc">Показывает, были ли изменения с последней проверки.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:70</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_ac528bd2feac8c1a0fd4ade7434755ced"><div class="ttname"><a href="classFCStatedObject.html#ac528bd2feac8c1a0fd4ade7434755ced">FCStatedObject::FCStatedObject</a></div><div class="ttdeci">FCStatedObject(QObject *parent=nullptr)</div><div class="ttdoc">Конструктор по умолчанию.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:36</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_ac76f9868820af20f23f4d7a1d5edf5fd"><div class="ttname"><a href="classFCStatedObject.html#ac76f9868820af20f23f4d7a1d5edf5fd">FCStatedObject::is</a></div><div class="ttdeci">bool is(const ReadyState state) const</div><div class="ttdoc">Проверяет, равно ли состояние готовности заданному.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:157</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_ad803b9570684c1e2627c1c450ac3127e"><div class="ttname"><a href="classFCStatedObject.html#ad803b9570684c1e2627c1c450ac3127e">FCStatedObject::play</a></div><div class="ttdeci">PlayState play() const</div><div class="ttdoc">Возвращает текущий режим воспроизведения.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:64</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_ae1cd50a2feaf55fb81dc1512d35c8c4f"><div class="ttname"><a href="classFCStatedObject.html#ae1cd50a2feaf55fb81dc1512d35c8c4f">FCStatedObject::set</a></div><div class="ttdeci">void set(const ErrorType type)</div><div class="ttdoc">Устанавливает тип ошибки (без сигналов).</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:142</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_aeb0c3f43cbb48e8f1300f1ff30f8577e"><div class="ttname"><a href="classFCStatedObject.html#aeb0c3f43cbb48e8f1300f1ff30f8577e">FCStatedObject::error</a></div><div class="ttdeci">ErrorType error() const</div><div class="ttdoc">Возвращает текущий тип ошибки.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:76</div></div>
+<div class="ttc" id="aclassFCStatedObject_html_afe9c134e139916d3f96cee007ee27dca"><div class="ttname"><a href="classFCStatedObject.html#afe9c134e139916d3f96cee007ee27dca">FCStatedObject::FCStatedObject</a></div><div class="ttdeci">FCStatedObject(const QString &amp;name, QObject *parent=nullptr)</div><div class="ttdoc">Конструктор с именем.</div><div class="ttdef"><b>Definition</b> FCStatedObject.h:47</div></div>
+<div class="ttc" id="astructCondition_html"><div class="ttname"><a href="structCondition.html">Condition</a></div><div class="ttdef"><b>Definition</b> FCCondition.h:18</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

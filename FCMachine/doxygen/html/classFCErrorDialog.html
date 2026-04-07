@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Класс FCErrorDialog</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classFCErrorDialog-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс FCErrorDialog</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Модальный диалог отображения ошибок с кнопкой подтверждения.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FCErrorDialog_8h_source.html">FCErrorDialog.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:FCErrorDialog:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFCErrorDialog__inherit__graph.png" border="0" usemap="#aFCErrorDialog_inherit__map" alt="Inheritance graph"/></div>
+<map name="aFCErrorDialog_inherit__map" id="aFCErrorDialog_inherit__map">
+<area shape="rect" title="Модальный диалог отображения ошибок с кнопкой подтверждения." alt="" coords="5,79,117,104"/>
+<area shape="rect" title=" " alt="" coords="24,5,99,31"/>
+<area shape="poly" title=" " alt="" coords="64,44,64,79,59,79,59,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса FCErrorDialog:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFCErrorDialog__coll__graph.png" border="0" usemap="#aFCErrorDialog_coll__map" alt="Collaboration graph"/></div>
+<map name="aFCErrorDialog_coll__map" id="aFCErrorDialog_coll__map">
+<area shape="rect" title="Модальный диалог отображения ошибок с кнопкой подтверждения." alt="" coords="5,79,117,104"/>
+<area shape="rect" title=" " alt="" coords="24,5,99,31"/>
+<area shape="poly" title=" " alt="" coords="64,44,64,79,59,79,59,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:ade6a88ab8148a7e598f5dfc8c56dccad" id="r_ade6a88ab8148a7e598f5dfc8c56dccad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade6a88ab8148a7e598f5dfc8c56dccad">ok</a> ()</td></tr>
+<tr class="memdesc:ade6a88ab8148a7e598f5dfc8c56dccad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сигнал, эмитируемый при подтверждении ошибки пользователем (нажатие "OK").  <br /></td></tr>
+<tr class="separator:ade6a88ab8148a7e598f5dfc8c56dccad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ab982d74f3f12fc881b08849fc90cd78a" id="r_ab982d74f3f12fc881b08849fc90cd78a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab982d74f3f12fc881b08849fc90cd78a">FCErrorDialog</a> (<a class="el" href="classFCRange.html">QWidget</a> *<a class="el" href="classFCRange.html">parent</a>=<a class="el" href="classFCRange.html">nullptr</a>)</td></tr>
+<tr class="memdesc:ab982d74f3f12fc881b08849fc90cd78a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор диалога с автоматической инициализацией интерфейса.  <br /></td></tr>
+<tr class="separator:ab982d74f3f12fc881b08849fc90cd78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace791d0e7803665b60c98bc721b555d5" id="r_ace791d0e7803665b60c98bc721b555d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace791d0e7803665b60c98bc721b555d5">~FCErrorDialog</a> () <a class="el" href="classFCRange.html">override</a></td></tr>
+<tr class="memdesc:ace791d0e7803665b60c98bc721b555d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор диалога.  <br /></td></tr>
+<tr class="separator:ace791d0e7803665b60c98bc721b555d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d2ef8acaa5189b977ce2173da90570" id="r_a97d2ef8acaa5189b977ce2173da90570"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97d2ef8acaa5189b977ce2173da90570">setMessage</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;<a class="el" href="classFCRange.html">message</a>)</td></tr>
+<tr class="memdesc:a97d2ef8acaa5189b977ce2173da90570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает текст сообщения об ошибке для отображения в диалоге.  <br /></td></tr>
+<tr class="separator:a97d2ef8acaa5189b977ce2173da90570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a659c28409bac613cd8d7e8ce7167dcf7" id="r_a659c28409bac613cd8d7e8ce7167dcf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a659c28409bac613cd8d7e8ce7167dcf7">exec</a> () <a class="el" href="classFCRange.html">override</a></td></tr>
+<tr class="memdesc:a659c28409bac613cd8d7e8ce7167dcf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отображает диалог в модальном режиме и возвращает результат.  <br /></td></tr>
+<tr class="separator:a659c28409bac613cd8d7e8ce7167dcf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Модальный диалог отображения ошибок с кнопкой подтверждения. </p>
+<p>Предназначен для визуализации текстовых сообщений об ошибках в графическом интерфейсе:</p><ul>
+<li>Отображает однострочное или многострочное сообщение в центральной части диалога,</li>
+<li>Предоставляет единственную кнопку "OK" для подтверждения и закрытия диалога,</li>
+<li>Автоматически эмитирует сигнал <a class="el" href="#ade6a88ab8148a7e598f5dfc8c56dccad" title="Сигнал, эмитируемый при подтверждении ошибки пользователем (нажатие &quot;OK&quot;).">ok()</a> при закрытии через кнопку "OK".</li>
+</ul>
+<p>Особенности реализации:</p><ul>
+<li>Использует генерируемый Qt Designer UI-класс (Ui::FCErrorDialog),</li>
+<li>Поддерживает установку сообщения как до отображения (через <a class="el" href="#a97d2ef8acaa5189b977ce2173da90570" title="Устанавливает текст сообщения об ошибке для отображения в диалоге.">setMessage()</a>), так и динамически во время работы диалога,</li>
+<li>Является модальным диалогом по умолчанию (<a class="el" href="#a659c28409bac613cd8d7e8ce7167dcf7" title="Отображает диалог в модальном режиме и возвращает результат.">exec()</a>), но может использоваться как немодальный (show()) при необходимости.</li>
+</ul>
+<dl class="section note"><dt>Заметки</dt><dd>Класс предназначен ТОЛЬКО для хост-систем с графическим интерфейсом (ПК, планшеты). Не подходит для встраиваемых систем без дисплея или с ограниченными ресурсами. </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Диалог НЕ является потокобезопасным — все операции должны выполняться в основном потоке (потоке событий Qt). </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classFCCommand.html" title="Класс для хранения, парсинга и генерации G-code команд (совместимость с прошивкой Marlin 2....">FCCommand</a> для обработки ошибок на уровне протокола </dd>
+<dd>
+<a class="el" href="classFCCondition.html" title="Класс для компактного хранения и управления составным состоянием устройства.">FCCondition</a> для управления состоянием ошибок в устройстве </dd></dl>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="ab982d74f3f12fc881b08849fc90cd78a" name="ab982d74f3f12fc881b08849fc90cd78a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab982d74f3f12fc881b08849fc90cd78a">&#9670;&#160;</a></span>FCErrorDialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCErrorDialog::FCErrorDialog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">QWidget</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classFCRange.html">nullptr</a></span></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор диалога с автоматической инициализацией интерфейса. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Родительский виджет (для управления временем жизни и модальностью). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>При указании родителя диалог будет уничтожен автоматически при уничтожении родителя. Если родитель не указан (nullptr), ответственность за удаление лежит на вызывающем коде. </dd></dl>
+
+</div>
+</div>
+<a id="ace791d0e7803665b60c98bc721b555d5" name="ace791d0e7803665b60c98bc721b555d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace791d0e7803665b60c98bc721b555d5">&#9670;&#160;</a></span>~FCErrorDialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCErrorDialog::~FCErrorDialog </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Деструктор диалога. </p>
+<dl class="section note"><dt>Заметки</dt><dd>Автоматически освобождает ресурсы интерфейса (через удаление _ui) и закрывает окно, если оно было открыто на момент уничтожения объекта. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a659c28409bac613cd8d7e8ce7167dcf7" name="a659c28409bac613cd8d7e8ce7167dcf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a659c28409bac613cd8d7e8ce7167dcf7">&#9670;&#160;</a></span>exec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">int</a> FCErrorDialog::exec </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Отображает диалог в модальном режиме и возвращает результат. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>QDialog::Accepted если пользователь нажал "OK", иначе QDialog::Rejected. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Этот метод является стандартным для QDialog и вызывается неявно при <a class="el" href="#a659c28409bac613cd8d7e8ce7167dcf7" title="Отображает диалог в модальном режиме и возвращает результат.">exec()</a>. Рекомендуется использовать именно <a class="el" href="#a659c28409bac613cd8d7e8ce7167dcf7" title="Отображает диалог в модальном режиме и возвращает результат.">exec()</a> для модальных диалогов ошибок. </dd></dl>
+
+</div>
+</div>
+<a id="ade6a88ab8148a7e598f5dfc8c56dccad" name="ade6a88ab8148a7e598f5dfc8c56dccad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade6a88ab8148a7e598f5dfc8c56dccad">&#9670;&#160;</a></span>ok</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">void</a> FCErrorDialog::ok </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сигнал, эмитируемый при подтверждении ошибки пользователем (нажатие "OK"). </p>
+<dl class="section note"><dt>Заметки</dt><dd>Сигнал эмитируется ДО закрытия диалога, что позволяет выполнить дополнительные действия перед уничтожением объекта (например, логирование подтверждения). </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Не путать с сигналом QDialog::finished() — этот сигнал специфичен для подтверждения ошибки. </dd></dl>
+
+</div>
+</div>
+<a id="a97d2ef8acaa5189b977ce2173da90570" name="a97d2ef8acaa5189b977ce2173da90570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d2ef8acaa5189b977ce2173da90570">&#9670;&#160;</a></span>setMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">void</a> FCErrorDialog::setMessage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает текст сообщения об ошибке для отображения в диалоге. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Текст сообщения (поддерживает HTML-форматирование для Qt-виджетов). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Метод можно вызывать как до вызова <a class="el" href="#a659c28409bac613cd8d7e8ce7167dcf7" title="Отображает диалог в модальном режиме и возвращает результат.">exec()</a>/show(), так и во время отображения диалога. Для многострочных сообщений используйте "\n" или "&lt;br&gt;" (в HTML-режиме). </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Длинные сообщения (&gt;500 символов) могут нарушить макет диалога — рекомендуется ограничивать длину или использовать многострочный режим в дизайнере. </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>FCDisplay/FCErrorDialog/<a class="el" href="FCErrorDialog_8h_source.html">FCErrorDialog.h</a></li>
+<li>FCDisplay/FCErrorDialog/<b>FCErrorDialog.cpp</b></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

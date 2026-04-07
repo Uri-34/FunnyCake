@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Класс FCThreader</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classFCThreader-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс FCThreader</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для выполнения FCThreadProcess в отдельном потоке.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FCThreader_8h_source.html">FCThreader.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:FCThreader:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFCThreader__inherit__graph.png" border="0" usemap="#aFCThreader_inherit__map" alt="Inheritance graph"/></div>
+<map name="aFCThreader_inherit__map" id="aFCThreader_inherit__map">
+<area shape="rect" title="Класс для выполнения FCThreadProcess в отдельном потоке." alt="" coords="5,79,103,104"/>
+<area shape="rect" title=" " alt="" coords="17,5,91,31"/>
+<area shape="poly" title=" " alt="" coords="57,44,57,79,51,79,51,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса FCThreader:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFCThreader__coll__graph.png" border="0" usemap="#aFCThreader_coll__map" alt="Collaboration graph"/></div>
+<map name="aFCThreader_coll__map" id="aFCThreader_coll__map">
+<area shape="rect" title="Класс для выполнения FCThreadProcess в отдельном потоке." alt="" coords="5,79,103,104"/>
+<area shape="rect" title=" " alt="" coords="17,5,91,31"/>
+<area shape="poly" title=" " alt="" coords="57,44,57,79,51,79,51,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:ac2f2a75492e132b50a449021e6c7519d" id="r_ac2f2a75492e132b50a449021e6c7519d"><td class="memItemLeft" align="right" valign="top"><a id="ac2f2a75492e132b50a449021e6c7519d" name="ac2f2a75492e132b50a449021e6c7519d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>conditionChanged</b> ()</td></tr>
+<tr class="memdesc:ac2f2a75492e132b50a449021e6c7519d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Состояние процесса изменилось. Перенаправляется от process-&gt;<a class="el" href="#ac2f2a75492e132b50a449021e6c7519d" title="Состояние процесса изменилось. Перенаправляется от process-&gt;conditionChanged().">conditionChanged()</a>. <br /></td></tr>
+<tr class="separator:ac2f2a75492e132b50a449021e6c7519d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32e0b8fc330b3c29f4163594e3f2f5c5" id="r_a32e0b8fc330b3c29f4163594e3f2f5c5"><td class="memItemLeft" align="right" valign="top"><a id="a32e0b8fc330b3c29f4163594e3f2f5c5" name="a32e0b8fc330b3c29f4163594e3f2f5c5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>started</b> (const QString &amp;<a class="el" href="#acb9d82975413d180c2aea8e9e2fc7675">processName</a>)</td></tr>
+<tr class="memdesc:a32e0b8fc330b3c29f4163594e3f2f5c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Процесс запущен. <br /></td></tr>
+<tr class="separator:a32e0b8fc330b3c29f4163594e3f2f5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c07acbd38a5fa6a032d251b86091ef2" id="r_a9c07acbd38a5fa6a032d251b86091ef2"><td class="memItemLeft" align="right" valign="top"><a id="a9c07acbd38a5fa6a032d251b86091ef2" name="a9c07acbd38a5fa6a032d251b86091ef2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>stoped</b> (const QString &amp;<a class="el" href="#acb9d82975413d180c2aea8e9e2fc7675">processName</a>)</td></tr>
+<tr class="memdesc:a9c07acbd38a5fa6a032d251b86091ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Процесс остановлен. <br /></td></tr>
+<tr class="separator:a9c07acbd38a5fa6a032d251b86091ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0535ab765d7715c97f8845b95db5fdb4" id="r_a0535ab765d7715c97f8845b95db5fdb4"><td class="memItemLeft" align="right" valign="top"><a id="a0535ab765d7715c97f8845b95db5fdb4" name="a0535ab765d7715c97f8845b95db5fdb4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>paused</b> (const QString &amp;<a class="el" href="#acb9d82975413d180c2aea8e9e2fc7675">processName</a>)</td></tr>
+<tr class="memdesc:a0535ab765d7715c97f8845b95db5fdb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Процесс приостановлен. <br /></td></tr>
+<tr class="separator:a0535ab765d7715c97f8845b95db5fdb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78f3aa8e83ce3c2cd7613ce61f8735b6" id="r_a78f3aa8e83ce3c2cd7613ce61f8735b6"><td class="memItemLeft" align="right" valign="top"><a id="a78f3aa8e83ce3c2cd7613ce61f8735b6" name="a78f3aa8e83ce3c2cd7613ce61f8735b6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reseted</b> (const QString &amp;<a class="el" href="#acb9d82975413d180c2aea8e9e2fc7675">processName</a>)</td></tr>
+<tr class="memdesc:a78f3aa8e83ce3c2cd7613ce61f8735b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Состояние сброшено. <br /></td></tr>
+<tr class="separator:a78f3aa8e83ce3c2cd7613ce61f8735b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56527958457bbee06aad191bc6adf438" id="r_a56527958457bbee06aad191bc6adf438"><td class="memItemLeft" align="right" valign="top"><a id="a56527958457bbee06aad191bc6adf438" name="a56527958457bbee06aad191bc6adf438"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>runningChanged</b> (bool running)</td></tr>
+<tr class="memdesc:a56527958457bbee06aad191bc6adf438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Изменился статус выполнения (running ↔ !running). <br /></td></tr>
+<tr class="separator:a56527958457bbee06aad191bc6adf438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e95690f998555461c22619a448bf06e" id="r_a1e95690f998555461c22619a448bf06e"><td class="memItemLeft" align="right" valign="top"><a id="a1e95690f998555461c22619a448bf06e" name="a1e95690f998555461c22619a448bf06e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>finished</b> ()</td></tr>
+<tr class="memdesc:a1e95690f998555461c22619a448bf06e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поток завершил работу (после <a class="el" href="#a5730d94e23685f469f6d00f089081c02" title="Остановить процесс и завершить поток.">stop()</a>). <br /></td></tr>
+<tr class="separator:a1e95690f998555461c22619a448bf06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a1b2ea3bfe32bb550104a7fb1afba34bb" id="r_a1b2ea3bfe32bb550104a7fb1afba34bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b2ea3bfe32bb550104a7fb1afba34bb">FCThreader</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a1b2ea3bfe32bb550104a7fb1afba34bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с передачей владения процессом.  <br /></td></tr>
+<tr class="separator:a1b2ea3bfe32bb550104a7fb1afba34bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b0c19f4a3ad3a906c06b49e46b1c924" id="r_a6b0c19f4a3ad3a906c06b49e46b1c924"><td class="memItemLeft" align="right" valign="top"><a id="a6b0c19f4a3ad3a906c06b49e46b1c924" name="a6b0c19f4a3ad3a906c06b49e46b1c924"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~FCThreader</b> () override</td></tr>
+<tr class="memdesc:a6b0c19f4a3ad3a906c06b49e46b1c924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор корректно останавливает поток и освобождает ресурсы. <br /></td></tr>
+<tr class="separator:a6b0c19f4a3ad3a906c06b49e46b1c924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb9d82975413d180c2aea8e9e2fc7675" id="r_acb9d82975413d180c2aea8e9e2fc7675"><td class="memItemLeft" align="right" valign="top"><a id="acb9d82975413d180c2aea8e9e2fc7675" name="acb9d82975413d180c2aea8e9e2fc7675"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>processName</b> () const</td></tr>
+<tr class="memdesc:acb9d82975413d180c2aea8e9e2fc7675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Имя процесса (objectName() процесса). <br /></td></tr>
+<tr class="separator:acb9d82975413d180c2aea8e9e2fc7675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a331478412ce8816a540cecd2729fce5f" id="r_a331478412ce8816a540cecd2729fce5f"><td class="memItemLeft" align="right" valign="top"><a id="a331478412ce8816a540cecd2729fce5f" name="a331478412ce8816a540cecd2729fce5f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (ReadyState state) const</td></tr>
+<tr class="memdesc:a331478412ce8816a540cecd2729fce5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">проверка есть ли процесс и в каком из 3х состояний готовности он находится. <br /></td></tr>
+<tr class="separator:a331478412ce8816a540cecd2729fce5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fdc4a1d69043a3b90d31893b1fdc537" id="r_a3fdc4a1d69043a3b90d31893b1fdc537"><td class="memItemLeft" align="right" valign="top"><a id="a3fdc4a1d69043a3b90d31893b1fdc537" name="a3fdc4a1d69043a3b90d31893b1fdc537"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (PlayState state) const</td></tr>
+<tr class="memdesc:a3fdc4a1d69043a3b90d31893b1fdc537"><td class="mdescLeft">&#160;</td><td class="mdescRight">проверка есть ли процесс и в каком из 3х состояний исполнения находится процесс. <br /></td></tr>
+<tr class="separator:a3fdc4a1d69043a3b90d31893b1fdc537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec7a751ed936740c0a298c33d72f159" id="r_a7ec7a751ed936740c0a298c33d72f159"><td class="memItemLeft" align="right" valign="top"><a id="a7ec7a751ed936740c0a298c33d72f159" name="a7ec7a751ed936740c0a298c33d72f159"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (ChangedState state) const</td></tr>
+<tr class="memdesc:a7ec7a751ed936740c0a298c33d72f159"><td class="mdescLeft">&#160;</td><td class="mdescRight">проверка есть ли процесс и в каком из 2х состояний находится процесс. <br /></td></tr>
+<tr class="separator:a7ec7a751ed936740c0a298c33d72f159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7254a5d7c30f787da8f7a399d806a4e5" id="r_a7254a5d7c30f787da8f7a399d806a4e5"><td class="memItemLeft" align="right" valign="top"><a id="a7254a5d7c30f787da8f7a399d806a4e5" name="a7254a5d7c30f787da8f7a399d806a4e5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is</b> (ErrorType type) const</td></tr>
+<tr class="memdesc:a7254a5d7c30f787da8f7a399d806a4e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Есть ли ошибка. <br /></td></tr>
+<tr class="separator:a7254a5d7c30f787da8f7a399d806a4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e3e78db639e2b00fd0451ab71c586d9" id="r_a4e3e78db639e2b00fd0451ab71c586d9"><td class="memItemLeft" align="right" valign="top"><a id="a4e3e78db639e2b00fd0451ab71c586d9" name="a4e3e78db639e2b00fd0451ab71c586d9"></a>
+Condition&#160;</td><td class="memItemRight" valign="bottom"><b>condition</b> () const</td></tr>
+<tr class="memdesc:a4e3e78db639e2b00fd0451ab71c586d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Текущее состояние процесса (для сериализации/логгирования). <br /></td></tr>
+<tr class="separator:a4e3e78db639e2b00fd0451ab71c586d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac97038858f9a89f6628166461c9e82d2" id="r_ac97038858f9a89f6628166461c9e82d2"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac97038858f9a89f6628166461c9e82d2">start</a> ()</td></tr>
+<tr class="memdesc:ac97038858f9a89f6628166461c9e82d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запустить процесс в отдельном потоке. Выполняет:  <br /></td></tr>
+<tr class="separator:ac97038858f9a89f6628166461c9e82d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5730d94e23685f469f6d00f089081c02" id="r_a5730d94e23685f469f6d00f089081c02"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5730d94e23685f469f6d00f089081c02">stop</a> ()</td></tr>
+<tr class="memdesc:a5730d94e23685f469f6d00f089081c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Остановить процесс и завершить поток.  <br /></td></tr>
+<tr class="separator:a5730d94e23685f469f6d00f089081c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7968d04867384d6894109093b58a14c" id="r_af7968d04867384d6894109093b58a14c"><td class="memItemLeft" align="right" valign="top"><a id="af7968d04867384d6894109093b58a14c" name="af7968d04867384d6894109093b58a14c"></a>
+Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><b>pause</b> ()</td></tr>
+<tr class="memdesc:af7968d04867384d6894109093b58a14c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поставить процесс на паузу (без остановки потока). <br /></td></tr>
+<tr class="separator:af7968d04867384d6894109093b58a14c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a451e0365028a34c6cb9dcb2246178698" id="r_a451e0365028a34c6cb9dcb2246178698"><td class="memItemLeft" align="right" valign="top"><a id="a451e0365028a34c6cb9dcb2246178698" name="a451e0365028a34c6cb9dcb2246178698"></a>
+Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
+<tr class="memdesc:a451e0365028a34c6cb9dcb2246178698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сбросить состояние процесса. <br /></td></tr>
+<tr class="separator:a451e0365028a34c6cb9dcb2246178698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c700c915897148da0a5201b2a0fcaf8" id="r_a1c700c915897148da0a5201b2a0fcaf8"><td class="memItemLeft" align="right" valign="top"><a id="a1c700c915897148da0a5201b2a0fcaf8" name="a1c700c915897148da0a5201b2a0fcaf8"></a>
+QThread *&#160;</td><td class="memItemRight" valign="bottom"><b>thread</b> () const</td></tr>
+<tr class="memdesc:a1c700c915897148da0a5201b2a0fcaf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Доступ к потоку (например, для приоритета). <br /></td></tr>
+<tr class="separator:a1c700c915897148da0a5201b2a0fcaf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c58b89bb65f2e745fc8e0bfa1f74225" id="r_a8c58b89bb65f2e745fc8e0bfa1f74225"><td class="memItemLeft" align="right" valign="top"><a id="a8c58b89bb65f2e745fc8e0bfa1f74225" name="a8c58b89bb65f2e745fc8e0bfa1f74225"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>append</b> (const FCThreadProcess *process)</td></tr>
+<tr class="separator:a8c58b89bb65f2e745fc8e0bfa1f74225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9af669d25804632ca90b1a1d7568f3b6" id="r_a9af669d25804632ca90b1a1d7568f3b6"><td class="memItemLeft" align="right" valign="top">const FCThreadProcess *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9af669d25804632ca90b1a1d7568f3b6">operator[]</a> (int number) const</td></tr>
+<tr class="memdesc:a9af669d25804632ca90b1a1d7568f3b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Прямой доступ к процессу по номуру.  <br /></td></tr>
+<tr class="separator:a9af669d25804632ca90b1a1d7568f3b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для выполнения FCThreadProcess в отдельном потоке. </p>
+<p>Управляет жизненным циклом процесса и потока. Состояние (ready/play/error) — <b>берётся из _process</b>, а не дублируется.</p>
+<p>⚠️ ВАЖНО: <a class="el" href="classFCThreader.html" title="Класс для выполнения FCThreadProcess в отдельном потоке.">FCThreader</a> НЕ наследует FCStatedObject. Вместо этого — делегирует запросы к процессу через прокси-методы.</p>
+<p>Это гарантирует:</p><ul>
+<li>согласованность состояния,</li>
+<li>отсутствие дублирования данных (экономия RAM в embedded),</li>
+<li>прозрачность: состояние = состояние процесса. </li>
+</ul>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a1b2ea3bfe32bb550104a7fb1afba34bb" name="a1b2ea3bfe32bb550104a7fb1afba34bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b2ea3bfe32bb550104a7fb1afba34bb">&#9670;&#160;</a></span>FCThreader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCThreader::FCThreader </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор с передачей владения процессом. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">process</td><td>Уникальный указатель на процесс (владение передаётся <a class="el" href="classFCThreader.html" title="Класс для выполнения FCThreadProcess в отдельном потоке.">FCThreader</a>). </td></tr>
+    <tr><td class="paramname">parent</td><td>Родитель (для QObject ownership).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Пример: auto poller = std::make_unique&lt;SensorPoller&gt;(); auto threader = new <a class="el" href="classFCThreader.html" title="Класс для выполнения FCThreadProcess в отдельном потоке.">FCThreader(std::move(poller), this)</a>; </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a9af669d25804632ca90b1a1d7568f3b6" name="a9af669d25804632ca90b1a1d7568f3b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9af669d25804632ca90b1a1d7568f3b6">&#9670;&#160;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const FCThreadProcess * FCThreader::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>number</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Прямой доступ к процессу по номуру. </p>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Не вызывайте методы управления (start/stop) напрямую — используйте <a class="el" href="classFCThreader.html" title="Класс для выполнения FCThreadProcess в отдельном потоке.">FCThreader</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ac97038858f9a89f6628166461c9e82d2" name="ac97038858f9a89f6628166461c9e82d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac97038858f9a89f6628166461c9e82d2">&#9670;&#160;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCThreader::start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Запустить процесс в отдельном потоке. Выполняет: </p>
+<ol type="1">
+<li>process-&gt;moveToThread(_thread)</li>
+<li>connect сигналов (started/stopped/paused → emit)</li>
+<li>start потока</li>
+<li>вызов process-&gt;<a class="el" href="#ac97038858f9a89f6628166461c9e82d2" title="Запустить процесс в отдельном потоке. Выполняет:">start()</a> через queued connection </li>
+</ol>
+
+</div>
+</div>
+<a id="a5730d94e23685f469f6d00f089081c02" name="a5730d94e23685f469f6d00f089081c02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5730d94e23685f469f6d00f089081c02">&#9670;&#160;</a></span>stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCThreader::stop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Остановить процесс и завершить поток. </p>
+<p>Выполняет graceful shutdown:</p><ul>
+<li>вызов process-&gt;<a class="el" href="#a5730d94e23685f469f6d00f089081c02" title="Остановить процесс и завершить поток.">stop()</a>,</li>
+<li>ожидание завершения через process-&gt;<a class="el" href="#a1e95690f998555461c22619a448bf06e" title="Поток завершил работу (после stop()).">finished()</a>,</li>
+<li>quit() + wait() потока. </li>
+</ul>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>FCTypes/FCThreader/<a class="el" href="FCThreader_8h_source.html">FCThreader.h</a></li>
+<li>FCTypes/FCThreader/<b>FCThreader.cpp</b></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

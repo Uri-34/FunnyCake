@@ -1,0 +1,815 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Класс FCSpeed</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="classFCSpeed-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс FCSpeed</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для хранения пары целочисленных скоростей движения и отрисовки.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FCSpeed_8h_source.html">FCSpeed.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a1c87b1322538c5fa10a7720d09a3717a" id="r_a1c87b1322538c5fa10a7720d09a3717a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a> = <a class="el" href="classFCRange.html">int32_t</a></td></tr>
+<tr class="separator:a1c87b1322538c5fa10a7720d09a3717a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a302c8ef1ce3a840bedfdc482312f1f86" id="r_a302c8ef1ce3a840bedfdc482312f1f86"><td class="memItemLeft" align="right" valign="top"><a id="a302c8ef1ce3a840bedfdc482312f1f86" name="a302c8ef1ce3a840bedfdc482312f1f86"></a>
+<a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FCSpeed</b> () <a class="el" href="classFCRange.html">noexcept</a>=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a302c8ef1ce3a840bedfdc482312f1f86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор по умолчанию. Инициализирует обе скорости нулевыми значениями. <br /></td></tr>
+<tr class="separator:a302c8ef1ce3a840bedfdc482312f1f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab198144a04f58473411ed4c2c8abd40e" id="r_ab198144a04f58473411ed4c2c8abd40e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab198144a04f58473411ed4c2c8abd40e">FCSpeed</a> (<a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a> <a class="el" href="#a8504b97ad257d39ae5d09983dcdeefdd">move</a>, <a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a> <a class="el" href="#a515d22a24306131d1457203a3091f135">draw</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ab198144a04f58473411ed4c2c8abd40e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с параметрами.  <br /></td></tr>
+<tr class="separator:ab198144a04f58473411ed4c2c8abd40e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67c8477b7bfa038ad84f8459f4f245ac" id="r_a67c8477b7bfa038ad84f8459f4f245ac"><td class="memItemLeft" align="right" valign="top"><a id="a67c8477b7bfa038ad84f8459f4f245ac" name="a67c8477b7bfa038ad84f8459f4f245ac"></a>
+<a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FCSpeed</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;) <a class="el" href="classFCRange.html">noexcept</a>=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a67c8477b7bfa038ad84f8459f4f245ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор копирования (тривиальный). <br /></td></tr>
+<tr class="separator:a67c8477b7bfa038ad84f8459f4f245ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b658ed76efb9c1733d7aceaa321763a" id="r_a1b658ed76efb9c1733d7aceaa321763a"><td class="memItemLeft" align="right" valign="top"><a id="a1b658ed76efb9c1733d7aceaa321763a" name="a1b658ed76efb9c1733d7aceaa321763a"></a>
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;) <a class="el" href="classFCRange.html">noexcept</a>=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a1b658ed76efb9c1733d7aceaa321763a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присваивания копированием (тривиальный). <br /></td></tr>
+<tr class="separator:a1b658ed76efb9c1733d7aceaa321763a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a5ae64126b184372548c4057d050587" id="r_a5a5ae64126b184372548c4057d050587"><td class="memItemLeft" align="right" valign="top"><a id="a5a5ae64126b184372548c4057d050587" name="a5a5ae64126b184372548c4057d050587"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~FCSpeed</b> ()=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a5a5ae64126b184372548c4057d050587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор (тривиальный). <br /></td></tr>
+<tr class="separator:a5a5ae64126b184372548c4057d050587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8504b97ad257d39ae5d09983dcdeefdd" id="r_a8504b97ad257d39ae5d09983dcdeefdd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8504b97ad257d39ae5d09983dcdeefdd">move</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a8504b97ad257d39ae5d09983dcdeefdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает скорость движения механизма.  <br /></td></tr>
+<tr class="separator:a8504b97ad257d39ae5d09983dcdeefdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a515d22a24306131d1457203a3091f135" id="r_a515d22a24306131d1457203a3091f135"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a515d22a24306131d1457203a3091f135">draw</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a515d22a24306131d1457203a3091f135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает скорость отрисовки/обновления.  <br /></td></tr>
+<tr class="separator:a515d22a24306131d1457203a3091f135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a7f15e5614a87c3b78a6e9dc9dfce7d" id="r_a6a7f15e5614a87c3b78a6e9dc9dfce7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a7f15e5614a87c3b78a6e9dc9dfce7d">setMove</a> (<a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a> <a class="el" href="classFCRange.html">v</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a6a7f15e5614a87c3b78a6e9dc9dfce7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое значение скорости движения.  <br /></td></tr>
+<tr class="separator:a6a7f15e5614a87c3b78a6e9dc9dfce7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21ce4faa1704bb66445fc4c028cda57f" id="r_a21ce4faa1704bb66445fc4c028cda57f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21ce4faa1704bb66445fc4c028cda57f">setDraw</a> (<a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a> <a class="el" href="classFCRange.html">v</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a21ce4faa1704bb66445fc4c028cda57f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новое значение скорости отрисовки.  <br /></td></tr>
+<tr class="separator:a21ce4faa1704bb66445fc4c028cda57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67ed4294ee4ff56aba32e5bea608766b" id="r_a67ed4294ee4ff56aba32e5bea608766b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67ed4294ee4ff56aba32e5bea608766b">set</a> (<a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a> <a class="el" href="#a8504b97ad257d39ae5d09983dcdeefdd">move</a>, <a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a> <a class="el" href="#a515d22a24306131d1457203a3091f135">draw</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a67ed4294ee4ff56aba32e5bea608766b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает обе скорости одновременно.  <br /></td></tr>
+<tr class="separator:a67ed4294ee4ff56aba32e5bea608766b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa29f0dfda852ad11c49a43da9f8d1973" id="r_aa29f0dfda852ad11c49a43da9f8d1973"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa29f0dfda852ad11c49a43da9f8d1973">isZero</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aa29f0dfda852ad11c49a43da9f8d1973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, равны ли обе скорости нулю.  <br /></td></tr>
+<tr class="separator:aa29f0dfda852ad11c49a43da9f8d1973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab88f5be05895ca9fa6e2ab3b2271a0a4" id="r_ab88f5be05895ca9fa6e2ab3b2271a0a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab88f5be05895ca9fa6e2ab3b2271a0a4">isValid</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ab88f5be05895ca9fa6e2ab3b2271a0a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, является ли скорость допустимой (не выходит за пределы разумных значений).  <br /></td></tr>
+<tr class="separator:ab88f5be05895ca9fa6e2ab3b2271a0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8331c082982dc81d4bab30c5fd77fa0" id="r_ad8331c082982dc81d4bab30c5fd77fa0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8331c082982dc81d4bab30c5fd77fa0">operator==</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ad8331c082982dc81d4bab30c5fd77fa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения на равенство.  <br /></td></tr>
+<tr class="separator:ad8331c082982dc81d4bab30c5fd77fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d7ef5064316b8725aebe7accd0a754" id="r_ac5d7ef5064316b8725aebe7accd0a754"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5d7ef5064316b8725aebe7accd0a754">operator!=</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ac5d7ef5064316b8725aebe7accd0a754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения на неравенство.  <br /></td></tr>
+<tr class="separator:ac5d7ef5064316b8725aebe7accd0a754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73ebc253ffdef5f3f599a53689d4fb9" id="r_ae73ebc253ffdef5f3f599a53689d4fb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae73ebc253ffdef5f3f599a53689d4fb9">operator+=</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ae73ebc253ffdef5f3f599a53689d4fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор составного сложения.  <br /></td></tr>
+<tr class="separator:ae73ebc253ffdef5f3f599a53689d4fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e728df17d499f41c0dd3de1343f36a" id="r_af6e728df17d499f41c0dd3de1343f36a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6e728df17d499f41c0dd3de1343f36a">operator-=</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:af6e728df17d499f41c0dd3de1343f36a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор составного вычитания.  <br /></td></tr>
+<tr class="separator:af6e728df17d499f41c0dd3de1343f36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae048ad6c2441fca0ef1094ef9dbadd36" id="r_ae048ad6c2441fca0ef1094ef9dbadd36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae048ad6c2441fca0ef1094ef9dbadd36">operator+</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ae048ad6c2441fca0ef1094ef9dbadd36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сложения.  <br /></td></tr>
+<tr class="separator:ae048ad6c2441fca0ef1094ef9dbadd36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b2ef75ec96eb9f740ea571f6032f285" id="r_a1b2ef75ec96eb9f740ea571f6032f285"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b2ef75ec96eb9f740ea571f6032f285">operator-</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a1b2ef75ec96eb9f740ea571f6032f285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор вычитания.  <br /></td></tr>
+<tr class="separator:a1b2ef75ec96eb9f740ea571f6032f285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a88a8189cce44141711cd6095eb944d" id="r_a8a88a8189cce44141711cd6095eb944d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a88a8189cce44141711cd6095eb944d">operator-</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a8a88a8189cce44141711cd6095eb944d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор унарного минуса (инверсия направления).  <br /></td></tr>
+<tr class="separator:a8a88a8189cce44141711cd6095eb944d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24b70ee3e2ea9a61009b9bb4d24bcbe" id="r_ac24b70ee3e2ea9a61009b9bb4d24bcbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac24b70ee3e2ea9a61009b9bb4d24bcbe">clamped</a> (<a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a> min, <a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a> max) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ac24b70ee3e2ea9a61009b9bb4d24bcbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ограничивает обе компоненты скорости заданным диапазоном.  <br /></td></tr>
+<tr class="separator:ac24b70ee3e2ea9a61009b9bb4d24bcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7ab2bb895fce4d29a3f20a6a3c886b9" id="r_af7ab2bb895fce4d29a3f20a6a3c886b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7ab2bb895fce4d29a3f20a6a3c886b9">scaled</a> (<a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a> <a class="el" href="classFCRange.html">factor</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:af7ab2bb895fce4d29a3f20a6a3c886b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Масштабирует обе компоненты скорости на заданный коэффициент.  <br /></td></tr>
+<tr class="separator:af7ab2bb895fce4d29a3f20a6a3c886b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a101bdf3daa03bbb714b773f0539fe37c" id="r_a101bdf3daa03bbb714b773f0539fe37c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">static</a> <a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a101bdf3daa03bbb714b773f0539fe37c">zero</a> () <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a101bdf3daa03bbb714b773f0539fe37c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает нулевую скорость (движение = 0, отрисовка = 0).  <br /></td></tr>
+<tr class="separator:a101bdf3daa03bbb714b773f0539fe37c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для хранения пары целочисленных скоростей движения и отрисовки. </p>
+<p>Предназначен для компактного представления двух независимых скоростей в единой структуре:</p><ul>
+<li>Скорость движения (_move) — линейная/угловая скорость исполнительного механизма (мм/с, шаги/с, об/мин в зависимости от контекста),</li>
+<li>Скорость отрисовки (_draw) — частота обновления графического вывода или кадров (кадры/с, точки/с).</li>
+</ul>
+<p>Особенности реализации:</p><ul>
+<li>Использует 32-битные знаковые целые числа (int32_t) для предсказуемого размера на всех платформах (ровно 8 байт),</li>
+<li>Поддерживает отрицательные значения для реверса или движения назад,</li>
+<li>Тривиально копируемый (trivially copyable) для эффективного использования в контейнерах и встраиваемых системах,</li>
+<li>Все операции помечены как constexpr и noexcept для максимальной эффективности.</li>
+</ul>
+<dl class="section note"><dt>Заметки</dt><dd>Семантика полей зависит от контекста использования:<ul>
+<li>В робототехнике: _move = скорость колёс/привода, _draw = скорость обновления дисплея,</li>
+<li>В графике: _move = скорость анимации объекта, _draw = частота кадров,</li>
+<li>В ЧПУ: _move = подача инструмента, _draw = скорость прорисовки траектории. </li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Класс НЕ выполняет автоматическую проверку допустимых диапазонов скоростей. Для ограничения значений используйте метод <a class="el" href="#ac24b70ee3e2ea9a61009b9bb4d24bcbe" title="Ограничивает обе компоненты скорости заданным диапазоном.">clamped()</a> или наследуйте класс с дополнительной валидацией. </dd></dl>
+</div><h2 class="groupheader">Определения типов</h2>
+<a id="a1c87b1322538c5fa10a7720d09a3717a" name="a1c87b1322538c5fa10a7720d09a3717a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c87b1322538c5fa10a7720d09a3717a">&#9670;&#160;</a></span>_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">using</a> <a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">FCSpeed::_type</a> = <a class="el" href="classFCRange.html">int32_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Тип данных для хранения значений скорости (32-битное знаковое целое). Использование знакового типа позволяет представлять реверс/движение назад. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="ab198144a04f58473411ed4c2c8abd40e" name="ab198144a04f58473411ed4c2c8abd40e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab198144a04f58473411ed4c2c8abd40e">&#9670;&#160;</a></span>FCSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FCSpeed::FCSpeed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a></td>          <td class="paramname"><span class="paramname"><em>move</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a></td>          <td class="paramname"><span class="paramname"><em>draw</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор с параметрами. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">move</td><td>Скорость движения (линейная/угловая скорость механизма). </td></tr>
+    <tr><td class="paramname">draw</td><td>Скорость отрисовки (частота обновления графического вывода). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Отрицательные значения допустимы и интерпретируются как реверс/движение назад. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="ac24b70ee3e2ea9a61009b9bb4d24bcbe" name="ac24b70ee3e2ea9a61009b9bb4d24bcbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac24b70ee3e2ea9a61009b9bb4d24bcbe">&#9670;&#160;</a></span>clamped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> FCSpeed::clamped </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a></td>          <td class="paramname"><span class="paramname"><em>min</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ограничивает обе компоненты скорости заданным диапазоном. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>Минимальное допустимое значение. </td></tr>
+    <tr><td class="paramname">max</td><td>Максимальное допустимое значение. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новый объект скорости с компонентами, ограниченными диапазоном [min, max]. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Применяется один и тот же диапазон к обеим компонентам. Для раздельного ограничения используйте отдельные вызовы с последующей сборкой. </dd></dl>
+
+</div>
+</div>
+<a id="a515d22a24306131d1457203a3091f135" name="a515d22a24306131d1457203a3091f135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a515d22a24306131d1457203a3091f135">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a> FCSpeed::draw </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает скорость отрисовки/обновления. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение скорости отрисовки (знаковое целое). </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>В контексте графики обычно положительное значение (частота кадров). </dd></dl>
+
+</div>
+</div>
+<a id="ab88f5be05895ca9fa6e2ab3b2271a0a4" name="ab88f5be05895ca9fa6e2ab3b2271a0a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab88f5be05895ca9fa6e2ab3b2271a0a4">&#9670;&#160;</a></span>isValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCSpeed::isValid </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, является ли скорость допустимой (не выходит за пределы разумных значений). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если обе компоненты находятся в диапазоне [-1'000'000, 1'000'000]; иначе — false. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Диапазон выбран как разумный предел для большинства встраиваемых приложений. Для строгой валидации используйте внешние проверки или наследование. </dd></dl>
+
+</div>
+</div>
+<a id="aa29f0dfda852ad11c49a43da9f8d1973" name="aa29f0dfda852ad11c49a43da9f8d1973"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa29f0dfda852ad11c49a43da9f8d1973">&#9670;&#160;</a></span>isZero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCSpeed::isZero </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, равны ли обе скорости нулю. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если _move == 0 и _draw == 0; иначе — false. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Эквивалентно сравнению с <a class="el" href="#a101bdf3daa03bbb714b773f0539fe37c" title="Возвращает нулевую скорость (движение = 0, отрисовка = 0).">FCSpeed::zero()</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a8504b97ad257d39ae5d09983dcdeefdd" name="a8504b97ad257d39ae5d09983dcdeefdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8504b97ad257d39ae5d09983dcdeefdd">&#9670;&#160;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a> FCSpeed::move </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает скорость движения механизма. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение скорости движения (знаковое целое). </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Отрицательное значение означает движение в обратном направлении (реверс). </dd></dl>
+
+</div>
+</div>
+<a id="ac5d7ef5064316b8725aebe7accd0a754" name="ac5d7ef5064316b8725aebe7accd0a754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5d7ef5064316b8725aebe7accd0a754">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCSpeed::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сравнения на неравенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другой объект скорости для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если скорости различаются хотя бы по одной компоненте; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="ae048ad6c2441fca0ef1094ef9dbadd36" name="ae048ad6c2441fca0ef1094ef9dbadd36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae048ad6c2441fca0ef1094ef9dbadd36">&#9670;&#160;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> FCSpeed::operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сложения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Добавляемая скорость. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новый объект скорости с суммой соответствующих компонент. </dd></dl>
+
+</div>
+</div>
+<a id="ae73ebc253ffdef5f3f599a53689d4fb9" name="ae73ebc253ffdef5f3f599a53689d4fb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae73ebc253ffdef5f3f599a53689d4fb9">&#9670;&#160;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp; FCSpeed::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор составного сложения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Добавляемая скорость. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Ссылка на текущий объект после модификации. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Компоненты складываются независимо: _move += other._move, _draw += other._draw. </dd></dl>
+
+</div>
+</div>
+<a id="a8a88a8189cce44141711cd6095eb944d" name="a8a88a8189cce44141711cd6095eb944d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a88a8189cce44141711cd6095eb944d">&#9670;&#160;</a></span>operator-() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> FCSpeed::operator- </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор унарного минуса (инверсия направления). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Новый объект скорости с инвертированными компонентами (-_move, -_draw). </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Полезен для быстрого переключения направления движения. </dd></dl>
+
+</div>
+</div>
+<a id="a1b2ef75ec96eb9f740ea571f6032f285" name="a1b2ef75ec96eb9f740ea571f6032f285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b2ef75ec96eb9f740ea571f6032f285">&#9670;&#160;</a></span>operator-() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> FCSpeed::operator- </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор вычитания. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Вычитаемая скорость. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новый объект скорости с разностью соответствующих компонент. </dd></dl>
+
+</div>
+</div>
+<a id="af6e728df17d499f41c0dd3de1343f36a" name="af6e728df17d499f41c0dd3de1343f36a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e728df17d499f41c0dd3de1343f36a">&#9670;&#160;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp; FCSpeed::operator-= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор составного вычитания. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Вычитаемая скорость. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Ссылка на текущий объект после модификации. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Компоненты вычитаются независимо: _move -= other._move, _draw -= other._draw. </dd></dl>
+
+</div>
+</div>
+<a id="ad8331c082982dc81d4bab30c5fd77fa0" name="ad8331c082982dc81d4bab30c5fd77fa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8331c082982dc81d4bab30c5fd77fa0">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCSpeed::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сравнения на равенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другой объект скорости для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если обе компоненты (_move и _draw) идентичны; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="af7ab2bb895fce4d29a3f20a6a3c886b9" name="af7ab2bb895fce4d29a3f20a6a3c886b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7ab2bb895fce4d29a3f20a6a3c886b9">&#9670;&#160;</a></span>scaled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> FCSpeed::scaled </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a></td>          <td class="paramname"><span class="paramname"><em>factor</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Масштабирует обе компоненты скорости на заданный коэффициент. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">factor</td><td>Целочисленный коэффициент масштабирования. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новый объект скорости с умноженными на фактор компонентами. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Для дробного масштабирования используйте внешнее преобразование типов. </dd></dl>
+
+</div>
+</div>
+<a id="a67ed4294ee4ff56aba32e5bea608766b" name="a67ed4294ee4ff56aba32e5bea608766b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67ed4294ee4ff56aba32e5bea608766b">&#9670;&#160;</a></span>set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FCSpeed::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a></td>          <td class="paramname"><span class="paramname"><em>move</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a></td>          <td class="paramname"><span class="paramname"><em>draw</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает обе скорости одновременно. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">move</td><td>Новое значение скорости движения. </td></tr>
+    <tr><td class="paramname">draw</td><td>Новое значение скорости отрисовки. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a21ce4faa1704bb66445fc4c028cda57f" name="a21ce4faa1704bb66445fc4c028cda57f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21ce4faa1704bb66445fc4c028cda57f">&#9670;&#160;</a></span>setDraw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FCSpeed::setDraw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое значение скорости отрисовки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Новое значение скорости отрисовки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>В большинстве случаев следует использовать положительные значения. </dd></dl>
+
+</div>
+</div>
+<a id="a6a7f15e5614a87c3b78a6e9dc9dfce7d" name="a6a7f15e5614a87c3b78a6e9dc9dfce7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a7f15e5614a87c3b78a6e9dc9dfce7d">&#9670;&#160;</a></span>setMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FCSpeed::setMove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a1c87b1322538c5fa10a7720d09a3717a">_type</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает новое значение скорости движения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Новое значение скорости движения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Отрицательные значения допустимы для реверса. </dd></dl>
+
+</div>
+</div>
+<a id="a101bdf3daa03bbb714b773f0539fe37c" name="a101bdf3daa03bbb714b773f0539fe37c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a101bdf3daa03bbb714b773f0539fe37c">&#9670;&#160;</a></span>zero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">static</a> <a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCSpeed.html">FCSpeed</a> FCSpeed::zero </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает нулевую скорость (движение = 0, отрисовка = 0). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Константный объект скорости с нулевыми значениями. </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>FCTypes/FCSpeed/<a class="el" href="FCSpeed_8h_source.html">FCSpeed.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

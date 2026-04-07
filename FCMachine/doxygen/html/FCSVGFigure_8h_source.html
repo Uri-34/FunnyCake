@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Исходный файл FCSVGImageParser/FCSVGFigure/FCSVGFigure.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_02d1a21c36f0c37d8730b9e2e1cab8ac.html">FCSVGImageParser</a></li><li class="navelem"><a class="el" href="dir_49fd83bbac9aa7359972d68ac3b4a9b7.html">FCSVGFigure</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FCSVGFigure.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FC_SVG_FIGURE_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FC_SVG_FIGURE_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QPen&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QBrush&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QPainterPath&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// --- конструкторы ---</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#a860b5614cf1f8bccf383d239696898ef">   16</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classFCSVGFigure.html#a860b5614cf1f8bccf383d239696898ef">FCSVGFigure</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QString</a> &amp;<a class="code hl_function" href="classFCSVGFigure.html#aeddfaa3d6fca826ddd958d314c1292ab">name</a>, <a class="code hl_class" href="classFCRange.html">QPen</a> <a class="code hl_function" href="classFCSVGFigure.html#a4ba9c9cbd1a916bab368c8c5b13c5c54">pen</a> = {}, <a class="code hl_class" href="classFCRange.html">QBrush</a> <a class="code hl_function" href="classFCSVGFigure.html#a8ba63ed9b022dd449c27bca968a89593">brush</a> = {}, <a class="code hl_class" href="classFCRange.html">QPainterPath</a> <a class="code hl_function" href="classFCSVGFigure.html#a366758165271aabe8ea84cb3e2956d63">path</a> = {}) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        : _name(<a class="code hl_function" href="classFCSVGFigure.html#aeddfaa3d6fca826ddd958d314c1292ab">name</a>),</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>          _pen(<a class="code hl_function" href="classFCSVGFigure.html#a4ba9c9cbd1a916bab368c8c5b13c5c54">pen</a>),</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>          _brush(<a class="code hl_function" href="classFCSVGFigure.html#a8ba63ed9b022dd449c27bca968a89593">brush</a>),</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>          _path(<a class="code hl_function" href="classFCSVGFigure.html#a366758165271aabe8ea84cb3e2956d63">path</a>)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// остальное компилятор сгенерирует сам :)</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a>(<a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a>&amp;&amp;) <a class="code hl_class" href="classFCRange.html">noexcept</a> = <a class="code hl_class" href="classFCRange.html">default</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a>&amp; <a class="code hl_class" href="classFCRange.html">operator</a>=(<a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a>&amp;) = <a class="code hl_class" href="classFCRange.html">default</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a>&amp; <a class="code hl_class" href="classFCRange.html">operator</a>=(<a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a>&amp;&amp;) <a class="code hl_class" href="classFCRange.html">noexcept</a> = <a class="code hl_class" href="classFCRange.html">default</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#a1c5f3202e5e98d8770a09e7cc4135e05">   31</a></span>    ~<a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a>() = <a class="code hl_class" href="classFCRange.html">default</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#aeddfaa3d6fca826ddd958d314c1292ab">   34</a></span>    <a class="code hl_class" href="classFCRange.html">constexpr</a> <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">QString</a>&amp; <a class="code hl_function" href="classFCSVGFigure.html#aeddfaa3d6fca826ddd958d314c1292ab">name</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _name; }</div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#a4ba9c9cbd1a916bab368c8c5b13c5c54">   36</a></span>    <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">QPen</a>&amp; <a class="code hl_function" href="classFCSVGFigure.html#a4ba9c9cbd1a916bab368c8c5b13c5c54">pen</a>() { <span class="keywordflow">return</span> _pen; }</div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#a8ba63ed9b022dd449c27bca968a89593">   38</a></span>    <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">QBrush</a>&amp; <a class="code hl_function" href="classFCSVGFigure.html#a8ba63ed9b022dd449c27bca968a89593">brush</a>() { <span class="keywordflow">return</span> _brush; }</div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#a366758165271aabe8ea84cb3e2956d63">   40</a></span>    <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">QPainterPath</a>&amp; <a class="code hl_function" href="classFCSVGFigure.html#a366758165271aabe8ea84cb3e2956d63">path</a>() { <span class="keywordflow">return</span> _path; }</div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#a42f172e0f469bdd58d5a37b647889bb8">   42</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCSVGFigure.html#a42f172e0f469bdd58d5a37b647889bb8">isEmpty</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _path.isEmpty(); }</div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#aec46aec107c23c38338017c0804b416f">   44</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classFCSVGFigure.html#aec46aec107c23c38338017c0804b416f">count</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _path.elementCount(); }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#a04dfdee9296b03a04e8aff99f9d7547b">   47</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFCSVGFigure.html#a04dfdee9296b03a04e8aff99f9d7547b">setName</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QString</a> &amp;<a class="code hl_function" href="classFCSVGFigure.html#aeddfaa3d6fca826ddd958d314c1292ab">name</a>) { _name = <a class="code hl_function" href="classFCSVGFigure.html#aeddfaa3d6fca826ddd958d314c1292ab">name</a>; }</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#a6d5b6895bf68d0a9483eb99cd38d3f89">   49</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFCSVGFigure.html#a6d5b6895bf68d0a9483eb99cd38d3f89">setPen</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QPen</a> &amp;<a class="code hl_function" href="classFCSVGFigure.html#a4ba9c9cbd1a916bab368c8c5b13c5c54">pen</a>) { _pen = <a class="code hl_function" href="classFCSVGFigure.html#a4ba9c9cbd1a916bab368c8c5b13c5c54">pen</a>; }</div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#a5f4434acb940200116b10f2866e3d2f0">   51</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFCSVGFigure.html#a5f4434acb940200116b10f2866e3d2f0">setBrush</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QBrush</a> &amp;<a class="code hl_function" href="classFCSVGFigure.html#a8ba63ed9b022dd449c27bca968a89593">brush</a>) { _brush = <a class="code hl_function" href="classFCSVGFigure.html#a8ba63ed9b022dd449c27bca968a89593">brush</a>; }</div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#a9fefffb5bacbc4b7089daff1a6cc269c">   53</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFCSVGFigure.html#a9fefffb5bacbc4b7089daff1a6cc269c">setPath</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QPainterPath</a> &amp;<a class="code hl_function" href="classFCSVGFigure.html#a366758165271aabe8ea84cb3e2956d63">path</a>) { _path = <a class="code hl_function" href="classFCSVGFigure.html#a366758165271aabe8ea84cb3e2956d63">path</a>; }</div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#a245fa931e17f9b6eaa8151f4e558962f">   55</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFCSVGFigure.html#a245fa931e17f9b6eaa8151f4e558962f">addPath</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QPainterPath</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) { _path.addPath(<a class="code hl_class" href="classFCRange.html">other</a>); }</div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#ad54a5a5a360400ba45c37a640a3fdc81">   57</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFCSVGFigure.html#ad54a5a5a360400ba45c37a640a3fdc81">translate</a>(<a class="code hl_class" href="classFCRange.html">qreal</a> <a class="code hl_class" href="classFCRange.html">dx</a>, <a class="code hl_class" href="classFCRange.html">qreal</a> <a class="code hl_class" href="classFCRange.html">dy</a>) { _path.<a class="code hl_function" href="classFCRange.html#a5d3e77645be5b26e22050a93bef773ef">translate</a>(<a class="code hl_class" href="classFCRange.html">dx</a>, <a class="code hl_class" href="classFCRange.html">dy</a>); }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classFCSVGFigure.html#a0f62d1033d95ffe13aa31fb95d42dd38">   60</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCSVGFigure.html#a0f62d1033d95ffe13aa31fb95d42dd38">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">return</span> _name == <a class="code hl_class" href="classFCRange.html">other</a>._name &amp;&amp; _pen == <a class="code hl_class" href="classFCRange.html">other</a>._pen &amp;&amp; _brush == <a class="code hl_class" href="classFCRange.html">other</a>._brush &amp;&amp; _path.elementCount() == <a class="code hl_class" href="classFCRange.html">other</a>._path.elementCount(); <span class="comment">// приближённо</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code hl_class" href="classFCSVGFigure.html">FCSVGFigure</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) { <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == <a class="code hl_class" href="classFCRange.html">other</a>); }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_class" href="classFCRange.html">QString</a> _name;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_class" href="classFCRange.html">QPen</a> _pen;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_class" href="classFCRange.html">QBrush</a> _brush;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_class" href="classFCRange.html">QPainterPath</a> _path;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>};</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">// --- псевдонимы ---</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">FCSVGFigureList</a> = <a class="code hl_class" href="classFCRange.html">QList&lt;FCSVGFigure&gt;</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">//Q_DECLARE_METATYPE(FCSVGFigure)</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">//Q_DECLARE_METATYPE(FCSVGFigureList)</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">//static_assert(std::is_copy_constructible_v&lt;FCSVGFigure&gt;, &quot;FCSVGFigure must be copyable for QList&quot;);</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">//static_assert(std::is_nothrow_move_constructible_v&lt;FCSVGFigure&gt;, &quot;FCSVGFigure should be noexcept-movable&quot;);</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif </span><span class="comment">// FC_SVG_FIGURE_H</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ttc" id="aclassFCRange_html"><div class="ttname"><a href="classFCRange.html">FCRange</a></div><div class="ttdoc">Шаблонный класс для представления числового диапазона [min, max] с гарантией корректности.</div><div class="ttdef"><b>Definition</b> FCRange.h:34</div></div>
+<div class="ttc" id="aclassFCRange_html_a5d3e77645be5b26e22050a93bef773ef"><div class="ttname"><a href="classFCRange.html#a5d3e77645be5b26e22050a93bef773ef">FCRange::translate</a></div><div class="ttdeci">constexpr void translate(T offset) noexcept</div><div class="ttdoc">Сдвигает диапазон на заданное смещение.</div><div class="ttdef"><b>Definition</b> FCRange.h:168</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html"><div class="ttname"><a href="classFCSVGFigure.html">FCSVGFigure</a></div><div class="ttdoc">&lt; класс для представления фигуры в SVG (имя + стиль + путь).</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:12</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_a04dfdee9296b03a04e8aff99f9d7547b"><div class="ttname"><a href="classFCSVGFigure.html#a04dfdee9296b03a04e8aff99f9d7547b">FCSVGFigure::setName</a></div><div class="ttdeci">constexpr void setName(const QString &amp;name)</div><div class="ttdoc">инициализирует имя.</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:47</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_a0f62d1033d95ffe13aa31fb95d42dd38"><div class="ttname"><a href="classFCSVGFigure.html#a0f62d1033d95ffe13aa31fb95d42dd38">FCSVGFigure::operator==</a></div><div class="ttdeci">constexpr bool operator==(const FCSVGFigure &amp;other)</div><div class="ttdoc">оператор сравнения !=.</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:60</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_a245fa931e17f9b6eaa8151f4e558962f"><div class="ttname"><a href="classFCSVGFigure.html#a245fa931e17f9b6eaa8151f4e558962f">FCSVGFigure::addPath</a></div><div class="ttdeci">constexpr void addPath(const QPainterPath &amp;other)</div><div class="ttdoc">делает трансляцию в новые координаты.</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:55</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_a366758165271aabe8ea84cb3e2956d63"><div class="ttname"><a href="classFCSVGFigure.html#a366758165271aabe8ea84cb3e2956d63">FCSVGFigure::path</a></div><div class="ttdeci">constexpr QPainterPath &amp; path()</div><div class="ttdoc">проверяет пуст ли путь</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:40</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_a42f172e0f469bdd58d5a37b647889bb8"><div class="ttname"><a href="classFCSVGFigure.html#a42f172e0f469bdd58d5a37b647889bb8">FCSVGFigure::isEmpty</a></div><div class="ttdeci">constexpr bool isEmpty() const noexcept</div><div class="ttdoc">возвращает количество элементов в фигуре</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:42</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_a4ba9c9cbd1a916bab368c8c5b13c5c54"><div class="ttname"><a href="classFCSVGFigure.html#a4ba9c9cbd1a916bab368c8c5b13c5c54">FCSVGFigure::pen</a></div><div class="ttdeci">constexpr QPen &amp; pen()</div><div class="ttdoc">возвращает кисть.</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:36</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_a5f4434acb940200116b10f2866e3d2f0"><div class="ttname"><a href="classFCSVGFigure.html#a5f4434acb940200116b10f2866e3d2f0">FCSVGFigure::setBrush</a></div><div class="ttdeci">constexpr void setBrush(const QBrush &amp;brush)</div><div class="ttdoc">инициализирует путь.</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:51</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_a6d5b6895bf68d0a9483eb99cd38d3f89"><div class="ttname"><a href="classFCSVGFigure.html#a6d5b6895bf68d0a9483eb99cd38d3f89">FCSVGFigure::setPen</a></div><div class="ttdeci">constexpr void setPen(const QPen &amp;pen)</div><div class="ttdoc">инициализирует .</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:49</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_a860b5614cf1f8bccf383d239696898ef"><div class="ttname"><a href="classFCSVGFigure.html#a860b5614cf1f8bccf383d239696898ef">FCSVGFigure::FCSVGFigure</a></div><div class="ttdeci">FCSVGFigure(const QString &amp;name, QPen pen={}, QBrush brush={}, QPainterPath path={}) noexcept</div><div class="ttdoc">&lt; конструктор с аргументами.</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:16</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_a8ba63ed9b022dd449c27bca968a89593"><div class="ttname"><a href="classFCSVGFigure.html#a8ba63ed9b022dd449c27bca968a89593">FCSVGFigure::brush</a></div><div class="ttdeci">constexpr QBrush &amp; brush()</div><div class="ttdoc">возвращает путь - последовательность элементов фигуры.</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:38</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_a9fefffb5bacbc4b7089daff1a6cc269c"><div class="ttname"><a href="classFCSVGFigure.html#a9fefffb5bacbc4b7089daff1a6cc269c">FCSVGFigure::setPath</a></div><div class="ttdeci">constexpr void setPath(const QPainterPath &amp;path)</div><div class="ttdoc">добавляет путь к пути фигуры.</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:53</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_ad54a5a5a360400ba45c37a640a3fdc81"><div class="ttname"><a href="classFCSVGFigure.html#ad54a5a5a360400ba45c37a640a3fdc81">FCSVGFigure::translate</a></div><div class="ttdeci">constexpr void translate(qreal dx, qreal dy)</div><div class="ttdoc">оператор сравнения ==.</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:57</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_aec46aec107c23c38338017c0804b416f"><div class="ttname"><a href="classFCSVGFigure.html#aec46aec107c23c38338017c0804b416f">FCSVGFigure::count</a></div><div class="ttdeci">constexpr int count() const noexcept</div><div class="ttdoc">инициализирует имя.</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:44</div></div>
+<div class="ttc" id="aclassFCSVGFigure_html_aeddfaa3d6fca826ddd958d314c1292ab"><div class="ttname"><a href="classFCSVGFigure.html#aeddfaa3d6fca826ddd958d314c1292ab">FCSVGFigure::name</a></div><div class="ttdeci">constexpr const QString &amp; name() const</div><div class="ttdoc">возвращает карандаш.</div><div class="ttdef"><b>Definition</b> FCSVGFigure.h:34</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

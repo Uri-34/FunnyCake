@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Класс FCHead</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-attribs">Статические открытые данные</a> &#124;
+<a href="classFCHead-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс FCHead</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс управления печатающей головкой плоттера с множественными соплами.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FCHead_8h_source.html">FCHead.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:FCHead:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFCHead__inherit__graph.png" border="0" usemap="#aFCHead_inherit__map" alt="Inheritance graph"/></div>
+<map name="aFCHead_inherit__map" id="aFCHead_inherit__map">
+<area shape="rect" title="Класс управления печатающей головкой плоттера с множественными соплами." alt="" coords="40,299,113,324"/>
+<area shape="rect" href="classFCI2CDevice.html" title="Базовый класс для всех устройств, подключаемых по шине I²C." alt="" coords="24,225,129,251"/>
+<area shape="poly" title=" " alt="" coords="79,264,79,299,74,299,74,264"/>
+<area shape="rect" href="classFCDevice.html" title="Абстрактный базовый класс для управления аппаратными устройствами в системе." alt="" coords="35,152,119,177"/>
+<area shape="poly" title=" " alt="" coords="79,191,79,225,74,225,74,191"/>
+<area shape="rect" href="classFCConditionObject.html" title="Базовый класс для объектов с управляемым составным состоянием и уведомлениями об изменениях." alt="" coords="5,79,148,104"/>
+<area shape="poly" title=" " alt="" coords="79,118,79,152,74,152,74,118"/>
+<area shape="rect" title=" " alt="" coords="39,5,114,31"/>
+<area shape="poly" title=" " alt="" coords="79,44,79,79,74,79,74,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса FCHead:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFCHead__coll__graph.png" border="0" usemap="#aFCHead_coll__map" alt="Collaboration graph"/></div>
+<map name="aFCHead_coll__map" id="aFCHead_coll__map">
+<area shape="rect" title="Класс управления печатающей головкой плоттера с множественными соплами." alt="" coords="40,299,113,324"/>
+<area shape="rect" href="classFCI2CDevice.html" title="Базовый класс для всех устройств, подключаемых по шине I²C." alt="" coords="24,225,129,251"/>
+<area shape="poly" title=" " alt="" coords="79,264,79,299,74,299,74,264"/>
+<area shape="rect" href="classFCDevice.html" title="Абстрактный базовый класс для управления аппаратными устройствами в системе." alt="" coords="35,152,119,177"/>
+<area shape="poly" title=" " alt="" coords="79,191,79,225,74,225,74,191"/>
+<area shape="rect" href="classFCConditionObject.html" title="Базовый класс для объектов с управляемым составным состоянием и уведомлениями об изменениях." alt="" coords="5,79,148,104"/>
+<area shape="poly" title=" " alt="" coords="79,118,79,152,74,152,74,118"/>
+<area shape="rect" title=" " alt="" coords="39,5,114,31"/>
+<area shape="poly" title=" " alt="" coords="79,44,79,79,74,79,74,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a3eab398667f60a09c9d8bbfc3c586de8" id="r_a3eab398667f60a09c9d8bbfc3c586de8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3eab398667f60a09c9d8bbfc3c586de8">FCHead</a> (<a class="el" href="classFCI2CBus.html">FCI2CBus</a> *<a class="el" href="classFCI2CDevice.html#a37b815519a619ee964ccf70998b12c95">bus</a>, <a class="el" href="classFCRange.html">uint8_t</a> <a class="el" href="classFCI2CDevice.html#a90554081a0d85ada4cb2ea5df3d66f89">address</a>=0, <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;name=<a class="el" href="classFCRange.html">QString</a>(), QObject *<a class="el" href="classFCRange.html">parent</a>=<a class="el" href="classFCRange.html">nullptr</a>)</td></tr>
+<tr class="memdesc:a3eab398667f60a09c9d8bbfc3c586de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор головки с привязкой к шине I2C.  <br /></td></tr>
+<tr class="separator:a3eab398667f60a09c9d8bbfc3c586de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d1e3987d75d69d8f513b302f92153b5" id="r_a5d1e3987d75d69d8f513b302f92153b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d1e3987d75d69d8f513b302f92153b5">~FCHead</a> () <a class="el" href="classFCRange.html">override</a>=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a5d1e3987d75d69d8f513b302f92153b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор головки.  <br /></td></tr>
+<tr class="separator:a5d1e3987d75d69d8f513b302f92153b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0129d31ab8f3e6897c331827483eb11f" id="r_a0129d31ab8f3e6897c331827483eb11f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0129d31ab8f3e6897c331827483eb11f">nozzleCount</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a0129d31ab8f3e6897c331827483eb11f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает количество сопел в головке.  <br /></td></tr>
+<tr class="separator:a0129d31ab8f3e6897c331827483eb11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b65f6ebcdb68810725a2b894fba904c" id="r_a7b65f6ebcdb68810725a2b894fba904c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCNozzle.html">FCNozzle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b65f6ebcdb68810725a2b894fba904c">nozzle</a> (<a class="el" href="classFCRange.html">int</a> <a class="el" href="classFCRange.html">index</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a7b65f6ebcdb68810725a2b894fba904c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает сопло по индексу с автоматической проверкой границ.  <br /></td></tr>
+<tr class="separator:a7b65f6ebcdb68810725a2b894fba904c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a097074366d56144faffad4130c936368" id="r_a097074366d56144faffad4130c936368"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a097074366d56144faffad4130c936368">isValidNozzleIndex</a> (<a class="el" href="classFCRange.html">int</a> <a class="el" href="classFCRange.html">index</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a097074366d56144faffad4130c936368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет валидность индекса сопла.  <br /></td></tr>
+<tr class="separator:a097074366d56144faffad4130c936368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aa87746a8efb6c58ef73c1f0960ab47" id="r_a6aa87746a8efb6c58ef73c1f0960ab47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">const</a> FCNozzleList &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6aa87746a8efb6c58ef73c1f0960ab47">nozzles</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a6aa87746a8efb6c58ef73c1f0960ab47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает список всех сопел головки.  <br /></td></tr>
+<tr class="separator:a6aa87746a8efb6c58ef73c1f0960ab47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f57990cbd98d1a14ca35aa9711190c0" id="r_a1f57990cbd98d1a14ca35aa9711190c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFC2DCell.html">FC2DCell</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f57990cbd98d1a14ca35aa9711190c0">boundingBox</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a1f57990cbd98d1a14ca35aa9711190c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает ограничивающий прямоугольник всех сопел в локальной системе координат.  <br /></td></tr>
+<tr class="separator:a1f57990cbd98d1a14ca35aa9711190c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classFCI2CDevice"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classFCI2CDevice')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="classFCI2CDevice.html">FCI2CDevice</a></td></tr>
+<tr class="memitem:a2324a85abe5f4cd8e70984e70c11480c inherit pub_methods_classFCI2CDevice" id="r_a2324a85abe5f4cd8e70984e70c11480c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCI2CDevice.html#a2324a85abe5f4cd8e70984e70c11480c">FCI2CDevice</a> (<a class="el" href="classFCI2CBus.html">FCI2CBus</a> *<a class="el" href="classFCI2CDevice.html#a37b815519a619ee964ccf70998b12c95">bus</a>, <a class="el" href="classFCRange.html">uint8_t</a> <a class="el" href="classFCI2CDevice.html#a90554081a0d85ada4cb2ea5df3d66f89">address</a>, <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;name=<a class="el" href="classFCRange.html">QString</a>(), QObject *<a class="el" href="classFCRange.html">parent</a>=<a class="el" href="classFCRange.html">nullptr</a>)</td></tr>
+<tr class="memdesc:a2324a85abe5f4cd8e70984e70c11480c inherit pub_methods_classFCI2CDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор устройства с привязкой к шине I²C.  <br /></td></tr>
+<tr class="separator:a2324a85abe5f4cd8e70984e70c11480c inherit pub_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c3f0f5bd2feced7fb2cee009bbc4dbf inherit pub_methods_classFCI2CDevice" id="r_a5c3f0f5bd2feced7fb2cee009bbc4dbf"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>FCI2CDevice</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCI2CDevice.html">FCI2CDevice</a> &amp;)=<a class="el" href="classFCRange.html">delete</a></td></tr>
+<tr class="separator:a5c3f0f5bd2feced7fb2cee009bbc4dbf inherit pub_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8d648d7c489e87f7b22a7d8d9380151 inherit pub_methods_classFCI2CDevice" id="r_ab8d648d7c489e87f7b22a7d8d9380151"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classFCI2CDevice.html">FCI2CDevice</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCI2CDevice.html">FCI2CDevice</a> &amp;)=<a class="el" href="classFCRange.html">delete</a></td></tr>
+<tr class="separator:ab8d648d7c489e87f7b22a7d8d9380151 inherit pub_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37b815519a619ee964ccf70998b12c95 inherit pub_methods_classFCI2CDevice" id="r_a37b815519a619ee964ccf70998b12c95"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classFCI2CBus.html">FCI2CBus</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>bus</b> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a37b815519a619ee964ccf70998b12c95 inherit pub_methods_classFCI2CDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает указатель на шину I²C. <br /></td></tr>
+<tr class="separator:a37b815519a619ee964ccf70998b12c95 inherit pub_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90554081a0d85ada4cb2ea5df3d66f89 inherit pub_methods_classFCI2CDevice" id="r_a90554081a0d85ada4cb2ea5df3d66f89"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classFCRange.html">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>address</b> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a90554081a0d85ada4cb2ea5df3d66f89 inherit pub_methods_classFCI2CDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает 7-битный адрес устройства на шине I²C. <br /></td></tr>
+<tr class="separator:a90554081a0d85ada4cb2ea5df3d66f89 inherit pub_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad46d6cf538ee73a87e42bbf3f5bd05e8 inherit pub_methods_classFCI2CDevice" id="r_ad46d6cf538ee73a87e42bbf3f5bd05e8"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classFCRange.html">QString</a>&#160;</td><td class="memItemRight" valign="bottom"><b>path</b> () <a class="el" href="classFCRange.html">const</a></td></tr>
+<tr class="memdesc:ad46d6cf538ee73a87e42bbf3f5bd05e8 inherit pub_methods_classFCI2CDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает путь к устройству шины в файловой системе. <br /></td></tr>
+<tr class="separator:ad46d6cf538ee73a87e42bbf3f5bd05e8 inherit pub_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165bee7cf2df81e3668704565b0986bf inherit pub_methods_classFCI2CDevice" id="r_a165bee7cf2df81e3668704565b0986bf"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>isOpen</b> () <a class="el" href="classFCRange.html">const</a></td></tr>
+<tr class="memdesc:a165bee7cf2df81e3668704565b0986bf inherit pub_methods_classFCI2CDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, открыта ли шина I²C для операций. <br /></td></tr>
+<tr class="separator:a165bee7cf2df81e3668704565b0986bf inherit pub_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classFCDevice"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classFCDevice')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="classFCDevice.html">FCDevice</a></td></tr>
+<tr class="memitem:a6987e5cf8772592be2912e5745d9edd6 inherit pub_methods_classFCDevice" id="r_a6987e5cf8772592be2912e5745d9edd6"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>FCDevice</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;name=<a class="el" href="classFCRange.html">QString</a>(), QObject *<a class="el" href="classFCRange.html">parent</a>=<a class="el" href="classFCRange.html">nullptr</a>)</td></tr>
+<tr class="separator:a6987e5cf8772592be2912e5745d9edd6 inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6790b2b75ad39599d723a5cf04e9d5ea inherit pub_methods_classFCDevice" id="r_a6790b2b75ad39599d723a5cf04e9d5ea"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>FCDevice</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCDevice.html">FCDevice</a> &amp;)=<a class="el" href="classFCRange.html">delete</a></td></tr>
+<tr class="separator:a6790b2b75ad39599d723a5cf04e9d5ea inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1055787ecb2558d1fd2f38f36ed79ed inherit pub_methods_classFCDevice" id="r_aa1055787ecb2558d1fd2f38f36ed79ed"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classFCDevice.html">FCDevice</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCDevice.html">FCDevice</a> &amp;)=<a class="el" href="classFCRange.html">delete</a></td></tr>
+<tr class="separator:aa1055787ecb2558d1fd2f38f36ed79ed inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b090dfb375cbbbf0825ed1acf03b281 inherit pub_methods_classFCDevice" id="r_a9b090dfb375cbbbf0825ed1acf03b281"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">virtual</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCDevice.html#a9b090dfb375cbbbf0825ed1acf03b281">start</a> ()</td></tr>
+<tr class="memdesc:a9b090dfb375cbbbf0825ed1acf03b281 inherit pub_methods_classFCDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запускает устройство и инициализирует оборудование.  <br /></td></tr>
+<tr class="separator:a9b090dfb375cbbbf0825ed1acf03b281 inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ba07d4adae8bc8656338d9913d21b5 inherit pub_methods_classFCDevice" id="r_a32ba07d4adae8bc8656338d9913d21b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">virtual</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCDevice.html#a32ba07d4adae8bc8656338d9913d21b5">stop</a> ()</td></tr>
+<tr class="memdesc:a32ba07d4adae8bc8656338d9913d21b5 inherit pub_methods_classFCDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Останавливает устройство и деинициализирует оборудование.  <br /></td></tr>
+<tr class="separator:a32ba07d4adae8bc8656338d9913d21b5 inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d0bd95bff749e01e788825c7f1df2bb inherit pub_methods_classFCDevice" id="r_a1d0bd95bff749e01e788825c7f1df2bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">virtual</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCDevice.html#a1d0bd95bff749e01e788825c7f1df2bb">pause</a> ()</td></tr>
+<tr class="memdesc:a1d0bd95bff749e01e788825c7f1df2bb inherit pub_methods_classFCDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приостанавливает текущую операцию.  <br /></td></tr>
+<tr class="separator:a1d0bd95bff749e01e788825c7f1df2bb inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f749901d4e44b6635e089cb478fa7dd inherit pub_methods_classFCDevice" id="r_a3f749901d4e44b6635e089cb478fa7dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">virtual</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCDevice.html#a3f749901d4e44b6635e089cb478fa7dd">reset</a> ()</td></tr>
+<tr class="memdesc:a3f749901d4e44b6635e089cb478fa7dd inherit pub_methods_classFCDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сбрасывает устройство в исходное состояние.  <br /></td></tr>
+<tr class="separator:a3f749901d4e44b6635e089cb478fa7dd inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ae7a8155e0d69bc4992225001d1817 inherit pub_methods_classFCDevice" id="r_a29ae7a8155e0d69bc4992225001d1817"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>isReady</b> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="separator:a29ae7a8155e0d69bc4992225001d1817 inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2a01a0ad1ddf941d2492bf868844954 inherit pub_methods_classFCDevice" id="r_aa2a01a0ad1ddf941d2492bf868844954"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>isPlay</b> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="separator:aa2a01a0ad1ddf941d2492bf868844954 inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8828ab27cff8dbf03046165db558db77 inherit pub_methods_classFCDevice" id="r_a8828ab27cff8dbf03046165db558db77"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>isPause</b> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="separator:a8828ab27cff8dbf03046165db558db77 inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a752df36ccfff75a8b6deb2c099e2cfc4 inherit pub_methods_classFCDevice" id="r_a752df36ccfff75a8b6deb2c099e2cfc4"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>isError</b> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="separator:a752df36ccfff75a8b6deb2c099e2cfc4 inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49b4c0ef46665c8f1313628123037ad6 inherit pub_methods_classFCDevice" id="r_a49b4c0ef46665c8f1313628123037ad6"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classFCRange.html">virtual</a> <a class="el" href="classFCRange.html">QByteArray</a>&#160;</td><td class="memItemRight" valign="bottom"><b>readData</b> (<a class="el" href="classFCRange.html">qsizetype</a> <a class="el" href="classFCRange.html">maxSize</a>=1024)</td></tr>
+<tr class="separator:a49b4c0ef46665c8f1313628123037ad6 inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c05da2964f2cb9edd7fee786c6f736d inherit pub_methods_classFCDevice" id="r_a1c05da2964f2cb9edd7fee786c6f736d"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classFCRange.html">virtual</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>writeData</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QByteArray</a> &amp;<a class="el" href="classFCRange.html">data</a>)</td></tr>
+<tr class="separator:a1c05da2964f2cb9edd7fee786c6f736d inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classFCConditionObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classFCConditionObject')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="classFCConditionObject.html">FCConditionObject</a></td></tr>
+<tr class="memitem:a552da8306f53fabfd14cbdeb83146f01 inherit pub_methods_classFCConditionObject" id="r_a552da8306f53fabfd14cbdeb83146f01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a552da8306f53fabfd14cbdeb83146f01">FCConditionObject</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;name, QObject *<a class="el" href="classFCRange.html">parent</a>=<a class="el" href="classFCRange.html">nullptr</a>)</td></tr>
+<tr class="memdesc:a552da8306f53fabfd14cbdeb83146f01 inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с именованием объекта и установкой родителя.  <br /></td></tr>
+<tr class="separator:a552da8306f53fabfd14cbdeb83146f01 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80e4f1af6aa8824d08933c8ee3a98256 inherit pub_methods_classFCConditionObject" id="r_a80e4f1af6aa8824d08933c8ee3a98256"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a80e4f1af6aa8824d08933c8ee3a98256">condition</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a80e4f1af6aa8824d08933c8ee3a98256 inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает полную структуру составного состояния.  <br /></td></tr>
+<tr class="separator:a80e4f1af6aa8824d08933c8ee3a98256 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8863368dc43ca1f9d4c8520daf4e8192 inherit pub_methods_classFCConditionObject" id="r_a8863368dc43ca1f9d4c8520daf4e8192"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a8863368dc43ca1f9d4c8520daf4e8192">set</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;<a class="el" href="classFCConditionObject.html#a80e4f1af6aa8824d08933c8ee3a98256">condition</a>)</td></tr>
+<tr class="memdesc:a8863368dc43ca1f9d4c8520daf4e8192 inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает полное составное состояние объекта.  <br /></td></tr>
+<tr class="separator:a8863368dc43ca1f9d4c8520daf4e8192 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a618bcff2cea4ce80fa28a1838a96f285 inherit pub_methods_classFCConditionObject" id="r_a618bcff2cea4ce80fa28a1838a96f285"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a618bcff2cea4ce80fa28a1838a96f285">set</a> (ReadyState <a class="el" href="classFCRange.html">state</a>)</td></tr>
+<tr class="memdesc:a618bcff2cea4ce80fa28a1838a96f285 inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает состояние готовности объекта.  <br /></td></tr>
+<tr class="separator:a618bcff2cea4ce80fa28a1838a96f285 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae549e3e894fe156c1563898978951791 inherit pub_methods_classFCConditionObject" id="r_ae549e3e894fe156c1563898978951791"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#ae549e3e894fe156c1563898978951791">set</a> (PlayState <a class="el" href="classFCRange.html">state</a>)</td></tr>
+<tr class="memdesc:ae549e3e894fe156c1563898978951791 inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает режим воспроизведения/выполнения.  <br /></td></tr>
+<tr class="separator:ae549e3e894fe156c1563898978951791 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2019ecf12972a4d440d5e965dc4e3ca inherit pub_methods_classFCConditionObject" id="r_ad2019ecf12972a4d440d5e965dc4e3ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#ad2019ecf12972a4d440d5e965dc4e3ca">set</a> (PanelState <a class="el" href="classFCRange.html">state</a>)</td></tr>
+<tr class="memdesc:ad2019ecf12972a4d440d5e965dc4e3ca inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает состояние панели.  <br /></td></tr>
+<tr class="separator:ad2019ecf12972a4d440d5e965dc4e3ca inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab05bd1cfc1fc1449e663ccabc9718511 inherit pub_methods_classFCConditionObject" id="r_ab05bd1cfc1fc1449e663ccabc9718511"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#ab05bd1cfc1fc1449e663ccabc9718511">set</a> (VisibilityState <a class="el" href="classFCRange.html">state</a>)</td></tr>
+<tr class="memdesc:ab05bd1cfc1fc1449e663ccabc9718511 inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает состояние видимости.  <br /></td></tr>
+<tr class="separator:ab05bd1cfc1fc1449e663ccabc9718511 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdc30a6abf3878d3f1423e9d6e38ba3d inherit pub_methods_classFCConditionObject" id="r_acdc30a6abf3878d3f1423e9d6e38ba3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#acdc30a6abf3878d3f1423e9d6e38ba3d">set</a> (ErrorType type)</td></tr>
+<tr class="memdesc:acdc30a6abf3878d3f1423e9d6e38ba3d inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает тип ошибки.  <br /></td></tr>
+<tr class="separator:acdc30a6abf3878d3f1423e9d6e38ba3d inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae591d66c13c687547aabda0b6422064e inherit pub_methods_classFCConditionObject" id="r_ae591d66c13c687547aabda0b6422064e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#ae591d66c13c687547aabda0b6422064e">is</a> (ReadyState <a class="el" href="classFCRange.html">state</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ae591d66c13c687547aabda0b6422064e inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, соответствует ли состояние готовности заданному значению.  <br /></td></tr>
+<tr class="separator:ae591d66c13c687547aabda0b6422064e inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afadf452bc21f22eacd18e08d5342181e inherit pub_methods_classFCConditionObject" id="r_afadf452bc21f22eacd18e08d5342181e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#afadf452bc21f22eacd18e08d5342181e">is</a> (PlayState <a class="el" href="classFCRange.html">state</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:afadf452bc21f22eacd18e08d5342181e inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, соответствует ли режим воспроизведения заданному значению.  <br /></td></tr>
+<tr class="separator:afadf452bc21f22eacd18e08d5342181e inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bfa93b0b5717637b0df4d73d2fe1afc inherit pub_methods_classFCConditionObject" id="r_a8bfa93b0b5717637b0df4d73d2fe1afc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a8bfa93b0b5717637b0df4d73d2fe1afc">is</a> (ChangedState <a class="el" href="classFCRange.html">state</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a8bfa93b0b5717637b0df4d73d2fe1afc inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, соответствует ли флаг изменения заданному значению.  <br /></td></tr>
+<tr class="separator:a8bfa93b0b5717637b0df4d73d2fe1afc inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06bdc598333a66c302e8b4c120256bbc inherit pub_methods_classFCConditionObject" id="r_a06bdc598333a66c302e8b4c120256bbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a06bdc598333a66c302e8b4c120256bbc">is</a> (PanelState <a class="el" href="classFCRange.html">state</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a06bdc598333a66c302e8b4c120256bbc inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, соответствует ли флаг изменения заданному значению.  <br /></td></tr>
+<tr class="separator:a06bdc598333a66c302e8b4c120256bbc inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa299ee3ec485139f5bccead6ea584428 inherit pub_methods_classFCConditionObject" id="r_aa299ee3ec485139f5bccead6ea584428"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#aa299ee3ec485139f5bccead6ea584428">is</a> (VisibilityState <a class="el" href="classFCRange.html">state</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aa299ee3ec485139f5bccead6ea584428 inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, соответствует ли флаг изменения заданному значению.  <br /></td></tr>
+<tr class="separator:aa299ee3ec485139f5bccead6ea584428 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48fe49402fcd0440bb5acc928801d26a inherit pub_methods_classFCConditionObject" id="r_a48fe49402fcd0440bb5acc928801d26a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a48fe49402fcd0440bb5acc928801d26a">is</a> (ErrorType type) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a48fe49402fcd0440bb5acc928801d26a inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, соответствует ли тип ошибки заданному значению.  <br /></td></tr>
+<tr class="separator:a48fe49402fcd0440bb5acc928801d26a inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d2401d13fb0c2462de64e7fb74a02ed inherit pub_methods_classFCConditionObject" id="r_a6d2401d13fb0c2462de64e7fb74a02ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a6d2401d13fb0c2462de64e7fb74a02ed">is</a> (<a class="el" href="classFCCondition.html">FCCondition</a> <a class="el" href="classFCConditionObject.html#a80e4f1af6aa8824d08933c8ee3a98256">condition</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a6d2401d13fb0c2462de64e7fb74a02ed inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, соответствует ли состояние заданному значению.  <br /></td></tr>
+<tr class="separator:a6d2401d13fb0c2462de64e7fb74a02ed inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb64c1f7624efc4f0fd53f248b1197d inherit pub_methods_classFCConditionObject" id="r_a2bb64c1f7624efc4f0fd53f248b1197d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a2bb64c1f7624efc4f0fd53f248b1197d">isEmpty</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a2bb64c1f7624efc4f0fd53f248b1197d inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, находится ли объект в базовом (исходном) состоянии.  <br /></td></tr>
+<tr class="separator:a2bb64c1f7624efc4f0fd53f248b1197d inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Статические открытые данные</h2></td></tr>
+<tr class="memitem:a4dd5a27836e3ae03e1f134af4a70aa01" id="r_a4dd5a27836e3ae03e1f134af4a70aa01"><td class="memItemLeft" align="right" valign="top"><a id="a4dd5a27836e3ae03e1f134af4a70aa01" name="a4dd5a27836e3ae03e1f134af4a70aa01"></a>
+<a class="el" href="classFCRange.html">static</a> <a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ROWS</b> = 1</td></tr>
+<tr class="memdesc:a4dd5a27836e3ae03e1f134af4a70aa01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество рядов сопел в головке (всегда 1 для текущей конфигурации). <br /></td></tr>
+<tr class="separator:a4dd5a27836e3ae03e1f134af4a70aa01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29eee75d82474c2259466e2c5d8a79cc" id="r_a29eee75d82474c2259466e2c5d8a79cc"><td class="memItemLeft" align="right" valign="top"><a id="a29eee75d82474c2259466e2c5d8a79cc" name="a29eee75d82474c2259466e2c5d8a79cc"></a>
+<a class="el" href="classFCRange.html">static</a> <a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><b>COLS</b> = 3</td></tr>
+<tr class="memdesc:a29eee75d82474c2259466e2c5d8a79cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество столбцов сопел в головке (всегда 3 для текущей конфигурации). <br /></td></tr>
+<tr class="separator:a29eee75d82474c2259466e2c5d8a79cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa074136efa6b0b8dd948a0dbc37f4c2e" id="r_aa074136efa6b0b8dd948a0dbc37f4c2e"><td class="memItemLeft" align="right" valign="top"><a id="aa074136efa6b0b8dd948a0dbc37f4c2e" name="aa074136efa6b0b8dd948a0dbc37f4c2e"></a>
+<a class="el" href="classFCRange.html">static</a> <a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><b>NOZZLE_COUNT</b> = <a class="el" href="#a4dd5a27836e3ae03e1f134af4a70aa01">ROWS</a> * <a class="el" href="#a29eee75d82474c2259466e2c5d8a79cc">COLS</a></td></tr>
+<tr class="memdesc:aa074136efa6b0b8dd948a0dbc37f4c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Общее количество сопел в головке (произведение ROWS × COLS). <br /></td></tr>
+<tr class="separator:aa074136efa6b0b8dd948a0dbc37f4c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header signals_classFCConditionObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('signals_classFCConditionObject')"><img src="closed.png" alt="-"/>&#160;Сигналы унаследованные от <a class="el" href="classFCConditionObject.html">FCConditionObject</a></td></tr>
+<tr class="memitem:a2a621418bcb23f68db2fbb5aef7b52d9 inherit signals_classFCConditionObject" id="r_a2a621418bcb23f68db2fbb5aef7b52d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a2a621418bcb23f68db2fbb5aef7b52d9">conditionChanged</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;name, <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCCondition.html">FCCondition</a> &amp;<a class="el" href="classFCConditionObject.html#a80e4f1af6aa8824d08933c8ee3a98256">condition</a>)</td></tr>
+<tr class="memdesc:a2a621418bcb23f68db2fbb5aef7b52d9 inherit signals_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сигнал об изменении составного состояния объекта.  <br /></td></tr>
+<tr class="separator:a2a621418bcb23f68db2fbb5aef7b52d9 inherit signals_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classFCI2CDevice"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classFCI2CDevice')"><img src="closed.png" alt="-"/>&#160;Защищенные члены унаследованные от <a class="el" href="classFCI2CDevice.html">FCI2CDevice</a></td></tr>
+<tr class="memitem:aa4b6a702a352f58e32c95d3ac5a29e1e inherit pro_methods_classFCI2CDevice" id="r_aa4b6a702a352f58e32c95d3ac5a29e1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCI2CDevice.html#aa4b6a702a352f58e32c95d3ac5a29e1e">readByte</a> ()</td></tr>
+<tr class="memdesc:aa4b6a702a352f58e32c95d3ac5a29e1e inherit pro_methods_classFCI2CDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Читает один байт из устройства.  <br /></td></tr>
+<tr class="separator:aa4b6a702a352f58e32c95d3ac5a29e1e inherit pro_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79a691784cec83c29556d02976d5ab68 inherit pro_methods_classFCI2CDevice" id="r_a79a691784cec83c29556d02976d5ab68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCI2CDevice.html#a79a691784cec83c29556d02976d5ab68">writeByte</a> (<a class="el" href="classFCRange.html">uint8_t</a> <a class="el" href="classFCRange.html">byte</a>)</td></tr>
+<tr class="memdesc:a79a691784cec83c29556d02976d5ab68 inherit pro_methods_classFCI2CDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает один байт в устройство.  <br /></td></tr>
+<tr class="separator:a79a691784cec83c29556d02976d5ab68 inherit pro_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19d7a0d4c0b6d06f2c1e56414826d26f inherit pro_methods_classFCI2CDevice" id="r_a19d7a0d4c0b6d06f2c1e56414826d26f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">QByteArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCI2CDevice.html#a19d7a0d4c0b6d06f2c1e56414826d26f">readBytes</a> (<a class="el" href="classFCRange.html">int</a> count, <a class="el" href="classFCRange.html">int</a> <a class="el" href="classFCRange.html">flags</a>=0)</td></tr>
+<tr class="memdesc:a19d7a0d4c0b6d06f2c1e56414826d26f inherit pro_methods_classFCI2CDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Читает указанное количество байт из устройства.  <br /></td></tr>
+<tr class="separator:a19d7a0d4c0b6d06f2c1e56414826d26f inherit pro_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d683b20d3d1e87494ea6ecc3ab24552 inherit pro_methods_classFCI2CDevice" id="r_a6d683b20d3d1e87494ea6ecc3ab24552"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCI2CDevice.html#a6d683b20d3d1e87494ea6ecc3ab24552">writeBytes</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QByteArray</a> &amp;<a class="el" href="classFCRange.html">data</a>, <a class="el" href="classFCRange.html">int</a> <a class="el" href="classFCRange.html">flags</a>=0)</td></tr>
+<tr class="memdesc:a6d683b20d3d1e87494ea6ecc3ab24552 inherit pro_methods_classFCI2CDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает массив байт в устройство.  <br /></td></tr>
+<tr class="separator:a6d683b20d3d1e87494ea6ecc3ab24552 inherit pro_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4c929c573ab7241b68c78091a7d21ab inherit pro_methods_classFCI2CDevice" id="r_aa4c929c573ab7241b68c78091a7d21ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCI2CDevice.html#aa4c929c573ab7241b68c78091a7d21ab">readRegister</a> (<a class="el" href="classFCRange.html">uint8_t</a> <a class="el" href="classFCRange.html">reg</a>)</td></tr>
+<tr class="memdesc:aa4c929c573ab7241b68c78091a7d21ab inherit pro_methods_classFCI2CDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Читает значение регистра устройства.  <br /></td></tr>
+<tr class="separator:aa4c929c573ab7241b68c78091a7d21ab inherit pro_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab482d463509a24dfee42de61ab908e73 inherit pro_methods_classFCI2CDevice" id="r_ab482d463509a24dfee42de61ab908e73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCI2CDevice.html#ab482d463509a24dfee42de61ab908e73">writeRegister</a> (<a class="el" href="classFCRange.html">uint8_t</a> <a class="el" href="classFCRange.html">reg</a>, <a class="el" href="classFCRange.html">uint8_t</a> <a class="el" href="classFCRange.html">value</a>)</td></tr>
+<tr class="memdesc:ab482d463509a24dfee42de61ab908e73 inherit pro_methods_classFCI2CDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает значение в регистр устройства.  <br /></td></tr>
+<tr class="separator:ab482d463509a24dfee42de61ab908e73 inherit pro_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52ba9558a4bd1fed5f3bae8137b87836 inherit pro_methods_classFCI2CDevice" id="r_a52ba9558a4bd1fed5f3bae8137b87836"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">QByteArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCI2CDevice.html#a52ba9558a4bd1fed5f3bae8137b87836">writeRead</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QByteArray</a> &amp;<a class="el" href="classFCRange.html">data</a>, <a class="el" href="classFCRange.html">int</a> count, <a class="el" href="classFCRange.html">int</a> <a class="el" href="classFCRange.html">flags</a>=0)</td></tr>
+<tr class="memdesc:a52ba9558a4bd1fed5f3bae8137b87836 inherit pro_methods_classFCI2CDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет транзакцию write-then-read (для регистров с автоинкрементом).  <br /></td></tr>
+<tr class="separator:a52ba9558a4bd1fed5f3bae8137b87836 inherit pro_methods_classFCI2CDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс управления печатающей головкой плоттера с множественными соплами. </p>
+<p>Представляет физическую головку плоттера, оснащённую несколькими соплами для нанесения краски/чернил разной толщины или цвета. Обеспечивает:</p><ul>
+<li>Хранение геометрических параметров каждого сопла (позиция, диаметр),</li>
+<li>Управление состоянием сопел через шину I2C (включение/выключение подачи),</li>
+<li>Преобразование координат между системой головки и глобальной системой плоттера,</li>
+<li>Калибровку относительного положения сопел для точного позиционирования.</li>
+</ul>
+<p>Топология головки:</p><ul>
+<li>Конфигурация 1×3 (1 ряд, 3 столбца) — три сопла в горизонтальной линии,</li>
+<li>Сопла расположены с фиксированным шагом для совместимости с механическим креплением,</li>
+<li>Каждое сопло имеет уникальный диаметр для нанесения линий разной толщины:<ul>
+<li>Сопло 0: <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.4</a> мм — тонкие линии, детализация,</li>
+<li>Сопло 1: <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.7</a> мм — средние линии, заливка,</li>
+<li>Сопло 2: <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.5</a> мм — универсальное назначение.</li>
+</ul>
+</li>
+</ul>
+<p>Особенности реализации:</p><ul>
+<li>Наследуется от <a class="el" href="classFCI2CDevice.html" title="Базовый класс для всех устройств, подключаемых по шине I²C.">FCI2CDevice</a> для интеграции в шину I2C управления периферией,</li>
+<li>Все сопла инициализируются статически при создании объекта (конфигурация неизменна),</li>
+<li>Доступ к соплам выполняется через безопасные методы с проверкой границ,</li>
+<li>Поддержка калибровочных смещений для компенсации механических допусков.</li>
+</ul>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Критически важно:<ul>
+<li>Конфигурация сопел (количество, расположение, диаметр) задаётся на этапе проектирования и не может быть изменена программно во время выполнения,</li>
+<li>Все координаты сопел задаются в локальной системе координат головки (мм), преобразование в глобальную систему выполняется внешними компонентами (плоттером). </li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Для встраиваемых систем (Raspberry Pi 4 + Buildroot):<ul>
+<li>Данные о соплах хранятся в стеке (не в куче) для минимизации фрагментации памяти,</li>
+<li>Все методы доступа к соплам являются константными и не вызывают выделения памяти,</li>
+<li>Рекомендуется кэшировать часто используемые параметры (диаметр активного сопла) в рабочем потоке. </li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="classFCNozzle.html" title="Класс для описания параметров отдельного сопла печатающей головки.">FCNozzle</a> для детального описания параметров отдельного сопла </dd>
+<dd>
+<a class="el" href="classFCPlotter.html" title="Класс управления промышленным плоттером в отдельном потоке выполнения.">FCPlotter</a> для управления головкой в составе полной системы плоттера </dd></dl>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a3eab398667f60a09c9d8bbfc3c586de8" name="a3eab398667f60a09c9d8bbfc3c586de8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eab398667f60a09c9d8bbfc3c586de8">&#9670;&#160;</a></span>FCHead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCHead::FCHead </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCI2CBus.html">FCI2CBus</a> *</td>          <td class="paramname"><span class="paramname"><em>bus</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">uint8_t</a></td>          <td class="paramname"><span class="paramname"><em>address</em><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">QString</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classFCRange.html">QString</a>()</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classFCRange.html">nullptr</a></span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор головки с привязкой к шине I2C. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bus</td><td>Указатель на шину I2C для управления периферийными устройствами. </td></tr>
+    <tr><td class="paramname">address</td><td>Адрес устройства на шине I2C (по умолчанию 0 — автоматическое определение). </td></tr>
+    <tr><td class="paramname">name</td><td>Имя устройства для идентификации в системе (по умолчанию пустая строка). </td></tr>
+    <tr><td class="paramname">parent</td><td>Родительский QObject для управления временем жизни. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>При создании автоматически инициализируется список сопел со следующими параметрами:<ul>
+<li>Сопло 0: позиция (5, 5) мм, диаметр <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.4</a> мм, калибровочное смещение 0,</li>
+<li>Сопло 1: позиция (15, 5) мм, диаметр <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.7</a> мм, калибровочное смещение 0,</li>
+<li>Сопло 2: позиция (5, 15) мм, диаметр <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152" title="Конструктор с параметрами.">0.5</a> мм, калибровочное смещение 0. </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a5d1e3987d75d69d8f513b302f92153b5" name="a5d1e3987d75d69d8f513b302f92153b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d1e3987d75d69d8f513b302f92153b5">&#9670;&#160;</a></span>~FCHead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCHead::~FCHead </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Деструктор головки. </p>
+<dl class="section note"><dt>Заметки</dt><dd>Все ресурсы освобождаются автоматически через механизм родительства QObject. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a1f57990cbd98d1a14ca35aa9711190c0" name="a1f57990cbd98d1a14ca35aa9711190c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f57990cbd98d1a14ca35aa9711190c0">&#9670;&#160;</a></span>boundingBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFC2DCell.html">FC2DCell</a> FCHead::boundingBox </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает ограничивающий прямоугольник всех сопел в локальной системе координат. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Прямоугольник (ячейка), охватывающий все сопла головки. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Размеры вычисляются динамически на основе позиций и диаметров сопел. </dd></dl>
+
+</div>
+</div>
+<a id="a097074366d56144faffad4130c936368" name="a097074366d56144faffad4130c936368"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a097074366d56144faffad4130c936368">&#9670;&#160;</a></span>isValidNozzleIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FCHead::isValidNozzleIndex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">int</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет валидность индекса сопла. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Проверяемый индекс. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если индекс находится в диапазоне [0, <a class="el" href="#a0129d31ab8f3e6897c331827483eb11f" title="Возвращает количество сопел в головке.">nozzleCount()</a> - 1]; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a7b65f6ebcdb68810725a2b894fba904c" name="a7b65f6ebcdb68810725a2b894fba904c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b65f6ebcdb68810725a2b894fba904c">&#9670;&#160;</a></span>nozzle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCNozzle.html">FCNozzle</a> &amp; FCHead::nozzle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">int</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает сопло по индексу с автоматической проверкой границ. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Индекс сопла в диапазоне [0, <a class="el" href="#a0129d31ab8f3e6897c331827483eb11f" title="Возвращает количество сопел в головке.">nozzleCount()</a> - 1]. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Константная ссылка на объект сопла. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>При выходе индекса за допустимые границы возвращается крайнее допустимое сопло:<ul>
+<li>Индекс &lt; 0 → возвращается сопло 0,</li>
+<li>Индекс ≥ <a class="el" href="#a0129d31ab8f3e6897c331827483eb11f" title="Возвращает количество сопел в головке.">nozzleCount()</a> → возвращается последнее сопло (<a class="el" href="#a0129d31ab8f3e6897c331827483eb11f" title="Возвращает количество сопел в головке.">nozzleCount()</a> - 1). </li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Для строгой проверки границ используйте метод <a class="el" href="#a097074366d56144faffad4130c936368" title="Проверяет валидность индекса сопла.">isValidNozzleIndex()</a> перед вызовом. </dd></dl>
+
+</div>
+</div>
+<a id="a0129d31ab8f3e6897c331827483eb11f" name="a0129d31ab8f3e6897c331827483eb11f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0129d31ab8f3e6897c331827483eb11f">&#9670;&#160;</a></span>nozzleCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">int</a> FCHead::nozzleCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает количество сопел в головке. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Целое число, равное константе NOZZLE_COUNT (3 для текущей конфигурации). </dd></dl>
+
+</div>
+</div>
+<a id="a6aa87746a8efb6c58ef73c1f0960ab47" name="a6aa87746a8efb6c58ef73c1f0960ab47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aa87746a8efb6c58ef73c1f0960ab47">&#9670;&#160;</a></span>nozzles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">const</a> FCNozzleList &amp; FCHead::nozzles </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает список всех сопел головки. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Константная ссылка на внутренний список сопел. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Изменение списка напрямую запрещено — конфигурация головки неизменна после создания. </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>FCPlotter/FCDevice/FCI2CDevice/FCHead/<a class="el" href="FCHead_8h_source.html">FCHead.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

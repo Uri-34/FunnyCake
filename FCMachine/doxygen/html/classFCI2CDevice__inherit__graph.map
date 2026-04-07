@@ -1,0 +1,15 @@
+<map id="FCI2CDevice" name="FCI2CDevice">
+<area shape="rect" id="Node000001" title="Базовый класс для всех устройств, подключаемых по шине I²C." alt="" coords="136,225,241,251"/>
+<area shape="rect" id="Node000005" href="$classFCHead.html" title="Класс управления печатающей головкой плоттера с множественными соплами." alt="" coords="5,299,79,324"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="154,259,67,301,65,296,152,254"/>
+<area shape="rect" id="Node000006" href="$classFCLM75AThermometer.html" title="Драйвер цифрового датчика температуры LM75A с интерфейсом I²C." alt="" coords="103,299,274,324"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="191,264,191,299,186,299,186,264"/>
+<area shape="rect" id="Node000007" href="$classFCPumpRamp.html" title="Контроллер насосной рампы с интегрированными датчиками температуры." alt="" coords="298,299,413,324"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="229,254,329,296,327,301,227,258"/>
+<area shape="rect" id="Node000002" href="$classFCDevice.html" title="Абстрактный базовый класс для управления аппаратными устройствами в системе." alt="" coords="147,152,231,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,191,191,225,186,225,186,191"/>
+<area shape="rect" id="Node000003" href="$classFCConditionObject.html" title="Базовый класс для объектов с управляемым составным состоянием и уведомлениями об изменениях." alt="" coords="117,79,260,104"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="191,118,191,152,186,152,186,118"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="151,5,226,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="191,44,191,79,186,79,186,44"/>
+</map>

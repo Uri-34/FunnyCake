@@ -1,0 +1,17 @@
+<map id="FCI2CIndicator" name="FCI2CIndicator">
+<area shape="rect" id="Node000001" title="Базовый класс для I²C&#45;управляемых индикаторов (LED)." alt="" coords="125,299,243,324"/>
+<area shape="rect" id="Node000006" href="$classFCI2CBlinkIndicator.html" title="абстрактный класс FCIndicator &#45; описывающий состояние индикатора" alt="" coords="22,372,173,397"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="161,335,113,374,110,370,158,330"/>
+<area shape="rect" id="Node000008" href="$classFCI2CColorIndicator.html" title="класс FCColorIndicator &#45; описывающий состояние индикатора" alt="" coords="197,372,347,397"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="210,330,259,370,256,374,207,335"/>
+<area shape="rect" id="Node000002" href="$classFCI2CDevice.html" title="Базовый класс для I²C&#45;устройств." alt="" coords="131,225,237,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,264,187,299,181,299,181,264"/>
+<area shape="rect" id="Node000003" href="$classFCDevice.html" title="абстрактный базовый класс для аппаратных устройств." alt="" coords="142,152,226,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="187,191,187,225,181,225,181,191"/>
+<area shape="rect" id="Node000004" href="$classFCConditionObject.html" title="Базовый класс для объектов с управляемым состоянием (готовность, воспроизведение, ошибки)." alt="" coords="113,79,255,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="187,118,187,152,181,152,181,118"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="147,5,221,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="187,44,187,79,181,79,181,44"/>
+<area shape="rect" id="Node000007" href="$classFCI2CBlinkColorIndicator.html" title="абстрактный класс FCIndicator &#45; описывающий состояние индикатора" alt="" coords="5,445,189,471"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="100,411,100,445,95,445,95,411"/>
+</map>

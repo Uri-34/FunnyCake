@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Исходный файл FCDisplay/FCDisplay.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_76197f5f74427dfba719c7f05a9ee1ce.html">FCDisplay</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FCDisplay.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FCDISPLAY_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FCDISPLAY_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QSettings&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QGridLayout&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QFileInfo&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QPair&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QRect&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;FCConfigFile.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;FCConditionObject.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;FCYesNoDialog.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;FCErrorDialog.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;FC2DSize.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span>Ui</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">class </span><a class="code hl_class" href="classFCDisplay.html">FCDisplay</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classFCDisplay.html">   53</a></span><span class="keyword">class </span><a class="code hl_class" href="classFCDisplay.html">FCDisplay</a></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>Q_OBJECT</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classFCDisplay.html#aff7847fcc3296d0adbac5dd1463e5ae1">FCDisplay</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_function" href="classFCDisplay.html#a20261d1d7296e3d7d3e209e26d7dc856">~FCDisplay</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classFCDisplay.html#abff34fbf4f3ee83619da1c0dd4e5364e">   78</a></span>    <a class="code hl_class" href="classFCDisplay.html">FCDisplay</a>&amp; <a class="code hl_function" href="classFCDisplay.html#abff34fbf4f3ee83619da1c0dd4e5364e">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCDisplay.html">FCDisplay</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="comment">// --- прокси-методы для доступа к состоянию ---</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classFCDisplay.html#a9ed04f711fd3f84ad9b8278fcb6e97d6">   84</a></span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCDisplay.html#a9ed04f711fd3f84ad9b8278fcb6e97d6">is</a>(ReadyState state) <span class="keyword">const</span> <span class="keyword">noexcept</span> { <span class="keywordflow">return</span> _condition.<a class="code hl_function" href="classFCConditionObject.html#ae591d66c13c687547aabda0b6422064e">is</a>(state); }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classFCDisplay.html#a5007ecbfaaee4f54f530ae5005bd8e37">   89</a></span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCDisplay.html#a5007ecbfaaee4f54f530ae5005bd8e37">is</a>(PlayState state) <span class="keyword">const</span> <span class="keyword">noexcept</span> { <span class="keywordflow">return</span> _condition.<a class="code hl_function" href="classFCConditionObject.html#ae591d66c13c687547aabda0b6422064e">is</a>(state); }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classFCDisplay.html#a9e296129d889b27cfc1cbf320de4bdbd">   94</a></span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCDisplay.html#a9e296129d889b27cfc1cbf320de4bdbd">is</a>(ChangedState state) <span class="keyword">const</span> <span class="keyword">noexcept</span> { <span class="keywordflow">return</span> _condition.<a class="code hl_function" href="classFCConditionObject.html#ae591d66c13c687547aabda0b6422064e">is</a>(state); }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classFCDisplay.html#a4c9d5bd4f540d9ff871d3f6a86383741">   99</a></span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCDisplay.html#a4c9d5bd4f540d9ff871d3f6a86383741">is</a>(ErrorType type) <span class="keyword">const</span> <span class="keyword">noexcept</span> { <span class="keywordflow">return</span> _condition.<a class="code hl_function" href="classFCConditionObject.html#ae591d66c13c687547aabda0b6422064e">is</a>(type); }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classFCDisplay.html#a7b0b081de0cebb6753c3b88897e7a392">  106</a></span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCDisplay.html#a7b0b081de0cebb6753c3b88897e7a392">is</a>(PanelState panel) <span class="keyword">const</span> <span class="keyword">noexcept</span> { <span class="keywordflow">return</span> _condition.panel() == panel; }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classFCDisplay.html#af89ad4684f3cbf98bae32246a21ce916">  113</a></span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCDisplay.html#af89ad4684f3cbf98bae32246a21ce916">is</a>(VisibilityState visibility) <span class="keyword">const</span> <span class="keyword">noexcept</span> { <span class="keywordflow">return</span> _condition.visibility() == visibility; }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classFCDisplay.html#a1a44901c078678f4efee85aae00a15af">  117</a></span>    [[nodiscard]] <span class="keyword">const</span> <a class="code hl_class" href="classFCCondition.html">FCCondition</a>&amp; <a class="code hl_function" href="classFCDisplay.html#a1a44901c078678f4efee85aae00a15af">condition</a>() const noexcept { <span class="keywordflow">return</span> _condition.<a class="code hl_function" href="classFCConditionObject.html#a80e4f1af6aa8824d08933c8ee3a98256">condition</a>(); }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classFCDisplay.html#a7bb9246635ed1585262a7077216e4bce">  122</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCDisplay.html#a7bb9246635ed1585262a7077216e4bce">set</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCCondition.html">FCCondition</a> &amp;<a class="code hl_function" href="classFCDisplay.html#a1a44901c078678f4efee85aae00a15af">condition</a>) { _condition.<a class="code hl_function" href="classFCConditionObject.html#a8863368dc43ca1f9d4c8520daf4e8192">set</a>(<a class="code hl_function" href="classFCDisplay.html#a1a44901c078678f4efee85aae00a15af">condition</a>); }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classFCDisplay.html#af88bfb9f087ee31e9f9ebef3d92507c4">  126</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCDisplay.html#af88bfb9f087ee31e9f9ebef3d92507c4">set</a>(ReadyState state) { _condition.<a class="code hl_function" href="classFCConditionObject.html#a8863368dc43ca1f9d4c8520daf4e8192">set</a>(state); }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classFCDisplay.html#aafbb0b89bcb7ed073215fc10f0fd657b">  130</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCDisplay.html#aafbb0b89bcb7ed073215fc10f0fd657b">set</a>(PlayState state) { _condition.<a class="code hl_function" href="classFCConditionObject.html#a8863368dc43ca1f9d4c8520daf4e8192">set</a>(state); }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classFCDisplay.html#a3df1b3350956e2b4485573d7eb1b7b98">  134</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCDisplay.html#a3df1b3350956e2b4485573d7eb1b7b98">set</a>(ErrorType type) { _condition.<a class="code hl_function" href="classFCConditionObject.html#a8863368dc43ca1f9d4c8520daf4e8192">set</a>(type); }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classFCDisplay.html#a0cac10a8aa41be93be70c2d213c2d42c">  138</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCDisplay.html#a0cac10a8aa41be93be70c2d213c2d42c">set</a>(PanelState panel) { _condition.<a class="code hl_function" href="classFCConditionObject.html#a8863368dc43ca1f9d4c8520daf4e8192">set</a>(panel); }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classFCDisplay.html#aa10bf91eb1178e6e07d97838b1849ab4">  142</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCDisplay.html#aa10bf91eb1178e6e07d97838b1849ab4">set</a>(VisibilityState visibility) { _condition.<a class="code hl_function" href="classFCConditionObject.html#a8863368dc43ca1f9d4c8520daf4e8192">set</a>(visibility); }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classFCDisplay.html#a928c1681cc76c3edc174c105fd6fb641">receiveMessage</a>(<span class="keyword">const</span> QString &amp;name, <span class="keyword">const</span> QString &amp;message);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordtype">void</span> console(VisibilityState visibility);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordtype">void</span> onSelectModelsElement();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordtype">void</span> onPlayPausePressed();</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordtype">void</span> onChangePlotterPressed();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keywordtype">void</span> onModelDataShow(<span class="keyword">const</span> QFileInfo &amp;fileInfo);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordtype">void</span> onSwitchToPanel(PanelState panel);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordtype">void</span> onParsingProcess(<span class="keywordtype">int</span> percent);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordtype">void</span> addPlotterName(<span class="keyword">const</span> QString &amp;name);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>signals:</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="classFCDisplay.html#a43d6fef8ee325cfbb632ef1d6e5ff7f2">  211</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCDisplay.html#a43d6fef8ee325cfbb632ef1d6e5ff7f2">conditionChanged</a>(<span class="keyword">const</span> QString &amp;name, <span class="keyword">const</span> <a class="code hl_class" href="classFCCondition.html">FCCondition</a> &amp;<a class="code hl_function" href="classFCDisplay.html#a1a44901c078678f4efee85aae00a15af">condition</a>);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="classFCDisplay.html#abb9ae365040b419a47bc612c2b0fd554">  217</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCDisplay.html#abb9ae365040b419a47bc612c2b0fd554">play</a>(<span class="keyword">const</span> QString &amp;model);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="classFCDisplay.html#abdd3a490d30bbbde269d24a01355c1ee">  222</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCDisplay.html#abdd3a490d30bbbde269d24a01355c1ee">pause</a>();</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="classFCDisplay.html#acf6ad478bf1fee7e082d194f17952230">  228</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCDisplay.html#acf6ad478bf1fee7e082d194f17952230">stop</a>();</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCDisplay.html#a70ea938174aa27a3d70473197f5f2247">event</a>(QEvent *<a class="code hl_function" href="classFCDisplay.html#a70ea938174aa27a3d70473197f5f2247">event</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="comment">// --- константы геометрии интерфейса ---</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DSize.html">FC2DSize</a> DefaultModelButtonSize{100, 140};</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DSize.html">FC2DSize</a> DefaultModelIconSize{95, 130};</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DSize.html">FC2DSize</a> DefaultModelSpacing{28, 8};</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> QPair&lt;QRect, QRect&gt; DefaultConsoleSize{</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        {390, 60, 841, 951},   <span class="comment">// Развёрнутое состояние</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        {390, 540, 841, 471}   <span class="comment">// Свёрнутое состояние</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    };</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> QPair&lt;QRect, QRect&gt; DefaultProgressBarSize{</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        {10, 540, 361, 241},   <span class="comment">// Развёрнутое состояние</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        {10, 540, 361, 301}    <span class="comment">// Свёрнутое состояние</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    };</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* DefaultPlayImage = <span class="stringliteral">&quot;:/img/play.svg&quot;</span>;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* DefaultPauseImage = <span class="stringliteral">&quot;:/img/pause.svg&quot;</span>;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* DefaultFNFImage = <span class="stringliteral">&quot;:/img/question.svg&quot;</span>;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DSize.html">FC2DSize</a> DefaultDisplayResolution{1280, 1024};</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> ScreenSaverTimeOut = 60000;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="comment">// --- методы инициализации ---</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="keywordtype">void</span> buildPlottersMenu();</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="keywordtype">void</span> buildModelsMenu();</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keywordtype">void</span> buildDialogs();</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keywordtype">void</span> buildInterface();</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    <span class="keywordtype">void</span> showNoModelsPlaceholder();</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    <span class="comment">// --- члены данных ---</span></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    Ui::FCDisplay *_ui = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    <a class="code hl_class" href="classFCConditionObject.html">FCConditionObject</a> _condition;</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    QGridLayout _gridOfModels;</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    <a class="code hl_class" href="classFCYesNoDialog.html">FCYesNoDialog</a> _yn;</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    <a class="code hl_class" href="classFCErrorDialog.html">FCErrorDialog</a> _error;</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    QTimer *_timer = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    PanelState _activePanel = PanelState::Main;</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    PanelState _previousPanel = PanelState::Main;</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>};</div>
+</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span> </div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span><span class="preprocessor">#endif </span><span class="comment">// FCDISPLAY_H</span></div>
+<div class="ttc" id="aclassFC2DSize_html"><div class="ttname"><a href="classFC2DSize.html">FC2DSize</a></div><div class="ttdoc">Класс для представления двумерного размера (ширина × высота).</div><div class="ttdef"><b>Definition</b> FC2DSize.h:23</div></div>
+<div class="ttc" id="aclassFCConditionObject_html"><div class="ttname"><a href="classFCConditionObject.html">FCConditionObject</a></div><div class="ttdoc">Базовый класс для объектов с управляемым составным состоянием и уведомлениями об изменениях.</div><div class="ttdef"><b>Definition</b> FCConditionObject.h:29</div></div>
+<div class="ttc" id="aclassFCConditionObject_html_a80e4f1af6aa8824d08933c8ee3a98256"><div class="ttname"><a href="classFCConditionObject.html#a80e4f1af6aa8824d08933c8ee3a98256">FCConditionObject::condition</a></div><div class="ttdeci">const FCCondition &amp; condition() const noexcept</div><div class="ttdoc">Возвращает полную структуру составного состояния.</div><div class="ttdef"><b>Definition</b> FCConditionObject.h:45</div></div>
+<div class="ttc" id="aclassFCConditionObject_html_a8863368dc43ca1f9d4c8520daf4e8192"><div class="ttname"><a href="classFCConditionObject.html#a8863368dc43ca1f9d4c8520daf4e8192">FCConditionObject::set</a></div><div class="ttdeci">void set(const FCCondition &amp;condition)</div><div class="ttdoc">Устанавливает полное составное состояние объекта.</div><div class="ttdef"><b>Definition</b> FCConditionObject.h:52</div></div>
+<div class="ttc" id="aclassFCConditionObject_html_ae591d66c13c687547aabda0b6422064e"><div class="ttname"><a href="classFCConditionObject.html#ae591d66c13c687547aabda0b6422064e">FCConditionObject::is</a></div><div class="ttdeci">bool is(ReadyState state) const noexcept</div><div class="ttdoc">Проверяет, соответствует ли состояние готовности заданному значению.</div><div class="ttdef"><b>Definition</b> FCConditionObject.h:168</div></div>
+<div class="ttc" id="aclassFCCondition_html"><div class="ttname"><a href="classFCCondition.html">FCCondition</a></div><div class="ttdoc">Класс для компактного хранения и управления составным состоянием устройства.</div><div class="ttdef"><b>Definition</b> FCCondition.h:143</div></div>
+<div class="ttc" id="aclassFCDisplay_html"><div class="ttname"><a href="classFCDisplay.html">FCDisplay</a></div><div class="ttdoc">Главное окно графического интерфейса системы управления плоттером (встраиваемая система).</div><div class="ttdef"><b>Definition</b> FCDisplay.h:55</div></div>
+<div class="ttc" id="aclassFCDisplay_html_a0cac10a8aa41be93be70c2d213c2d42c"><div class="ttname"><a href="classFCDisplay.html#a0cac10a8aa41be93be70c2d213c2d42c">FCDisplay::set</a></div><div class="ttdeci">void set(PanelState panel)</div><div class="ttdoc">Устанавливает активную панель интерфейса.</div><div class="ttdef"><b>Definition</b> FCDisplay.h:138</div></div>
+<div class="ttc" id="aclassFCDisplay_html_a1a44901c078678f4efee85aae00a15af"><div class="ttname"><a href="classFCDisplay.html#a1a44901c078678f4efee85aae00a15af">FCDisplay::condition</a></div><div class="ttdeci">const FCCondition &amp; condition() const noexcept</div><div class="ttdoc">Возвращает полную структуру составного состояния.</div><div class="ttdef"><b>Definition</b> FCDisplay.h:117</div></div>
+<div class="ttc" id="aclassFCDisplay_html_a20261d1d7296e3d7d3e209e26d7dc856"><div class="ttname"><a href="classFCDisplay.html#a20261d1d7296e3d7d3e209e26d7dc856">FCDisplay::~FCDisplay</a></div><div class="ttdeci">~FCDisplay() override</div><div class="ttdoc">Деструктор главного окна.</div><div class="ttdef"><b>Definition</b> FCDisplay.cpp:43</div></div>
+<div class="ttc" id="aclassFCDisplay_html_a3df1b3350956e2b4485573d7eb1b7b98"><div class="ttname"><a href="classFCDisplay.html#a3df1b3350956e2b4485573d7eb1b7b98">FCDisplay::set</a></div><div class="ttdeci">void set(ErrorType type)</div><div class="ttdoc">Устанавливает тип ошибки.</div><div class="ttdef"><b>Definition</b> FCDisplay.h:134</div></div>
+<div class="ttc" id="aclassFCDisplay_html_a43d6fef8ee325cfbb632ef1d6e5ff7f2"><div class="ttname"><a href="classFCDisplay.html#a43d6fef8ee325cfbb632ef1d6e5ff7f2">FCDisplay::conditionChanged</a></div><div class="ttdeci">void conditionChanged(const QString &amp;name, const FCCondition &amp;condition)</div><div class="ttdoc">Сигнал изменения составного состояния интерфейса.</div></div>
+<div class="ttc" id="aclassFCDisplay_html_a4c9d5bd4f540d9ff871d3f6a86383741"><div class="ttname"><a href="classFCDisplay.html#a4c9d5bd4f540d9ff871d3f6a86383741">FCDisplay::is</a></div><div class="ttdeci">bool is(ErrorType type) const noexcept</div><div class="ttdoc">Проверяет текущий тип ошибки.</div><div class="ttdef"><b>Definition</b> FCDisplay.h:99</div></div>
+<div class="ttc" id="aclassFCDisplay_html_a5007ecbfaaee4f54f530ae5005bd8e37"><div class="ttname"><a href="classFCDisplay.html#a5007ecbfaaee4f54f530ae5005bd8e37">FCDisplay::is</a></div><div class="ttdeci">bool is(PlayState state) const noexcept</div><div class="ttdoc">Проверяет текущий режим воспроизведения.</div><div class="ttdef"><b>Definition</b> FCDisplay.h:89</div></div>
+<div class="ttc" id="aclassFCDisplay_html_a70ea938174aa27a3d70473197f5f2247"><div class="ttname"><a href="classFCDisplay.html#a70ea938174aa27a3d70473197f5f2247">FCDisplay::event</a></div><div class="ttdeci">bool event(QEvent *event) override</div><div class="ttdoc">Переопределённый обработчик событий для поддержки сенсорного ввода.</div><div class="ttdef"><b>Definition</b> FCDisplay.cpp:48</div></div>
+<div class="ttc" id="aclassFCDisplay_html_a7b0b081de0cebb6753c3b88897e7a392"><div class="ttname"><a href="classFCDisplay.html#a7b0b081de0cebb6753c3b88897e7a392">FCDisplay::is</a></div><div class="ttdeci">bool is(PanelState panel) const noexcept</div><div class="ttdoc">Проверяет текущую активную панель интерфейса.</div><div class="ttdef"><b>Definition</b> FCDisplay.h:106</div></div>
+<div class="ttc" id="aclassFCDisplay_html_a7bb9246635ed1585262a7077216e4bce"><div class="ttname"><a href="classFCDisplay.html#a7bb9246635ed1585262a7077216e4bce">FCDisplay::set</a></div><div class="ttdeci">void set(const FCCondition &amp;condition)</div><div class="ttdoc">Устанавливает новое составное состояние.</div><div class="ttdef"><b>Definition</b> FCDisplay.h:122</div></div>
+<div class="ttc" id="aclassFCDisplay_html_a928c1681cc76c3edc174c105fd6fb641"><div class="ttname"><a href="classFCDisplay.html#a928c1681cc76c3edc174c105fd6fb641">FCDisplay::receiveMessage</a></div><div class="ttdeci">void receiveMessage(const QString &amp;name, const QString &amp;message)</div><div class="ttdoc">Обрабатывает входящее диагностическое сообщение для отображения в консоли.</div><div class="ttdef"><b>Definition</b> FCDisplay.cpp:519</div></div>
+<div class="ttc" id="aclassFCDisplay_html_a9e296129d889b27cfc1cbf320de4bdbd"><div class="ttname"><a href="classFCDisplay.html#a9e296129d889b27cfc1cbf320de4bdbd">FCDisplay::is</a></div><div class="ttdeci">bool is(ChangedState state) const noexcept</div><div class="ttdoc">Проверяет флаг изменения состояния.</div><div class="ttdef"><b>Definition</b> FCDisplay.h:94</div></div>
+<div class="ttc" id="aclassFCDisplay_html_a9ed04f711fd3f84ad9b8278fcb6e97d6"><div class="ttname"><a href="classFCDisplay.html#a9ed04f711fd3f84ad9b8278fcb6e97d6">FCDisplay::is</a></div><div class="ttdeci">bool is(ReadyState state) const noexcept</div><div class="ttdoc">Проверяет текущее состояние готовности устройства.</div><div class="ttdef"><b>Definition</b> FCDisplay.h:84</div></div>
+<div class="ttc" id="aclassFCDisplay_html_aa10bf91eb1178e6e07d97838b1849ab4"><div class="ttname"><a href="classFCDisplay.html#aa10bf91eb1178e6e07d97838b1849ab4">FCDisplay::set</a></div><div class="ttdeci">void set(VisibilityState visibility)</div><div class="ttdoc">Устанавливает состояние видимости.</div><div class="ttdef"><b>Definition</b> FCDisplay.h:142</div></div>
+<div class="ttc" id="aclassFCDisplay_html_aafbb0b89bcb7ed073215fc10f0fd657b"><div class="ttname"><a href="classFCDisplay.html#aafbb0b89bcb7ed073215fc10f0fd657b">FCDisplay::set</a></div><div class="ttdeci">void set(PlayState state)</div><div class="ttdoc">Устанавливает режим воспроизведения.</div><div class="ttdef"><b>Definition</b> FCDisplay.h:130</div></div>
+<div class="ttc" id="aclassFCDisplay_html_abb9ae365040b419a47bc612c2b0fd554"><div class="ttname"><a href="classFCDisplay.html#abb9ae365040b419a47bc612c2b0fd554">FCDisplay::play</a></div><div class="ttdeci">void play(const QString &amp;model)</div><div class="ttdoc">Сигнал запуска выполнения выбранной модели на активном плоттере.</div></div>
+<div class="ttc" id="aclassFCDisplay_html_abdd3a490d30bbbde269d24a01355c1ee"><div class="ttname"><a href="classFCDisplay.html#abdd3a490d30bbbde269d24a01355c1ee">FCDisplay::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Сигнал приостановки текущей операции на плоттере.</div></div>
+<div class="ttc" id="aclassFCDisplay_html_abff34fbf4f3ee83619da1c0dd4e5364e"><div class="ttname"><a href="classFCDisplay.html#abff34fbf4f3ee83619da1c0dd4e5364e">FCDisplay::operator=</a></div><div class="ttdeci">FCDisplay &amp; operator=(const FCDisplay &amp;)=delete</div><div class="ttdoc">Оператор присваивания (запрещён для предотвращения копирования состояния).</div></div>
+<div class="ttc" id="aclassFCDisplay_html_acf6ad478bf1fee7e082d194f17952230"><div class="ttname"><a href="classFCDisplay.html#acf6ad478bf1fee7e082d194f17952230">FCDisplay::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Сигнал остановки текущей операции и возврата в исходное состояние.</div></div>
+<div class="ttc" id="aclassFCDisplay_html_af88bfb9f087ee31e9f9ebef3d92507c4"><div class="ttname"><a href="classFCDisplay.html#af88bfb9f087ee31e9f9ebef3d92507c4">FCDisplay::set</a></div><div class="ttdeci">void set(ReadyState state)</div><div class="ttdoc">Устанавливает состояние готовности.</div><div class="ttdef"><b>Definition</b> FCDisplay.h:126</div></div>
+<div class="ttc" id="aclassFCDisplay_html_af89ad4684f3cbf98bae32246a21ce916"><div class="ttname"><a href="classFCDisplay.html#af89ad4684f3cbf98bae32246a21ce916">FCDisplay::is</a></div><div class="ttdeci">bool is(VisibilityState visibility) const noexcept</div><div class="ttdoc">Проверяет состояние видимости элементов интерфейса.</div><div class="ttdef"><b>Definition</b> FCDisplay.h:113</div></div>
+<div class="ttc" id="aclassFCDisplay_html_aff7847fcc3296d0adbac5dd1463e5ae1"><div class="ttname"><a href="classFCDisplay.html#aff7847fcc3296d0adbac5dd1463e5ae1">FCDisplay::FCDisplay</a></div><div class="ttdeci">FCDisplay(QWidget *parent=nullptr)</div><div class="ttdoc">Конструктор главного окна с инициализацией интерфейса и состояния.</div><div class="ttdef"><b>Definition</b> FCDisplay.cpp:17</div></div>
+<div class="ttc" id="aclassFCErrorDialog_html"><div class="ttname"><a href="classFCErrorDialog.html">FCErrorDialog</a></div><div class="ttdoc">Модальный диалог отображения ошибок с кнопкой подтверждения.</div><div class="ttdef"><b>Definition</b> FCErrorDialog.h:35</div></div>
+<div class="ttc" id="aclassFCYesNoDialog_html"><div class="ttname"><a href="classFCYesNoDialog.html">FCYesNoDialog</a></div><div class="ttdoc">Модальный диалог подтверждения с двумя кнопками &quot;Да&quot; и &quot;Нет&quot;.</div><div class="ttdef"><b>Definition</b> FCYesNoDialog.h:45</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Исходный файл FCTypes/FC3DArea/FC3DSize/FC3DSize.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_095319a0a42fa4deb6343e81a7cff0f0.html">FCTypes</a></li><li class="navelem"><a class="el" href="dir_d8002eed92ce90a9d208662b6f1adf02.html">FC3DArea</a></li><li class="navelem"><a class="el" href="dir_29bfede0f9693b069ba95d287ca7aad9.html">FC3DSize</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FC3DSize.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FC_3D_SIZE_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FC_3D_SIZE_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtGlobal&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span><a class="code hl_class" href="classFC3DPoint.html">FC3DPoint</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classFC3DSize.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classFC3DSize.html">FC3DSize</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classFC3DSize.html#a5bef38bcbfa2a6ba2d018f732fa4de4c">   27</a></span>    <span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">_type</a> = <a class="code hl_class" href="classFCRange.html">float</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// --- конструкторы ---</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classFC3DSize.html#a9b837dbd5668a0ea2cdba4619732aebc">   31</a></span>    <span class="keyword">constexpr</span> <a class="code hl_function" href="classFC3DSize.html#a9b837dbd5668a0ea2cdba4619732aebc">FC3DSize</a>() <a class="code hl_class" href="classFCRange.html">noexcept</a> = <a class="code hl_class" href="classFCRange.html">default</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classFC3DSize.html#a936e77993cc789e120a696f33a7c0edc">   37</a></span>    <a class="code hl_class" href="classFCRange.html">constexpr</a> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a>(<a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">w</a>, <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">h</a>, <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">d</a>) <a class="code hl_class" href="classFCRange.html">noexcept</a></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        : _w(<a class="code hl_class" href="classFCRange.html">w</a>)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        , _h(<a class="code hl_class" href="classFCRange.html">h</a>)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        , _d(<a class="code hl_class" href="classFCRange.html">d</a>)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    {}</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classFC3DSize.html#aee089d6934a5999a8e08f2716a9fc301">   44</a></span>    <span class="keyword">constexpr</span> <a class="code hl_function" href="classFC3DSize.html#aee089d6934a5999a8e08f2716a9fc301">FC3DSize</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a>&amp;) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classFC3DSize.html#a97433c43555f693c9888da6451bb179c">   47</a></span>    <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a>&amp; <a class="code hl_function" href="classFC3DSize.html#a97433c43555f693c9888da6451bb179c">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a>&amp;) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classFC3DSize.html#ababbcccf66e179b55735e9967d519dd8">   50</a></span>    <a class="code hl_function" href="classFC3DSize.html#ababbcccf66e179b55735e9967d519dd8">~FC3DSize</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">// --- геттеры ---</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classFC3DSize.html#a328060e57a1683970110c1703387bb93">   55</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_function" href="classFC3DSize.html#a328060e57a1683970110c1703387bb93">width</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _w; }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classFC3DSize.html#ac6d2836eab22b125ea03803629a898aa">   59</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_function" href="classFC3DSize.html#ac6d2836eab22b125ea03803629a898aa">height</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _h; }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classFC3DSize.html#a39b8c787a9218d8f4be97a428bbf3798">   63</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_function" href="classFC3DSize.html#a39b8c787a9218d8f4be97a428bbf3798">depth</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _d; }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">// --- сеттеры ---</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classFC3DSize.html#a3c32d1d52ce8604398e6a0ab1a2b8e56">   68</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFC3DSize.html#a3c32d1d52ce8604398e6a0ab1a2b8e56">setWidth</a>(<a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">w</a>) <span class="keyword">noexcept</span> { _w = <a class="code hl_class" href="classFCRange.html">w</a>; }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classFC3DSize.html#ae4da9514cb844cc28a009c128a602026">   72</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFC3DSize.html#ae4da9514cb844cc28a009c128a602026">setHeight</a>(<a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">h</a>) <span class="keyword">noexcept</span> { _h = <a class="code hl_class" href="classFCRange.html">h</a>; }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classFC3DSize.html#a24731f2974dac72613f0aad49a4cd5ac">   76</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFC3DSize.html#a24731f2974dac72613f0aad49a4cd5ac">setDepth</a>(<a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">d</a>) <span class="keyword">noexcept</span> { _d = <a class="code hl_class" href="classFCRange.html">d</a>; }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classFC3DSize.html#aef7c775dc2820a7eae9716d2294c11d9">   82</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFC3DSize.html#aef7c775dc2820a7eae9716d2294c11d9">setWidthHeightDepth</a>(<a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">w</a>, <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">h</a>, <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">d</a>) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        _w = <a class="code hl_class" href="classFCRange.html">w</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        _h = <a class="code hl_class" href="classFCRange.html">h</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        _d = <a class="code hl_class" href="classFCRange.html">d</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">// --- преобразования ---</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC3DPoint.html">FC3DPoint</a> <a class="code hl_function" href="classFC3DSize.html#a08ab0140f022774c576e2cae7a3d3143">toPoint</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <a class="code hl_class" href="classFCRange.html">static</a> <a class="code hl_class" href="classFCRange.html">constexpr</a> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a> <a class="code hl_function" href="classFC3DSize.html#ac6498b35534a82255e7abf215458b2d9">fromPoint</a>(<a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFC3DPoint.html">FC3DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">p</a>) <a class="code hl_class" href="classFCRange.html">noexcept</a>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="comment">// --- проверки состояния ---</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classFC3DSize.html#a3e38644b3faf00d33df0ac3636e67f0f">  104</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <a class="code hl_class" href="classFCRange.html">constexpr</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFC3DSize.html#a3e38644b3faf00d33df0ac3636e67f0f">isEmpty</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _w &lt;= 0 || _h &lt;= 0 || _d &lt;= 0; }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classFC3DSize.html#a585ec5547a2ea4680eb9ead6deda4eb0">  108</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFC3DSize.html#a585ec5547a2ea4680eb9ead6deda4eb0">isNull</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _w == 0 &amp;&amp; _h == 0 &amp;&amp; _d == 0; }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="comment">// --- геометрические свойства ---</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classFC3DSize.html#ae30969b87ba086601c8c335b4c041fcc">  114</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_function" href="classFC3DSize.html#ae30969b87ba086601c8c335b4c041fcc">volume</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _w * _h * _d; }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classFC3DSize.html#abf1c43859e0d52d6a8552778aea07564">  119</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="comment">/*constexpr*/</span> <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_function" href="classFC3DSize.html#abf1c43859e0d52d6a8552778aea07564">diagonal</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::hypot</a>(_w, <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::hypot</a>(_h, _d));</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="comment">// --- операторы сравнения ---</span></div>
+<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="classFC3DSize.html#aeb6e0d597be0884ab156deadbd838352">  128</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFC3DSize.html#aeb6e0d597be0884ab156deadbd838352">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">return</span> _w == <a class="code hl_class" href="classFCRange.html">other</a>._w &amp;&amp; _h == <a class="code hl_class" href="classFCRange.html">other</a>._h &amp;&amp; _d == <a class="code hl_class" href="classFCRange.html">other</a>._d;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
+</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classFC3DSize.html#ac6e6fa83c4156366561cfd0be0ca9523">  136</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFC3DSize.html#ac6e6fa83c4156366561cfd0be0ca9523">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == <a class="code hl_class" href="classFCRange.html">other</a>);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="comment">// --- операторы модификации ---</span></div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classFC3DSize.html#ae4434e2ed69c169d9bd27202feab6e4c">  145</a></span>    <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a>&amp; <a class="code hl_function" href="classFC3DSize.html#ae4434e2ed69c169d9bd27202feab6e4c">operator+=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        _w += <a class="code hl_class" href="classFCRange.html">other</a>._w;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        _h += <a class="code hl_class" href="classFCRange.html">other</a>._h;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        _d += <a class="code hl_class" href="classFCRange.html">other</a>._d;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="foldopen" id="foldopen00156" data-start="{" data-end="}">
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="classFC3DSize.html#a2ff971a6a37d9785d809a33e9c750285">  156</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a> <a class="code hl_function" href="classFC3DSize.html#a2ff971a6a37d9785d809a33e9c750285">operator+</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a>{_w + <a class="code hl_class" href="classFCRange.html">other</a>._w, _h + <a class="code hl_class" href="classFCRange.html">other</a>._h, _d + <a class="code hl_class" href="classFCRange.html">other</a>._d};</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
+</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="comment">// --- масштабирование ---</span></div>
+<div class="foldopen" id="foldopen00165" data-start="{" data-end="}">
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="classFC3DSize.html#a46ea50ba9e768e9f4a30b5aa74791f5a">  165</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a> <a class="code hl_function" href="classFC3DSize.html#a46ea50ba9e768e9f4a30b5aa74791f5a">scaled</a>(<a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">factor</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a>{_w * <a class="code hl_class" href="classFCRange.html">factor</a>, _h * <a class="code hl_class" href="classFCRange.html">factor</a>, _d * <a class="code hl_class" href="classFCRange.html">factor</a>};</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    }</div>
+</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="foldopen" id="foldopen00175" data-start="{" data-end="}">
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classFC3DSize.html#a0f553ba0a8b9424db56cb9f8cdbb7f00">  175</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a> <a class="code hl_function" href="classFC3DSize.html#a0f553ba0a8b9424db56cb9f8cdbb7f00">scaled</a>(<a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">fx</a>, <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">fy</a>, <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">fz</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a>{_w * <a class="code hl_class" href="classFCRange.html">fx</a>, _h * <a class="code hl_class" href="classFCRange.html">fy</a>, _d * <a class="code hl_class" href="classFCRange.html">fz</a>};</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <a class="code hl_typedef" href="classFC3DSize.html#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> _w = 0;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <a class="code hl_typedef" href="classFC3DSize.html#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> _h = 0;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <a class="code hl_typedef" href="classFC3DSize.html#a5bef38bcbfa2a6ba2d018f732fa4de4c">_type</a> _d = 0;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>};</div>
+</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keyword">constexpr</span> <a class="code hl_class" href="classFC3DSize.html">FC3DSize</a> FC3DSizeError{-1, -1, -1};</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="comment">// Проверки компиляции (гарантируют тривиальность и предсказуемый размер в памяти)</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="comment">// static_assert(std::is_trivially_copyable_v&lt;FC3DSize&gt;, &quot;FC3DSize должен быть тривиально копируемым типом&quot;);</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="comment">// static_assert(sizeof(FC3DSize) == 3 * sizeof(float), &quot;Размер FC3DSize должен быть в точности 3 × float&quot;);</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="preprocessor">#endif </span><span class="comment">// FC_3D_SIZE_H</span></div>
+<div class="ttc" id="aclassFC3DPoint_html"><div class="ttname"><a href="classFC3DPoint.html">FC3DPoint</a></div><div class="ttdoc">Класс для представления трёхмерной точки с координатами (x, y, z).</div><div class="ttdef"><b>Definition</b> FC3DPoint.h:24</div></div>
+<div class="ttc" id="aclassFC3DSize_html"><div class="ttname"><a href="classFC3DSize.html">FC3DSize</a></div><div class="ttdoc">Класс для представления трёхмерного размера (ширина × высота × глубина).</div><div class="ttdef"><b>Definition</b> FC3DSize.h:24</div></div>
+<div class="ttc" id="aclassFC3DSize_html_a08ab0140f022774c576e2cae7a3d3143"><div class="ttname"><a href="classFC3DSize.html#a08ab0140f022774c576e2cae7a3d3143">FC3DSize::toPoint</a></div><div class="ttdeci">constexpr FC3DPoint toPoint() const noexcept</div><div class="ttdoc">Преобразует размер в точку, интерпретируя компоненты как координаты.</div><div class="ttdef"><b>Definition</b> FC3DSize.cpp:4</div></div>
+<div class="ttc" id="aclassFC3DSize_html_a0f553ba0a8b9424db56cb9f8cdbb7f00"><div class="ttname"><a href="classFC3DSize.html#a0f553ba0a8b9424db56cb9f8cdbb7f00">FC3DSize::scaled</a></div><div class="ttdeci">constexpr FC3DSize scaled(_type fx, _type fy, _type fz) const noexcept</div><div class="ttdoc">Возвращает размер, масштабированный разными коэффициентами по осям.</div><div class="ttdef"><b>Definition</b> FC3DSize.h:175</div></div>
+<div class="ttc" id="aclassFC3DSize_html_a24731f2974dac72613f0aad49a4cd5ac"><div class="ttname"><a href="classFC3DSize.html#a24731f2974dac72613f0aad49a4cd5ac">FC3DSize::setDepth</a></div><div class="ttdeci">constexpr void setDepth(_type d) noexcept</div><div class="ttdoc">Устанавливает новое значение глубины.</div><div class="ttdef"><b>Definition</b> FC3DSize.h:76</div></div>
+<div class="ttc" id="aclassFC3DSize_html_a2ff971a6a37d9785d809a33e9c750285"><div class="ttname"><a href="classFC3DSize.html#a2ff971a6a37d9785d809a33e9c750285">FC3DSize::operator+</a></div><div class="ttdeci">constexpr FC3DSize operator+(const FC3DSize &amp;other) const noexcept</div><div class="ttdoc">Оператор сложения размеров (покомпонентное сложение).</div><div class="ttdef"><b>Definition</b> FC3DSize.h:156</div></div>
+<div class="ttc" id="aclassFC3DSize_html_a328060e57a1683970110c1703387bb93"><div class="ttname"><a href="classFC3DSize.html#a328060e57a1683970110c1703387bb93">FC3DSize::width</a></div><div class="ttdeci">constexpr _type width() const noexcept</div><div class="ttdoc">Возвращает ширину размера.</div><div class="ttdef"><b>Definition</b> FC3DSize.h:55</div></div>
+<div class="ttc" id="aclassFC3DSize_html_a39b8c787a9218d8f4be97a428bbf3798"><div class="ttname"><a href="classFC3DSize.html#a39b8c787a9218d8f4be97a428bbf3798">FC3DSize::depth</a></div><div class="ttdeci">constexpr _type depth() const noexcept</div><div class="ttdoc">Возвращает глубину размера.</div><div class="ttdef"><b>Definition</b> FC3DSize.h:63</div></div>
+<div class="ttc" id="aclassFC3DSize_html_a3c32d1d52ce8604398e6a0ab1a2b8e56"><div class="ttname"><a href="classFC3DSize.html#a3c32d1d52ce8604398e6a0ab1a2b8e56">FC3DSize::setWidth</a></div><div class="ttdeci">constexpr void setWidth(_type w) noexcept</div><div class="ttdoc">Устанавливает новое значение ширины.</div><div class="ttdef"><b>Definition</b> FC3DSize.h:68</div></div>
+<div class="ttc" id="aclassFC3DSize_html_a3e38644b3faf00d33df0ac3636e67f0f"><div class="ttname"><a href="classFC3DSize.html#a3e38644b3faf00d33df0ac3636e67f0f">FC3DSize::isEmpty</a></div><div class="ttdeci">constexpr bool isEmpty() const noexcept</div><div class="ttdoc">Проверяет, является ли размер пустым (неположительное значение хотя бы по одной оси).</div><div class="ttdef"><b>Definition</b> FC3DSize.h:104</div></div>
+<div class="ttc" id="aclassFC3DSize_html_a46ea50ba9e768e9f4a30b5aa74791f5a"><div class="ttname"><a href="classFC3DSize.html#a46ea50ba9e768e9f4a30b5aa74791f5a">FC3DSize::scaled</a></div><div class="ttdeci">constexpr FC3DSize scaled(_type factor) const noexcept</div><div class="ttdoc">Возвращает размер, масштабированный единым коэффициентом.</div><div class="ttdef"><b>Definition</b> FC3DSize.h:165</div></div>
+<div class="ttc" id="aclassFC3DSize_html_a585ec5547a2ea4680eb9ead6deda4eb0"><div class="ttname"><a href="classFC3DSize.html#a585ec5547a2ea4680eb9ead6deda4eb0">FC3DSize::isNull</a></div><div class="ttdeci">constexpr bool isNull() const noexcept</div><div class="ttdoc">Проверяет, является ли размер нулевым (все компоненты точно равны нулю).</div><div class="ttdef"><b>Definition</b> FC3DSize.h:108</div></div>
+<div class="ttc" id="aclassFC3DSize_html_a5bef38bcbfa2a6ba2d018f732fa4de4c"><div class="ttname"><a href="classFC3DSize.html#a5bef38bcbfa2a6ba2d018f732fa4de4c">FC3DSize::_type</a></div><div class="ttdeci">float _type</div><div class="ttdoc">Тип данных, используемый для хранения размеров (по умолчанию — float).</div><div class="ttdef"><b>Definition</b> FC3DSize.h:27</div></div>
+<div class="ttc" id="aclassFC3DSize_html_a97433c43555f693c9888da6451bb179c"><div class="ttname"><a href="classFC3DSize.html#a97433c43555f693c9888da6451bb179c">FC3DSize::operator=</a></div><div class="ttdeci">constexpr FC3DSize &amp; operator=(const FC3DSize &amp;) noexcept=default</div><div class="ttdoc">Оператор присваивания копированием (тривиальный).</div></div>
+<div class="ttc" id="aclassFC3DSize_html_a9b837dbd5668a0ea2cdba4619732aebc"><div class="ttname"><a href="classFC3DSize.html#a9b837dbd5668a0ea2cdba4619732aebc">FC3DSize::FC3DSize</a></div><div class="ttdeci">constexpr FC3DSize() noexcept=default</div><div class="ttdoc">Конструктор по умолчанию. Создаёт размер с нулевыми значениями (0, 0, 0).</div></div>
+<div class="ttc" id="aclassFC3DSize_html_ababbcccf66e179b55735e9967d519dd8"><div class="ttname"><a href="classFC3DSize.html#ababbcccf66e179b55735e9967d519dd8">FC3DSize::~FC3DSize</a></div><div class="ttdeci">~FC3DSize()=default</div><div class="ttdoc">Деструктор (тривиальный).</div></div>
+<div class="ttc" id="aclassFC3DSize_html_abf1c43859e0d52d6a8552778aea07564"><div class="ttname"><a href="classFC3DSize.html#abf1c43859e0d52d6a8552778aea07564">FC3DSize::diagonal</a></div><div class="ttdeci">_type diagonal() const noexcept</div><div class="ttdoc">Вычисляет длину пространственной диагонали параллелепипеда.</div><div class="ttdef"><b>Definition</b> FC3DSize.h:119</div></div>
+<div class="ttc" id="aclassFC3DSize_html_ac6498b35534a82255e7abf215458b2d9"><div class="ttname"><a href="classFC3DSize.html#ac6498b35534a82255e7abf215458b2d9">FC3DSize::fromPoint</a></div><div class="ttdeci">static constexpr FC3DSize fromPoint(const FC3DPoint &amp;p) noexcept</div><div class="ttdoc">Создаёт размер из точки, интерпретируя координаты как компоненты размера.</div><div class="ttdef"><b>Definition</b> FC3DSize.cpp:6</div></div>
+<div class="ttc" id="aclassFC3DSize_html_ac6d2836eab22b125ea03803629a898aa"><div class="ttname"><a href="classFC3DSize.html#ac6d2836eab22b125ea03803629a898aa">FC3DSize::height</a></div><div class="ttdeci">constexpr _type height() const noexcept</div><div class="ttdoc">Возвращает высоту размера.</div><div class="ttdef"><b>Definition</b> FC3DSize.h:59</div></div>
+<div class="ttc" id="aclassFC3DSize_html_ac6e6fa83c4156366561cfd0be0ca9523"><div class="ttname"><a href="classFC3DSize.html#ac6e6fa83c4156366561cfd0be0ca9523">FC3DSize::operator!=</a></div><div class="ttdeci">constexpr bool operator!=(const FC3DSize &amp;other) const noexcept</div><div class="ttdoc">Оператор сравнения на неравенство.</div><div class="ttdef"><b>Definition</b> FC3DSize.h:136</div></div>
+<div class="ttc" id="aclassFC3DSize_html_ae30969b87ba086601c8c335b4c041fcc"><div class="ttname"><a href="classFC3DSize.html#ae30969b87ba086601c8c335b4c041fcc">FC3DSize::volume</a></div><div class="ttdeci">constexpr _type volume() const noexcept</div><div class="ttdoc">Вычисляет объём параллелепипеда с заданным размером.</div><div class="ttdef"><b>Definition</b> FC3DSize.h:114</div></div>
+<div class="ttc" id="aclassFC3DSize_html_ae4434e2ed69c169d9bd27202feab6e4c"><div class="ttname"><a href="classFC3DSize.html#ae4434e2ed69c169d9bd27202feab6e4c">FC3DSize::operator+=</a></div><div class="ttdeci">constexpr FC3DSize &amp; operator+=(const FC3DSize &amp;other) noexcept</div><div class="ttdoc">Оператор составного сложения размеров (покомпонентное сложение).</div><div class="ttdef"><b>Definition</b> FC3DSize.h:145</div></div>
+<div class="ttc" id="aclassFC3DSize_html_ae4da9514cb844cc28a009c128a602026"><div class="ttname"><a href="classFC3DSize.html#ae4da9514cb844cc28a009c128a602026">FC3DSize::setHeight</a></div><div class="ttdeci">constexpr void setHeight(_type h) noexcept</div><div class="ttdoc">Устанавливает новое значение высоты.</div><div class="ttdef"><b>Definition</b> FC3DSize.h:72</div></div>
+<div class="ttc" id="aclassFC3DSize_html_aeb6e0d597be0884ab156deadbd838352"><div class="ttname"><a href="classFC3DSize.html#aeb6e0d597be0884ab156deadbd838352">FC3DSize::operator==</a></div><div class="ttdeci">constexpr bool operator==(const FC3DSize &amp;other) const noexcept</div><div class="ttdoc">Оператор сравнения на равенство.</div><div class="ttdef"><b>Definition</b> FC3DSize.h:128</div></div>
+<div class="ttc" id="aclassFC3DSize_html_aee089d6934a5999a8e08f2716a9fc301"><div class="ttname"><a href="classFC3DSize.html#aee089d6934a5999a8e08f2716a9fc301">FC3DSize::FC3DSize</a></div><div class="ttdeci">constexpr FC3DSize(const FC3DSize &amp;) noexcept=default</div><div class="ttdoc">Конструктор копирования (тривиальный).</div></div>
+<div class="ttc" id="aclassFC3DSize_html_aef7c775dc2820a7eae9716d2294c11d9"><div class="ttname"><a href="classFC3DSize.html#aef7c775dc2820a7eae9716d2294c11d9">FC3DSize::setWidthHeightDepth</a></div><div class="ttdeci">constexpr void setWidthHeightDepth(_type w, _type h, _type d) noexcept</div><div class="ttdoc">Устанавливает все три размера одновременно.</div><div class="ttdef"><b>Definition</b> FC3DSize.h:82</div></div>
+<div class="ttc" id="aclassFCRange_html"><div class="ttname"><a href="classFCRange.html">FCRange</a></div><div class="ttdoc">Шаблонный класс для представления числового диапазона [min, max] с гарантией корректности.</div><div class="ttdef"><b>Definition</b> FCRange.h:34</div></div>
+<div class="ttc" id="aclassFCRange_html_ad64748aa407cd3708dd078c9e8789152"><div class="ttname"><a href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">FCRange::FCRange</a></div><div class="ttdeci">constexpr FCRange(T min=defaultMin(), T max=defaultMax()) noexcept</div><div class="ttdoc">Конструктор с параметрами.</div><div class="ttdef"><b>Definition</b> FCRange.h:75</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

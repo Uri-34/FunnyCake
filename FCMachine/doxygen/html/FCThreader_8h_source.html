@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Исходный файл FCTypes/FCThreader/FCThreader.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_095319a0a42fa4deb6343e81a7cff0f0.html">FCTypes</a></li><li class="navelem"><a class="el" href="dir_04c9fdb7f85e6759e2b2ea23807ecf92.html">FCThreader</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FCThreader.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// --- пример ---</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//auto poller = std::make_unique&lt;SensorPoller&gt;();</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//auto threader = new FCThreader(std::move(poller), this);</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//connect(threader, &amp;FCThreader::started, [](const QString&amp; name){</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//    qDebug() &lt;&lt; name &lt;&lt; &quot;started&quot;;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//});</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//threader-&gt;start();   // → запуск в потоке</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//threader-&gt;pause();   // → пауза</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//threader-&gt;stop();    // → graceful shutdown</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef FC_THREADER_MANAGER_H</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define FC_THREADER_MANAGER_H</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;QThread&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;QPointer&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//#include &quot;FCStatedObject.h&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;FCThreadProcess.h&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classFCThreader.html">   44</a></span><span class="keyword">class </span><a class="code hl_class" href="classFCThreader.html">FCThreader</a></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    Q_OBJECT</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// Свойства для QML / Designer</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//    Q_PROPERTY(bool running READ isRunning NOTIFY runningChanged)</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">//    Q_PROPERTY(bool paused READ isPaused NOTIFY conditionChanged)</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">//    Q_PROPERTY(QString processName READ processName CONSTANT)</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classFCThreader.html#a1b2ea3bfe32bb550104a7fb1afba34bb">FCThreader</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classFCThreader.html#a6b0c19f4a3ad3a906c06b49e46b1c924">   69</a></span>    <a class="code hl_function" href="classFCThreader.html#a6b0c19f4a3ad3a906c06b49e46b1c924">~FCThreader</a>()<span class="keyword"> override </span>{ <a class="code hl_function" href="classFCThreader.html#a5730d94e23685f469f6d00f089081c02">stop</a>(); }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// --- Делегирование состояния (без дублирования!) ---</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    QString <a class="code hl_function" href="classFCThreader.html#acb9d82975413d180c2aea8e9e2fc7675">processName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classFCThreader.html#a331478412ce8816a540cecd2729fce5f">   80</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCThreader.html#a331478412ce8816a540cecd2729fce5f">is</a>(ReadyState state)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _process &amp;&amp; _process-&gt;is(state); }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classFCThreader.html#a3fdc4a1d69043a3b90d31893b1fdc537">   85</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCThreader.html#a3fdc4a1d69043a3b90d31893b1fdc537">is</a>(PlayState state)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _process &amp;&amp; _process-&gt;is(state); }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classFCThreader.html#a7ec7a751ed936740c0a298c33d72f159">   90</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCThreader.html#a7ec7a751ed936740c0a298c33d72f159">is</a>(ChangedState state)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _process &amp;&amp; _process-&gt;is(state); }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classFCThreader.html#a7254a5d7c30f787da8f7a399d806a4e5">   95</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCThreader.html#a7254a5d7c30f787da8f7a399d806a4e5">is</a>(ErrorType type)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _process &amp;&amp; _process-&gt;is(type); }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classFCThreader.html#a4e3e78db639e2b00fd0451ab71c586d9">  100</a></span>    Condition <a class="code hl_function" href="classFCThreader.html#a4e3e78db639e2b00fd0451ab71c586d9">condition</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _process ? _process-&gt;condition() : Condition{}; }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="comment">// --- управление ---</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="classFCThreader.html#ac97038858f9a89f6628166461c9e82d2">start</a>();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="classFCThreader.html#a5730d94e23685f469f6d00f089081c02">stop</a>();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="classFCThreader.html#af7968d04867384d6894109093b58a14c">pause</a>();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="classFCThreader.html#a451e0365028a34c6cb9dcb2246178698">reset</a>();</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classFCThreader.html#a1c700c915897148da0a5201b2a0fcaf8">  136</a></span>    QThread *<a class="code hl_function" href="classFCThreader.html#a1c700c915897148da0a5201b2a0fcaf8">thread</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _thread; }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordtype">bool</span> append(<span class="keyword">const</span> FCThreadProcess *process);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classFCThreader.html#a9af669d25804632ca90b1a1d7568f3b6">  144</a></span>    <span class="keyword">const</span> FCThreadProcess *<a class="code hl_function" href="classFCThreader.html#a9af669d25804632ca90b1a1d7568f3b6">operator[]</a>(<span class="keywordtype">int</span> number)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _processList[number]; }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>signals:</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classFCThreader.html#ac2f2a75492e132b50a449021e6c7519d">  151</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCThreader.html#ac2f2a75492e132b50a449021e6c7519d">conditionChanged</a>();</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="classFCThreader.html#a32e0b8fc330b3c29f4163594e3f2f5c5">  156</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCThreader.html#a32e0b8fc330b3c29f4163594e3f2f5c5">started</a>(<span class="keyword">const</span> QString &amp;<a class="code hl_function" href="classFCThreader.html#acb9d82975413d180c2aea8e9e2fc7675">processName</a>);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classFCThreader.html#a9c07acbd38a5fa6a032d251b86091ef2">  161</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCThreader.html#a9c07acbd38a5fa6a032d251b86091ef2">stoped</a>(<span class="keyword">const</span> QString &amp;<a class="code hl_function" href="classFCThreader.html#acb9d82975413d180c2aea8e9e2fc7675">processName</a>);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classFCThreader.html#a0535ab765d7715c97f8845b95db5fdb4">  166</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCThreader.html#a0535ab765d7715c97f8845b95db5fdb4">paused</a>(<span class="keyword">const</span> QString &amp;<a class="code hl_function" href="classFCThreader.html#acb9d82975413d180c2aea8e9e2fc7675">processName</a>);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="classFCThreader.html#a78f3aa8e83ce3c2cd7613ce61f8735b6">  171</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCThreader.html#a78f3aa8e83ce3c2cd7613ce61f8735b6">reseted</a>(<span class="keyword">const</span> QString &amp;<a class="code hl_function" href="classFCThreader.html#acb9d82975413d180c2aea8e9e2fc7675">processName</a>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classFCThreader.html#a56527958457bbee06aad191bc6adf438">  176</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCThreader.html#a56527958457bbee06aad191bc6adf438">runningChanged</a>(<span class="keywordtype">bool</span> running);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classFCThreader.html#a1e95690f998555461c22619a448bf06e">  181</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCThreader.html#a1e95690f998555461c22619a448bf06e">finished</a>();</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordtype">void</span> onProcessFinished(<span class="keyword">const</span> QString &amp;<a class="code hl_function" href="classFCThreader.html#acb9d82975413d180c2aea8e9e2fc7675">processName</a>);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordtype">void</span> onProcessConditionChanged(<span class="keyword">const</span> QString &amp;<a class="code hl_function" href="classFCThreader.html#acb9d82975413d180c2aea8e9e2fc7675">processName</a>);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    FCThreadProcessList _processList;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>};</div>
+</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="preprocessor">#endif </span><span class="comment">// FC_THREADER_MANAGER_H</span></div>
+<div class="ttc" id="aclassFCThreader_html"><div class="ttname"><a href="classFCThreader.html">FCThreader</a></div><div class="ttdoc">Класс для выполнения FCThreadProcess в отдельном потоке.</div><div class="ttdef"><b>Definition</b> FCThreader.h:46</div></div>
+<div class="ttc" id="aclassFCThreader_html_a0535ab765d7715c97f8845b95db5fdb4"><div class="ttname"><a href="classFCThreader.html#a0535ab765d7715c97f8845b95db5fdb4">FCThreader::paused</a></div><div class="ttdeci">void paused(const QString &amp;processName)</div><div class="ttdoc">Процесс приостановлен.</div></div>
+<div class="ttc" id="aclassFCThreader_html_a1b2ea3bfe32bb550104a7fb1afba34bb"><div class="ttname"><a href="classFCThreader.html#a1b2ea3bfe32bb550104a7fb1afba34bb">FCThreader::FCThreader</a></div><div class="ttdeci">FCThreader(QObject *parent=nullptr)</div><div class="ttdoc">Конструктор с передачей владения процессом.</div><div class="ttdef"><b>Definition</b> FCThreader.cpp:7</div></div>
+<div class="ttc" id="aclassFCThreader_html_a1c700c915897148da0a5201b2a0fcaf8"><div class="ttname"><a href="classFCThreader.html#a1c700c915897148da0a5201b2a0fcaf8">FCThreader::thread</a></div><div class="ttdeci">QThread * thread() const</div><div class="ttdoc">Доступ к потоку (например, для приоритета).</div><div class="ttdef"><b>Definition</b> FCThreader.h:136</div></div>
+<div class="ttc" id="aclassFCThreader_html_a1e95690f998555461c22619a448bf06e"><div class="ttname"><a href="classFCThreader.html#a1e95690f998555461c22619a448bf06e">FCThreader::finished</a></div><div class="ttdeci">void finished()</div><div class="ttdoc">Поток завершил работу (после stop()).</div></div>
+<div class="ttc" id="aclassFCThreader_html_a32e0b8fc330b3c29f4163594e3f2f5c5"><div class="ttname"><a href="classFCThreader.html#a32e0b8fc330b3c29f4163594e3f2f5c5">FCThreader::started</a></div><div class="ttdeci">void started(const QString &amp;processName)</div><div class="ttdoc">Процесс запущен.</div></div>
+<div class="ttc" id="aclassFCThreader_html_a331478412ce8816a540cecd2729fce5f"><div class="ttname"><a href="classFCThreader.html#a331478412ce8816a540cecd2729fce5f">FCThreader::is</a></div><div class="ttdeci">bool is(ReadyState state) const</div><div class="ttdoc">проверка есть ли процесс и в каком из 3х состояний готовности он находится.</div><div class="ttdef"><b>Definition</b> FCThreader.h:80</div></div>
+<div class="ttc" id="aclassFCThreader_html_a3fdc4a1d69043a3b90d31893b1fdc537"><div class="ttname"><a href="classFCThreader.html#a3fdc4a1d69043a3b90d31893b1fdc537">FCThreader::is</a></div><div class="ttdeci">bool is(PlayState state) const</div><div class="ttdoc">проверка есть ли процесс и в каком из 3х состояний исполнения находится процесс.</div><div class="ttdef"><b>Definition</b> FCThreader.h:85</div></div>
+<div class="ttc" id="aclassFCThreader_html_a451e0365028a34c6cb9dcb2246178698"><div class="ttname"><a href="classFCThreader.html#a451e0365028a34c6cb9dcb2246178698">FCThreader::reset</a></div><div class="ttdeci">Q_INVOKABLE void reset()</div><div class="ttdoc">Сбросить состояние процесса.</div><div class="ttdef"><b>Definition</b> FCThreader.cpp:98</div></div>
+<div class="ttc" id="aclassFCThreader_html_a4e3e78db639e2b00fd0451ab71c586d9"><div class="ttname"><a href="classFCThreader.html#a4e3e78db639e2b00fd0451ab71c586d9">FCThreader::condition</a></div><div class="ttdeci">Condition condition() const</div><div class="ttdoc">Текущее состояние процесса (для сериализации/логгирования).</div><div class="ttdef"><b>Definition</b> FCThreader.h:100</div></div>
+<div class="ttc" id="aclassFCThreader_html_a56527958457bbee06aad191bc6adf438"><div class="ttname"><a href="classFCThreader.html#a56527958457bbee06aad191bc6adf438">FCThreader::runningChanged</a></div><div class="ttdeci">void runningChanged(bool running)</div><div class="ttdoc">Изменился статус выполнения (running ↔ !running).</div></div>
+<div class="ttc" id="aclassFCThreader_html_a5730d94e23685f469f6d00f089081c02"><div class="ttname"><a href="classFCThreader.html#a5730d94e23685f469f6d00f089081c02">FCThreader::stop</a></div><div class="ttdeci">Q_INVOKABLE void stop()</div><div class="ttdoc">Остановить процесс и завершить поток.</div><div class="ttdef"><b>Definition</b> FCThreader.cpp:60</div></div>
+<div class="ttc" id="aclassFCThreader_html_a6b0c19f4a3ad3a906c06b49e46b1c924"><div class="ttname"><a href="classFCThreader.html#a6b0c19f4a3ad3a906c06b49e46b1c924">FCThreader::~FCThreader</a></div><div class="ttdeci">~FCThreader() override</div><div class="ttdoc">Деструктор корректно останавливает поток и освобождает ресурсы.</div><div class="ttdef"><b>Definition</b> FCThreader.h:69</div></div>
+<div class="ttc" id="aclassFCThreader_html_a7254a5d7c30f787da8f7a399d806a4e5"><div class="ttname"><a href="classFCThreader.html#a7254a5d7c30f787da8f7a399d806a4e5">FCThreader::is</a></div><div class="ttdeci">bool is(ErrorType type) const</div><div class="ttdoc">Есть ли ошибка.</div><div class="ttdef"><b>Definition</b> FCThreader.h:95</div></div>
+<div class="ttc" id="aclassFCThreader_html_a78f3aa8e83ce3c2cd7613ce61f8735b6"><div class="ttname"><a href="classFCThreader.html#a78f3aa8e83ce3c2cd7613ce61f8735b6">FCThreader::reseted</a></div><div class="ttdeci">void reseted(const QString &amp;processName)</div><div class="ttdoc">Состояние сброшено.</div></div>
+<div class="ttc" id="aclassFCThreader_html_a7ec7a751ed936740c0a298c33d72f159"><div class="ttname"><a href="classFCThreader.html#a7ec7a751ed936740c0a298c33d72f159">FCThreader::is</a></div><div class="ttdeci">bool is(ChangedState state) const</div><div class="ttdoc">проверка есть ли процесс и в каком из 2х состояний находится процесс.</div><div class="ttdef"><b>Definition</b> FCThreader.h:90</div></div>
+<div class="ttc" id="aclassFCThreader_html_a9af669d25804632ca90b1a1d7568f3b6"><div class="ttname"><a href="classFCThreader.html#a9af669d25804632ca90b1a1d7568f3b6">FCThreader::operator[]</a></div><div class="ttdeci">const FCThreadProcess * operator[](int number) const</div><div class="ttdoc">Прямой доступ к процессу по номуру.</div><div class="ttdef"><b>Definition</b> FCThreader.h:144</div></div>
+<div class="ttc" id="aclassFCThreader_html_a9c07acbd38a5fa6a032d251b86091ef2"><div class="ttname"><a href="classFCThreader.html#a9c07acbd38a5fa6a032d251b86091ef2">FCThreader::stoped</a></div><div class="ttdeci">void stoped(const QString &amp;processName)</div><div class="ttdoc">Процесс остановлен.</div></div>
+<div class="ttc" id="aclassFCThreader_html_ac2f2a75492e132b50a449021e6c7519d"><div class="ttname"><a href="classFCThreader.html#ac2f2a75492e132b50a449021e6c7519d">FCThreader::conditionChanged</a></div><div class="ttdeci">void conditionChanged()</div><div class="ttdoc">Состояние процесса изменилось. Перенаправляется от process-&gt;conditionChanged().</div></div>
+<div class="ttc" id="aclassFCThreader_html_ac97038858f9a89f6628166461c9e82d2"><div class="ttname"><a href="classFCThreader.html#ac97038858f9a89f6628166461c9e82d2">FCThreader::start</a></div><div class="ttdeci">Q_INVOKABLE void start()</div><div class="ttdoc">Запустить процесс в отдельном потоке. Выполняет:</div><div class="ttdef"><b>Definition</b> FCThreader.cpp:41</div></div>
+<div class="ttc" id="aclassFCThreader_html_acb9d82975413d180c2aea8e9e2fc7675"><div class="ttname"><a href="classFCThreader.html#acb9d82975413d180c2aea8e9e2fc7675">FCThreader::processName</a></div><div class="ttdeci">QString processName() const</div><div class="ttdoc">Имя процесса (objectName() процесса).</div><div class="ttdef"><b>Definition</b> FCThreader.cpp:35</div></div>
+<div class="ttc" id="aclassFCThreader_html_af7968d04867384d6894109093b58a14c"><div class="ttname"><a href="classFCThreader.html#af7968d04867384d6894109093b58a14c">FCThreader::pause</a></div><div class="ttdeci">Q_INVOKABLE void pause()</div><div class="ttdoc">Поставить процесс на паузу (без остановки потока).</div><div class="ttdef"><b>Definition</b> FCThreader.cpp:83</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<map id="FCDevice" name="FCDevice">
+<area shape="rect" id="Node000001" title="Абстрактный базовый класс для управления аппаратными устройствами в системе." alt="" coords="296,152,380,177"/>
+<area shape="rect" id="Node000004" href="$classFCI2CDevice.html" title="Базовый класс для всех устройств, подключаемых по шине I²C." alt="" coords="136,225,241,251"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="303,186,214,228,212,223,301,181"/>
+<area shape="rect" id="Node000008" href="$classFCMarlinController.html" title="Низкоуровневый драйвер управления контроллером на базе прошивки Marlin 2.1.2.4." alt="" coords="266,225,410,251"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="341,191,341,225,335,225,335,191"/>
+<area shape="rect" id="Node000009" href="$classFCPlotter.html" title="Класс управления промышленным плоттером в отдельном потоке выполнения." alt="" coords="434,225,517,251"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="373,181,454,223,452,227,371,186"/>
+<area shape="rect" id="Node000002" href="$classFCConditionObject.html" title="Базовый класс для объектов с управляемым составным состоянием и уведомлениями об изменениях." alt="" coords="267,79,409,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="341,118,341,152,335,152,335,118"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="301,5,375,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="341,44,341,79,335,79,335,44"/>
+<area shape="rect" id="Node000005" href="$classFCHead.html" title="Класс управления печатающей головкой плоттера с множественными соплами." alt="" coords="5,299,79,324"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="154,259,67,301,65,296,152,254"/>
+<area shape="rect" id="Node000006" href="$classFCLM75AThermometer.html" title="Драйвер цифрового датчика температуры LM75A с интерфейсом I²C." alt="" coords="103,299,274,324"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="191,264,191,299,186,299,186,264"/>
+<area shape="rect" id="Node000007" href="$classFCPumpRamp.html" title="Контроллер насосной рампы с интегрированными датчиками температуры." alt="" coords="298,299,413,324"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="229,254,329,296,327,301,227,258"/>
+</map>

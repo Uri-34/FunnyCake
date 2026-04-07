@@ -1,0 +1,27 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,203,80,228"/>
+<area shape="rect" id="Node000001" href="$classFCConditionObject.html" title="Базовый класс для объектов с управляемым составным состоянием и уведомлениями об изменениях." alt="" coords="128,203,271,228"/>
+<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="94,213,128,213,128,218,94,218"/>
+<area shape="rect" id="Node000002" href="$classFCDevice.html" title="Абстрактный базовый класс для управления аппаратными устройствами в системе." alt="" coords="350,104,434,129"/>
+<area shape="poly" id="edge7_Node000001_Node000002" title=" " alt="" coords="227,192,269,165,318,138,349,126,351,131,320,143,272,170,230,197"/>
+<area shape="rect" id="Node000009" href="$classFCGCoder.html" title="Генератор G&#45;code из SVG&#45;данных." alt="" coords="349,153,435,179"/>
+<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="262,197,348,174,349,180,263,202"/>
+<area shape="rect" id="Node000010" href="$classFCI2CBus.html" title=" " alt="" coords="350,203,434,228"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="285,213,350,213,350,218,285,218"/>
+<area shape="rect" id="Node000011" href="$classFCSVGImageParser.html" title="&lt; парсер SVG&#45;файлов для 3D&#45;сетки." alt="" coords="319,252,465,277"/>
+<area shape="poly" id="edge16_Node000001_Node000011" title=" " alt="" coords="263,229,342,249,341,254,262,234"/>
+<area shape="rect" id="Node000012" href="$classFCSVGLayer.html" title="&lt; класс для представления одного слоя SVG (Z&#45;уровня)." alt="" coords="341,301,443,327"/>
+<area shape="poly" id="edge17_Node000001_Node000012" title=" " alt="" coords="230,234,272,261,320,288,348,299,346,304,318,292,269,266,227,238"/>
+<area shape="rect" id="Node000003" href="$classFCI2CDevice.html" title="Базовый класс для всех устройств, подключаемых по шине I²C." alt="" coords="533,55,638,80"/>
+<area shape="poly" id="edge8_Node000002_Node000003" title=" " alt="" coords="447,100,534,78,535,83,448,105"/>
+<area shape="rect" id="Node000007" href="$classFCMarlinController.html" title="Низкоуровневый драйвер управления контроллером на базе прошивки Marlin 2.1.2.4." alt="" coords="513,104,657,129"/>
+<area shape="poly" id="edge12_Node000002_Node000007" title=" " alt="" coords="448,114,513,114,513,119,448,119"/>
+<area shape="rect" id="Node000008" href="$classFCPlotter.html" title="Класс управления промышленным плоттером в отдельном потоке выполнения." alt="" coords="544,153,627,179"/>
+<area shape="poly" id="edge13_Node000002_Node000008" title=" " alt="" coords="448,128,544,153,543,158,447,133"/>
+<area shape="rect" id="Node000004" href="$classFCHead.html" title="Класс управления печатающей головкой плоттера с множественными соплами." alt="" coords="754,5,827,31"/>
+<area shape="poly" id="edge9_Node000003_Node000004" title=" " alt="" coords="651,49,753,24,754,29,652,54"/>
+<area shape="rect" id="Node000005" href="$classFCLM75AThermometer.html" title="Драйвер цифрового датчика температуры LM75A с интерфейсом I²C." alt="" coords="705,55,876,80"/>
+<area shape="poly" id="edge10_Node000003_Node000005" title=" " alt="" coords="652,65,705,65,705,70,652,70"/>
+<area shape="rect" id="Node000006" href="$classFCPumpRamp.html" title="Контроллер насосной рампы с интегрированными датчиками температуры." alt="" coords="733,104,848,129"/>
+<area shape="poly" id="edge11_Node000003_Node000006" title=" " alt="" coords="652,81,738,101,736,107,651,86"/>
+</map>

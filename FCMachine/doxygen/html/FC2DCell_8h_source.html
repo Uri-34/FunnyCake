@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Исходный файл FCTypes/FC2DArea/FC2DCell/FC2DCell.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_095319a0a42fa4deb6343e81a7cff0f0.html">FCTypes</a></li><li class="navelem"><a class="el" href="dir_c8a5456491c4a62d9bf9dee14b0779b7.html">FC2DArea</a></li><li class="navelem"><a class="el" href="dir_764a526d07097007430866ec08a6bb9a.html">FC2DCell</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FC2DCell.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FC_2D_CELL_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FC_2D_CELL_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtGlobal&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;FC2DPoint.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;FC2DSize.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classFC2DCell.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="classFC2DCell.html">FC2DCell</a></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a3b8ddac16ed5b97ce1e3af6867c17690">   24</a></span>    <span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">_type</a> = <a class="code hl_class" href="classFCRange.html">float</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// --- конструкторы ---</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a14df297ade6f4fe01004135b7a98e543">   28</a></span>    <span class="keyword">constexpr</span> <a class="code hl_function" href="classFC2DCell.html#a14df297ade6f4fe01004135b7a98e543">FC2DCell</a>() <a class="code hl_class" href="classFCRange.html">noexcept</a> = <a class="code hl_class" href="classFCRange.html">default</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a8caecff7ac566a36f1cef3272edfdeea">   33</a></span>    <a class="code hl_class" href="classFCRange.html">constexpr</a> <a class="code hl_class" href="classFC2DCell.html">FC2DCell</a>(<a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_function" href="classFC2DCell.html#a09c2354ffa9be7e6828f887962928e33">position</a>, <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFC2DSize.html">FC2DSize</a>&amp; <a class="code hl_function" href="classFC2DCell.html#a7d306f0dae0c227ef0a729203fa7b428">size</a>) <a class="code hl_class" href="classFCRange.html">noexcept</a></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        : _position(<a class="code hl_function" href="classFC2DCell.html#a09c2354ffa9be7e6828f887962928e33">position</a>)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        , _size(<a class="code hl_function" href="classFC2DCell.html#a7d306f0dae0c227ef0a729203fa7b428">size</a>)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {}</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a4cebfb363eb18980147380a5714fec9a">   39</a></span>    <span class="keyword">constexpr</span> <a class="code hl_function" href="classFC2DCell.html#a4cebfb363eb18980147380a5714fec9a">FC2DCell</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DCell.html">FC2DCell</a>&amp;) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a375c029818433cf99fd8f05c417f5815">   42</a></span>    <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DCell.html">FC2DCell</a>&amp; <a class="code hl_function" href="classFC2DCell.html#a375c029818433cf99fd8f05c417f5815">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DCell.html">FC2DCell</a>&amp;) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a32752eea24bdc2c3d8c16e13d8307268">   45</a></span>    <a class="code hl_function" href="classFC2DCell.html#a32752eea24bdc2c3d8c16e13d8307268">~FC2DCell</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">// --- геттеры ---</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a09c2354ffa9be7e6828f887962928e33">   50</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_function" href="classFC2DCell.html#a09c2354ffa9be7e6828f887962928e33">position</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _position; }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a7d306f0dae0c227ef0a729203fa7b428">   54</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keyword">const</span> <a class="code hl_class" href="classFC2DSize.html">FC2DSize</a>&amp; <a class="code hl_function" href="classFC2DCell.html#a7d306f0dae0c227ef0a729203fa7b428">size</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _size; }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classFC2DCell.html#aa842d57fcdac8b734ca78f8cabbba8b6">   57</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_function" href="classFC2DCell.html#aa842d57fcdac8b734ca78f8cabbba8b6">x</a>() <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _position.<a class="code hl_function" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">x</a>(); }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a0308be8ef40d2447a669b52404769d11">   60</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_function" href="classFC2DCell.html#a0308be8ef40d2447a669b52404769d11">y</a>() <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _position.<a class="code hl_function" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">y</a>(); }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a2259637445deb55884527b835d8af3c6">   63</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_function" href="classFC2DCell.html#a2259637445deb55884527b835d8af3c6">width</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _size.<a class="code hl_function" href="classFC2DSize.html#a0e38d6c47adc6e2017d36d60d363c5a7">width</a>(); }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a9ac6ad00c4fb700fddf7afe72fe4018d">   66</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_function" href="classFC2DCell.html#a9ac6ad00c4fb700fddf7afe72fe4018d">height</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _size.<a class="code hl_function" href="classFC2DSize.html#ad77250611693589aed8210c676afc141">height</a>(); }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">// --- сеттеры ---</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a6b4d03cf49cef3d2b6526db1abe87c9d">   71</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFC2DCell.html#a6b4d03cf49cef3d2b6526db1abe87c9d">set</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> &amp;<a class="code hl_class" href="classFCRange.html">p</a>) <span class="keyword">noexcept</span> { _position = <a class="code hl_class" href="classFCRange.html">p</a>; }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classFC2DCell.html#ae77bc625ac5327441d7a6d0c6dd97f72">   75</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFC2DCell.html#ae77bc625ac5327441d7a6d0c6dd97f72">set</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DSize.html">FC2DSize</a> &amp;<a class="code hl_function" href="classFC2DCell.html#a7d306f0dae0c227ef0a729203fa7b428">size</a>) <span class="keyword">noexcept</span> { _size = <a class="code hl_function" href="classFC2DCell.html#a7d306f0dae0c227ef0a729203fa7b428">size</a>; }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a8e5c96cc889ed24dbef6c30377dfd34e">   80</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFC2DCell.html#a8e5c96cc889ed24dbef6c30377dfd34e">move</a>(<a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">dx</a>, <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">dy</a>) <span class="keyword">noexcept</span> { _position = _position.<a class="code hl_function" href="classFC2DPoint.html#ac9e89bd1cd5013113ebb2cf6e4dc8ffd">translated</a>(<a class="code hl_class" href="classFCRange.html">dx</a>, <a class="code hl_class" href="classFCRange.html">dy</a>); }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a7547bbfbf79c3dcfeca79ac238cbaa2b">   84</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFC2DCell.html#a7547bbfbf79c3dcfeca79ac238cbaa2b">move</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> &amp;<a class="code hl_class" href="classFCRange.html">delta</a>) <span class="keyword">noexcept</span> { _position += <a class="code hl_class" href="classFCRange.html">delta</a>; }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="comment">// --- геометрия ---</span></div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a493dd0a4141e2a19e38fc06266f034d0">   89</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DCell.html#a493dd0a4141e2a19e38fc06266f034d0">center</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">return</span> _position.<a class="code hl_function" href="classFC2DPoint.html#ac9e89bd1cd5013113ebb2cf6e4dc8ffd">translated</a>(_size.<a class="code hl_function" href="classFC2DSize.html#a0e38d6c47adc6e2017d36d60d363c5a7">width</a>() / 2, _size.<a class="code hl_function" href="classFC2DSize.html#ad77250611693589aed8210c676afc141">height</a>() / 2);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a263236e4fc08b7a633fc806322db70dc">   96</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::array&lt;FC2DPoint, 4&gt;</a> <a class="code hl_function" href="classFC2DCell.html#a263236e4fc08b7a633fc806322db70dc">corners</a>() <a class="code hl_class" href="classFCRange.html">noexcept</a></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">x0</a> = _position.<a class="code hl_function" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">x</a>();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">y0</a> = _position.<a class="code hl_function" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">y</a>();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">x1</a> = <a class="code hl_class" href="classFCRange.html">x0</a> + _size.<a class="code hl_function" href="classFC2DSize.html#a0e38d6c47adc6e2017d36d60d363c5a7">width</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <a class="code hl_class" href="classFCRange.html">_type</a> <a class="code hl_class" href="classFCRange.html">y1</a> = <a class="code hl_class" href="classFCRange.html">y0</a> + _size.<a class="code hl_function" href="classFC2DSize.html#ad77250611693589aed8210c676afc141">height</a>();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">return</span> {{</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{<a class="code hl_class" href="classFCRange.html">x0</a>, <a class="code hl_class" href="classFCRange.html">y0</a>}, <span class="comment">// левый-верхний угол</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{<a class="code hl_class" href="classFCRange.html">x1</a>, <a class="code hl_class" href="classFCRange.html">y0</a>}, <span class="comment">// правый-верхний угол</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{<a class="code hl_class" href="classFCRange.html">x0</a>, <a class="code hl_class" href="classFCRange.html">y1</a>}, <span class="comment">// левый-нижний угол</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{<a class="code hl_class" href="classFCRange.html">x1</a>, <a class="code hl_class" href="classFCRange.html">y1</a>}  <span class="comment">// правый-нижний угол</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        }};</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classFC2DCell.html#ae8ca43d72d88afd2fdc9cbf1c6da56a1">  113</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFC2DCell.html#ae8ca43d72d88afd2fdc9cbf1c6da56a1">contains</a>(<a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> &amp;<a class="code hl_class" href="classFCRange.html">p</a>) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFCRange.html">p</a>.x() &gt;= _position.<a class="code hl_function" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">x</a>() &amp;&amp; <a class="code hl_class" href="classFCRange.html">p</a>.x() &lt;= _position.<a class="code hl_function" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">x</a>() + _size.<a class="code hl_function" href="classFC2DSize.html#a0e38d6c47adc6e2017d36d60d363c5a7">width</a>() &amp;&amp;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>               <a class="code hl_class" href="classFCRange.html">p</a>.y() &gt;= _position.<a class="code hl_function" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">y</a>() &amp;&amp; <a class="code hl_class" href="classFCRange.html">p</a>.y() &lt;= _position.<a class="code hl_function" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">y</a>() + _size.<a class="code hl_function" href="classFC2DSize.html#ad77250611693589aed8210c676afc141">height</a>();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classFC2DCell.html#ab6e52810d86580c6ae25a4e871ecf3cd">  122</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFC2DCell.html#ab6e52810d86580c6ae25a4e871ecf3cd">intersects</a>(<a class="code hl_class" href="classFC2DCell.html">FC2DCell</a> &amp;<a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">return</span> !(_position.<a class="code hl_function" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">x</a>() + _size.<a class="code hl_function" href="classFC2DSize.html#a0e38d6c47adc6e2017d36d60d363c5a7">width</a>()  &lt; <a class="code hl_class" href="classFCRange.html">other</a>._position.x() ||</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                 <a class="code hl_class" href="classFCRange.html">other</a>._position.x() + <a class="code hl_class" href="classFCRange.html">other</a>._size.<a class="code hl_function" href="classFCRange.html#a32a1fcc6ac5aac10c0ec0a01991d62bf">width</a>()  &lt; _position.<a class="code hl_function" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">x</a>() ||</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                 _position.<a class="code hl_function" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">y</a>() + _size.<a class="code hl_function" href="classFC2DSize.html#ad77250611693589aed8210c676afc141">height</a>() &lt; <a class="code hl_class" href="classFCRange.html">other</a>._position.y() ||</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                 <a class="code hl_class" href="classFCRange.html">other</a>._position.y() + <a class="code hl_class" href="classFCRange.html">other</a>._size.height() &lt; _position.<a class="code hl_function" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">y</a>());</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
+</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a78d127275efe6cf8239af61f3f0fa624">  132</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFC2DCell.html#a78d127275efe6cf8239af61f3f0fa624">isEmpty</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _size.<a class="code hl_function" href="classFC2DSize.html#a3e4f980c569e592f44ffad72ece9951e">isEmpty</a>(); }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="comment">// --- операторы ---</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a0a5fbfcd3e1fe771c9aa5db93cd03a4d">  138</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFC2DCell.html#a0a5fbfcd3e1fe771c9aa5db93cd03a4d">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DCell.html">FC2DCell</a> &amp;<a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span> { <span class="keywordflow">return</span> _position == <a class="code hl_class" href="classFCRange.html">other</a>._position &amp;&amp; _size == <a class="code hl_class" href="classFCRange.html">other</a>._size; }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="foldopen" id="foldopen00143" data-start="{" data-end="}">
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classFC2DCell.html#a10d70ced0470f738d192a79fe570a816">  143</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFC2DCell.html#a10d70ced0470f738d192a79fe570a816">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DCell.html">FC2DCell</a>&amp; <a class="code hl_class" href="classFCRange.html">o</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == <a class="code hl_class" href="classFCRange.html">o</a>);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    }</div>
+</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> _position;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_class" href="classFC2DSize.html">FC2DSize</a>  _size{};</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>};</div>
+</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment">// --- внешние псевдонимы типов ---</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">FC2DCellList</a> = <a class="code hl_class" href="classFCRange.html">QList&lt;FC2DCell&gt;</a>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">FC2DPtrCellList</a> = <a class="code hl_class" href="classFCRange.html">QList&lt;FC2DCell*&gt;</a>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DCell.html">FC2DCell</a> FC2DCellError {{-1, -1}, {-1, -1}};</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="comment">// Примечание: для гарантии эффективности копирования и использования в низкоуровневых контекстах</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="comment">// рекомендуется раскомментировать проверку тривиальности при условии, что FC2DPoint и FC2DSize</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="comment">// также являются тривиальными типами:</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="comment">// static_assert(std::is_trivially_copyable_v&lt;FC2DCell&gt;, &quot;FC2DCell должен быть тривиально копируемым типом&quot;);</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="preprocessor">#endif </span><span class="comment">// FC_2D_CELL_H</span></div>
+<div class="ttc" id="aclassFC2DCell_html"><div class="ttname"><a href="classFC2DCell.html">FC2DCell</a></div><div class="ttdoc">Класс для представления двумерной ячейки (прямоугольной области) с заданной позицией и размером.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:21</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a0308be8ef40d2447a669b52404769d11"><div class="ttname"><a href="classFC2DCell.html#a0308be8ef40d2447a669b52404769d11">FC2DCell::y</a></div><div class="ttdeci">constexpr _type y() noexcept</div><div class="ttdoc">Возвращает Y-координату левого верхнего угла.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:60</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a09c2354ffa9be7e6828f887962928e33"><div class="ttname"><a href="classFC2DCell.html#a09c2354ffa9be7e6828f887962928e33">FC2DCell::position</a></div><div class="ttdeci">constexpr const FC2DPoint &amp; position() const noexcept</div><div class="ttdoc">Возвращает позицию левого верхнего угла ячейки.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:50</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a0a5fbfcd3e1fe771c9aa5db93cd03a4d"><div class="ttname"><a href="classFC2DCell.html#a0a5fbfcd3e1fe771c9aa5db93cd03a4d">FC2DCell::operator==</a></div><div class="ttdeci">constexpr bool operator==(const FC2DCell &amp;other) const noexcept</div><div class="ttdoc">Оператор сравнения на равенство.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:138</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a10d70ced0470f738d192a79fe570a816"><div class="ttname"><a href="classFC2DCell.html#a10d70ced0470f738d192a79fe570a816">FC2DCell::operator!=</a></div><div class="ttdeci">constexpr bool operator!=(const FC2DCell &amp;o) const noexcept</div><div class="ttdoc">Оператор сравнения на неравенство.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:143</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a14df297ade6f4fe01004135b7a98e543"><div class="ttname"><a href="classFC2DCell.html#a14df297ade6f4fe01004135b7a98e543">FC2DCell::FC2DCell</a></div><div class="ttdeci">constexpr FC2DCell() noexcept=default</div><div class="ttdoc">Конструктор по умолчанию. Создаёт ячейку с позицией (0,0) и нулевым размером.</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a2259637445deb55884527b835d8af3c6"><div class="ttname"><a href="classFC2DCell.html#a2259637445deb55884527b835d8af3c6">FC2DCell::width</a></div><div class="ttdeci">constexpr _type width() const noexcept</div><div class="ttdoc">Возвращает ширину ячейки.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:63</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a263236e4fc08b7a633fc806322db70dc"><div class="ttname"><a href="classFC2DCell.html#a263236e4fc08b7a633fc806322db70dc">FC2DCell::corners</a></div><div class="ttdeci">constexpr std::array&lt; FC2DPoint, 4 &gt; corners() noexcept</div><div class="ttdoc">Возвращает координаты четырёх углов ячейки в порядке: [левый-верхний, правый-верхний,...</div><div class="ttdef"><b>Definition</b> FC2DCell.h:96</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a32752eea24bdc2c3d8c16e13d8307268"><div class="ttname"><a href="classFC2DCell.html#a32752eea24bdc2c3d8c16e13d8307268">FC2DCell::~FC2DCell</a></div><div class="ttdeci">~FC2DCell()=default</div><div class="ttdoc">Деструктор (тривиальный).</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a375c029818433cf99fd8f05c417f5815"><div class="ttname"><a href="classFC2DCell.html#a375c029818433cf99fd8f05c417f5815">FC2DCell::operator=</a></div><div class="ttdeci">constexpr FC2DCell &amp; operator=(const FC2DCell &amp;) noexcept=default</div><div class="ttdoc">Оператор присваивания (тривиальный).</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a493dd0a4141e2a19e38fc06266f034d0"><div class="ttname"><a href="classFC2DCell.html#a493dd0a4141e2a19e38fc06266f034d0">FC2DCell::center</a></div><div class="ttdeci">constexpr FC2DPoint center() const noexcept</div><div class="ttdoc">Вычисляет центр ячейки.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:89</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a4cebfb363eb18980147380a5714fec9a"><div class="ttname"><a href="classFC2DCell.html#a4cebfb363eb18980147380a5714fec9a">FC2DCell::FC2DCell</a></div><div class="ttdeci">constexpr FC2DCell(const FC2DCell &amp;) noexcept=default</div><div class="ttdoc">Конструктор копирования (тривиальный).</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a6b4d03cf49cef3d2b6526db1abe87c9d"><div class="ttname"><a href="classFC2DCell.html#a6b4d03cf49cef3d2b6526db1abe87c9d">FC2DCell::set</a></div><div class="ttdeci">constexpr void set(const FC2DPoint &amp;p) noexcept</div><div class="ttdoc">Устанавливает новую позицию левого верхнего угла ячейки.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:71</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a7547bbfbf79c3dcfeca79ac238cbaa2b"><div class="ttname"><a href="classFC2DCell.html#a7547bbfbf79c3dcfeca79ac238cbaa2b">FC2DCell::move</a></div><div class="ttdeci">constexpr void move(const FC2DPoint &amp;delta) noexcept</div><div class="ttdoc">Перемещает ячейку на заданный вектор (объект FC2DPoint).</div><div class="ttdef"><b>Definition</b> FC2DCell.h:84</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a78d127275efe6cf8239af61f3f0fa624"><div class="ttname"><a href="classFC2DCell.html#a78d127275efe6cf8239af61f3f0fa624">FC2DCell::isEmpty</a></div><div class="ttdeci">constexpr bool isEmpty() const noexcept</div><div class="ttdoc">Проверяет, является ли ячейка пустой (нулевая ширина или высота).</div><div class="ttdef"><b>Definition</b> FC2DCell.h:132</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a7d306f0dae0c227ef0a729203fa7b428"><div class="ttname"><a href="classFC2DCell.html#a7d306f0dae0c227ef0a729203fa7b428">FC2DCell::size</a></div><div class="ttdeci">constexpr const FC2DSize &amp; size() const noexcept</div><div class="ttdoc">Возвращает размеры ячейки.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:54</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a8e5c96cc889ed24dbef6c30377dfd34e"><div class="ttname"><a href="classFC2DCell.html#a8e5c96cc889ed24dbef6c30377dfd34e">FC2DCell::move</a></div><div class="ttdeci">constexpr void move(_type dx, _type dy) noexcept</div><div class="ttdoc">Перемещает ячейку на заданный вектор (dx, dy).</div><div class="ttdef"><b>Definition</b> FC2DCell.h:80</div></div>
+<div class="ttc" id="aclassFC2DCell_html_a9ac6ad00c4fb700fddf7afe72fe4018d"><div class="ttname"><a href="classFC2DCell.html#a9ac6ad00c4fb700fddf7afe72fe4018d">FC2DCell::height</a></div><div class="ttdeci">constexpr _type height() const noexcept</div><div class="ttdoc">Возвращает высоту ячейки.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:66</div></div>
+<div class="ttc" id="aclassFC2DCell_html_aa842d57fcdac8b734ca78f8cabbba8b6"><div class="ttname"><a href="classFC2DCell.html#aa842d57fcdac8b734ca78f8cabbba8b6">FC2DCell::x</a></div><div class="ttdeci">constexpr _type x() noexcept</div><div class="ttdoc">Возвращает X-координату левого верхнего угла.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:57</div></div>
+<div class="ttc" id="aclassFC2DCell_html_ab6e52810d86580c6ae25a4e871ecf3cd"><div class="ttname"><a href="classFC2DCell.html#ab6e52810d86580c6ae25a4e871ecf3cd">FC2DCell::intersects</a></div><div class="ttdeci">constexpr bool intersects(FC2DCell &amp;other) noexcept</div><div class="ttdoc">Проверяет пересечение текущей ячейки с другой ячейкой.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:122</div></div>
+<div class="ttc" id="aclassFC2DCell_html_ae77bc625ac5327441d7a6d0c6dd97f72"><div class="ttname"><a href="classFC2DCell.html#ae77bc625ac5327441d7a6d0c6dd97f72">FC2DCell::set</a></div><div class="ttdeci">constexpr void set(const FC2DSize &amp;size) noexcept</div><div class="ttdoc">Устанавливает новый размер ячейки.</div><div class="ttdef"><b>Definition</b> FC2DCell.h:75</div></div>
+<div class="ttc" id="aclassFC2DCell_html_ae8ca43d72d88afd2fdc9cbf1c6da56a1"><div class="ttname"><a href="classFC2DCell.html#ae8ca43d72d88afd2fdc9cbf1c6da56a1">FC2DCell::contains</a></div><div class="ttdeci">constexpr bool contains(FC2DPoint &amp;p) noexcept</div><div class="ttdoc">Проверяет, находится ли точка внутри ячейки (включая границы).</div><div class="ttdef"><b>Definition</b> FC2DCell.h:113</div></div>
+<div class="ttc" id="aclassFC2DPoint_html"><div class="ttname"><a href="classFC2DPoint.html">FC2DPoint</a></div><div class="ttdoc">Класс для представления двумерной точки с координатами (x, y).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:23</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a8ddca7d9848f1743d995ec26589f837d"><div class="ttname"><a href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">FC2DPoint::x</a></div><div class="ttdeci">constexpr _type x() const noexcept</div><div class="ttdoc">Возвращает координату X точки.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:56</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_ac9e89bd1cd5013113ebb2cf6e4dc8ffd"><div class="ttname"><a href="classFC2DPoint.html#ac9e89bd1cd5013113ebb2cf6e4dc8ffd">FC2DPoint::translated</a></div><div class="ttdeci">constexpr FC2DPoint translated(_type dx, _type dy) const noexcept</div><div class="ttdoc">Возвращает точку, смещённую на заданный вектор (dx, dy).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:150</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_ad58d4797d8838c1ec53ccb6a1ae32c44"><div class="ttname"><a href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">FC2DPoint::y</a></div><div class="ttdeci">constexpr _type y() const noexcept</div><div class="ttdoc">Возвращает координату Y точки.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:60</div></div>
+<div class="ttc" id="aclassFC2DSize_html"><div class="ttname"><a href="classFC2DSize.html">FC2DSize</a></div><div class="ttdoc">Класс для представления двумерного размера (ширина × высота).</div><div class="ttdef"><b>Definition</b> FC2DSize.h:23</div></div>
+<div class="ttc" id="aclassFC2DSize_html_a0e38d6c47adc6e2017d36d60d363c5a7"><div class="ttname"><a href="classFC2DSize.html#a0e38d6c47adc6e2017d36d60d363c5a7">FC2DSize::width</a></div><div class="ttdeci">constexpr _type width() const noexcept</div><div class="ttdoc">Возвращает ширину размера.</div><div class="ttdef"><b>Definition</b> FC2DSize.h:52</div></div>
+<div class="ttc" id="aclassFC2DSize_html_a3e4f980c569e592f44ffad72ece9951e"><div class="ttname"><a href="classFC2DSize.html#a3e4f980c569e592f44ffad72ece9951e">FC2DSize::isEmpty</a></div><div class="ttdeci">constexpr bool isEmpty() const noexcept</div><div class="ttdoc">Проверяет, является ли размер пустым (неположительная ширина или высота).</div><div class="ttdef"><b>Definition</b> FC2DSize.h:94</div></div>
+<div class="ttc" id="aclassFC2DSize_html_ad77250611693589aed8210c676afc141"><div class="ttname"><a href="classFC2DSize.html#ad77250611693589aed8210c676afc141">FC2DSize::height</a></div><div class="ttdeci">constexpr _type height() const noexcept</div><div class="ttdoc">Возвращает высоту размера.</div><div class="ttdef"><b>Definition</b> FC2DSize.h:56</div></div>
+<div class="ttc" id="aclassFCRange_html"><div class="ttname"><a href="classFCRange.html">FCRange</a></div><div class="ttdoc">Шаблонный класс для представления числового диапазона [min, max] с гарантией корректности.</div><div class="ttdef"><b>Definition</b> FCRange.h:34</div></div>
+<div class="ttc" id="aclassFCRange_html_a32a1fcc6ac5aac10c0ec0a01991d62bf"><div class="ttname"><a href="classFCRange.html#a32a1fcc6ac5aac10c0ec0a01991d62bf">FCRange::width</a></div><div class="ttdeci">constexpr T width() const noexcept</div><div class="ttdoc">Вычисляет ширину диапазона (разность границ).</div><div class="ttdef"><b>Definition</b> FCRange.h:101</div></div>
+<div class="ttc" id="aclassFCRange_html_ad64748aa407cd3708dd078c9e8789152"><div class="ttname"><a href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">FCRange::FCRange</a></div><div class="ttdeci">constexpr FCRange(T min=defaultMin(), T max=defaultMax()) noexcept</div><div class="ttdoc">Конструктор с параметрами.</div><div class="ttdef"><b>Definition</b> FCRange.h:75</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

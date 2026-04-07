@@ -1,0 +1,5 @@
+<map id="FCNozzle" name="FCNozzle">
+<area shape="rect" id="Node000001" title="&lt; Сопло — простая структура. Массив сопел ..." alt="" coords="9,93,92,119"/>
+<area shape="rect" id="Node000002" href="$classFC2DPoint.html" title="Класс для представления двумерной точки (x, y).псевдонимы" alt="" coords="5,5,96,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,45,53,93,48,93,48,45"/>
+</map>

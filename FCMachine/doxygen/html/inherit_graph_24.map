@@ -1,0 +1,7 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,31,80,56"/>
+<area shape="rect" id="Node000001" href="$classFCErrorDialog.html" title="Модальный диалог отображения ошибок с кнопкой подтверждения." alt="" coords="132,5,244,31"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="93,32,131,25,132,30,94,37"/>
+<area shape="rect" id="Node000002" href="$classFCYesNoDialog.html" title="Модальный диалог подтверждения с двумя кнопками &quot;Да&quot; и &quot;Нет&quot;." alt="" coords="128,55,248,80"/>
+<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="94,49,128,55,127,60,93,54"/>
+</map>

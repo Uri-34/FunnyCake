@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Класс FCSPISensor</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-attribs">Статические открытые данные</a> &#124;
+<a href="classFCSPISensor-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс FCSPISensor<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>абстрактный класс FCSensor - описывающий датчик  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FCSPISensor_8h_source.html">FCSPISensor.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:FCSPISensor:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFCSPISensor__inherit__graph.png" border="0" usemap="#aFCSPISensor_inherit__map" alt="Inheritance graph"/></div>
+<map name="aFCSPISensor_inherit__map" id="aFCSPISensor_inherit__map">
+<area shape="rect" title="абстрактный класс FCSensor &#45; описывающий датчик" alt="" coords="25,299,128,324"/>
+<area shape="rect" href="classFCSPIDevice.html" title="абстрактный класс FCSPIIndicator &#45; описывающий состояние индикатора" alt="" coords="25,225,129,251"/>
+<area shape="poly" title=" " alt="" coords="79,264,79,299,74,299,74,264"/>
+<area shape="rect" href="classFCDevice.html" title="абстрактный базовый класс для аппаратных устройств." alt="" coords="35,152,119,177"/>
+<area shape="poly" title=" " alt="" coords="79,191,79,225,74,225,74,191"/>
+<area shape="rect" href="classFCConditionObject.html" title="Базовый класс для объектов с управляемым состоянием (готовность, воспроизведение, ошибки)." alt="" coords="5,79,148,104"/>
+<area shape="poly" title=" " alt="" coords="79,118,79,152,74,152,74,118"/>
+<area shape="rect" title=" " alt="" coords="39,5,114,31"/>
+<area shape="poly" title=" " alt="" coords="79,44,79,79,74,79,74,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса FCSPISensor:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFCSPISensor__coll__graph.png" border="0" usemap="#aFCSPISensor_coll__map" alt="Collaboration graph"/></div>
+<map name="aFCSPISensor_coll__map" id="aFCSPISensor_coll__map">
+<area shape="rect" title="абстрактный класс FCSensor &#45; описывающий датчик" alt="" coords="25,299,128,324"/>
+<area shape="rect" href="classFCSPIDevice.html" title="абстрактный класс FCSPIIndicator &#45; описывающий состояние индикатора" alt="" coords="25,225,129,251"/>
+<area shape="poly" title=" " alt="" coords="79,264,79,299,74,299,74,264"/>
+<area shape="rect" href="classFCDevice.html" title="абстрактный базовый класс для аппаратных устройств." alt="" coords="35,152,119,177"/>
+<area shape="poly" title=" " alt="" coords="79,191,79,225,74,225,74,191"/>
+<area shape="rect" href="classFCConditionObject.html" title="Базовый класс для объектов с управляемым состоянием (готовность, воспроизведение, ошибки)." alt="" coords="5,79,148,104"/>
+<area shape="poly" title=" " alt="" coords="79,118,79,152,74,152,74,118"/>
+<area shape="rect" title=" " alt="" coords="39,5,114,31"/>
+<area shape="poly" title=" " alt="" coords="79,44,79,79,74,79,74,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionFCSPISensor_1_1Word.html">Word</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:a22e4f7dc2e776bc7c089d2c3c8926e6d" id="r_a22e4f7dc2e776bc7c089d2c3c8926e6d"><td class="memItemLeft" align="right" valign="top"><a id="a22e4f7dc2e776bc7c089d2c3c8926e6d" name="a22e4f7dc2e776bc7c089d2c3c8926e6d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>valueChanged</b> (const qreal value)</td></tr>
+<tr class="memdesc:a22e4f7dc2e776bc7c089d2c3c8926e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">сигнал вызывается при изменении State <br /></td></tr>
+<tr class="separator:a22e4f7dc2e776bc7c089d2c3c8926e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e968ac0c3533e29fe5a2f765620652c" id="r_a1e968ac0c3533e29fe5a2f765620652c"><td class="memItemLeft" align="right" valign="top"><a id="a1e968ac0c3533e29fe5a2f765620652c" name="a1e968ac0c3533e29fe5a2f765620652c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>inRange</b> (const qreal value)</td></tr>
+<tr class="memdesc:a1e968ac0c3533e29fe5a2f765620652c"><td class="mdescLeft">&#160;</td><td class="mdescRight">сигнал вызывается при нахождени в границах (_min, _max) <br /></td></tr>
+<tr class="separator:a1e968ac0c3533e29fe5a2f765620652c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae96a78626d04758ee22854ef8be9657a" id="r_ae96a78626d04758ee22854ef8be9657a"><td class="memItemLeft" align="right" valign="top"><a id="ae96a78626d04758ee22854ef8be9657a" name="ae96a78626d04758ee22854ef8be9657a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>outRange</b> (const qreal value)</td></tr>
+<tr class="memdesc:ae96a78626d04758ee22854ef8be9657a"><td class="mdescLeft">&#160;</td><td class="mdescRight">сигнал вызывается при выходе за границы (_min, _max) <br /></td></tr>
+<tr class="separator:ae96a78626d04758ee22854ef8be9657a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6457e4fad1900e5f4aef979d831ec537" id="r_a6457e4fad1900e5f4aef979d831ec537"><td class="memItemLeft" align="right" valign="top"><a id="a6457e4fad1900e5f4aef979d831ec537" name="a6457e4fad1900e5f4aef979d831ec537"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>state</b> (const FCState state)</td></tr>
+<tr class="memdesc:a6457e4fad1900e5f4aef979d831ec537"><td class="mdescLeft">&#160;</td><td class="mdescRight">сигнал вызывается при изменении состояния <br /></td></tr>
+<tr class="separator:a6457e4fad1900e5f4aef979d831ec537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header signals_classFCConditionObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('signals_classFCConditionObject')"><img src="closed.png" alt="-"/>&#160;Сигналы унаследованные от <a class="el" href="classFCConditionObject.html">FCConditionObject</a></td></tr>
+<tr class="memitem:a2a621418bcb23f68db2fbb5aef7b52d9 inherit signals_classFCConditionObject" id="r_a2a621418bcb23f68db2fbb5aef7b52d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a2a621418bcb23f68db2fbb5aef7b52d9">conditionChanged</a> (const QString &amp;name, const <a class="el" href="classFCCondition.html">FCCondition</a> &amp;<a class="el" href="classFCConditionObject.html#a768f2669b351fdc7a13e36f77e14d463">condition</a>)</td></tr>
+<tr class="memdesc:a2a621418bcb23f68db2fbb5aef7b52d9 inherit signals_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сигнализирует об изменении состояния (<code>ready</code>, <code>play</code>, <code>changed</code>, <code>error</code>).  <br /></td></tr>
+<tr class="separator:a2a621418bcb23f68db2fbb5aef7b52d9 inherit signals_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a246c89746969e796743299b40c1ae56f" id="r_a246c89746969e796743299b40c1ae56f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a246c89746969e796743299b40c1ae56f">FCSPISensor</a> (int fd=0, int timeOut=TimeOut, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a246c89746969e796743299b40c1ae56f"><td class="mdescLeft">&#160;</td><td class="mdescRight">коструктор класса FCSensor  <br /></td></tr>
+<tr class="separator:a246c89746969e796743299b40c1ae56f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27b3cef8d22c2964d0870ff1a17cd570" id="r_a27b3cef8d22c2964d0870ff1a17cd570"><td class="memItemLeft" align="right" valign="top"><a id="a27b3cef8d22c2964d0870ff1a17cd570" name="a27b3cef8d22c2964d0870ff1a17cd570"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~FCSPISensor</b> ()</td></tr>
+<tr class="memdesc:a27b3cef8d22c2964d0870ff1a17cd570"><td class="mdescLeft">&#160;</td><td class="mdescRight">деструктор класса FCSensor <br /></td></tr>
+<tr class="separator:a27b3cef8d22c2964d0870ff1a17cd570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79f1aa51994464a6550167449458a587" id="r_a79f1aa51994464a6550167449458a587"><td class="memItemLeft" align="right" valign="top"><a id="a79f1aa51994464a6550167449458a587" name="a79f1aa51994464a6550167449458a587"></a>
+<a class="el" href="classFCSPISensor.html">FCSPISensor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classFCSPISensor.html">FCSPISensor</a> &amp;sensor)</td></tr>
+<tr class="memdesc:a79f1aa51994464a6550167449458a587"><td class="mdescLeft">&#160;</td><td class="mdescRight">перешрузка операции = <br /></td></tr>
+<tr class="separator:a79f1aa51994464a6550167449458a587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab811da174f67057f94e0d9f4437e7488" id="r_ab811da174f67057f94e0d9f4437e7488"><td class="memItemLeft" align="right" valign="top"><a id="ab811da174f67057f94e0d9f4437e7488" name="ab811da174f67057f94e0d9f4437e7488"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> ()</td></tr>
+<tr class="separator:ab811da174f67057f94e0d9f4437e7488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bec398f0c2d339d4fc5a7672e7602da" id="r_a3bec398f0c2d339d4fc5a7672e7602da"><td class="memItemLeft" align="right" valign="top"><a id="a3bec398f0c2d339d4fc5a7672e7602da" name="a3bec398f0c2d339d4fc5a7672e7602da"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>stop</b> ()</td></tr>
+<tr class="separator:a3bec398f0c2d339d4fc5a7672e7602da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa14ec10ecfb2870926ef48af585a6720" id="r_aa14ec10ecfb2870926ef48af585a6720"><td class="memItemLeft" align="right" valign="top"><a id="aa14ec10ecfb2870926ef48af585a6720" name="aa14ec10ecfb2870926ef48af585a6720"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>fd</b> ()</td></tr>
+<tr class="separator:aa14ec10ecfb2870926ef48af585a6720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a91e127849e2161460080dfc10ccc7e" id="r_a3a91e127849e2161460080dfc10ccc7e"><td class="memItemLeft" align="right" valign="top"><a id="a3a91e127849e2161460080dfc10ccc7e" name="a3a91e127849e2161460080dfc10ccc7e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>address</b> ()</td></tr>
+<tr class="separator:a3a91e127849e2161460080dfc10ccc7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab51279517993e133c9154188089ac3bc" id="r_ab51279517993e133c9154188089ac3bc"><td class="memItemLeft" align="right" valign="top"><a id="ab51279517993e133c9154188089ac3bc" name="ab51279517993e133c9154188089ac3bc"></a>
+const FCState &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>state</b> ()</td></tr>
+<tr class="separator:ab51279517993e133c9154188089ac3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1ce9414361dc20c0a43145966b3177a" id="r_ac1ce9414361dc20c0a43145966b3177a"><td class="memItemLeft" align="right" valign="top"><a id="ac1ce9414361dc20c0a43145966b3177a" name="ac1ce9414361dc20c0a43145966b3177a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setRange</b> (qreal min, qreal max)</td></tr>
+<tr class="separator:ac1ce9414361dc20c0a43145966b3177a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5111104610facbd4aa9df94094e7a63" id="r_ab5111104610facbd4aa9df94094e7a63"><td class="memItemLeft" align="right" valign="top"><a id="ab5111104610facbd4aa9df94094e7a63" name="ab5111104610facbd4aa9df94094e7a63"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setRange</b> (<a class="el" href="classFCRange.html">FCRange</a>&lt; qreal &gt; &amp;range)</td></tr>
+<tr class="separator:ab5111104610facbd4aa9df94094e7a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33e1c91e882557b27a757128929d05eb" id="r_a33e1c91e882557b27a757128929d05eb"><td class="memItemLeft" align="right" valign="top"><a id="a33e1c91e882557b27a757128929d05eb" name="a33e1c91e882557b27a757128929d05eb"></a>
+<a class="el" href="classFCRange.html">FCRange</a>&lt; qreal &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>range</b> ()</td></tr>
+<tr class="separator:a33e1c91e882557b27a757128929d05eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e1564463528809e752d41c1ba1b9b4" id="r_a92e1564463528809e752d41c1ba1b9b4"><td class="memItemLeft" align="right" valign="top"><a id="a92e1564463528809e752d41c1ba1b9b4" name="a92e1564463528809e752d41c1ba1b9b4"></a>
+qreal&#160;</td><td class="memItemRight" valign="bottom"><b>value</b> ()</td></tr>
+<tr class="separator:a92e1564463528809e752d41c1ba1b9b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0433d16d82d49bb490a433b26a6b5d2" id="r_aa0433d16d82d49bb490a433b26a6b5d2"><td class="memItemLeft" align="right" valign="top"><a id="aa0433d16d82d49bb490a433b26a6b5d2" name="aa0433d16d82d49bb490a433b26a6b5d2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setValue</b> (qreal value)</td></tr>
+<tr class="separator:aa0433d16d82d49bb490a433b26a6b5d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a749d88efb0ba4293bc062e0cb2232bc1" id="r_a749d88efb0ba4293bc062e0cb2232bc1"><td class="memItemLeft" align="right" valign="top"><a id="a749d88efb0ba4293bc062e0cb2232bc1" name="a749d88efb0ba4293bc062e0cb2232bc1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setDelta</b> (qreal delta)</td></tr>
+<tr class="separator:a749d88efb0ba4293bc062e0cb2232bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b85d15736ff23027a2c12833e37683e" id="r_a0b85d15736ff23027a2c12833e37683e"><td class="memItemLeft" align="right" valign="top"><a id="a0b85d15736ff23027a2c12833e37683e" name="a0b85d15736ff23027a2c12833e37683e"></a>
+qreal&#160;</td><td class="memItemRight" valign="bottom"><b>delta</b> ()</td></tr>
+<tr class="separator:a0b85d15736ff23027a2c12833e37683e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5584a5b7e7c9d6c786fbcad89e79249c" id="r_a5584a5b7e7c9d6c786fbcad89e79249c"><td class="memItemLeft" align="right" valign="top"><a id="a5584a5b7e7c9d6c786fbcad89e79249c" name="a5584a5b7e7c9d6c786fbcad89e79249c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>processing</b> ()=0</td></tr>
+<tr class="separator:a5584a5b7e7c9d6c786fbcad89e79249c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classFCSPIDevice"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classFCSPIDevice')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="classFCSPIDevice.html">FCSPIDevice</a></td></tr>
+<tr class="memitem:a1159f2d3f5e622520b2e1f4f2d805b0e inherit pub_methods_classFCSPIDevice" id="r_a1159f2d3f5e622520b2e1f4f2d805b0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCSPIDevice.html#a1159f2d3f5e622520b2e1f4f2d805b0e">FCSPIDevice</a> (const int spiBusNumber=FirstSpiBus, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a1159f2d3f5e622520b2e1f4f2d805b0e inherit pub_methods_classFCSPIDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">коструктор класса  <br /></td></tr>
+<tr class="separator:a1159f2d3f5e622520b2e1f4f2d805b0e inherit pub_methods_classFCSPIDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa065f78edfc57b4027cb2afe8e4e40cb inherit pub_methods_classFCSPIDevice" id="r_aa065f78edfc57b4027cb2afe8e4e40cb"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>FCSPIDevice</b> (const <a class="el" href="classFCSPIDevice.html">FCSPIDevice</a> &amp;device)</td></tr>
+<tr class="memdesc:aa065f78edfc57b4027cb2afe8e4e40cb inherit pub_methods_classFCSPIDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">конструктор копирования <br /></td></tr>
+<tr class="separator:aa065f78edfc57b4027cb2afe8e4e40cb inherit pub_methods_classFCSPIDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93fa4abd81f892214cedfd4027687a38 inherit pub_methods_classFCSPIDevice" id="r_a93fa4abd81f892214cedfd4027687a38"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>~FCSPIDevice</b> ()</td></tr>
+<tr class="memdesc:a93fa4abd81f892214cedfd4027687a38 inherit pub_methods_classFCSPIDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">деструктор класса <br /></td></tr>
+<tr class="separator:a93fa4abd81f892214cedfd4027687a38 inherit pub_methods_classFCSPIDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b6137839178e1c4adafb767725ecffd inherit pub_methods_classFCSPIDevice" id="r_a4b6137839178e1c4adafb767725ecffd"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setSpiBusNumber</b> (const int spiBusNumber)</td></tr>
+<tr class="separator:a4b6137839178e1c4adafb767725ecffd inherit pub_methods_classFCSPIDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae37d5aeba9a7ee3e7cac3c9b23a34e72 inherit pub_methods_classFCSPIDevice" id="r_ae37d5aeba9a7ee3e7cac3c9b23a34e72"><td class="memItemLeft" align="right" valign="top">
+int&#160;</td><td class="memItemRight" valign="bottom"><b>spiBusNumber</b> ()</td></tr>
+<tr class="separator:ae37d5aeba9a7ee3e7cac3c9b23a34e72 inherit pub_methods_classFCSPIDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classFCDevice"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classFCDevice')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="classFCDevice.html">FCDevice</a></td></tr>
+<tr class="memitem:a03f67d1f8cd6535959d9bdfe52481b61 inherit pub_methods_classFCDevice" id="r_a03f67d1f8cd6535959d9bdfe52481b61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCDevice.html#a03f67d1f8cd6535959d9bdfe52481b61">FCDevice</a> (const QString &amp;name={}, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a03f67d1f8cd6535959d9bdfe52481b61 inherit pub_methods_classFCDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">запрещаем копирование (как у всех QObject).  <br /></td></tr>
+<tr class="separator:a03f67d1f8cd6535959d9bdfe52481b61 inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6790b2b75ad39599d723a5cf04e9d5ea inherit pub_methods_classFCDevice" id="r_a6790b2b75ad39599d723a5cf04e9d5ea"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>FCDevice</b> (const <a class="el" href="classFCDevice.html">FCDevice</a> &amp;)=delete</td></tr>
+<tr class="separator:a6790b2b75ad39599d723a5cf04e9d5ea inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1055787ecb2558d1fd2f38f36ed79ed inherit pub_methods_classFCDevice" id="r_aa1055787ecb2558d1fd2f38f36ed79ed"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classFCDevice.html">FCDevice</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classFCDevice.html">FCDevice</a> &amp;)=delete</td></tr>
+<tr class="memdesc:aa1055787ecb2558d1fd2f38f36ed79ed inherit pub_methods_classFCDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">деструктор (останавливает устройство при необходимости). <br /></td></tr>
+<tr class="separator:aa1055787ecb2558d1fd2f38f36ed79ed inherit pub_methods_classFCDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classFCConditionObject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classFCConditionObject')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="classFCConditionObject.html">FCConditionObject</a></td></tr>
+<tr class="memitem:a552da8306f53fabfd14cbdeb83146f01 inherit pub_methods_classFCConditionObject" id="r_a552da8306f53fabfd14cbdeb83146f01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a552da8306f53fabfd14cbdeb83146f01">FCConditionObject</a> (const QString &amp;name, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a552da8306f53fabfd14cbdeb83146f01 inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор по умолчанию.  <br /></td></tr>
+<tr class="separator:a552da8306f53fabfd14cbdeb83146f01 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d26c5647a5e37d6430aafe5311447df inherit pub_methods_classFCConditionObject" id="r_a4d26c5647a5e37d6430aafe5311447df"><td class="memItemLeft" align="right" valign="top">constexpr ReadyState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a4d26c5647a5e37d6430aafe5311447df">ready</a> () const</td></tr>
+<tr class="memdesc:a4d26c5647a5e37d6430aafe5311447df inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает текущее состояние готовности.  <br /></td></tr>
+<tr class="separator:a4d26c5647a5e37d6430aafe5311447df inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02efa192da9225869d0993798bab807b inherit pub_methods_classFCConditionObject" id="r_a02efa192da9225869d0993798bab807b"><td class="memItemLeft" align="right" valign="top">constexpr PlayState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a02efa192da9225869d0993798bab807b">play</a> () const</td></tr>
+<tr class="memdesc:a02efa192da9225869d0993798bab807b inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает текущий режим воспроизведения.  <br /></td></tr>
+<tr class="separator:a02efa192da9225869d0993798bab807b inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf1f8cf26805e32d2810e3261c80a0d inherit pub_methods_classFCConditionObject" id="r_a8bf1f8cf26805e32d2810e3261c80a0d"><td class="memItemLeft" align="right" valign="top">constexpr ChangedState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a8bf1f8cf26805e32d2810e3261c80a0d">changed</a> () const</td></tr>
+<tr class="memdesc:a8bf1f8cf26805e32d2810e3261c80a0d inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Показывает, были ли изменения с последней проверки.  <br /></td></tr>
+<tr class="separator:a8bf1f8cf26805e32d2810e3261c80a0d inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afac068c52aea279d78702d9a747abb4e inherit pub_methods_classFCConditionObject" id="r_afac068c52aea279d78702d9a747abb4e"><td class="memItemLeft" align="right" valign="top">constexpr ErrorType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#afac068c52aea279d78702d9a747abb4e">error</a> () const</td></tr>
+<tr class="memdesc:afac068c52aea279d78702d9a747abb4e inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает текущий тип ошибки.  <br /></td></tr>
+<tr class="separator:afac068c52aea279d78702d9a747abb4e inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768f2669b351fdc7a13e36f77e14d463 inherit pub_methods_classFCConditionObject" id="r_a768f2669b351fdc7a13e36f77e14d463"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classFCCondition.html">FCCondition</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a768f2669b351fdc7a13e36f77e14d463">condition</a> () const</td></tr>
+<tr class="memdesc:a768f2669b351fdc7a13e36f77e14d463 inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает полную структуру состояния.  <br /></td></tr>
+<tr class="separator:a768f2669b351fdc7a13e36f77e14d463 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8863368dc43ca1f9d4c8520daf4e8192 inherit pub_methods_classFCConditionObject" id="r_a8863368dc43ca1f9d4c8520daf4e8192"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a8863368dc43ca1f9d4c8520daf4e8192">set</a> (const <a class="el" href="classFCCondition.html">FCCondition</a> &amp;<a class="el" href="classFCConditionObject.html#a768f2669b351fdc7a13e36f77e14d463">condition</a>)</td></tr>
+<tr class="separator:a8863368dc43ca1f9d4c8520daf4e8192 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85cfdbc1253bf880aad54d16f0f65178 inherit pub_methods_classFCConditionObject" id="r_a85cfdbc1253bf880aad54d16f0f65178"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a85cfdbc1253bf880aad54d16f0f65178">set</a> (const ReadyState &amp;state)</td></tr>
+<tr class="separator:a85cfdbc1253bf880aad54d16f0f65178 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3a7ed9cf1d92e5d5b57d35fe019645d inherit pub_methods_classFCConditionObject" id="r_ac3a7ed9cf1d92e5d5b57d35fe019645d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#ac3a7ed9cf1d92e5d5b57d35fe019645d">set</a> (const PlayState state)</td></tr>
+<tr class="separator:ac3a7ed9cf1d92e5d5b57d35fe019645d inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa010fa4f1dafae979006d29ba68e2aa6 inherit pub_methods_classFCConditionObject" id="r_aa010fa4f1dafae979006d29ba68e2aa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#aa010fa4f1dafae979006d29ba68e2aa6">set</a> (const ChangedState state)</td></tr>
+<tr class="separator:aa010fa4f1dafae979006d29ba68e2aa6 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7f27732883a082a26651795da514d8c inherit pub_methods_classFCConditionObject" id="r_ae7f27732883a082a26651795da514d8c"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const ErrorType type)</td></tr>
+<tr class="separator:ae7f27732883a082a26651795da514d8c inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab3916b62451e50b829e222e15425fb8 inherit pub_methods_classFCConditionObject" id="r_aab3916b62451e50b829e222e15425fb8"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#aab3916b62451e50b829e222e15425fb8">is</a> (const ReadyState state) const</td></tr>
+<tr class="memdesc:aab3916b62451e50b829e222e15425fb8 inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, равно ли состояние готовности заданному.  <br /></td></tr>
+<tr class="separator:aab3916b62451e50b829e222e15425fb8 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0d4e66c38b561d96ec2e4df61b6311d inherit pub_methods_classFCConditionObject" id="r_ac0d4e66c38b561d96ec2e4df61b6311d"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#ac0d4e66c38b561d96ec2e4df61b6311d">is</a> (const PlayState state) const</td></tr>
+<tr class="memdesc:ac0d4e66c38b561d96ec2e4df61b6311d inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, равен ли режим воспроизведения заданному.  <br /></td></tr>
+<tr class="separator:ac0d4e66c38b561d96ec2e4df61b6311d inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a971fd342429dd25bd1b97defea09006b inherit pub_methods_classFCConditionObject" id="r_a971fd342429dd25bd1b97defea09006b"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a971fd342429dd25bd1b97defea09006b">is</a> (const ChangedState state) const</td></tr>
+<tr class="memdesc:a971fd342429dd25bd1b97defea09006b inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, равен ли флаг изменений заданному.  <br /></td></tr>
+<tr class="separator:a971fd342429dd25bd1b97defea09006b inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c11bd3ebb2da918e7678e3422e1845d inherit pub_methods_classFCConditionObject" id="r_a0c11bd3ebb2da918e7678e3422e1845d"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a0c11bd3ebb2da918e7678e3422e1845d">is</a> (const ErrorType type) const</td></tr>
+<tr class="memdesc:a0c11bd3ebb2da918e7678e3422e1845d inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, равен ли тип ошибки заданному.  <br /></td></tr>
+<tr class="separator:a0c11bd3ebb2da918e7678e3422e1845d inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a075e66893d07a389eb97f96d3b1e6bdd inherit pub_methods_classFCConditionObject" id="r_a075e66893d07a389eb97f96d3b1e6bdd"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFCConditionObject.html#a075e66893d07a389eb97f96d3b1e6bdd">isEmpty</a> () const</td></tr>
+<tr class="memdesc:a075e66893d07a389eb97f96d3b1e6bdd inherit pub_methods_classFCConditionObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, находится ли обьект в базовом (исходном) состоянии.  <br /></td></tr>
+<tr class="separator:a075e66893d07a389eb97f96d3b1e6bdd inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6cefe14aaf45a8ef0d67995c5ecd1b6 inherit pub_methods_classFCConditionObject" id="r_ae6cefe14aaf45a8ef0d67995c5ecd1b6"><td class="memItemLeft" align="right" valign="top">
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>readyEmit</b> (const ReadyState state)</td></tr>
+<tr class="separator:ae6cefe14aaf45a8ef0d67995c5ecd1b6 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab233ff49e498afb775d3c36dedbcb1d3 inherit pub_methods_classFCConditionObject" id="r_ab233ff49e498afb775d3c36dedbcb1d3"><td class="memItemLeft" align="right" valign="top">
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>playEmit</b> (const PlayState state)</td></tr>
+<tr class="separator:ab233ff49e498afb775d3c36dedbcb1d3 inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1158ce6645b08f19c4a8dcff202bb7e inherit pub_methods_classFCConditionObject" id="r_af1158ce6645b08f19c4a8dcff202bb7e"><td class="memItemLeft" align="right" valign="top">
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>errorEmit</b> (const ErrorType type)</td></tr>
+<tr class="separator:af1158ce6645b08f19c4a8dcff202bb7e inherit pub_methods_classFCConditionObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Статические открытые данные</h2></td></tr>
+<tr class="memitem:afb2f7833f6d9ed3fa36d1aeb0fa3222b" id="r_afb2f7833f6d9ed3fa36d1aeb0fa3222b"><td class="memItemLeft" align="right" valign="top"><a id="afb2f7833f6d9ed3fa36d1aeb0fa3222b" name="afb2f7833f6d9ed3fa36d1aeb0fa3222b"></a>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><b>TimeOut</b> = 2000</td></tr>
+<tr class="separator:afb2f7833f6d9ed3fa36d1aeb0fa3222b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pub_types_classFCSPIDevice"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_classFCSPIDevice')"><img src="closed.png" alt="-"/>&#160;Открытые типы унаследованные от <a class="el" href="classFCSPIDevice.html">FCSPIDevice</a></td></tr>
+<tr class="memitem:a2c176c1345ac59272f5b5a89d7833a9e inherit pub_types_classFCSPIDevice" id="r_a2c176c1345ac59272f5b5a89d7833a9e"><td class="memItemLeft" align="right" valign="top"><a id="a2c176c1345ac59272f5b5a89d7833a9e" name="a2c176c1345ac59272f5b5a89d7833a9e"></a>enum &#160;</td><td class="memItemRight" valign="bottom">{ <b>FirstSpiBus</b> = 0
+, <b>SecontSpiBus</b>
+ }</td></tr>
+<tr class="separator:a2c176c1345ac59272f5b5a89d7833a9e inherit pub_types_classFCSPIDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classFCSPIDevice"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_classFCSPIDevice')"><img src="closed.png" alt="-"/>&#160;Открытые атрибуты унаследованные от <a class="el" href="classFCSPIDevice.html">FCSPIDevice</a></td></tr>
+<tr class="memitem:a57caecd1f3f46f95e584bff1beb1fc32 inherit pub_attribs_classFCSPIDevice" id="r_a57caecd1f3f46f95e584bff1beb1fc32"><td class="memItemLeft" align="right" valign="top">
+enum FCSPIDevice:: { ... } &#160;</td><td class="memItemRight" valign="bottom"><b>SpiBusNumbers</b></td></tr>
+<tr class="separator:a57caecd1f3f46f95e584bff1beb1fc32 inherit pub_attribs_classFCSPIDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>абстрактный класс FCSensor - описывающий датчик </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a246c89746969e796743299b40c1ae56f" name="a246c89746969e796743299b40c1ae56f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a246c89746969e796743299b40c1ae56f">&#9670;&#160;</a></span>FCSPISensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCSPISensor::FCSPISensor </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>fd</em><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeOut</em><span class="paramdefsep"> = </span><span class="paramdefval">TimeOut</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>коструктор класса FCSensor </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chip</td><td>- i2c чип </td></tr>
+    <tr><td class="paramname">address</td><td>- адрес датчика </td></tr>
+    <tr><td class="paramname">timeOut</td><td>- время между опросами датчика в милисекундах </td></tr>
+    <tr><td class="paramname">parent</td><td>- указатель на владельца </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>FCPlotter/FCDevice/FCBusDevices/FCSPIDevice/FCSPISensor/<a class="el" href="FCSPISensor_8h_source.html">FCSPISensor.h</a></li>
+<li>FCPlotter/FCDevice/FCBusDevices/FCSPIDevice/FCSPISensor/<b>FCSPISensor.cpp</b></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

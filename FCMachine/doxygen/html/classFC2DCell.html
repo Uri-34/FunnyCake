@@ -1,0 +1,637 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Класс FC2DCell</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classFC2DCell-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс FC2DCell</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для представления двумерной ячейки (прямоугольной области) с заданной позицией и размером.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FC2DCell_8h_source.html">FC2DCell.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a3b8ddac16ed5b97ce1e3af6867c17690" id="r_a3b8ddac16ed5b97ce1e3af6867c17690"><td class="memItemLeft" align="right" valign="top"><a id="a3b8ddac16ed5b97ce1e3af6867c17690" name="a3b8ddac16ed5b97ce1e3af6867c17690"></a>
+<a class="el" href="classFCRange.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_type</b> = <a class="el" href="classFCRange.html">float</a></td></tr>
+<tr class="memdesc:a3b8ddac16ed5b97ce1e3af6867c17690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тип данных, используемый для хранения координат и размеров (по умолчанию — float). <br /></td></tr>
+<tr class="separator:a3b8ddac16ed5b97ce1e3af6867c17690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a14df297ade6f4fe01004135b7a98e543" id="r_a14df297ade6f4fe01004135b7a98e543"><td class="memItemLeft" align="right" valign="top"><a id="a14df297ade6f4fe01004135b7a98e543" name="a14df297ade6f4fe01004135b7a98e543"></a>
+<a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FC2DCell</b> () <a class="el" href="classFCRange.html">noexcept</a>=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a14df297ade6f4fe01004135b7a98e543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор по умолчанию. Создаёт ячейку с позицией (0,0) и нулевым размером. <br /></td></tr>
+<tr class="separator:a14df297ade6f4fe01004135b7a98e543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8caecff7ac566a36f1cef3272edfdeea" id="r_a8caecff7ac566a36f1cef3272edfdeea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8caecff7ac566a36f1cef3272edfdeea">FC2DCell</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp;<a class="el" href="#a09c2354ffa9be7e6828f887962928e33">position</a>, <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DSize.html">FC2DSize</a> &amp;<a class="el" href="#a7d306f0dae0c227ef0a729203fa7b428">size</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a8caecff7ac566a36f1cef3272edfdeea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с параметрами.  <br /></td></tr>
+<tr class="separator:a8caecff7ac566a36f1cef3272edfdeea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cebfb363eb18980147380a5714fec9a" id="r_a4cebfb363eb18980147380a5714fec9a"><td class="memItemLeft" align="right" valign="top"><a id="a4cebfb363eb18980147380a5714fec9a" name="a4cebfb363eb18980147380a5714fec9a"></a>
+<a class="el" href="classFCRange.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FC2DCell</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DCell.html">FC2DCell</a> &amp;) <a class="el" href="classFCRange.html">noexcept</a>=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a4cebfb363eb18980147380a5714fec9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор копирования (тривиальный). <br /></td></tr>
+<tr class="separator:a4cebfb363eb18980147380a5714fec9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375c029818433cf99fd8f05c417f5815" id="r_a375c029818433cf99fd8f05c417f5815"><td class="memItemLeft" align="right" valign="top"><a id="a375c029818433cf99fd8f05c417f5815" name="a375c029818433cf99fd8f05c417f5815"></a>
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC2DCell.html">FC2DCell</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DCell.html">FC2DCell</a> &amp;) <a class="el" href="classFCRange.html">noexcept</a>=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a375c029818433cf99fd8f05c417f5815"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присваивания (тривиальный). <br /></td></tr>
+<tr class="separator:a375c029818433cf99fd8f05c417f5815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32752eea24bdc2c3d8c16e13d8307268" id="r_a32752eea24bdc2c3d8c16e13d8307268"><td class="memItemLeft" align="right" valign="top"><a id="a32752eea24bdc2c3d8c16e13d8307268" name="a32752eea24bdc2c3d8c16e13d8307268"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~FC2DCell</b> ()=<a class="el" href="classFCRange.html">default</a></td></tr>
+<tr class="memdesc:a32752eea24bdc2c3d8c16e13d8307268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор (тривиальный). <br /></td></tr>
+<tr class="separator:a32752eea24bdc2c3d8c16e13d8307268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09c2354ffa9be7e6828f887962928e33" id="r_a09c2354ffa9be7e6828f887962928e33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09c2354ffa9be7e6828f887962928e33">position</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a09c2354ffa9be7e6828f887962928e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает позицию левого верхнего угла ячейки.  <br /></td></tr>
+<tr class="separator:a09c2354ffa9be7e6828f887962928e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d306f0dae0c227ef0a729203fa7b428" id="r_a7d306f0dae0c227ef0a729203fa7b428"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DSize.html">FC2DSize</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d306f0dae0c227ef0a729203fa7b428">size</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a7d306f0dae0c227ef0a729203fa7b428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает размеры ячейки.  <br /></td></tr>
+<tr class="separator:a7d306f0dae0c227ef0a729203fa7b428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa842d57fcdac8b734ca78f8cabbba8b6" id="r_aa842d57fcdac8b734ca78f8cabbba8b6"><td class="memItemLeft" align="right" valign="top"><a id="aa842d57fcdac8b734ca78f8cabbba8b6" name="aa842d57fcdac8b734ca78f8cabbba8b6"></a>
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a3b8ddac16ed5b97ce1e3af6867c17690">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>x</b> () <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:aa842d57fcdac8b734ca78f8cabbba8b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает X-координату левого верхнего угла. <br /></td></tr>
+<tr class="separator:aa842d57fcdac8b734ca78f8cabbba8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0308be8ef40d2447a669b52404769d11" id="r_a0308be8ef40d2447a669b52404769d11"><td class="memItemLeft" align="right" valign="top"><a id="a0308be8ef40d2447a669b52404769d11" name="a0308be8ef40d2447a669b52404769d11"></a>
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a3b8ddac16ed5b97ce1e3af6867c17690">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>y</b> () <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a0308be8ef40d2447a669b52404769d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает Y-координату левого верхнего угла. <br /></td></tr>
+<tr class="separator:a0308be8ef40d2447a669b52404769d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2259637445deb55884527b835d8af3c6" id="r_a2259637445deb55884527b835d8af3c6"><td class="memItemLeft" align="right" valign="top"><a id="a2259637445deb55884527b835d8af3c6" name="a2259637445deb55884527b835d8af3c6"></a>
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a3b8ddac16ed5b97ce1e3af6867c17690">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>width</b> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a2259637445deb55884527b835d8af3c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает ширину ячейки. <br /></td></tr>
+<tr class="separator:a2259637445deb55884527b835d8af3c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac6ad00c4fb700fddf7afe72fe4018d" id="r_a9ac6ad00c4fb700fddf7afe72fe4018d"><td class="memItemLeft" align="right" valign="top"><a id="a9ac6ad00c4fb700fddf7afe72fe4018d" name="a9ac6ad00c4fb700fddf7afe72fe4018d"></a>
+<a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="#a3b8ddac16ed5b97ce1e3af6867c17690">_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>height</b> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a9ac6ad00c4fb700fddf7afe72fe4018d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает высоту ячейки. <br /></td></tr>
+<tr class="separator:a9ac6ad00c4fb700fddf7afe72fe4018d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b4d03cf49cef3d2b6526db1abe87c9d" id="r_a6b4d03cf49cef3d2b6526db1abe87c9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b4d03cf49cef3d2b6526db1abe87c9d">set</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp;<a class="el" href="classFCRange.html">p</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a6b4d03cf49cef3d2b6526db1abe87c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новую позицию левого верхнего угла ячейки.  <br /></td></tr>
+<tr class="separator:a6b4d03cf49cef3d2b6526db1abe87c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae77bc625ac5327441d7a6d0c6dd97f72" id="r_ae77bc625ac5327441d7a6d0c6dd97f72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae77bc625ac5327441d7a6d0c6dd97f72">set</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DSize.html">FC2DSize</a> &amp;<a class="el" href="#a7d306f0dae0c227ef0a729203fa7b428">size</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ae77bc625ac5327441d7a6d0c6dd97f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает новый размер ячейки.  <br /></td></tr>
+<tr class="separator:ae77bc625ac5327441d7a6d0c6dd97f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e5c96cc889ed24dbef6c30377dfd34e" id="r_a8e5c96cc889ed24dbef6c30377dfd34e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e5c96cc889ed24dbef6c30377dfd34e">move</a> (<a class="el" href="#a3b8ddac16ed5b97ce1e3af6867c17690">_type</a> <a class="el" href="classFCRange.html">dx</a>, <a class="el" href="#a3b8ddac16ed5b97ce1e3af6867c17690">_type</a> <a class="el" href="classFCRange.html">dy</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a8e5c96cc889ed24dbef6c30377dfd34e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перемещает ячейку на заданный вектор (dx, dy).  <br /></td></tr>
+<tr class="separator:a8e5c96cc889ed24dbef6c30377dfd34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7547bbfbf79c3dcfeca79ac238cbaa2b" id="r_a7547bbfbf79c3dcfeca79ac238cbaa2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7547bbfbf79c3dcfeca79ac238cbaa2b">move</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp;<a class="el" href="classFCRange.html">delta</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a7547bbfbf79c3dcfeca79ac238cbaa2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перемещает ячейку на заданный вектор (объект <a class="el" href="classFC2DPoint.html" title="Класс для представления двумерной точки с координатами (x, y).">FC2DPoint</a>).  <br /></td></tr>
+<tr class="separator:a7547bbfbf79c3dcfeca79ac238cbaa2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a493dd0a4141e2a19e38fc06266f034d0" id="r_a493dd0a4141e2a19e38fc06266f034d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a493dd0a4141e2a19e38fc06266f034d0">center</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a493dd0a4141e2a19e38fc06266f034d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет центр ячейки.  <br /></td></tr>
+<tr class="separator:a493dd0a4141e2a19e38fc06266f034d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a263236e4fc08b7a633fc806322db70dc" id="r_a263236e4fc08b7a633fc806322db70dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::array</a>&lt; <a class="el" href="classFC2DPoint.html">FC2DPoint</a>, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a263236e4fc08b7a633fc806322db70dc">corners</a> () <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a263236e4fc08b7a633fc806322db70dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает координаты четырёх углов ячейки в порядке: [левый-верхний, правый-верхний, левый-нижний, правый-нижний].  <br /></td></tr>
+<tr class="separator:a263236e4fc08b7a633fc806322db70dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8ca43d72d88afd2fdc9cbf1c6da56a1" id="r_ae8ca43d72d88afd2fdc9cbf1c6da56a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8ca43d72d88afd2fdc9cbf1c6da56a1">contains</a> (<a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp;<a class="el" href="classFCRange.html">p</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ae8ca43d72d88afd2fdc9cbf1c6da56a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, находится ли точка внутри ячейки (включая границы).  <br /></td></tr>
+<tr class="separator:ae8ca43d72d88afd2fdc9cbf1c6da56a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6e52810d86580c6ae25a4e871ecf3cd" id="r_ab6e52810d86580c6ae25a4e871ecf3cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6e52810d86580c6ae25a4e871ecf3cd">intersects</a> (<a class="el" href="classFC2DCell.html">FC2DCell</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:ab6e52810d86580c6ae25a4e871ecf3cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет пересечение текущей ячейки с другой ячейкой.  <br /></td></tr>
+<tr class="separator:ab6e52810d86580c6ae25a4e871ecf3cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d127275efe6cf8239af61f3f0fa624" id="r_a78d127275efe6cf8239af61f3f0fa624"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78d127275efe6cf8239af61f3f0fa624">isEmpty</a> () <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a78d127275efe6cf8239af61f3f0fa624"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, является ли ячейка пустой (нулевая ширина или высота).  <br /></td></tr>
+<tr class="separator:a78d127275efe6cf8239af61f3f0fa624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5fbfcd3e1fe771c9aa5db93cd03a4d" id="r_a0a5fbfcd3e1fe771c9aa5db93cd03a4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a5fbfcd3e1fe771c9aa5db93cd03a4d">operator==</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DCell.html">FC2DCell</a> &amp;<a class="el" href="classFCRange.html">other</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a0a5fbfcd3e1fe771c9aa5db93cd03a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения на равенство.  <br /></td></tr>
+<tr class="separator:a0a5fbfcd3e1fe771c9aa5db93cd03a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10d70ced0470f738d192a79fe570a816" id="r_a10d70ced0470f738d192a79fe570a816"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10d70ced0470f738d192a79fe570a816">operator!=</a> (<a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DCell.html">FC2DCell</a> &amp;<a class="el" href="classFCRange.html">o</a>) <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFCRange.html">noexcept</a></td></tr>
+<tr class="memdesc:a10d70ced0470f738d192a79fe570a816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор сравнения на неравенство.  <br /></td></tr>
+<tr class="separator:a10d70ced0470f738d192a79fe570a816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для представления двумерной ячейки (прямоугольной области) с заданной позицией и размером. </p>
+<p>Предоставляет функционал для работы с геометрией прямоугольника: проверка вхождения точек, пересечения с другими ячейками, вычисление центра и углов, а также операции перемещения. Класс спроектирован как тривиальный (trivially copyable) для эффективной работы в контейнерах и возможности использования в constexpr-контекстах. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a8caecff7ac566a36f1cef3272edfdeea" name="a8caecff7ac566a36f1cef3272edfdeea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8caecff7ac566a36f1cef3272edfdeea">&#9670;&#160;</a></span>FC2DCell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> FC2DCell::FC2DCell </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>position</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DSize.html">FC2DSize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор с параметрами. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>Позиция левого верхнего угла ячейки. </td></tr>
+    <tr><td class="paramname">size</td><td>Размеры ячейки (ширина и высота). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a493dd0a4141e2a19e38fc06266f034d0" name="a493dd0a4141e2a19e38fc06266f034d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a493dd0a4141e2a19e38fc06266f034d0">&#9670;&#160;</a></span>center()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> FC2DCell::center </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисляет центр ячейки. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Точка, расположенная в центре прямоугольника. </dd></dl>
+
+</div>
+</div>
+<a id="ae8ca43d72d88afd2fdc9cbf1c6da56a1" name="ae8ca43d72d88afd2fdc9cbf1c6da56a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8ca43d72d88afd2fdc9cbf1c6da56a1">&#9670;&#160;</a></span>contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FC2DCell::contains </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, находится ли точка внутри ячейки (включая границы). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Проверяемая точка. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если точка принадлежит ячейке; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a263236e4fc08b7a633fc806322db70dc" name="a263236e4fc08b7a633fc806322db70dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a263236e4fc08b7a633fc806322db70dc">&#9670;&#160;</a></span>corners()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::array</a>&lt; <a class="el" href="classFC2DPoint.html">FC2DPoint</a>, 4 &gt; FC2DCell::corners </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает координаты четырёх углов ячейки в порядке: [левый-верхний, правый-верхний, левый-нижний, правый-нижний]. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Массив из 4 точек типа <a class="el" href="classFC2DPoint.html" title="Класс для представления двумерной точки с координатами (x, y).">FC2DPoint</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ab6e52810d86580c6ae25a4e871ecf3cd" name="ab6e52810d86580c6ae25a4e871ecf3cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6e52810d86580c6ae25a4e871ecf3cd">&#9670;&#160;</a></span>intersects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FC2DCell::intersects </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFC2DCell.html">FC2DCell</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет пересечение текущей ячейки с другой ячейкой. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Другая ячейка для проверки пересечения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если ячейки пересекаются (включая касание границами); иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a78d127275efe6cf8239af61f3f0fa624" name="a78d127275efe6cf8239af61f3f0fa624"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78d127275efe6cf8239af61f3f0fa624">&#9670;&#160;</a></span>isEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FC2DCell::isEmpty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, является ли ячейка пустой (нулевая ширина или высота). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если ширина или высота &lt;= 0; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a8e5c96cc889ed24dbef6c30377dfd34e" name="a8e5c96cc889ed24dbef6c30377dfd34e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e5c96cc889ed24dbef6c30377dfd34e">&#9670;&#160;</a></span>move() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FC2DCell::move </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a3b8ddac16ed5b97ce1e3af6867c17690">_type</a></td>          <td class="paramname"><span class="paramname"><em>dx</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a3b8ddac16ed5b97ce1e3af6867c17690">_type</a></td>          <td class="paramname"><span class="paramname"><em>dy</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Перемещает ячейку на заданный вектор (dx, dy). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dx</td><td>Смещение по оси X. </td></tr>
+    <tr><td class="paramname">dy</td><td>Смещение по оси Y. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7547bbfbf79c3dcfeca79ac238cbaa2b" name="a7547bbfbf79c3dcfeca79ac238cbaa2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7547bbfbf79c3dcfeca79ac238cbaa2b">&#9670;&#160;</a></span>move() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FC2DCell::move </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>delta</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Перемещает ячейку на заданный вектор (объект <a class="el" href="classFC2DPoint.html" title="Класс для представления двумерной точки с координатами (x, y).">FC2DPoint</a>). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delta</td><td>Вектор смещения. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a10d70ced0470f738d192a79fe570a816" name="a10d70ced0470f738d192a79fe570a816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10d70ced0470f738d192a79fe570a816">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FC2DCell::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DCell.html">FC2DCell</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>o</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сравнения на неравенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>Другая ячейка для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если ячейки различаются по позиции или размеру; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a0a5fbfcd3e1fe771c9aa5db93cd03a4d" name="a0a5fbfcd3e1fe771c9aa5db93cd03a4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5fbfcd3e1fe771c9aa5db93cd03a4d">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">bool</a> FC2DCell::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DCell.html">FC2DCell</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор сравнения на равенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>Другая ячейка для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если позиции и размеры идентичны; иначе — false. </dd></dl>
+
+</div>
+</div>
+<a id="a09c2354ffa9be7e6828f887962928e33" name="a09c2354ffa9be7e6828f887962928e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c2354ffa9be7e6828f887962928e33">&#9670;&#160;</a></span>position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp; FC2DCell::position </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает позицию левого верхнего угла ячейки. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Константная ссылка на объект позиции. </dd></dl>
+
+</div>
+</div>
+<a id="a6b4d03cf49cef3d2b6526db1abe87c9d" name="a6b4d03cf49cef3d2b6526db1abe87c9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b4d03cf49cef3d2b6526db1abe87c9d">&#9670;&#160;</a></span>set() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FC2DCell::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DPoint.html">FC2DPoint</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает новую позицию левого верхнего угла ячейки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Новая позиция. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae77bc625ac5327441d7a6d0c6dd97f72" name="ae77bc625ac5327441d7a6d0c6dd97f72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae77bc625ac5327441d7a6d0c6dd97f72">&#9670;&#160;</a></span>set() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">void</a> FC2DCell::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DSize.html">FC2DSize</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает новый размер ячейки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>Новый размер. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7d306f0dae0c227ef0a729203fa7b428" name="a7d306f0dae0c227ef0a729203fa7b428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d306f0dae0c227ef0a729203fa7b428">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFCRange.html">constexpr</a> <a class="el" href="classFCRange.html">const</a> <a class="el" href="classFC2DSize.html">FC2DSize</a> &amp; FC2DCell::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает размеры ячейки. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Константная ссылка на объект размера. </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>FCTypes/FC2DArea/FC2DCell/<a class="el" href="FC2DCell_8h_source.html">FC2DCell.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

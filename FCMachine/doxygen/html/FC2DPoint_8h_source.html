@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Исходный файл FCTypes/FC2DArea/FC2DPoint/FC2DPoint.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_095319a0a42fa4deb6343e81a7cff0f0.html">FCTypes</a></li><li class="navelem"><a class="el" href="dir_c8a5456491c4a62d9bf9dee14b0779b7.html">FC2DArea</a></li><li class="navelem"><a class="el" href="dir_90f16772ff50999f5ada46f881ed3dba.html">FC2DPoint</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FC2DPoint.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FC_2D_POINT_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FC_2D_POINT_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtGlobal&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="classFC2DSize.html">FC2DSize</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span><a class="code hl_class" href="classFC3DSize.html">FC3DSize</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">class </span><a class="code hl_class" href="classFC3DPoint.html">FC3DPoint</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classFC2DPoint.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">   26</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> = <a class="code hl_class" href="classFCRange.html">float</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// --- конструкторы ---</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a7c2348caf9c5c6a29888b6f9e4dce445">   30</a></span>    <span class="keyword">constexpr</span> <a class="code hl_function" href="classFC2DPoint.html#a7c2348caf9c5c6a29888b6f9e4dce445">FC2DPoint</a>() <a class="code hl_class" href="classFCRange.html">noexcept</a> = <a class="code hl_class" href="classFCRange.html">default</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a12907067fb0b50765d3c3f20a83c6112">   35</a></span>    <a class="code hl_class" href="classFCRange.html">constexpr</a> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>(<a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">x</a>, <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">y</a>) <a class="code hl_class" href="classFCRange.html">noexcept</a></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        : _x(<a class="code hl_function" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">x</a>)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        , _y(<a class="code hl_function" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">y</a>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {}</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#aded09d2389ea310e85df4cce850ba04d">   42</a></span>    <span class="keyword">explicit</span> <span class="keyword">constexpr</span> <a class="code hl_function" href="classFC2DPoint.html#aded09d2389ea310e85df4cce850ba04d">FC2DPoint</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC3DPoint.html">FC3DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">point</a>) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a90db2522e60889c2e14baa0381ccfb00">   45</a></span>    <span class="keyword">constexpr</span> <a class="code hl_function" href="classFC2DPoint.html#a90db2522e60889c2e14baa0381ccfb00">FC2DPoint</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp;) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a2674e2d1936300271e6f0aa3cb6f3e39">   48</a></span>    <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_function" href="classFC2DPoint.html#a2674e2d1936300271e6f0aa3cb6f3e39">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp;) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#acc962f9fdab54f311176b1700a2a125b">   51</a></span>    <a class="code hl_function" href="classFC2DPoint.html#acc962f9fdab54f311176b1700a2a125b">~FC2DPoint</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// --- геттеры ---</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">   56</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">x</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _x; }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">   60</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">y</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _y; }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">// --- сеттеры ---</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a328c0b7af785519f459122c2e566b168">   65</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFC2DPoint.html#a328c0b7af785519f459122c2e566b168">setX</a>(<a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">x</a>) <span class="keyword">noexcept</span> { _x = <a class="code hl_function" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">x</a>; }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a262c9a1b4842f466abd3944bce6b5de7">   69</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFC2DPoint.html#a262c9a1b4842f466abd3944bce6b5de7">setY</a>(<a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">y</a>) <span class="keyword">noexcept</span> { _y = <a class="code hl_function" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">y</a>; }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#ac33994a77b65062ad522d5e375ccd6f2">   74</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFC2DPoint.html#ac33994a77b65062ad522d5e375ccd6f2">setXY</a>(<a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">x</a>, <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">y</a>) <span class="keyword">noexcept</span> { _x = <a class="code hl_function" href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">x</a>; _y = <a class="code hl_function" href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">y</a>; }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="comment">// --- преобразования ---</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC3DPoint.html">FC3DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#a06d3ba9c3a94b8d6333d1a6158a44e63">to3D</a>(<a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> z = 0) <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#afac93cc40f5db45398ffe93959f0d133">   84</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <a class="code hl_class" href="classFCRange.html">constexpr</a> <a class="code hl_class" href="classFC2DSize.html">FC2DSize</a> <a class="code hl_function" href="classFC2DPoint.html#afac93cc40f5db45398ffe93959f0d133">to2DSize</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="comment">// --- геометрические методы ---</span></div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#ae0941e2ee287484dbe55a7560bc35742">   91</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="comment">/*constexpr*/</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#ae0941e2ee287484dbe55a7560bc35742">distanceTo</a>(<a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">dx</a> = _x - <a class="code hl_class" href="classFCRange.html">other</a>._x;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">dy</a> = _y - <a class="code hl_class" href="classFCRange.html">other</a>._y;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::hypot</a>(<a class="code hl_class" href="classFCRange.html">dx</a>, <a class="code hl_class" href="classFCRange.html">dy</a>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#acfcee0029a93e823eba05f95168478de">  102</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#acfcee0029a93e823eba05f95168478de">distanceSquaredTo</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">dx</a> = _x - <a class="code hl_class" href="classFCRange.html">other</a>._x;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">dy</a> = _y - <a class="code hl_class" href="classFCRange.html">other</a>._y;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFCRange.html">dx</a> * <a class="code hl_class" href="classFCRange.html">dx</a> + <a class="code hl_class" href="classFCRange.html">dy</a> * <a class="code hl_class" href="classFCRange.html">dy</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a864caeb2203b6b0efcdfa0c18e5cb856">  112</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="comment">/*constexpr*/</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#a864caeb2203b6b0efcdfa0c18e5cb856">angle</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::atan2</a>(_y, _x); }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#ae9e704f9ff22bc8fc4165cfb3ce3d72d">  118</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="comment">/*constexpr*/</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#ae9e704f9ff22bc8fc4165cfb3ce3d72d">angleTo</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">dot</a> = _x * <a class="code hl_class" href="classFCRange.html">other</a>._x + _y * <a class="code hl_class" href="classFCRange.html">other</a>._y;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">cross</a> = _x * <a class="code hl_class" href="classFCRange.html">other</a>._y - _y * <a class="code hl_class" href="classFCRange.html">other</a>._x;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::atan2</a>(<a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::abs</a>(<a class="code hl_class" href="classFCRange.html">cross</a>), <a class="code hl_class" href="classFCRange.html">dot</a>);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
+</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a560999992aa3b2279a4d247db43e1b92">  128</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="comment">/*constexpr*/</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#a560999992aa3b2279a4d247db43e1b92">length</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::hypot</a>(_x, _y); }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a73923e58314ca5379605e879390d084e">  133</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#a73923e58314ca5379605e879390d084e">lengthSquared</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _x * _x + _y * _y; }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#aefef2f957d3f2c0c88f3b61bcfc8e34f">  138</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#aefef2f957d3f2c0c88f3b61bcfc8e34f">normalized</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">l</a> = <a class="code hl_function" href="classFC2DPoint.html#a560999992aa3b2279a4d247db43e1b92">length</a>();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="classFCRange.html">l</a> == 0) <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{};</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">inv</a> = 1.0f / <a class="code hl_class" href="classFCRange.html">l</a>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{_x * <a class="code hl_class" href="classFCRange.html">inv</a>, _y * <a class="code hl_class" href="classFCRange.html">inv</a>};</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#ac9e89bd1cd5013113ebb2cf6e4dc8ffd">  150</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#ac9e89bd1cd5013113ebb2cf6e4dc8ffd">translated</a>(<a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">dx</a>, <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">dy</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{_x + <a class="code hl_class" href="classFCRange.html">dx</a>, _y + <a class="code hl_class" href="classFCRange.html">dy</a>};</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
+</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a46112cd08c0f080709c531a72e74467f">  158</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#a46112cd08c0f080709c531a72e74467f">translated</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">delta</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{_x + <a class="code hl_class" href="classFCRange.html">delta</a>._x, _y + <a class="code hl_class" href="classFCRange.html">delta</a>._y};</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
+</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="foldopen" id="foldopen00167" data-start="{" data-end="}">
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#afbb48e6b3295cd4cfbfbb06efb8b88fd">  167</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#afbb48e6b3295cd4cfbfbb06efb8b88fd">scaled</a>(<a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">scaleX</a>, <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">scaleY</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{_x * <a class="code hl_class" href="classFCRange.html">scaleX</a>, _y * <a class="code hl_class" href="classFCRange.html">scaleY</a>};</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    }</div>
+</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="foldopen" id="foldopen00175" data-start="{" data-end="}">
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a3a6383d6a9a390cd070d4efda59aa58b">  175</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#a3a6383d6a9a390cd070d4efda59aa58b">scaled</a>(<a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">factor</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{_x * <a class="code hl_class" href="classFCRange.html">factor</a>, _y * <a class="code hl_class" href="classFCRange.html">factor</a>};</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="foldopen" id="foldopen00184" data-start="{" data-end="}">
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a6dfb51186c17ff1dc2e5d7ca5a6e31fe">  184</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="comment">/*constexpr*/</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#a6dfb51186c17ff1dc2e5d7ca5a6e31fe">rotated</a>(<a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#a864caeb2203b6b0efcdfa0c18e5cb856">angle</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">cosA</a> = <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::cos</a>(<a class="code hl_function" href="classFC2DPoint.html#a864caeb2203b6b0efcdfa0c18e5cb856">angle</a>);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">sinA</a> = <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::sin</a>(<a class="code hl_function" href="classFC2DPoint.html#a864caeb2203b6b0efcdfa0c18e5cb856">angle</a>);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            _x * <a class="code hl_class" href="classFCRange.html">cosA</a> - _y * <a class="code hl_class" href="classFCRange.html">sinA</a>,</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            _x * <a class="code hl_class" href="classFCRange.html">sinA</a> + _y * <a class="code hl_class" href="classFCRange.html">cosA</a></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        };</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
+</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a1efb26356ad343fa4d45833e8f42fe16">  196</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#a1efb26356ad343fa4d45833e8f42fe16">mirroredX</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{_x, -_y}; }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a53d8fdc2a36d018ecd6d67220e225a78">  200</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#a53d8fdc2a36d018ecd6d67220e225a78">mirroredY</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{-_x, _y}; }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a8ba1cacaeb271c4f92229e7959b5fcf8">  204</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#a8ba1cacaeb271c4f92229e7959b5fcf8">mirroredOrigin</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> -(*this); }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="comment">// --- операторы ---</span></div>
+<div class="foldopen" id="foldopen00210" data-start="{" data-end="}">
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#ac5e4d53f435815c84fda2861362e8d81">  210</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFC2DPoint.html#ac5e4d53f435815c84fda2861362e8d81">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    {</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        <span class="keywordflow">return</span> _x == <a class="code hl_class" href="classFCRange.html">other</a>._x &amp;&amp; _y == <a class="code hl_class" href="classFCRange.html">other</a>._y;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    }</div>
+</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="foldopen" id="foldopen00218" data-start="{" data-end="}">
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#afbcbbf1674428e658db04813c03547be">  218</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classFC2DPoint.html#afbcbbf1674428e658db04813c03547be">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == <a class="code hl_class" href="classFCRange.html">other</a>);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    }</div>
+</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="foldopen" id="foldopen00226" data-start="{" data-end="}">
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a0c0d40272d83a5bf1a6ce5c7a8ef6ee0">  226</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#a0c0d40272d83a5bf1a6ce5c7a8ef6ee0">operator+</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{_x + <a class="code hl_class" href="classFCRange.html">other</a>._x, _y + <a class="code hl_class" href="classFCRange.html">other</a>._y};</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    }</div>
+</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="foldopen" id="foldopen00234" data-start="{" data-end="}">
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#af846b8c597a715deb3d75f240be6da7e">  234</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#af846b8c597a715deb3d75f240be6da7e">operator-</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    {</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{_x - <a class="code hl_class" href="classFCRange.html">other</a>._x, _y - <a class="code hl_class" href="classFCRange.html">other</a>._y};</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    }</div>
+</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="foldopen" id="foldopen00242" data-start="{" data-end="}">
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a4b684155b14cddb7c5daab66fb06883b">  242</a></span>    <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_function" href="classFC2DPoint.html#a4b684155b14cddb7c5daab66fb06883b">operator+=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    {</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        _x += <a class="code hl_class" href="classFCRange.html">other</a>._x;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        _y += <a class="code hl_class" href="classFCRange.html">other</a>._y;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    }</div>
+</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="foldopen" id="foldopen00252" data-start="{" data-end="}">
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a582d008ec207ca26a58432594e72a877">  252</a></span>    <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_function" href="classFC2DPoint.html#a582d008ec207ca26a58432594e72a877">operator-=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        _x -= <a class="code hl_class" href="classFCRange.html">other</a>._x;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        _y -= <a class="code hl_class" href="classFCRange.html">other</a>._y;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    }</div>
+</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="foldopen" id="foldopen00261" data-start="{" data-end="}">
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a2cd4ef640ed8611415ba8a0344d2f3d9">  261</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#a2cd4ef640ed8611415ba8a0344d2f3d9">operator-</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    {</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{-_x, -_y};</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    }</div>
+</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="foldopen" id="foldopen00269" data-start="{" data-end="}">
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a8c622aa895a756e853c12335aa6570d7">  269</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#a8c622aa895a756e853c12335aa6570d7">operator*</a>(<a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">factor</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classFC2DPoint.html#afbb48e6b3295cd4cfbfbb06efb8b88fd">scaled</a>(<a class="code hl_class" href="classFCRange.html">factor</a>);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    }</div>
+</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="foldopen" id="foldopen00277" data-start="{" data-end="}">
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#a1474b0d98a8a323f5a2cdbc04dd4905d">  277</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> <a class="code hl_function" href="classFC2DPoint.html#a1474b0d98a8a323f5a2cdbc04dd4905d">operator/</a>(<a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">divisor</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    {</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_class" href="classFCRange.html">inv</a> = 1.0f / <a class="code hl_class" href="classFCRange.html">divisor</a>;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>{_x * <a class="code hl_class" href="classFCRange.html">inv</a>, _y * <a class="code hl_class" href="classFCRange.html">inv</a>};</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    }</div>
+</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="foldopen" id="foldopen00286" data-start="{" data-end="}">
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#ae674dd3c95986c6b9e1e1974099d85b1">  286</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#ae674dd3c95986c6b9e1e1974099d85b1">dotProduct</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    {</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        <span class="keywordflow">return</span> _x * <a class="code hl_class" href="classFCRange.html">other</a>._x + _y * <a class="code hl_class" href="classFCRange.html">other</a>._y;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    }</div>
+</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="foldopen" id="foldopen00294" data-start="{" data-end="}">
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="classFC2DPoint.html#addf798a02ee250437b65642c1d379d7e">  294</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keyword">constexpr</span> <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> <a class="code hl_function" href="classFC2DPoint.html#addf798a02ee250437b65642c1d379d7e">crossProduct</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a>&amp; <a class="code hl_class" href="classFCRange.html">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    {</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        <span class="keywordflow">return</span> _x * <a class="code hl_class" href="classFCRange.html">other</a>._y - _y * <a class="code hl_class" href="classFCRange.html">other</a>._x;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    }</div>
+</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> _x = 0;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <a class="code hl_typedef" href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">_type</a> _y = 0;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>};</div>
+</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="comment">// --- внешние псевдонимы типов ---</span></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">FC2DPointList</a> = <a class="code hl_class" href="classFCRange.html">QList&lt;FC2DPoint&gt;</a>;</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">FC2DPtrPointList</a> = <a class="code hl_class" href="classFCRange.html">QList&lt;FC2DPoint*&gt;</a>;</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="keyword">constexpr</span> <a class="code hl_class" href="classFC2DPoint.html">FC2DPoint</a> FC2DPointError{-1, -1};</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="comment">// Примечание: для гарантии эффективности копирования и использования в низкоуровневых контекстах</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="comment">// рекомендуется раскомментировать проверку тривиальности при условии, что все специальные методы</span></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="comment">// объявлены как = default:</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="comment">// static_assert(std::is_trivially_copyable_v&lt;FC2DPoint&gt;, &quot;FC2DPoint должен быть тривиально копируемым типом&quot;);</span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="comment">// static_assert(sizeof(FC2DPoint) == 2 * sizeof(_type), &quot;Размер FC2DPoint должен быть в точности 2 × _type&quot;);</span></div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="preprocessor">#endif </span><span class="comment">// FC_2D_POINT_H</span></div>
+<div class="ttc" id="aclassFC2DPoint_html"><div class="ttname"><a href="classFC2DPoint.html">FC2DPoint</a></div><div class="ttdoc">Класс для представления двумерной точки с координатами (x, y).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:23</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a06d3ba9c3a94b8d6333d1a6158a44e63"><div class="ttname"><a href="classFC2DPoint.html#a06d3ba9c3a94b8d6333d1a6158a44e63">FC2DPoint::to3D</a></div><div class="ttdeci">constexpr FC3DPoint to3D(_type z=0) const noexcept</div><div class="ttdoc">Преобразует 2D-точку в 3D-точку, добавляя координату Z.</div><div class="ttdef"><b>Definition</b> FC2DPoint.cpp:12</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a0c0d40272d83a5bf1a6ce5c7a8ef6ee0"><div class="ttname"><a href="classFC2DPoint.html#a0c0d40272d83a5bf1a6ce5c7a8ef6ee0">FC2DPoint::operator+</a></div><div class="ttdeci">constexpr FC2DPoint operator+(const FC2DPoint &amp;other) const noexcept</div><div class="ttdoc">Оператор сложения точек (покомпонентное сложение).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:226</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a1474b0d98a8a323f5a2cdbc04dd4905d"><div class="ttname"><a href="classFC2DPoint.html#a1474b0d98a8a323f5a2cdbc04dd4905d">FC2DPoint::operator/</a></div><div class="ttdeci">constexpr FC2DPoint operator/(_type divisor) const noexcept</div><div class="ttdoc">Оператор деления на скаляр.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:277</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a1efb26356ad343fa4d45833e8f42fe16"><div class="ttname"><a href="classFC2DPoint.html#a1efb26356ad343fa4d45833e8f42fe16">FC2DPoint::mirroredX</a></div><div class="ttdeci">constexpr FC2DPoint mirroredX() const noexcept</div><div class="ttdoc">Возвращает точку, отражённую относительно оси X (инвертирует Y).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:196</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a262c9a1b4842f466abd3944bce6b5de7"><div class="ttname"><a href="classFC2DPoint.html#a262c9a1b4842f466abd3944bce6b5de7">FC2DPoint::setY</a></div><div class="ttdeci">constexpr void setY(_type y) noexcept</div><div class="ttdoc">Устанавливает новое значение координаты Y.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:69</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a2674e2d1936300271e6f0aa3cb6f3e39"><div class="ttname"><a href="classFC2DPoint.html#a2674e2d1936300271e6f0aa3cb6f3e39">FC2DPoint::operator=</a></div><div class="ttdeci">constexpr FC2DPoint &amp; operator=(const FC2DPoint &amp;) noexcept=default</div><div class="ttdoc">Оператор присваивания копированием (тривиальный).</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a2cd4ef640ed8611415ba8a0344d2f3d9"><div class="ttname"><a href="classFC2DPoint.html#a2cd4ef640ed8611415ba8a0344d2f3d9">FC2DPoint::operator-</a></div><div class="ttdeci">constexpr FC2DPoint operator-() const noexcept</div><div class="ttdoc">Унарный оператор минус (отражение относительно начала координат).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:261</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a328c0b7af785519f459122c2e566b168"><div class="ttname"><a href="classFC2DPoint.html#a328c0b7af785519f459122c2e566b168">FC2DPoint::setX</a></div><div class="ttdeci">constexpr void setX(_type x) noexcept</div><div class="ttdoc">Устанавливает новое значение координаты X.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:65</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a3a6383d6a9a390cd070d4efda59aa58b"><div class="ttname"><a href="classFC2DPoint.html#a3a6383d6a9a390cd070d4efda59aa58b">FC2DPoint::scaled</a></div><div class="ttdeci">constexpr FC2DPoint scaled(_type factor) const noexcept</div><div class="ttdoc">Возвращает точку, масштабированную относительно начала координат с одинаковым коэффициентом.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:175</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a46112cd08c0f080709c531a72e74467f"><div class="ttname"><a href="classFC2DPoint.html#a46112cd08c0f080709c531a72e74467f">FC2DPoint::translated</a></div><div class="ttdeci">constexpr FC2DPoint translated(const FC2DPoint &amp;delta) const noexcept</div><div class="ttdoc">Возвращает точку, смещённую на вектор, заданный другой точкой.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:158</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a4b684155b14cddb7c5daab66fb06883b"><div class="ttname"><a href="classFC2DPoint.html#a4b684155b14cddb7c5daab66fb06883b">FC2DPoint::operator+=</a></div><div class="ttdeci">constexpr FC2DPoint &amp; operator+=(const FC2DPoint &amp;other) noexcept</div><div class="ttdoc">Оператор составного сложения (+=).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:242</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a53d8fdc2a36d018ecd6d67220e225a78"><div class="ttname"><a href="classFC2DPoint.html#a53d8fdc2a36d018ecd6d67220e225a78">FC2DPoint::mirroredY</a></div><div class="ttdeci">constexpr FC2DPoint mirroredY() const noexcept</div><div class="ttdoc">Возвращает точку, отражённую относительно оси Y (инвертирует X).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:200</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a560999992aa3b2279a4d247db43e1b92"><div class="ttname"><a href="classFC2DPoint.html#a560999992aa3b2279a4d247db43e1b92">FC2DPoint::length</a></div><div class="ttdeci">_type length() const noexcept</div><div class="ttdoc">Вычисляет длину вектора (расстояние от начала координат до точки).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:128</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a582d008ec207ca26a58432594e72a877"><div class="ttname"><a href="classFC2DPoint.html#a582d008ec207ca26a58432594e72a877">FC2DPoint::operator-=</a></div><div class="ttdeci">constexpr FC2DPoint &amp; operator-=(const FC2DPoint &amp;other) noexcept</div><div class="ttdoc">Оператор составного вычитания (-=).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:252</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a6dfb51186c17ff1dc2e5d7ca5a6e31fe"><div class="ttname"><a href="classFC2DPoint.html#a6dfb51186c17ff1dc2e5d7ca5a6e31fe">FC2DPoint::rotated</a></div><div class="ttdeci">FC2DPoint rotated(_type angle) const noexcept</div><div class="ttdoc">Возвращает точку, повёрнутую вокруг начала координат.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:184</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a73923e58314ca5379605e879390d084e"><div class="ttname"><a href="classFC2DPoint.html#a73923e58314ca5379605e879390d084e">FC2DPoint::lengthSquared</a></div><div class="ttdeci">constexpr _type lengthSquared() const noexcept</div><div class="ttdoc">Вычисляет квадрат длины вектора (без извлечения корня).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:133</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a7c2348caf9c5c6a29888b6f9e4dce445"><div class="ttname"><a href="classFC2DPoint.html#a7c2348caf9c5c6a29888b6f9e4dce445">FC2DPoint::FC2DPoint</a></div><div class="ttdeci">constexpr FC2DPoint() noexcept=default</div><div class="ttdoc">Конструктор по умолчанию. Создаёт точку с координатами (0, 0).</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a864caeb2203b6b0efcdfa0c18e5cb856"><div class="ttname"><a href="classFC2DPoint.html#a864caeb2203b6b0efcdfa0c18e5cb856">FC2DPoint::angle</a></div><div class="ttdeci">_type angle() const noexcept</div><div class="ttdoc">Вычисляет угол вектора (от начала координат к точке) относительно оси X.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:112</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a8ba1cacaeb271c4f92229e7959b5fcf8"><div class="ttname"><a href="classFC2DPoint.html#a8ba1cacaeb271c4f92229e7959b5fcf8">FC2DPoint::mirroredOrigin</a></div><div class="ttdeci">constexpr FC2DPoint mirroredOrigin() const noexcept</div><div class="ttdoc">Возвращает точку, отражённую относительно начала координат.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:204</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a8c622aa895a756e853c12335aa6570d7"><div class="ttname"><a href="classFC2DPoint.html#a8c622aa895a756e853c12335aa6570d7">FC2DPoint::operator*</a></div><div class="ttdeci">constexpr FC2DPoint operator*(_type factor) const noexcept</div><div class="ttdoc">Оператор умножения на скаляр.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:269</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a8ddca7d9848f1743d995ec26589f837d"><div class="ttname"><a href="classFC2DPoint.html#a8ddca7d9848f1743d995ec26589f837d">FC2DPoint::x</a></div><div class="ttdeci">constexpr _type x() const noexcept</div><div class="ttdoc">Возвращает координату X точки.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:56</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_a90db2522e60889c2e14baa0381ccfb00"><div class="ttname"><a href="classFC2DPoint.html#a90db2522e60889c2e14baa0381ccfb00">FC2DPoint::FC2DPoint</a></div><div class="ttdeci">constexpr FC2DPoint(const FC2DPoint &amp;) noexcept=default</div><div class="ttdoc">Конструктор копирования (тривиальный).</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_aade22e68e0f20ccef5699b489a1a33ef"><div class="ttname"><a href="classFC2DPoint.html#aade22e68e0f20ccef5699b489a1a33ef">FC2DPoint::_type</a></div><div class="ttdeci">float _type</div><div class="ttdoc">Тип данных, используемый для хранения координат (по умолчанию — float).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:26</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_ac33994a77b65062ad522d5e375ccd6f2"><div class="ttname"><a href="classFC2DPoint.html#ac33994a77b65062ad522d5e375ccd6f2">FC2DPoint::setXY</a></div><div class="ttdeci">constexpr void setXY(_type x, _type y) noexcept</div><div class="ttdoc">Устанавливает обе координаты одновременно.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:74</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_ac5e4d53f435815c84fda2861362e8d81"><div class="ttname"><a href="classFC2DPoint.html#ac5e4d53f435815c84fda2861362e8d81">FC2DPoint::operator==</a></div><div class="ttdeci">constexpr bool operator==(const FC2DPoint &amp;other) const noexcept</div><div class="ttdoc">Оператор сравнения на равенство.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:210</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_ac9e89bd1cd5013113ebb2cf6e4dc8ffd"><div class="ttname"><a href="classFC2DPoint.html#ac9e89bd1cd5013113ebb2cf6e4dc8ffd">FC2DPoint::translated</a></div><div class="ttdeci">constexpr FC2DPoint translated(_type dx, _type dy) const noexcept</div><div class="ttdoc">Возвращает точку, смещённую на заданный вектор (dx, dy).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:150</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_acc962f9fdab54f311176b1700a2a125b"><div class="ttname"><a href="classFC2DPoint.html#acc962f9fdab54f311176b1700a2a125b">FC2DPoint::~FC2DPoint</a></div><div class="ttdeci">~FC2DPoint()=default</div><div class="ttdoc">Деструктор (тривиальный).</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_acfcee0029a93e823eba05f95168478de"><div class="ttname"><a href="classFC2DPoint.html#acfcee0029a93e823eba05f95168478de">FC2DPoint::distanceSquaredTo</a></div><div class="ttdeci">constexpr _type distanceSquaredTo(const FC2DPoint &amp;other) const noexcept</div><div class="ttdoc">Вычисляет квадрат расстояния до другой точки (без извлечения корня).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:102</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_ad58d4797d8838c1ec53ccb6a1ae32c44"><div class="ttname"><a href="classFC2DPoint.html#ad58d4797d8838c1ec53ccb6a1ae32c44">FC2DPoint::y</a></div><div class="ttdeci">constexpr _type y() const noexcept</div><div class="ttdoc">Возвращает координату Y точки.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:60</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_addf798a02ee250437b65642c1d379d7e"><div class="ttname"><a href="classFC2DPoint.html#addf798a02ee250437b65642c1d379d7e">FC2DPoint::crossProduct</a></div><div class="ttdeci">constexpr _type crossProduct(const FC2DPoint &amp;other) const noexcept</div><div class="ttdoc">Вычисляет псевдоскалярное (2D cross) произведение двух точек.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:294</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_aded09d2389ea310e85df4cce850ba04d"><div class="ttname"><a href="classFC2DPoint.html#aded09d2389ea310e85df4cce850ba04d">FC2DPoint::FC2DPoint</a></div><div class="ttdeci">constexpr FC2DPoint(const FC3DPoint &amp;point) noexcept</div><div class="ttdoc">Конструктор преобразования из 3D-точки (координата Z игнорируется).</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_ae0941e2ee287484dbe55a7560bc35742"><div class="ttname"><a href="classFC2DPoint.html#ae0941e2ee287484dbe55a7560bc35742">FC2DPoint::distanceTo</a></div><div class="ttdeci">_type distanceTo(const FC2DPoint &amp;other) const noexcept</div><div class="ttdoc">Вычисляет евклидово расстояние до другой точки.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:91</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_ae674dd3c95986c6b9e1e1974099d85b1"><div class="ttname"><a href="classFC2DPoint.html#ae674dd3c95986c6b9e1e1974099d85b1">FC2DPoint::dotProduct</a></div><div class="ttdeci">constexpr _type dotProduct(const FC2DPoint &amp;other) const noexcept</div><div class="ttdoc">Вычисляет скалярное (векторное dot) произведение двух точек.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:286</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_ae9e704f9ff22bc8fc4165cfb3ce3d72d"><div class="ttname"><a href="classFC2DPoint.html#ae9e704f9ff22bc8fc4165cfb3ce3d72d">FC2DPoint::angleTo</a></div><div class="ttdeci">_type angleTo(const FC2DPoint &amp;other) const noexcept</div><div class="ttdoc">Вычисляет угол между двумя векторами (от начала координат к this и other).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:118</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_aefef2f957d3f2c0c88f3b61bcfc8e34f"><div class="ttname"><a href="classFC2DPoint.html#aefef2f957d3f2c0c88f3b61bcfc8e34f">FC2DPoint::normalized</a></div><div class="ttdeci">constexpr FC2DPoint normalized() const noexcept</div><div class="ttdoc">Возвращает нормализованный вектор (единичной длины).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:138</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_af846b8c597a715deb3d75f240be6da7e"><div class="ttname"><a href="classFC2DPoint.html#af846b8c597a715deb3d75f240be6da7e">FC2DPoint::operator-</a></div><div class="ttdeci">constexpr FC2DPoint operator-(const FC2DPoint &amp;other) const noexcept</div><div class="ttdoc">Оператор вычитания точек (покомпонентное вычитание).</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:234</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_afac93cc40f5db45398ffe93959f0d133"><div class="ttname"><a href="classFC2DPoint.html#afac93cc40f5db45398ffe93959f0d133">FC2DPoint::to2DSize</a></div><div class="ttdeci">constexpr FC2DSize to2DSize() const noexcept</div><div class="ttdoc">Преобразует точку в размер, интерпретируя координаты как ширину и высоту.</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_afbb48e6b3295cd4cfbfbb06efb8b88fd"><div class="ttname"><a href="classFC2DPoint.html#afbb48e6b3295cd4cfbfbb06efb8b88fd">FC2DPoint::scaled</a></div><div class="ttdeci">constexpr FC2DPoint scaled(_type scaleX, _type scaleY) const noexcept</div><div class="ttdoc">Возвращает точку, масштабированную относительно начала координат.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:167</div></div>
+<div class="ttc" id="aclassFC2DPoint_html_afbcbbf1674428e658db04813c03547be"><div class="ttname"><a href="classFC2DPoint.html#afbcbbf1674428e658db04813c03547be">FC2DPoint::operator!=</a></div><div class="ttdeci">constexpr bool operator!=(const FC2DPoint &amp;other) const noexcept</div><div class="ttdoc">Оператор сравнения на неравенство.</div><div class="ttdef"><b>Definition</b> FC2DPoint.h:218</div></div>
+<div class="ttc" id="aclassFC2DSize_html"><div class="ttname"><a href="classFC2DSize.html">FC2DSize</a></div><div class="ttdoc">Класс для представления двумерного размера (ширина × высота).</div><div class="ttdef"><b>Definition</b> FC2DSize.h:23</div></div>
+<div class="ttc" id="aclassFC3DPoint_html"><div class="ttname"><a href="classFC3DPoint.html">FC3DPoint</a></div><div class="ttdoc">Класс для представления трёхмерной точки с координатами (x, y, z).</div><div class="ttdef"><b>Definition</b> FC3DPoint.h:24</div></div>
+<div class="ttc" id="aclassFC3DSize_html"><div class="ttname"><a href="classFC3DSize.html">FC3DSize</a></div><div class="ttdoc">Класс для представления трёхмерного размера (ширина × высота × глубина).</div><div class="ttdef"><b>Definition</b> FC3DSize.h:24</div></div>
+<div class="ttc" id="aclassFCRange_html"><div class="ttname"><a href="classFCRange.html">FCRange</a></div><div class="ttdoc">Шаблонный класс для представления числового диапазона [min, max] с гарантией корректности.</div><div class="ttdef"><b>Definition</b> FCRange.h:34</div></div>
+<div class="ttc" id="aclassFCRange_html_ad64748aa407cd3708dd078c9e8789152"><div class="ttname"><a href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">FCRange::FCRange</a></div><div class="ttdeci">constexpr FCRange(T min=defaultMin(), T max=defaultMax()) noexcept</div><div class="ttdoc">Конструктор с параметрами.</div><div class="ttdef"><b>Definition</b> FCRange.h:75</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

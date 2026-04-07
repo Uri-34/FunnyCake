@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FC Plotter...: Исходный файл FCPlotter/FCDevice/FCI2CDevice/FCLM75A/FCLM75AThermometer/FCLM75AThermometer.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FC Plotter...<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Программа для управления плоттером ...</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_dcfbaeab36b027cae77235f4e38c274a.html">FCPlotter</a></li><li class="navelem"><a class="el" href="dir_dc3ba5ac427b695d6a0e19650f09833f.html">FCDevice</a></li><li class="navelem"><a class="el" href="dir_69a3fc6c302c5a04f0ff925aa4288251.html">FCI2CDevice</a></li><li class="navelem"><a class="el" href="dir_c7a005ad7d49247beab9c17838a8df4e.html">FCLM75A</a></li><li class="navelem"><a class="el" href="dir_68a2bf3df5c7cc967b0cf6e1b4f423b7.html">FCLM75AThermometer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FCLM75AThermometer.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FC_LM75A_THERMOMETER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FC_LM75A_THERMOMETER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QElapsedTimer&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;FCI2CDevice.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html">   44</a></span><span class="keyword">class </span><a class="code hl_class" href="classFCLM75AThermometer.html">FCLM75AThermometer</a></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    : <span class="keyword">public</span> <a class="code hl_class" href="classFCI2CDevice.html">FCI2CDevice</a></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><a class="code hl_class" href="classFCRange.html">Q_OBJECT</a></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// --- константы датчика ---</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#a1ae43112ec45c4da31189e25e717b90f">   51</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">uint8_t</a> <a class="code hl_variable" href="classFCLM75AThermometer.html#a1ae43112ec45c4da31189e25e717b90f">DEFAULT_I2C_ADDRESS</a> = 0x48;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#ad2abcc75988c028231b8b371b633dfc2">   54</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classFCLM75AThermometer.html#ad2abcc75988c028231b8b371b633dfc2">MIN_CONVERSION_TIME_MS</a> = 27;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#aba8074093208f2128ed60a55cb0b93c9">   57</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classFCLM75AThermometer.html#aba8074093208f2128ed60a55cb0b93c9">DEFAULT_RESOLUTION_BITS</a> = 9;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#ae3b90a4213456bc8df075f75abc9f030">   60</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="classFCLM75AThermometer.html#ae3b90a4213456bc8df075f75abc9f030">DEFAULT_COMPENSATION</a> = 1.0f;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#aa69f4d302266aefcf283424fbabbc732">   63</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="classFCLM75AThermometer.html#aa69f4d302266aefcf283424fbabbc732">DEFAULT_DELTA_THRESHOLD</a> = 0.5f;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">// --- регистры датчика ---</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#a1a42c0af48a929d4068ad96fe7162c02">   67</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">uint8_t</a> <a class="code hl_variable" href="classFCLM75AThermometer.html#a1a42c0af48a929d4068ad96fe7162c02">REG_TEMPERATURE</a> = 0x00;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#aa2eb7ade7e50ef7dd34eead6c209dc8f">   70</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">uint8_t</a> <a class="code hl_variable" href="classFCLM75AThermometer.html#aa2eb7ade7e50ef7dd34eead6c209dc8f">REG_CONFIGURATION</a> = 0x01;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#af8591a2dac93f0b0f06bbcf1c69cbb68">   73</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">uint8_t</a> <a class="code hl_variable" href="classFCLM75AThermometer.html#af8591a2dac93f0b0f06bbcf1c69cbb68">REG_THYST</a> = 0x02;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#a8e16aa501cbe289a927dd13fc3cd24f1">   76</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_class" href="classFCRange.html">uint8_t</a> <a class="code hl_variable" href="classFCLM75AThermometer.html#a8e16aa501cbe289a927dd13fc3cd24f1">REG_TOS</a> = 0x03;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">// --- конструкторы и деструктор ---</span></div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#a1ef310c26f1a16e177aa32a57623db0a">   89</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classFCLM75AThermometer.html#a1ef310c26f1a16e177aa32a57623db0a">FCLM75AThermometer</a>(<a class="code hl_class" href="classFCI2CBus.html">FCI2CBus</a> *<a class="code hl_function" href="classFCI2CDevice.html#a37b815519a619ee964ccf70998b12c95">bus</a>, <a class="code hl_class" href="classFCRange.html">uint8_t</a> <a class="code hl_function" href="classFCI2CDevice.html#a90554081a0d85ada4cb2ea5df3d66f89">address</a> = <a class="code hl_variable" href="classFCLM75AThermometer.html#a1ae43112ec45c4da31189e25e717b90f">DEFAULT_I2C_ADDRESS</a>,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                                <span class="keyword">const</span> <a class="code hl_class" href="classFCRange.html">QString</a> &amp;name = <a class="code hl_class" href="classFCRange.html">QString</a>(), QObject *<a class="code hl_class" href="classFCRange.html">parent</a> = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        : <a class="code hl_class" href="classFCI2CDevice.html">FCI2CDevice</a>(<a class="code hl_function" href="classFCI2CDevice.html#a37b815519a619ee964ccf70998b12c95">bus</a>, <a class="code hl_function" href="classFCI2CDevice.html#a90554081a0d85ada4cb2ea5df3d66f89">address</a>, name, <a class="code hl_class" href="classFCRange.html">parent</a>),</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>          _compensation(<a class="code hl_variable" href="classFCLM75AThermometer.html#ae3b90a4213456bc8df075f75abc9f030">DEFAULT_COMPENSATION</a>),</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>          _deltaThreshold(<a class="code hl_variable" href="classFCLM75AThermometer.html#aa69f4d302266aefcf283424fbabbc732">DEFAULT_DELTA_THRESHOLD</a>),</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>          _lastTemperature(<a class="code hl_class" href="classFCRange.html">std</a>::<a class="code hl_class" href="classFCRange.html">numeric_limits</a>&lt;<a class="code hl_class" href="classFCRange.html">float</a>&gt;::<a class="code hl_class" href="classFCRange.html">quiet_NaN</a>())</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <a class="code hl_function" href="classFCConditionObject.html#a8863368dc43ca1f9d4c8520daf4e8192">set</a>({ReadyState::Ready, PlayState::Stop, ChangedState::NotChanged, ErrorType::NoError});</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        _lastReadTimer.start();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#a7abd570895674c159f318cd49aa9be79">  102</a></span>    <a class="code hl_function" href="classFCLM75AThermometer.html#a7abd570895674c159f318cd49aa9be79">~FCLM75AThermometer</a>()<span class="keyword"> override </span>{ <a class="code hl_function" href="classFCLM75AThermometer.html#a052c549c0b1d6b33c48d0c67aafc6b30">setShutdownMode</a>(<span class="keyword">true</span>); }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="comment">// --- запрет копирования ---</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#ac6c955a87b6ee1618c4b1ac7d7918276">  106</a></span>    <a class="code hl_function" href="classFCLM75AThermometer.html#ac6c955a87b6ee1618c4b1ac7d7918276">FCLM75AThermometer</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCLM75AThermometer.html">FCLM75AThermometer</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#adcf77859e15da3f5d0a3e5552d99e456">  109</a></span>    <a class="code hl_class" href="classFCLM75AThermometer.html">FCLM75AThermometer</a>&amp; <a class="code hl_function" href="classFCLM75AThermometer.html#adcf77859e15da3f5d0a3e5552d99e456">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFCLM75AThermometer.html">FCLM75AThermometer</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">// --- методы управления датчиком ---</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCLM75AThermometer.html#a7b55699f8ac93f3aa396398f9a190c7c">initialize</a>(<span class="keywordtype">int</span> <a class="code hl_class" href="classFCRange.html">resolutionBits</a> = <a class="code hl_variable" href="classFCLM75AThermometer.html#aba8074093208f2128ed60a55cb0b93c9">DEFAULT_RESOLUTION_BITS</a>, <span class="keywordtype">bool</span> <a class="code hl_class" href="classFCRange.html">shutdown</a> = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">float</span> <a class="code hl_function" href="classFCLM75AThermometer.html#a64438a5defea9fa2646ee44e25fb4bef">temperatureC</a>();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCLM75AThermometer.html#a052c549c0b1d6b33c48d0c67aafc6b30">setShutdownMode</a>(<span class="keywordtype">bool</span> <a class="code hl_class" href="classFCRange.html">enable</a>);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCLM75AThermometer.html#a401aed7019ad280774a7f812f5b06376">isDataReady</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="comment">// --- методы настройки ---</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#a0b1ce5d02ec30a0b3439984254dd83c2">  149</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCLM75AThermometer.html#a0b1ce5d02ec30a0b3439984254dd83c2">setCompensation</a>(<span class="keywordtype">float</span> <a class="code hl_class" href="classFCRange.html">offset</a>) <span class="keyword">noexcept</span> { _compensation = <a class="code hl_class" href="classFCRange.html">offset</a>; }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#a6ee7fb6a21fb4db1b1dc926bfcfb3062">  153</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">float</span> <a class="code hl_function" href="classFCLM75AThermometer.html#a6ee7fb6a21fb4db1b1dc926bfcfb3062">compensation</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _compensation; }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#a1ad82cfcb7cd5793aa60417963c54299">  158</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFCLM75AThermometer.html#a1ad82cfcb7cd5793aa60417963c54299">setDeltaThreshold</a>(<span class="keywordtype">float</span> <a class="code hl_class" href="classFCRange.html">delta</a>) <span class="keyword">noexcept</span> { _deltaThreshold = <a class="code hl_function" href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">std::abs</a>(<a class="code hl_class" href="classFCRange.html">delta</a>); }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#af038d2250981d7922120fd96e365e746">  162</a></span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">float</span> <a class="code hl_function" href="classFCLM75AThermometer.html#af038d2250981d7922120fd96e365e746">deltaThreshold</a>() <a class="code hl_class" href="classFCRange.html">const</a> <a class="code hl_class" href="classFCRange.html">noexcept</a> { <span class="keywordflow">return</span> _deltaThreshold; }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="comment">// --- методы низкоуровневого доступа ---</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <a class="code hl_class" href="classFCRange.html">int16_t</a> <a class="code hl_function" href="classFCLM75AThermometer.html#a3bde6ea1dd518cbc9873d599a7d6d31e">readRegister</a>(<a class="code hl_class" href="classFCRange.html">uint8_t</a> <a class="code hl_class" href="classFCRange.html">reg</a>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    [[<a class="code hl_class" href="classFCRange.html">nodiscard</a>]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classFCLM75AThermometer.html#a39f44f0b035eddeee315dd58cdecd411">writeRegister</a>(<a class="code hl_class" href="classFCRange.html">uint8_t</a> <a class="code hl_class" href="classFCRange.html">reg</a>, <a class="code hl_class" href="classFCRange.html">uint8_t</a> <a class="code hl_class" href="classFCRange.html">value</a>);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><a class="code hl_class" href="classFCRange.html">signals</a>:</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classFCLM75AThermometer.html#a2885ebb3834ef13040f37b47b5abd481">  185</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classFCLM75AThermometer.html#a2885ebb3834ef13040f37b47b5abd481">temperatureChanged</a>(<span class="keywordtype">float</span> <a class="code hl_class" href="classFCRange.html">celsius</a>);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordtype">float</span> _compensation;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordtype">float</span> _deltaThreshold;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordtype">float</span> _lastTemperature;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keyword">mutable</span> <a class="code hl_class" href="classFCRange.html">QElapsedTimer</a> _lastReadTimer;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>};</div>
+</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment">// --- псевдонимы типов ---</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">FCLM75AThermometerList</a> = <a class="code hl_class" href="classFCRange.html">QList&lt;FCLM75AThermometer*&gt;</a>;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="keyword">using </span><a class="code hl_class" href="classFCRange.html">FCLM75AThermometerQList</a> = <a class="code hl_class" href="classFCRange.html">QList&lt;QPointer&lt;FCLM75AThermometer&gt;</a>&gt;;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="comment">// --- проверки компиляции ---</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment">// Гарантирует корректный размер адреса I²C (7 бит)</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="keyword">static_assert</span>(<a class="code hl_variable" href="classFCLM75AThermometer.html#a1ae43112ec45c4da31189e25e717b90f">FCLM75AThermometer::DEFAULT_I2C_ADDRESS</a> &lt;= 0x7F, <span class="stringliteral">&quot;LM75A адрес должен быть 7-битным&quot;</span>);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment">// Гарантирует валидность разрешения</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="keyword">static_assert</span>(<a class="code hl_variable" href="classFCLM75AThermometer.html#aba8074093208f2128ed60a55cb0b93c9">FCLM75AThermometer::DEFAULT_RESOLUTION_BITS</a> &gt;= 9 &amp;&amp;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>              <a class="code hl_variable" href="classFCLM75AThermometer.html#aba8074093208f2128ed60a55cb0b93c9">FCLM75AThermometer::DEFAULT_RESOLUTION_BITS</a> &lt;= 12,</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>              <span class="stringliteral">&quot;Разрешение LM75A должно быть в диапазоне 9–12 бит&quot;</span>);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="preprocessor">#endif </span><span class="comment">// FC_LM75A_THERMOMETER_H</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="ttc" id="aclassFCConditionObject_html_a8863368dc43ca1f9d4c8520daf4e8192"><div class="ttname"><a href="classFCConditionObject.html#a8863368dc43ca1f9d4c8520daf4e8192">FCConditionObject::set</a></div><div class="ttdeci">void set(const FCCondition &amp;condition)</div><div class="ttdoc">Устанавливает полное составное состояние объекта.</div><div class="ttdef"><b>Definition</b> FCConditionObject.h:52</div></div>
+<div class="ttc" id="aclassFCI2CBus_html"><div class="ttname"><a href="classFCI2CBus.html">FCI2CBus</a></div><div class="ttdef"><b>Definition</b> FCI2CBus.h:62</div></div>
+<div class="ttc" id="aclassFCI2CDevice_html"><div class="ttname"><a href="classFCI2CDevice.html">FCI2CDevice</a></div><div class="ttdoc">Базовый класс для всех устройств, подключаемых по шине I²C.</div><div class="ttdef"><b>Definition</b> FCI2CDevice.h:51</div></div>
+<div class="ttc" id="aclassFCI2CDevice_html_a37b815519a619ee964ccf70998b12c95"><div class="ttname"><a href="classFCI2CDevice.html#a37b815519a619ee964ccf70998b12c95">FCI2CDevice::bus</a></div><div class="ttdeci">FCI2CBus * bus() const noexcept</div><div class="ttdoc">Возвращает указатель на шину I²C.</div><div class="ttdef"><b>Definition</b> FCI2CDevice.h:88</div></div>
+<div class="ttc" id="aclassFCI2CDevice_html_a90554081a0d85ada4cb2ea5df3d66f89"><div class="ttname"><a href="classFCI2CDevice.html#a90554081a0d85ada4cb2ea5df3d66f89">FCI2CDevice::address</a></div><div class="ttdeci">uint8_t address() const noexcept</div><div class="ttdoc">Возвращает 7-битный адрес устройства на шине I²C.</div><div class="ttdef"><b>Definition</b> FCI2CDevice.h:91</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html"><div class="ttname"><a href="classFCLM75AThermometer.html">FCLM75AThermometer</a></div><div class="ttdoc">Драйвер цифрового датчика температуры LM75A с интерфейсом I²C.</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:46</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a052c549c0b1d6b33c48d0c67aafc6b30"><div class="ttname"><a href="classFCLM75AThermometer.html#a052c549c0b1d6b33c48d0c67aafc6b30">FCLM75AThermometer::setShutdownMode</a></div><div class="ttdeci">bool setShutdownMode(bool enable)</div><div class="ttdoc">Устанавливает режим отключения датчика для экономии энергии.</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.cpp:124</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a0b1ce5d02ec30a0b3439984254dd83c2"><div class="ttname"><a href="classFCLM75AThermometer.html#a0b1ce5d02ec30a0b3439984254dd83c2">FCLM75AThermometer::setCompensation</a></div><div class="ttdeci">void setCompensation(float offset) noexcept</div><div class="ttdoc">Устанавливает компенсацию калибровочного смещения.</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:149</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a1a42c0af48a929d4068ad96fe7162c02"><div class="ttname"><a href="classFCLM75AThermometer.html#a1a42c0af48a929d4068ad96fe7162c02">FCLM75AThermometer::REG_TEMPERATURE</a></div><div class="ttdeci">static constexpr uint8_t REG_TEMPERATURE</div><div class="ttdoc">Регистр температуры (только чтение, 16 бит).</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:67</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a1ad82cfcb7cd5793aa60417963c54299"><div class="ttname"><a href="classFCLM75AThermometer.html#a1ad82cfcb7cd5793aa60417963c54299">FCLM75AThermometer::setDeltaThreshold</a></div><div class="ttdeci">void setDeltaThreshold(float delta) noexcept</div><div class="ttdoc">Устанавливает порог изменения температуры для эмиссии сигнала.</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:158</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a1ae43112ec45c4da31189e25e717b90f"><div class="ttname"><a href="classFCLM75AThermometer.html#a1ae43112ec45c4da31189e25e717b90f">FCLM75AThermometer::DEFAULT_I2C_ADDRESS</a></div><div class="ttdeci">static constexpr uint8_t DEFAULT_I2C_ADDRESS</div><div class="ttdoc">Стандартный I²C адрес датчика при A0=A1=A2=GND (7-битный адрес).</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:51</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a1ef310c26f1a16e177aa32a57623db0a"><div class="ttname"><a href="classFCLM75AThermometer.html#a1ef310c26f1a16e177aa32a57623db0a">FCLM75AThermometer::FCLM75AThermometer</a></div><div class="ttdeci">FCLM75AThermometer(FCI2CBus *bus, uint8_t address=DEFAULT_I2C_ADDRESS, const QString &amp;name=QString(), QObject *parent=nullptr)</div><div class="ttdoc">Конструктор датчика температуры с привязкой к шине I²C.</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:89</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a2885ebb3834ef13040f37b47b5abd481"><div class="ttname"><a href="classFCLM75AThermometer.html#a2885ebb3834ef13040f37b47b5abd481">FCLM75AThermometer::temperatureChanged</a></div><div class="ttdeci">void temperatureChanged(float celsius)</div><div class="ttdoc">Сигнал изменения температуры.</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a39f44f0b035eddeee315dd58cdecd411"><div class="ttname"><a href="classFCLM75AThermometer.html#a39f44f0b035eddeee315dd58cdecd411">FCLM75AThermometer::writeRegister</a></div><div class="ttdeci">bool writeRegister(uint8_t reg, uint8_t value)</div><div class="ttdoc">Записывает 8-битное значение в регистр датчика.</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.cpp:212</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a3bde6ea1dd518cbc9873d599a7d6d31e"><div class="ttname"><a href="classFCLM75AThermometer.html#a3bde6ea1dd518cbc9873d599a7d6d31e">FCLM75AThermometer::readRegister</a></div><div class="ttdeci">int16_t readRegister(uint8_t reg) const</div><div class="ttdoc">Читает 16-битное значение из регистра датчика.</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.cpp:168</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a401aed7019ad280774a7f812f5b06376"><div class="ttname"><a href="classFCLM75AThermometer.html#a401aed7019ad280774a7f812f5b06376">FCLM75AThermometer::isDataReady</a></div><div class="ttdeci">bool isDataReady() const</div><div class="ttdoc">Проверяет готовность данных к чтению (завершение преобразования).</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.cpp:155</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a64438a5defea9fa2646ee44e25fb4bef"><div class="ttname"><a href="classFCLM75AThermometer.html#a64438a5defea9fa2646ee44e25fb4bef">FCLM75AThermometer::temperatureC</a></div><div class="ttdeci">float temperatureC()</div><div class="ttdoc">Возвращает текущую температуру в градусах Цельсия.</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.cpp:62</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a6ee7fb6a21fb4db1b1dc926bfcfb3062"><div class="ttname"><a href="classFCLM75AThermometer.html#a6ee7fb6a21fb4db1b1dc926bfcfb3062">FCLM75AThermometer::compensation</a></div><div class="ttdeci">float compensation() const noexcept</div><div class="ttdoc">Возвращает текущее значение компенсации.</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:153</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a7abd570895674c159f318cd49aa9be79"><div class="ttname"><a href="classFCLM75AThermometer.html#a7abd570895674c159f318cd49aa9be79">FCLM75AThermometer::~FCLM75AThermometer</a></div><div class="ttdeci">~FCLM75AThermometer() override</div><div class="ttdoc">Деструктор датчика.</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:102</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a7b55699f8ac93f3aa396398f9a190c7c"><div class="ttname"><a href="classFCLM75AThermometer.html#a7b55699f8ac93f3aa396398f9a190c7c">FCLM75AThermometer::initialize</a></div><div class="ttdeci">bool initialize(int resolutionBits=DEFAULT_RESOLUTION_BITS, bool shutdown=false)</div><div class="ttdoc">Инициализирует датчик и настраивает режим работы.</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.cpp:23</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_a8e16aa501cbe289a927dd13fc3cd24f1"><div class="ttname"><a href="classFCLM75AThermometer.html#a8e16aa501cbe289a927dd13fc3cd24f1">FCLM75AThermometer::REG_TOS</a></div><div class="ttdeci">static constexpr uint8_t REG_TOS</div><div class="ttdoc">Регистр порога срабатывания (чтение/запись, 16 бит).</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:76</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_aa2eb7ade7e50ef7dd34eead6c209dc8f"><div class="ttname"><a href="classFCLM75AThermometer.html#aa2eb7ade7e50ef7dd34eead6c209dc8f">FCLM75AThermometer::REG_CONFIGURATION</a></div><div class="ttdeci">static constexpr uint8_t REG_CONFIGURATION</div><div class="ttdoc">Регистр конфигурации (чтение/запись, 8 бит).</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:70</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_aa69f4d302266aefcf283424fbabbc732"><div class="ttname"><a href="classFCLM75AThermometer.html#aa69f4d302266aefcf283424fbabbc732">FCLM75AThermometer::DEFAULT_DELTA_THRESHOLD</a></div><div class="ttdeci">static constexpr float DEFAULT_DELTA_THRESHOLD</div><div class="ttdoc">Порог изменения температуры для эмиссии сигнала temperatureChanged() (°C).</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:63</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_aba8074093208f2128ed60a55cb0b93c9"><div class="ttname"><a href="classFCLM75AThermometer.html#aba8074093208f2128ed60a55cb0b93c9">FCLM75AThermometer::DEFAULT_RESOLUTION_BITS</a></div><div class="ttdeci">static constexpr int DEFAULT_RESOLUTION_BITS</div><div class="ttdoc">Разрешение по умолчанию (9 бит = 0.5 °C).</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:57</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_ac6c955a87b6ee1618c4b1ac7d7918276"><div class="ttname"><a href="classFCLM75AThermometer.html#ac6c955a87b6ee1618c4b1ac7d7918276">FCLM75AThermometer::FCLM75AThermometer</a></div><div class="ttdeci">FCLM75AThermometer(const FCLM75AThermometer &amp;)=delete</div><div class="ttdoc">Запрет копирования объекта (удалён конструктор копирования).</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_ad2abcc75988c028231b8b371b633dfc2"><div class="ttname"><a href="classFCLM75AThermometer.html#ad2abcc75988c028231b8b371b633dfc2">FCLM75AThermometer::MIN_CONVERSION_TIME_MS</a></div><div class="ttdeci">static constexpr int MIN_CONVERSION_TIME_MS</div><div class="ttdoc">Минимальное время преобразования для 9-битного режима (мс).</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:54</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_adcf77859e15da3f5d0a3e5552d99e456"><div class="ttname"><a href="classFCLM75AThermometer.html#adcf77859e15da3f5d0a3e5552d99e456">FCLM75AThermometer::operator=</a></div><div class="ttdeci">FCLM75AThermometer &amp; operator=(const FCLM75AThermometer &amp;)=delete</div><div class="ttdoc">Запрет присваивания объекта (удалён оператор присваивания).</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_ae3b90a4213456bc8df075f75abc9f030"><div class="ttname"><a href="classFCLM75AThermometer.html#ae3b90a4213456bc8df075f75abc9f030">FCLM75AThermometer::DEFAULT_COMPENSATION</a></div><div class="ttdeci">static constexpr float DEFAULT_COMPENSATION</div><div class="ttdoc">Компенсация калибровочного смещения по умолчанию (°C).</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:60</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_af038d2250981d7922120fd96e365e746"><div class="ttname"><a href="classFCLM75AThermometer.html#af038d2250981d7922120fd96e365e746">FCLM75AThermometer::deltaThreshold</a></div><div class="ttdeci">float deltaThreshold() const noexcept</div><div class="ttdoc">Возвращает текущий порог изменения температуры.</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:162</div></div>
+<div class="ttc" id="aclassFCLM75AThermometer_html_af8591a2dac93f0b0f06bbcf1c69cbb68"><div class="ttname"><a href="classFCLM75AThermometer.html#af8591a2dac93f0b0f06bbcf1c69cbb68">FCLM75AThermometer::REG_THYST</a></div><div class="ttdeci">static constexpr uint8_t REG_THYST</div><div class="ttdoc">Регистр гистерезиса (чтение/запись, 16 бит).</div><div class="ttdef"><b>Definition</b> FCLM75AThermometer.h:73</div></div>
+<div class="ttc" id="aclassFCRange_html"><div class="ttname"><a href="classFCRange.html">FCRange</a></div><div class="ttdoc">Шаблонный класс для представления числового диапазона [min, max] с гарантией корректности.</div><div class="ttdef"><b>Definition</b> FCRange.h:34</div></div>
+<div class="ttc" id="aclassFCRange_html_ad64748aa407cd3708dd078c9e8789152"><div class="ttname"><a href="classFCRange.html#ad64748aa407cd3708dd078c9e8789152">FCRange::FCRange</a></div><div class="ttdeci">constexpr FCRange(T min=defaultMin(), T max=defaultMax()) noexcept</div><div class="ttdoc">Конструктор с параметрами.</div><div class="ttdef"><b>Definition</b> FCRange.h:75</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>
