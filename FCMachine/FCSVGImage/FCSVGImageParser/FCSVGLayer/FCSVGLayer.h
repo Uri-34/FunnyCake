@@ -4,7 +4,7 @@
 #include <QList>
 #include <QString>
 
-#include "FCConditionObject.h"
+#include "FCState.h"
 #include "FCSVGFigure.h"
 
 /**
@@ -21,7 +21,7 @@
  * @see FCSVGImageContainer для хранения полной модели
  */
 class FCSVGLayer
-    : public FCConditionObject
+    : public QObject
 {
 Q_OBJECT
 public:
@@ -34,10 +34,12 @@ public:
      * @note Начальное состояние: ReadyState::NotReady, PlayState::Stop.
      */
     explicit FCSVGLayer(const QString &name = QString(), qreal thickness = 1.0, QObject *parent = nullptr)
-        : FCConditionObject(name, parent),
+        : QObject(parent),
           _thickness(thickness),
           _zPosition(0.0)
-    {}
+    {
+        setObjectName(name);
+    }
 
     /**
      * @brief Деструктор (генерируется компилятором).

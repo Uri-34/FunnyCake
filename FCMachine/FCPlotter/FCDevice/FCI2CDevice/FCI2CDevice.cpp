@@ -26,87 +26,108 @@ bool FCI2CDevice::final()
     return true;
 }
 
-uint8_t FCI2CDevice::readByte()
+QByteArray FCI2CDevice::buildPacket(uint8_t command, const QByteArray &data)
 {
-    uint8_t retCode = bus()->readByte(_address);
+    QByteArray packet;
+    packet.append(command);
+    packet.append(static_cast<char>(data.size()));
+    packet.append(address());
+    packet.append(data);
+    packet.append(static_cast<char>(crc8(packet)));
 
-    if(retCode)
-    {
-        emit condition(state().set(FCReadyState::NotReady, FCErrorType::Read), objectName());
-    }
-
-    return retCode;
+    return packet;
 }
 
-bool FCI2CDevice::writeByte(uint8_t byte)
+uint8_t FCI2CDevice::crc8(const QByteArray &data)
 {
-    uint8_t retCode = bus()->writeByte(_address, byte);
-
-    if(retCode)
+    uint8_t crc = 0x00;
+    for(char b : data)
     {
-        emit condition(state().set(FCReadyState::NotReady, FCErrorType::Write), objectName());
+        crc ^= static_cast<uint8_t>(b);
+        for (int count = 0; count < 8; ++count)
+        {
+            crc = (crc & 0x80) ? (crc << 1) ^ 0x07 : crc << 1;
+        }
     }
-
-    return retCode;
+    return crc;
 }
 
-QByteArray FCI2CDevice::readBytes(int count, int flags)
+bool FCI2CDevice::send(uint8_t command, const QByteArray &data, FCI2CFlag flag)
 {
-    QByteArray retArray = bus()->readBytes(_address, count, flags);
-
-    if(retArray.isEmpty())
+    if(!state().is(FCReadyState::Ready))
     {
-        emit condition(state().set(FCReadyState::NotReady, FCErrorType::Read), objectName());
+        return false;
     }
 
-    return retArray;
-}
-
-bool FCI2CDevice::writeBytes(const QByteArray &data, int flags)
-{
-    bool retCode = bus()->writeBytes(_address, data, flags);
-
-    if(!retCode)
+    bool result = bus()->writeBytes(address(), buildPacket(command, data), flag);
+    if(!result)
     {
         emit condition(state().set(FCReadyState::NotReady, FCErrorType::Write), objectName());
     }
-
-    return retCode;
-}
-
-uint8_t FCI2CDevice::readRegister(uint8_t reg)
-{
-    uint8_t retCode = bus()->readRegister(_address, reg);
-
-    if(retCode)
+    else
     {
-        emit condition(state().set(FCReadyState::NotReady, FCErrorType::Read), objectName());
+        emit condition(state().set(FCReadyState::Ready, FCErrorType::None), objectName());
     }
 
-    return retCode;
+    return result;
 }
 
-bool FCI2CDevice::writeRegister(uint8_t reg, uint8_t value)
+bool FCI2CDevice::send(const QByteArray &data, FCI2CFlag flag)
 {
-    bool retCode = bus()->writeRegister(_address, reg, value);
+    if(!state().is(FCReadyState::Ready))
+    {
+        return false;
+    }
 
-    if(!retCode)
+    bool result = bus()->writeBytes(address(), data, flag);
+    if(!result)
     {
         emit condition(state().set(FCReadyState::NotReady, FCErrorType::Write), objectName());
     }
+    else
+    {
+        emit condition(state().set(FCReadyState::Ready, FCErrorType::None), objectName());
+    }
 
-    return retCode;
+    return result;
 }
 
-QByteArray FCI2CDevice::writeRead(const QByteArray &data, int count, int flags)
+const QByteArray FCI2CDevice::receive(int length, FCI2CFlag flag)
 {
-    QByteArray retArray = bus()->writeRead(_address, data, count, flags);
+    if(!state().is(FCReadyState::Ready))
+    {
+        return QByteArray{};
+    }
 
-    if(retArray.isEmpty())
+    QByteArray buffer = bus()->readBytes(address(), length, flag);
+    if(!buffer.isEmpty())
     {
         emit condition(state().set(FCReadyState::NotReady, FCErrorType::Write), objectName());
     }
+    else
+    {
+        emit condition(state().set(FCReadyState::Ready, FCErrorType::None), objectName());
+    }
 
-    return retArray;
+    return buffer;
 }
 
+QByteArray FCI2CDevice::exchange(uint8_t command, const QByteArray &data, int length, FCI2CFlag flag)
+{
+    if(!state().is(FCReadyState::Ready))
+    {
+        return QByteArray{};
+    }
+
+    QByteArray buffer = bus()->writeRead(address(), buildPacket(command, data), length, flag);
+    if(!buffer.isEmpty())
+    {
+        emit condition(state().set(FCReadyState::NotReady, FCErrorType::Write), objectName());
+    }
+    else
+    {
+        emit condition(state().set(FCReadyState::Ready, FCErrorType::None), objectName());
+    }
+
+    return buffer;
+}

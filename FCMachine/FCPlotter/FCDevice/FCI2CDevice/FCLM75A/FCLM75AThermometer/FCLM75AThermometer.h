@@ -33,17 +33,19 @@ public:
     ~FCLM75AThermometer() override;
 
     [[nodiscard]] float temperatureC();
-    bool setShutdownMode(bool enable);
-    [[nodiscard]] bool isDataReady(); // Убран const: может менять состояние при ошибке шины
+//    bool setShutdownMode(bool enable);
+//    [[nodiscard]] bool isDataReady();
 
     void setCompensation(float offset) noexcept { _compensation = offset; }
     [[nodiscard]] float compensation() const noexcept { return _compensation; }
     void setDeltaThreshold(float delta) noexcept { _deltaThreshold = std::abs(delta); }
     [[nodiscard]] float deltaThreshold() const noexcept { return _deltaThreshold; }
 
-    [[nodiscard]] int16_t readRegister(uint8_t reg);
-    [[nodiscard]] bool writeRegister(uint8_t reg, uint8_t value);
-    [[nodiscard]] QString securityCode(int timeoutMs) override { Q_UNUSED(timeoutMs); return {}; }
+//    [[nodiscard]] int16_t readRegister(uint8_t reg);
+//    [[nodiscard]] bool writeRegister(uint8_t reg, uint8_t value);
+
+
+    [[nodiscard]] QString securityCode(int timeoutMs) { Q_UNUSED(timeoutMs); return {}; }
 
 signals:
     void temperatureChanged(float celsius);

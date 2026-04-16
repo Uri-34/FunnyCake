@@ -28,13 +28,13 @@ public:
     [[nodiscard]] const FCM115 &firmwareData() const noexcept { return _m115; }
     [[nodiscard]] bool setLed(const QList<QColor> &colors, uint8_t brightness = 255);
 
-    inline void emergencyStop() { sendCommand("M112"); }
-    inline void disableMotors() { sendCommand("M84"); }
-    inline void reboot() { sendCommand("M999"); }
-    [[nodiscard]] QString securityCode(int timeoutMs) override;
+    inline void emergencyStop() { send("M112"); }
+    inline void disableMotors() { send("M84"); }
+    inline void reboot() { send("M999"); }
+    [[nodiscard]] QString securityCode(int timeoutMs);
 
 signals:
-    void colorChanged(const QColor &color);
+//    void colorChanged(const QColor &color);
 
 protected:
     bool init();

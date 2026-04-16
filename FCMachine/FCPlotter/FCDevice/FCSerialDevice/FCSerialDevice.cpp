@@ -59,7 +59,7 @@ bool FCSerialDevice::final()
     return true;
 }
 
-bool FCSerialDevice::sendCommand(const QString &command, int timeoutMs, int retries)
+bool FCSerialDevice::send(const QString &command, int timeoutMs, int retries)
 {
     for(int attempt = 0; attempt < retries; ++attempt)
     {
@@ -78,11 +78,11 @@ bool FCSerialDevice::sendCommand(const QString &command, int timeoutMs, int retr
     return false;
 }
 
-bool FCSerialDevice::sendCommands(const QStringList &commands, int timeoutMs, int retries)
+bool FCSerialDevice::send(const QStringList &commands, int timeoutMs, int retries)
 {
     for(auto  &command : commands)
     {
-        if(!sendCommand(command, timeoutMs, retries))
+        if(!send(command, timeoutMs, retries))
         {
             emit condition(state().set(FCReadyState::NotReady, FCErrorType::Write), objectName());
             return false;

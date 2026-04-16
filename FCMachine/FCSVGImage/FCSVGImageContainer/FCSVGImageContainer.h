@@ -24,12 +24,12 @@
  * @note Сигналы эмитятся в классах-владельцах (FCDisplay, FCMachine)
  * @threadsafe
  */
-class FCSVGImageContainer : public QObject
+class FCSVGImageContainer
+    : public QObject
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
-    const FCSVGImageContainerState FCSVGImageContainerDefaultState {FCReadyState::NotReady, FCPlayState::Stop, FCChangedState::Unchanged, FCErrorState::None, FCErrorType::None};
+    const FCSVGImageContainerState FCSVGImageContainerDefaultState {FCReadyState::NotReady, FCPlayState::Stop, FCErrorType::None};
 
     // СТРУКТУРЫ ДАННЫХ
     struct Metadata

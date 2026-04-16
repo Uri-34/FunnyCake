@@ -1,5 +1,5 @@
 QT += core gui widgets serialport xml svg concurrent
-CONFIG += c++17 warn_on
+CONFIG += c++20 warn_on
 
 GENERATED_PRI = $$PWD/FCMachine.pri
 

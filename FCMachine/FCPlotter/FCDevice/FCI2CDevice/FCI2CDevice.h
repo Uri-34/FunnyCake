@@ -21,28 +21,35 @@ class FCI2CDevice
 Q_OBJECT
 Q_DISABLE_COPY_MOVE(FCI2CDevice)
 public:
+//    static const int FCI2CDeviceTimeOut = 100;
+
     explicit FCI2CDevice(FCI2CBus *bus, uint8_t address, const QString &name = QString(), QObject *parent = nullptr);
     ~FCI2CDevice() override = default;
 
     [[nodiscard]] inline QString path() const { return _bus ? _bus->path() : QString(); }
     [[nodiscard]] inline bool isOpen() const { return _bus ? _bus->isOpen() : false; }
 
-    // Делегирующие методы с защитой от nullptr
-    uint8_t readByte();
-    bool writeByte(uint8_t byte);
-    QByteArray readBytes(int count, int flags = 0);
-    bool writeBytes(const QByteArray &data, int flags = 0);
-    uint8_t readRegister(uint8_t reg);
-    bool writeRegister(uint8_t reg, uint8_t value);
-    QByteArray writeRead(const QByteArray &data, int count, int flags = 0);
+    // отправка данных на устройство
+    bool send(const QByteArray &data, FCI2CFlag flag = FCI2CFlag::None);
+    bool send(uint8_t command, const QByteArray &data = QByteArray{}, FCI2CFlag flag = FCI2CFlag::None);
+    // получение данных с устройства
+    const QByteArray receive(int length, FCI2CFlag flag = FCI2CFlag::None);
+
+    // обмен данными с устройством send(...) & receive(...)
+    QByteArray exchange(uint8_t command, const QByteArray &data = QByteArray{}, int length = 0, FCI2CFlag flag = FCI2CFlag::None);
 
 protected:
     [[nodiscard]] inline FCI2CBus* bus() { return _bus; }
+    [[nodiscard]] inline uint8_t address() { return _address; }
 
     bool init();
     bool final();
 
 private:
+    QByteArray buildPacket(uint8_t command, const QByteArray &data);
+    // Стандартный CRC8 (полином 0x07, инициализация 0x00)
+    uint8_t crc8(const QByteArray &data);
+
     FCI2CBus *_bus = nullptr;
     uint8_t _address = 0;
 };

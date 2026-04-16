@@ -114,7 +114,7 @@ public:
      *          Не вызывайте из основного потока приложения — используйте QThread или QtConcurrent.
      * @see writeBytesRaw(), answer(), writeArrayList()
      */
-    bool sendCommand(const QString &command, int timeoutMs = DEFAULT_TIMEOUT_MS, int retries = MAX_RETRIES);
+    bool send(const QString &command, int timeoutMs = DEFAULT_TIMEOUT_MS, int retries = MAX_RETRIES);
 
     /**
      * @brief Последовательная отправка списка команд.
@@ -132,7 +132,7 @@ public:
      * @warning Если список пуст, метод вернёт true без выполнения каких-либо операций.
      * @see writeBytes()
      */
-    bool sendCommands(const QStringList &commands, int timeoutMs = DEFAULT_TIMEOUT_MS, int retries = MAX_RETRIES);
+    bool send(const QStringList &commands, int timeoutMs = DEFAULT_TIMEOUT_MS, int retries = MAX_RETRIES);
 
     /**
      * @brief Возвращает последний полученный ответ от устройства.
@@ -227,6 +227,11 @@ protected:
      * @warning Блокирует поток на время timeoutMs. Не вызывать из GUI.
      * @see writeBytes(), flush()
      */
+
+private:
+    // ========================================================================
+    // ЗАКРЫТЫЕ МЕТОДЫ И ЧЛЕНЫ ДАННЫХ
+    // ========================================================================
     [[nodiscard]] bool writeBytesRaw(const QString &bytes, int timeoutMs);
 
     /**
@@ -257,11 +262,6 @@ protected:
      * @see init(), QSerialPortInfo
      */
     [[nodiscard]] bool available() const;
-
-private:
-    // ========================================================================
-    // ЗАКРЫТЫЕ ЧЛЕНЫ ДАННЫХ
-    // ========================================================================
 
     /// @brief Указатель на управляемый последовательный порт.
     /// @details Владеет объектом QSerialPort (удаляется в final() и деструкторе).

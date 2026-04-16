@@ -50,7 +50,7 @@ bool FCMarlinController::final()
 
 bool FCMarlinController::checkConnection()
 {
-    bool success = sendCommand("M105", 1000, 1);
+    bool success = send("M105", 1000, 1);
     if(success)
     {
         parseFirmwareData(answer());
@@ -66,7 +66,7 @@ bool FCMarlinController::setLed(const QList<QColor> &colors, uint8_t brightness)
         return false;
     }
 
-    QByteArrayList commands;
+    QStringList commands;
     commands.reserve(colors.size());
     for(int i = 0; i < colors.size(); ++i)
     {
@@ -76,19 +76,20 @@ bool FCMarlinController::setLed(const QList<QColor> &colors, uint8_t brightness)
                         .arg(brightness).arg(i).toUtf8();
     }
 
-    bool success = sendCommands(commands);
+    bool success = send(commands);
     if(success)
     {
         emit condition(state().set(FCReadyState::Ready, FCErrorType::None), objectName());
         if(!colors.isEmpty())
         {
-            emit colorChanged(colors.first());
+//            emit colorChanged(colors.first());
         }
     }
     else
     {
         emit condition(state().set(FCReadyState::NotReady, FCErrorType::Write), objectName());
     }
+
     return success;
 }
 
@@ -100,7 +101,7 @@ QString FCMarlinController::securityCode(int timeoutMs)
         return {};
     }
 
-    if(!sendCommand("M916", timeoutMs, 1))
+    if(!send("M916", timeoutMs, 1))
     {
         emit condition(state().set(FCReadyState::NotReady, FCErrorType::Read), objectName());
         return {};

@@ -83,7 +83,7 @@ bool FCPlotterGCodeEngine::execute(const QString &command)
         return false;
     }
 
-    if (!_controller->sendCommand(command.toUtf8())) {
+    if (!_controller->send(command.toUtf8())) {
         emit executionError(command, QStringLiteral("Не удалось отправить команду"));
         return false;
     }

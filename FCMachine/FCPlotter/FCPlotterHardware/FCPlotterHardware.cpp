@@ -2,13 +2,13 @@
 
 #include <QDebug>
 
-FCPlotterHardware::FCPlotterHardware(const QString &portName, FCI2CBus *bus, const FCNozzleList &nozzeles, QObject *parent)
+FCPlotterHardware::FCPlotterHardware(const QString &portName, FCI2CBus *bus, QObject *parent)
     : QObject(parent),
       _portName(portName),
       _bus(bus),
       _controller(new FCMarlinController(portName, this)),
       _ramp(new FCPumpRamp(bus, this)),
-      _nozzeles{nozzeles}
+      _head{FCHead{bus, 100, this}}
 {
     init();
 }
@@ -20,12 +20,12 @@ FCPlotterHardware::~FCPlotterHardware()
 
 bool FCPlotterHardware::init()
 {
-    connect(_bus, &FCI2CBus::condition, this,
-            [this](const FCBusState &state)
-            {
-                _state &= state;
-                emit condition(_state);
-            });
+//    connect(_bus, &FCI2CBus::condition, this,
+//            [this](const FCBusState &state)
+//            {
+//                _state &= state;
+//                emit condition(_state);
+//            });
     connect(_controller, &FCMarlinController::condition, this,
             [this](const FCDeviceState &state)
             {
@@ -39,7 +39,8 @@ bool FCPlotterHardware::init()
                 emit condition(_state);
             });
 
-    connect(_controller, &FCMarlinController::colorChanged, _ramp, &FCPumpRamp::switchTo);
+    // colorChanged() не смена цвета жижи а смена цвета индикатора
+//    connect(_controller, &FCMarlinController::colorChanged, _ramp, &FCPumpRamp::switchTo);
 
     return true;
 }

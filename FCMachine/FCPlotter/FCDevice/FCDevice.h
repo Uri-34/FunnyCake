@@ -6,6 +6,7 @@
 #include <QList>
 #include <QPointer>
 #include <QString>
+
 #include "FCState.h"
 
 /**
@@ -26,16 +27,8 @@ public:
     explicit FCDevice(const QString &name, QObject *parent = nullptr);
     ~FCDevice() override = default;
 
-    [[nodiscard]] virtual QString securityCode(int timeoutMs) = 0;
-
     /// Безопасный доступ к состоянию (только чтение)
     [[nodiscard]] inline FCDeviceState& state() noexcept { return _state; }
-
-//protected:
-//    /// Инициализация устройства (переопределяется в потомках)
-//    virtual bool init() = 0;
-//    /// Очистка ресурсов перед удалением
-//    virtual bool final() = 0;
 
 signals:
     /// Единственный сигнал изменения состояния

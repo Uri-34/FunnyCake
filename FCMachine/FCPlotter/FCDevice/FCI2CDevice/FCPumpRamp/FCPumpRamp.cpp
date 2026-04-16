@@ -2,13 +2,14 @@
 
 FCPumpRamp::FCPumpRamp(FCI2CBus *bus, QObject *parent)
 : FCI2CDevice(bus, 0x20, "Ramp", parent),
-  _pumps{
-      {QColor(Qt::red), 0xFE},
-      {QColor(Qt::green), 0xFD},
-      {QColor(Qt::blue), 0xFB}
-  }
+  _pumps{0xFE, 0xFD, 0xFB}
 {
-    // init() вызывается автоматически
+    init();
+}
+
+FCPumpRamp::~FCPumpRamp()
+{
+    final();
 }
 
 bool FCPumpRamp::init()
@@ -35,17 +36,15 @@ bool FCPumpRamp::init()
 bool FCPumpRamp::final()
 {
     _thermometers.clear();
+    reset();
     emit condition(state().set(FCReadyState::NotReady, FCErrorType::None), objectName());
     return true;
 }
 
 bool FCPumpRamp::reset()
 {
-    QByteArray command;
-    command.append(static_cast<char>(0xFF));
-    command.append(static_cast<char>(0xFF));
-
-    if(writeBytes(command))
+    QByteArray off{static_cast<char>(0xFF), static_cast<char>(0xFF)};
+    if(send(off))
     {
         emit condition(state().set(FCReadyState::Ready, FCErrorType::None), objectName());
         return true;
@@ -57,50 +56,35 @@ bool FCPumpRamp::reset()
     }
 }
 
-bool FCPumpRamp::switchTo(const QColor &color)
+bool FCPumpRamp::switchTo(uint8_t pumpNumber)
 {
     if(!reset())
     {
         return false;
     }
 
-    uint8_t pumpNumber = selectPumpNumber(color);
-    QByteArray command;
-    command.append(static_cast<char>(_pumps.at(pumpNumber).second));
-    command.append(static_cast<char>(0xFF));
-
-    bool success = writeBytes(command);
-    if(success)
+    QByteArray number{static_cast<char>(_pumps.at(pumpNumber)), static_cast<char>(0xFF)};
+    if(send(number))
     {
         emit condition(state().set(FCReadyState::Ready, FCErrorType::None), objectName());
         emit pumpSwitched(pumpNumber);
+
+        return true;
     }
     else
     {
         emit condition(state().set(FCReadyState::NotReady, FCErrorType::Write), objectName());
+
+        return false;
     }
-    return success;
 }
 
-uint8_t FCPumpRamp::selectPumpNumber(const QColor &color) const
+qreal FCPumpRamp::thermometer(int index) const
 {
-    for(int i = 0; i < _pumps.size(); ++i)
+    if(FCRange<int>(0, _thermometers.size()).contains(index))
     {
-        if(_pumps.at(i).first == color)
-        {
-            return static_cast<uint8_t>(i);
-        }
+        return _thermometers.at(index)->temperatureC();
     }
 
-    return 0;
-}
-
-FCLM75AThermometer* FCPumpRamp::thermometer(int index) const
-{
-    if(index >= 0 && index < _thermometers.size())
-    {
-        return _thermometers.at(index);
-    }
-
-    return nullptr;
+    return 0.0;
 }

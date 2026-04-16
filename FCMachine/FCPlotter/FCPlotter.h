@@ -65,7 +65,7 @@ public:
     // --- Доступ к свойствам ---
     [[nodiscard]] inline QString serialNumber() const noexcept { return _serialNumber; }
     [[nodiscard]] bool isThreadRunning() const noexcept;
-    [[nodiscard]] QString securityCode(int timeoutMs) override;
+    [[nodiscard]] QString securityCode(int timeoutMs);
 
     // --- Управление потоком ---
     [[nodiscard]] bool startThread();

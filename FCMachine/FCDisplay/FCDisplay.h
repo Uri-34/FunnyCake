@@ -101,14 +101,14 @@ public:
      */
     [[nodiscard]] inline bool is(FCPlayState state) const noexcept { return _state.is<FCPlayState>(state); }
 
-    /**
-     * @brief Проверка состояния изменений.
-     * @param state Состояние для проверки (FCChangedState).
-     * @return true, если состояние активно.
-     *
-     * @note Используется для подтверждения выхода при несохранённых изменениях.
-     */
-    [[nodiscard]] inline bool is(FCChangedState state) const noexcept { return _state.is<FCChangedState>(state); }
+//    /**
+//     * @brief Проверка состояния изменений.
+//     * @param state Состояние для проверки (FCChangedState).
+//     * @return true, если состояние активно.
+//     *
+//     * @note Используется для подтверждения выхода при несохранённых изменениях.
+//     */
+//    [[nodiscard]] inline bool is(FCChangedState state) const noexcept { return _state.is<FCChangedState>(state); }
 
     /**
      * @brief Проверка типа ошибки.

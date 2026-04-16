@@ -1,59 +1,24 @@
 #include "FCHead.h"
 
-void FCHead::selectColor(const QColor &color)
+bool FCHead::init()
 {
-    // смена цвета это переключание между дюзами
-    // - отвести все податчики в верхнее положение
-    // - определить номер податчика с необходимым цветом
-    // - переместить податчик определенного мотора в нижнее-рабочее положение
-    if(removeAllFeeders())
+    if(!controllerState().isReady() || securityCode() != SecurityCode)
     {
-        if(submitFeeder(calculateFeeder(color)))
-        {
-            emit condition(state().set(FCReadyState::Ready, FCErrorType::None), objectName());
-        }
-    }
-    else
-    {
-        emit condition(state().set(FCReadyState::NotReady, FCErrorType::Motion), objectName());
-    }
-}
-
-QString FCHead::securityCode(int timeoutMs)
-{
-    Q_UNUSED(timeoutMs) // временная заглушка
-
-    // прописать считывание секретного кода
-
-    return {};
-}
-
-uint8_t FCHead::calculateFeeder(const QColor &color)
-{
-    for(int count = 0; count < _nozzles.size(); count++)
-    {
-        if(_nozzles[count].color() == color)
-        {
-            return count;
-        }
+        state().set(FCReadyState::NotReady);
+        return false;
     }
 
-    return 0;
-}
+    _feedersCount = feedersCount();
 
-bool FCHead::removeAllFeeders()
-{
-    // прописать логику выполнения отвода всех податчиков в верхнее положение
+    // ...
 
+    state().set(FCReadyState::Ready);
     return true;
 }
 
-bool FCHead::submitFeeder(uint8_t number)
+void FCHead::switchToFeeder(uint8_t number)
 {
-    Q_UNUSED(number) // временная заглушка
-
-    // прописать логику выбранного податчика в рабочее-нижнее положение
-
-    return true;
+    QByteArray n;
+    n.append(static_cast<uint8_t>(FCRange<uint8_t>(0, _feedersCount).clamped(number)));
+    send(SwitchToFeeder, n);
 }
-

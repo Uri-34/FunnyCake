@@ -1,4 +1,4 @@
-# Автосгенерировано: Пт 03 апр 2026 11:47:25 MSK
+# Автосгенерировано: Чт 16 апр 2026 09:41:51 MSK
 # Скриптом: ./doxygen/scripts/generate.pri.sh
 
 # Include directories (from header locations)
@@ -9,8 +9,8 @@ INCLUDEPATH += $$PWD/FCDisplay/FCErrorDialog
 INCLUDEPATH += $$PWD/FCDisplay/FCYesNoDialog
 INCLUDEPATH += $$PWD/FCPlotter/FCDevice
 INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCHead
-INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCHead/FCNozzle
 INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice
+INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCI2CPacket
 INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/FCLM75AThermometer
 INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A
 INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCPumpRamp
@@ -43,7 +43,7 @@ INCLUDEPATH += $$PWD/FCTypes/FCSpeed
 INCLUDEPATH += $$PWD/FCTypes/FCState
 INCLUDEPATH += $$PWD/FCTypes/FCTransformations
 
-# SOURCES (39 элементов)
+# SOURCES (38 элементов)
 SOURCES += $$PWD/FCConfigFile/FCConfigFile.cpp
 SOURCES += $$PWD/FCDisplay/FCDisplay.cpp
 SOURCES += $$PWD/FCDisplay/FCErrorDialog/FCErrorDialog.cpp
@@ -51,7 +51,6 @@ SOURCES += $$PWD/FCDisplay/FCYesNoDialog/FCYesNoDialog.cpp
 SOURCES += $$PWD/FCMachine.cpp
 SOURCES += $$PWD/FCPlotter/FCDevice/FCDevice.cpp
 SOURCES += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCHead/FCHead.cpp
-SOURCES += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCHead/FCNozzle/FCNozzle.cpp
 SOURCES += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCI2CDevice.cpp
 SOURCES += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/FCLM75AThermometer/FCLM75AThermometer.cpp
 SOURCES += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/LM75A.cpp
@@ -92,8 +91,8 @@ HEADERS += $$PWD/FCDisplay/FCYesNoDialog/FCYesNoDialog.h
 HEADERS += $$PWD/FCMachine.h
 HEADERS += $$PWD/FCPlotter/FCDevice/FCDevice.h
 HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCHead/FCHead.h
-HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCHead/FCNozzle/FCNozzle.h
 HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCI2CDevice.h
+HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCI2CPacket/FCI2CPacket.h
 HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/FCLM75AThermometer/FCLM75AThermometer.h
 HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/LM75A.h
 HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCPumpRamp/FCPumpRamp.h

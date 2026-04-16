@@ -134,7 +134,7 @@ FCSVGImageContainer::FCSVGImageContainer(QObject *parent)
       _writeInProgress(0),
       _figureCounter(1),
       _viewBox(),
-      _state{FCReadyState::NotReady, FCPlayState::Stop, FCChangedState::Unchanged, FCErrorState::None}  // ✅ ИСПРАВЛЕНО
+      _state{FCReadyState::NotReady, FCPlayState::Stop, FCErrorType::None}  // ✅ ИСПРАВЛЕНО
 {
     setObjectName(QStringLiteral("SVGContainer"));
 }
@@ -262,7 +262,7 @@ void FCSVGImageContainer::clear()
     _writeInProgress.storeRelaxed(0);
 
     // ✅ Сброс состояния через FCStateT<>
-    _state.set(FCSVGImageContainerDefaultState);
+    _state.set(FCReadyState::NotReady);
 }
 
 void FCSVGImageContainer::setReady()

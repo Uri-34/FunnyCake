@@ -5,7 +5,7 @@
 #include "FCPlotter.h"
 #include "FCPlotterHardware.h"
 #include "FCPlotterGCodeEngine.h"
-#include "FCNozzle.h"
+#include "FCFeeder.h"
 
 #include <QDebug>
 
@@ -16,7 +16,7 @@
 FCPlotter::FCPlotter(QString &portName, FCI2CBus *bus, QObject *parent)
     : FCDevice(QStringLiteral("Plotter-") + portName, parent),
       _serialNumber{QStringLiteral("PLOT-%1-%2").arg(portName.replace('/', '_')).arg(QRandomGenerator::global()->bounded(10000, 99999))},
-      _hardware{portName, bus, {{Qt::red, 2, 1}, {Qt::green, 2, 1}, {Qt::blue, 2, 1}}, this},
+      _hardware{portName, bus, {{Qt::red, 1}, {Qt::green, 1}, {Qt::blue, 1}}, this},
       _workerThread{nullptr},
       _stopRequested{false}
 {

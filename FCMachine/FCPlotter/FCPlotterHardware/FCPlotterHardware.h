@@ -7,7 +7,7 @@
 #include "FCMarlinController.h"
 #include "FCPumpRamp.h"
 #include "FCI2CBus.h"
-#include "FCNozzle.h"
+#include "FCHead.h"
 #include "FCState.h"
 
 
@@ -17,7 +17,7 @@ class FCPlotterHardware
     Q_OBJECT
 
 public:
-    explicit FCPlotterHardware(const QString &portName, FCI2CBus *bus, const FCNozzleList &nozzeles, QObject *parent = nullptr);
+    explicit FCPlotterHardware(const QString &portName, FCI2CBus *bus, QObject *parent = nullptr);
     ~FCPlotterHardware() override;
 
     [[nodiscard]] bool isReady() const noexcept;
@@ -27,7 +27,7 @@ public:
     void emergencyStop();
     [[nodiscard]] QString securityCode(int timeoutMs) const;
 
-    const FCNozzleList& nozzeles() { return _nozzeles; }
+    const FCHead& head() { return _head; }
 
 signals:
     void condition(const FCPlotterHardwareState &state);
@@ -42,7 +42,7 @@ private:
     FCI2CBus *_bus = nullptr;
     FCMarlinController *_controller = nullptr;
     FCPumpRamp *_ramp = nullptr;
-    FCNozzleList _nozzeles;
+    FCHead _head;
 
     FCPlotterHardwareState _state;
 };

@@ -252,7 +252,7 @@ public:
     /// @return true если текущее значение совпадает с value
     /// @details Вызывает static_assert при передаче недопустимого типа.
     template<typename State>
-    [[nodiscard]] inline bool is(State value) const noexcept
+    inline bool is(State value) const noexcept
     {
         static_assert((std::is_same_v<State, States> || ...),
                       "State type is not included in this FCStateT instance");
