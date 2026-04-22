@@ -7,7 +7,7 @@
 #include "FCMarlinController.h"
 #include "FCPumpRamp.h"
 #include "FCI2CBus.h"
-#include "FCHead.h"
+#include "FCCanHead.h"
 #include "FCState.h"
 
 
@@ -27,7 +27,7 @@ public:
     void emergencyStop();
     [[nodiscard]] QString securityCode(int timeoutMs) const;
 
-    const FCHead& head() { return _head; }
+    const FCCanHead& head() { return _head; }
 
 signals:
     void condition(const FCPlotterHardwareState &state);
@@ -42,7 +42,7 @@ private:
     FCI2CBus *_bus = nullptr;
     FCMarlinController *_controller = nullptr;
     FCPumpRamp *_ramp = nullptr;
-    FCHead _head;
+    FCCanHead _head;
 
     FCPlotterHardwareState _state;
 };

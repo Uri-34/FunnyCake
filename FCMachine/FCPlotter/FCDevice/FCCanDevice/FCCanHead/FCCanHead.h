@@ -4,9 +4,10 @@
 #include <QObject>
 #include <QString>
 #include <QTimer>
+#include <QCanBus>
 
 #include "FC3DPoint.h"
-#include "FCI2CDevice.h"
+#include "FCCanDevice.h"
 #include "FCState.h"
 
 /**
@@ -18,16 +19,15 @@
  *   - Секретный код из контроллера головки для обеспечения безопасности
  *   - Состояние головки (state).
  */
-class FCHead
-    : public FCI2CDevice
+class FCCanHead
+    : public FCCanDevice
 {
 Q_OBJECT
-Q_DISABLE_COPY_MOVE(FCHead)
+Q_DISABLE_COPY_MOVE(FCCanHead)
 public:
-    const int HeadStateIntervalMs = 1000;
     QByteArray SecurityCode = {"fldskfks;lfk;sl"};
 
-    enum FCHeadCommand
+    enum FCCanHeadCommand
     {
         GetState = 0x01,
 
@@ -41,13 +41,11 @@ public:
         GetSecurityCode = 0x30
     };
 
-    explicit FCHead(FCI2CBus *bus, uint8_t address = 0, QObject *parent = nullptr)
-        : FCI2CDevice(bus, address, "head", parent)
-    {
-        init();
-    }
+    explicit FCCanHead(QObject *parent = nullptr)
+        : FCCanDevice("can0", parent)
+    {}
 
-    ~FCHead() override = default;
+    ~FCCanHead() override = default;
 
 public slots:
     /// отправить все фидеры в верхнее положение
@@ -62,15 +60,18 @@ public slots:
 private:
     /// инициализация обьекта
     bool init();
+
     /// получение серретного кода
     inline const QByteArray securityCode() { return exchange(GetSecurityCode); }
     /// получить состояние генерируемое в коде контроллера управления головкой
-    inline const FCDeviceState controllerState() { return static_cast<FCDeviceState>(exchange(GetState, {}, 1).at(0)); } // ???????????????????
+    inline const FCDeviceState controllerState() { return static_cast<FCDeviceState>(exchange(GetState, {}).at(0)); } // ???????????????????
     /// количество фидеров в головке
     inline uint8_t feedersCount() { return static_cast<uint8_t>(exchange(GetFeedersCount).at(0)); }
 
     /// количество фидеров (получено от контроллера гоовки)
     uint8_t _feedersCount;
+
+    QCanBusDevice *canDevice = nullptr;
 };
 
 #endif // FC_HEAD_H

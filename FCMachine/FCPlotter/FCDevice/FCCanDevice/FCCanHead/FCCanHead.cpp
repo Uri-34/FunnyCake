@@ -1,6 +1,7 @@
-#include "FCHead.h"
+#include "FCCanHead.h"
+#include "FCRange.h"
 
-bool FCHead::init()
+bool FCCanHead::init()
 {
     if(!controllerState().isReady() || securityCode() != SecurityCode)
     {
@@ -16,7 +17,7 @@ bool FCHead::init()
     return true;
 }
 
-void FCHead::switchToFeeder(uint8_t number)
+void FCCanHead::switchToFeeder(uint8_t number)
 {
     QByteArray n;
     n.append(static_cast<uint8_t>(FCRange<uint8_t>(0, _feedersCount).clamped(number)));

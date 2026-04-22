@@ -8,7 +8,7 @@ FCPlotterHardware::FCPlotterHardware(const QString &portName, FCI2CBus *bus, QOb
       _bus(bus),
       _controller(new FCMarlinController(portName, this)),
       _ramp(new FCPumpRamp(bus, this)),
-      _head{FCHead{bus, 100, this}}
+      _head{FCCanHead{this}}
 {
     init();
 }

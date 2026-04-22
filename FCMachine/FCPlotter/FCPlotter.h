@@ -203,8 +203,8 @@ private:
 
     // --- Члены данных ---
     QString _serialNumber;                    ///< Уникальный идентификатор экземпляра
-    FCPlotterHardware _hardware;              ///< Компонент управления оборудованием
     QThread *_workerThread = nullptr;         ///< Рабочий поток выполнения
+    FCPlotterHardware _hardware;              ///< Компонент управления оборудованием
     FCSVGImageContainer _currentContainer;    ///< Текущие данные для печати
     bool _stopRequested = false;              ///< Флаг запроса завершения
 
