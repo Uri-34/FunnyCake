@@ -3,9 +3,6 @@
 #include <QRandomGenerator>
 
 #include "FCPlotter.h"
-#include "FCPlotterHardware.h"
-#include "FCPlotterGCodeEngine.h"
-//#include "FCFeeder.h"
 
 #include <QDebug>
 
@@ -16,11 +13,14 @@
 FCPlotter::FCPlotter(QString &portName, FCI2CBus *bus, QObject *parent)
     : FCDevice(QStringLiteral("Plotter-") + portName, parent),
       _serialNumber{QStringLiteral("PLOT-%1-%2").arg(portName.replace('/', '_')).arg(QRandomGenerator::global()->bounded(10000, 99999))},
-      _hardware{portName, bus, this},
+      _bus{bus},
+      _controller{new FCGCodeController{portName, this}},
+      _ramp{new FCPumpRamp{bus, this}},
+      _head{new FCCanHead{this}},
+
       _workerThread{nullptr},
       _stopRequested{false}
 {
-    // Подключение сигналов оборудования
     init();
 }
 
@@ -31,7 +31,7 @@ FCPlotter::~FCPlotter()
     {
         stopThread();
     }
-    // _hardware удалится автоматически через механизм родитель-потомок
+    // _bus + _controller + _ramp + _head удалятся автоматически через механизм родитель-потомок
 }
 
 // ============================================================================
@@ -41,12 +41,6 @@ FCPlotter::~FCPlotter()
 bool FCPlotter::isThreadRunning() const noexcept
 {
     return _workerThread && _workerThread->isRunning() && !_stopRequested;
-}
-
-QString FCPlotter::securityCode(int timeoutMs)
-{
-    // Делегирование компоненту оборудования
-    return _hardware.securityCode(timeoutMs);
 }
 
 // ============================================================================
@@ -65,25 +59,16 @@ bool FCPlotter::startThread()
 
     // Создание и настройка рабочего потока
     _workerThread = new QThread(this);
-    _workerThread->setObjectName(QStringLiteral("PlotterWorker-") + _serialNumber);
+    _workerThread->setObjectName(QStringLiteral("PlotterWorker-") + objectName() + _serialNumber);
 
     // Перемещение объекта в рабочий поток
     moveToThread(_workerThread);
 
     // Запуск цикла обработки через сигнал started
-    connect(_workerThread, &QThread::started,
-            this, &FCPlotter::run,
-            Qt::DirectConnection
-    );  // run() выполняется в контексте _workerThread
+    connect(_workerThread, &QThread::started, this, &FCPlotter::run, Qt::DirectConnection);  // run() выполняется в контексте _workerThread
 
     // Сигнал завершения для очистки
-    connect(_workerThread, &QThread::finished,
-            this, [this]()
-            {
-                emit stopped(objectName());
-            },
-            Qt::QueuedConnection
-    );  // Обработка в основном потоке
+    connect(_workerThread, &QThread::finished, this, [this](){ emit stopped(objectName()); }, Qt::QueuedConnection);  // Обработка в основном потоке
 
     _workerThread->start();
     return true;
@@ -99,7 +84,7 @@ bool FCPlotter::stopThread()
     _stopRequested = true;
 
     // Финализация оборудования
-    _hardware.final();
+//    _hardware.final();
 
     // Остановка потока с таймаутом
     _workerThread->quit();
@@ -113,7 +98,7 @@ bool FCPlotter::stopThread()
     _workerThread = nullptr;
 
     // Сброс состояния
-    set(FCReadyState::NotReady, FCPlayState::Stop, FCChangedState::Changed, FCErrorType::Disconnection);
+    state().set(FCPlotterState{FCReadyState::NotReady, FCErrorType::None});
     return true;
 }
 
@@ -125,30 +110,27 @@ void FCPlotter::start(const FCSVGImageContainer &container)
 {
     if(_stopRequested)
     {
-        emit error(objectName(), QStringLiteral("Запрос остановки активен"));
+        emitErrorCondition(FCPlotterState{FCReadyState::NotReady, FCErrorType::Destroy}, QStringLiteral("Запрос остановки активен"));
         return;
     }
 
-    if(!_hardware.isReady())
+    if(!state().isReady())
     {
-        emit error(objectName(), QStringLiteral("Оборудование не готово"));
-        set(FCReadyState::NotReady, FCErrorState::Critical, FCErrorType::Connection);
+        emitErrorCondition(FCPlotterState{FCReadyState::NotReady, FCErrorType::Connection}, QStringLiteral("Оборудование не готово"));
         return;
     }
 
     if(!container.isValid())
     {
-        emit error(objectName(), QStringLiteral("Невалидный контейнер"));
-        set(FCReadyState::NotReady, FCErrorType::Parse);
+        emitErrorCondition(FCPlotterState{FCReadyState::NotReady, FCErrorType::Parse}, QStringLiteral("Невалидный контейнер"));
         return;
     }
 
-    // Копирование контейнера (безопасно для кросс-поточного использования)
-    _currentContainer = container;
+    // копирование контейнера (безопасно для кросс-поточного использования)
+    _container = container;
 
-    // Обновление состояния и запуск обработки
-    set(FCPlayState::Start, FCChangedState::Changed);
-    emit started(objectName());
+    // обновление состояния и запуск обработки
+    setStartCondition(FCPlotterState{FCPlayState::Start, FCErrorType::None});
 
     // Непосредственный запуск обработки (выполнится в рабочем потоке)
     // Благодаря moveToThread(), этот вызов будет выполнен в контексте _workerThread
@@ -163,7 +145,7 @@ void FCPlotter::stop()
     }
 
     // Немедленная аварийная остановка оборудования
-    _hardware.emergencyStop();
+    _controller->emergencyStop();
 
     // Обновление состояния
     set(FCPlayState::Stop, FCChangedState::Changed);
@@ -227,7 +209,7 @@ void FCPlotter::clear()
     auto *controller = _hardware.controller();
     if(controller)
     {
-        controller->sendCommand("G1 X0 Y0 Z10");
+        controller->send("G1 X0 Y0 Z10");
     }
 
     emit cleared(objectName());
@@ -265,11 +247,10 @@ void FCPlotter::run()
     // Этот слот выполняется в контексте _workerThread
 
     // Инициализация оборудования
-    if(!_hardware.isReady())
+    if(!init() || !state().isReady())
     {
         emit error(objectName(), QStringLiteral("Не удалось инициализировать оборудование"));
-        set(FCReadyState::NotReady, FCErrorState::Critical, FCErrorType::Connection);
-        emit condition(state());
+        emit condition(state().set(FCReadyState::NotReady, FCErrorType::Connection));
         return;
     }
 
@@ -281,7 +262,7 @@ void FCPlotter::run()
 void FCPlotter::processStartCommand()
 {
     // Проверка готовности
-    if(!_hardware.isReady() || !_currentContainer.isValid())
+    if(!state().isReady() || !_container.isValid())
     {
         emit error(objectName(), QStringLiteral("Невозможно начать операцию"));
         set(FCReadyState::NotReady, FCErrorState::Critical, FCErrorType::Connection);
@@ -303,7 +284,7 @@ void FCPlotter::processStartCommand()
 
     // Выполнение команд
     int totalCommands = gcodeList.size();
-    int totalLayers = _currentContainer.layerCount();
+    int totalLayers = _container.layerCount();
     int processedCommands = 0;
     qint64 lastProgressUpdate = 0;
 
@@ -439,11 +420,11 @@ void FCPlotter::processLongTestCommand()
 bool FCPlotter::init()
 {
     bool returnCode = false;
-    // Готовность оборудования
-    if(_hardware.init())
+    // определение состояния плоттера в зависимости от состояний всех устройств
+    if((_bus && _bus->isOpen()) &&
+        _controller && _controller->)
     {
-        // Проброс сигналов оборудования в сигналы плоттера (для UI)
-        connect(&_hardware, &FCPlotterHardware::condition,
+        connect(&_bus, &FCI2CBus::condition,
                 this, [this](const FCPlotterHardwareState &state)
                 {
                     bool ready = state.isReady();

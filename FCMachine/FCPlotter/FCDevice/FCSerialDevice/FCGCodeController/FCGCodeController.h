@@ -1,5 +1,5 @@
-﻿#ifndef FC_MARLIN_CONTROLLER_H
-#define FC_MARLIN_CONTROLLER_H
+﻿#ifndef FC_GCODE_CONTROLLER_H
+#define FC_GCODE_CONTROLLER_H
 
 #include <QObject>
 #include <QList>
@@ -15,23 +15,26 @@
  *          ВАЖНО: Дублирующий _state удалён. Используется FCDevice::state().
  * @warning Блокирующие операции вызывать из рабочего потока.
  */
-class FCMarlinController
+class FCGCodeController
     : public FCSerialDevice
 {
 Q_OBJECT
-Q_DISABLE_COPY_MOVE(FCMarlinController)
+Q_DISABLE_COPY_MOVE(FCGCodeController)
 public:
-    explicit FCMarlinController(const QString &portName, QObject *parent = nullptr);
-    ~FCMarlinController() override;
+    QByteArray SecurityCode = {"fldskfks;lfk;sl"};
+
+    explicit FCGCodeController(const QString &portName, QObject *parent = nullptr);
+    ~FCGCodeController() override;
 
     [[nodiscard]] bool checkConnection();
     [[nodiscard]] const FCM115 &firmwareData() const noexcept { return _m115; }
     [[nodiscard]] bool setLed(const QList<QColor> &colors, uint8_t brightness = 255);
 
-    inline void emergencyStop() { send("M112"); }
+    // M112 - emergencyStop
+    inline void stop() { send("M112"); }
     inline void disableMotors() { send("M84"); }
     inline void reboot() { send("M999"); }
-    [[nodiscard]] QString securityCode(int timeoutMs);
+    bool isSecretCheck();
 
 signals:
 //    void colorChanged(const QColor &color);
@@ -40,7 +43,7 @@ protected:
     bool init();
     bool final();
     [[nodiscard]] bool parse(const QString &response);
-    [[nodiscard]] bool setupPortParameters(QSerialPort *port);
+    [[nodiscard]] bool setParameters(QSerialPort *port);
 
 private:
     void parseFirmwareData(const QString &response);
@@ -49,6 +52,6 @@ private:
 };
 
 using FCColorList = QList<QColor>;
-using FCMarlinControllerList = QList<FCMarlinController *>;
+using FCMarlinControllerList = QList<FCGCodeController *>;
 
-#endif // FC_MARLIN_CONTROLLER_H
+#endif // FC_GCODE_CONTROLLER_H

@@ -1,14 +1,14 @@
-#include "FCMarlinController.h"
+#include "FCGCodeController.h"
 #include <QThread>
 #include <QRegularExpression>
 
-FCMarlinController::FCMarlinController(const QString &portName, QObject *parent)
+FCGCodeController::FCGCodeController(const QString &portName, QObject *parent)
 : FCSerialDevice(portName, parent), _m115(), _connected(false)
 {
     init();
 }
 
-FCMarlinController::~FCMarlinController()
+FCGCodeController::~FCGCodeController()
 {
     if(_connected)
     {
@@ -18,26 +18,22 @@ FCMarlinController::~FCMarlinController()
     }
 }
 
-bool FCMarlinController::init()
+bool FCGCodeController::init()
 {
-    if(!FCSerialDevice::init())
+    if(!FCSerialDevice::init() && !checkConnection())
     {
         emit condition(state().set(FCReadyState::NotReady, FCErrorType::Connection), objectName());
         return false;
     }
-
-    if(!checkConnection())
+    else
     {
-        emit condition(state().set(FCReadyState::NotReady, FCErrorType::Connection), objectName());
-        return false;
+        _connected = true;
+        emit condition(state().set(FCReadyState::Ready, FCErrorType::None), objectName());
     }
-
-    _connected = true;
-    emit condition(state().set(FCReadyState::Ready, FCErrorType::None), objectName());
     return true;
 }
 
-bool FCMarlinController::final()
+bool FCGCodeController::final()
 {
     if(_connected)
     {
@@ -48,7 +44,7 @@ bool FCMarlinController::final()
     return FCSerialDevice::final();
 }
 
-bool FCMarlinController::checkConnection()
+bool FCGCodeController::checkConnection()
 {
     bool success = send("M105", 1000, 1);
     if(success)
@@ -58,7 +54,7 @@ bool FCMarlinController::checkConnection()
     return success;
 }
 
-bool FCMarlinController::setLed(const QList<QColor> &colors, uint8_t brightness)
+bool FCGCodeController::setLed(const QList<QColor> &colors, uint8_t brightness)
 {
     if(colors.isEmpty() || !state().is(FCReadyState::Ready))
     {
@@ -93,32 +89,18 @@ bool FCMarlinController::setLed(const QList<QColor> &colors, uint8_t brightness)
     return success;
 }
 
-QString FCMarlinController::securityCode(int timeoutMs)
+bool FCGCodeController::isSecretCheck()
 {
-    if(!state().is(FCReadyState::Ready))
+    bool result = false;
+    if(state().is(FCReadyState::Ready) && send("M916", 200, 1))
     {
-        emit condition(state().set(FCReadyState::NotReady, FCErrorType::Connection), objectName());
-        return {};
+        result = answer().trimmed().contains(SecurityCode) ? true : false;
     }
 
-    if(!send("M916", timeoutMs, 1))
-    {
-        emit condition(state().set(FCReadyState::NotReady, FCErrorType::Read), objectName());
-        return {};
-    }
-
-    QString response = answer().trimmed();
-    if(response.startsWith("ok CODE:", Qt::CaseInsensitive))
-    {
-        emit condition(state().set(FCReadyState::Ready, FCErrorType::None), objectName());
-        return response.mid(8).trimmed();
-    }
-
-    emit condition(state().set(FCReadyState::NotReady, FCErrorType::Parse), objectName());
-    return {};
+    return result;
 }
 
-bool FCMarlinController::parse(const QString &response)
+bool FCGCodeController::parse(const QString &response)
 {
     const QString trimmed = response.trimmed();
     if(trimmed.startsWith("Error:", Qt::CaseInsensitive) || trimmed.startsWith("ERROR:", Qt::CaseInsensitive))
@@ -143,7 +125,7 @@ bool FCMarlinController::parse(const QString &response)
     return true;
 }
 
-bool FCMarlinController::setupPortParameters(QSerialPort *port)
+bool FCGCodeController::setParameters(QSerialPort *port)
 {
     if(!port)
     {
@@ -160,7 +142,7 @@ bool FCMarlinController::setupPortParameters(QSerialPort *port)
     return true;
 }
 
-void FCMarlinController::parseFirmwareData(const QString &response)
+void FCGCodeController::parseFirmwareData(const QString &response)
 {
     if(!_m115.parse(response))
     {

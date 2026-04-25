@@ -5,14 +5,16 @@
 #include <QSerialPortInfo>
 
 FCSerialDevice::FCSerialDevice(const QString &portName, QObject *parent)
-: FCDevice(portName, parent)
+    : FCDevice(portName, parent)
 {
-    init(); // настраивает обьект
+    // настраивает обьект
+    init();
 }
 
 FCSerialDevice::~FCSerialDevice()
 {
-    final(); // гарантирует закрытие порта до удаления QObject
+    // гарантирует закрытие порта до удаления QObject
+    final();
 }
 
 bool FCSerialDevice::init()
@@ -34,7 +36,7 @@ bool FCSerialDevice::init()
         return false;
     }
 
-    flush();
+    clear();
     emit condition(state().set(FCReadyState::Ready, FCErrorType::None), objectName());
     return true;
 }
@@ -61,20 +63,26 @@ bool FCSerialDevice::final()
 
 bool FCSerialDevice::send(const QString &command, int timeoutMs, int retries)
 {
-    for(int attempt = 0; attempt < retries; ++attempt)
+    if(state().is(FCReadyState::Ready))
     {
-        if(writeBytesRaw(command, timeoutMs))
+        int attempt = 0;
+        while(attempt < retries)
         {
-            emit condition(state().set(FCReadyState::Ready, FCErrorType::None), objectName());
-            return true;
+            if(!writeBytesRaw(command, timeoutMs))
+            {
+                QThread::msleep(50 * (attempt + 1));
+                state().set(FCReadyState::NotReady, FCErrorType::Write);
+            }
+            else
+            {
+                return true;
+            }
+
+            attempt++;
         }
-        if(attempt < retries - 1)
-        {
-            QThread::msleep(50 * (attempt + 1));
-        }
+        emit condition(state());
     }
-    state().set(FCReadyState::NotReady, FCErrorType::Write);
-    emit condition(state());
+
     return false;
 }
 
@@ -124,7 +132,7 @@ bool FCSerialDevice::writeBytesRaw(const QString &bytes, int timeoutMs)
     return false;
 }
 
-void FCSerialDevice::flush()
+void FCSerialDevice::clear()
 {
     QMutexLocker locker(&_portMutex);
     if(_port && _port->isOpen())
@@ -136,8 +144,7 @@ void FCSerialDevice::flush()
 
 bool FCSerialDevice::available() const
 {
-    const auto ports = QSerialPortInfo::availablePorts();
-    for(const QSerialPortInfo &info : ports)
+    for(const QSerialPortInfo &info : QSerialPortInfo::availablePorts())
     {
         if(info.systemLocation() == objectName() || info.portName() == objectName())
         {

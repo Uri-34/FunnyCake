@@ -9,6 +9,7 @@
 #include "FC3DPoint.h"
 #include "FCCanDevice.h"
 #include "FCState.h"
+#include "FCRange.h"
 
 /**
  * @brief Коммуникационный класс, осуществляет общение с прошивкой печатающей головки по I2C.
@@ -20,7 +21,7 @@
  *   - Состояние головки (state).
  */
 class FCCanHead
-    : public FCCanDevice
+    : protected FCCanDevice
 {
 Q_OBJECT
 Q_DISABLE_COPY_MOVE(FCCanHead)
@@ -47,31 +48,27 @@ public:
 
     ~FCCanHead() override = default;
 
+    /// получение серретного кода
+    inline bool isSecretCheck() { return exchange(GetSecurityCode) == SecurityCode; }
+
 public slots:
     /// отправить все фидеры в верхнее положение
-    inline void feedersToHome() { send(FeedersToHome); }
+    inline void feedersToHomePosition() { send(FeedersToHome); }
     /// переключить на конкретный фидер
-    void switchToFeeder(uint8_t number);
+    void switchToFeeder(uint8_t number) { send(SwitchToFeeder, QByteArray{1, static_cast<uint8_t>(FCRange<uint8_t>(0, _feedersCount).clamped(number))}); }
     /// переместить головку в парковочное положение
-    inline void headToHome() { send(HeadToHome); }
+    inline void headToHomePosition() { send(HeadToHome); }
     /// переместить головку в рабочее положение ()
-    inline void headToWork() { send(HeadToWork); }
+    inline void headToWorkPosition() { send(HeadToWork); }
 
 private:
     /// инициализация обьекта
     bool init();
-
-    /// получение серретного кода
-    inline const QByteArray securityCode() { return exchange(GetSecurityCode); }
-    /// получить состояние генерируемое в коде контроллера управления головкой
-    inline const FCDeviceState controllerState() { return static_cast<FCDeviceState>(exchange(GetState, {}).at(0)); } // ???????????????????
     /// количество фидеров в головке
     inline uint8_t feedersCount() { return static_cast<uint8_t>(exchange(GetFeedersCount).at(0)); }
 
     /// количество фидеров (получено от контроллера гоовки)
     uint8_t _feedersCount;
-
-    QCanBusDevice *canDevice = nullptr;
 };
 
 #endif // FC_HEAD_H

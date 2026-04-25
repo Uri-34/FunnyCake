@@ -9,7 +9,9 @@
 #include "FCDevice.h"
 #include "FCI2CBus.h"
 #include "FCSVGImageContainer.h"
-#include "FCPlotterHardware.h"
+#include "FCGCodeController.h"
+#include "FCPumpRamp.h"
+#include "FCCanHead.h"
 
 /**
  * @brief Фасад для управления плоттером через сигналы от UI.
@@ -65,14 +67,10 @@ public:
     // --- Доступ к свойствам ---
     [[nodiscard]] inline QString serialNumber() const noexcept { return _serialNumber; }
     [[nodiscard]] bool isThreadRunning() const noexcept;
-    [[nodiscard]] QString securityCode(int timeoutMs);
 
     // --- Управление потоком ---
-    [[nodiscard]] bool startThread();
+    bool startThread();
     bool stopThread();
-
-    // --- Доступ к состоянию (через базовый класс) ---
-    using FCDevice::state;  // Наследуем state(), is(), set() из FCDevice
 
 public slots:
     // ========================================================================
@@ -176,14 +174,26 @@ signals:
     /// @param testName "short" или "long", @param success результат, @param details отчёт
     void test(const QString &testName, bool success, const QString &details);
 
-    /// @brief Изменение готовности оборудования (проброс от FCPlotterHardware)
-    /// @param ready true если оборудование инициализировано
-    void hardwareReady(bool ready);
-
 private:
     // --- Виртуальные методы инициализации (из FCDevice) ---
     bool init();
     bool final();
+
+    // установка состояния готовности и генерация сигнала состояния
+    void setStartCondition(const FCPlotterState state)
+    {
+        emit condition(FCDevice::state().set(state));
+        emit started(objectName());
+    }
+
+    // установка состояния ошибки и генерация сигнала состояния
+    void emitErrorCondition(const FCPlotterState &state, const QString &message)
+    {
+        emit condition(FCDevice::state().set(state));
+        emit error(objectName(), message);
+    }
+
+    inline bool isSecretCheck() { return _head->isSecretCheck() && _controller->isSecretCheck(); }
 
     // --- Приватные слоты: выполнение команд в рабочем потоке ---
     void run();  // Главный цикл обработки (вызывается через QThread::started)
@@ -202,11 +212,15 @@ private:
     [[nodiscard]] int estimateCurrentLayer(int cmdIdx, int totalCmds, int totalLayers) const;
 
     // --- Члены данных ---
-    QString _serialNumber;                    ///< Уникальный идентификатор экземпляра
-    QThread *_workerThread = nullptr;         ///< Рабочий поток выполнения
-    FCPlotterHardware _hardware;              ///< Компонент управления оборудованием
-    FCSVGImageContainer _currentContainer;    ///< Текущие данные для печати
-    bool _stopRequested = false;              ///< Флаг запроса завершения
+    QString _serialNumber;                           ///< уникальный идентификатор плоттера
+    FCSVGImageContainer _container;                  ///< контейнер с данными для печати
+    FCI2CBus *_bus = nullptr;                        ///< указатель на I2C шину
+    FCGCodeController *_controller = nullptr;  ///< указатель на контроллер
+    FCPumpRamp *_ramp = nullptr;                     ///< указатель на рампу насосов
+    FCCanHead *_head = nullptr;                      ///< указатель на прокси головки
+
+    QThread *_workerThread = nullptr;                ///< Рабочий поток выполнения
+    bool _stopRequested = false;                     ///< Флаг запроса завершения
 
     // --- Константы ---
     static constexpr int PROGRESS_UPDATE_MS = 500;   ///< Интервал обновления прогресса

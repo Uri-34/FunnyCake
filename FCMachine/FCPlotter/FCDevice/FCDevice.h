@@ -27,12 +27,13 @@ public:
     explicit FCDevice(const QString &name, QObject *parent = nullptr);
     ~FCDevice() override = default;
 
-    /// Безопасный доступ к состоянию (только чтение)
-    [[nodiscard]] inline FCDeviceState& state() noexcept { return _state; }
-
 signals:
-    /// Единственный сигнал изменения состояния
+    /// Единный сигнал изменения состояния
     void condition(const FCDeviceState &state, const QString &details = QString());
+
+protected:
+    /// Безопасный доступ к состоянию (только чтение)
+    [[nodiscard]] inline FCDeviceState &state() noexcept { return _state; }
 
 private:
     FCDeviceState _state; ///< Внутреннее хранилище состояния (2 компонента)

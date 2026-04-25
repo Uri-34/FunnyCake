@@ -1,8 +1,8 @@
-# Автосгенерировано: Вт 21 апр 2026 11:01:44 MSK
+# Автосгенерировано: Сб 25 апр 2026 17:51:40 MSK
 # Скриптом: ./doxygen/scripts/generate.pri.sh
 
 # Include directories (from header locations)
-# INCLUDEPATH (41 элементов)
+# INCLUDEPATH (40 элементов)
 INCLUDEPATH += $$PWD/FCConfigFile
 INCLUDEPATH += $$PWD/FCDisplay
 INCLUDEPATH += $$PWD/FCDisplay/FCErrorDialog
@@ -16,13 +16,12 @@ INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCI2CPacket
 INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/FCLM75AThermometer
 INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A
 INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCPumpRamp
-INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCMarlinController/FCM115
-INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCMarlinController
+INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCGCodeController
+INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCGCodeController/FCM115
 INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCSerialDevice
 INCLUDEPATH += $$PWD/FCPlotter/FCPlotterCommandQueue
 INCLUDEPATH += $$PWD/FCPlotter/FCPlotterGCodeEngine
 INCLUDEPATH += $$PWD/FCPlotter
-INCLUDEPATH += $$PWD/FCPlotter/FCPlotterHardware
 INCLUDEPATH += $$PWD/FCPlotter/FCPlotterTestSuite
 INCLUDEPATH += $$PWD/FCSSI/FCI2CBus
 INCLUDEPATH += $$PWD/FCSVGImage/FCSVGImageCoder
@@ -45,7 +44,7 @@ INCLUDEPATH += $$PWD/FCTypes/FCSpeed
 INCLUDEPATH += $$PWD/FCTypes/FCState
 INCLUDEPATH += $$PWD/FCTypes/FCTransformations
 
-# SOURCES (40 элементов)
+# SOURCES (39 элементов)
 SOURCES += $$PWD/FCConfigFile/FCConfigFile.cpp
 SOURCES += $$PWD/FCDisplay/FCDisplay.cpp
 SOURCES += $$PWD/FCDisplay/FCErrorDialog/FCErrorDialog.cpp
@@ -59,13 +58,12 @@ SOURCES += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCI2CHead/FCI2CHead.cpp
 SOURCES += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/FCLM75AThermometer/FCLM75AThermometer.cpp
 SOURCES += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/LM75A.cpp
 SOURCES += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCPumpRamp/FCPumpRamp.cpp
-SOURCES += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCMarlinController/FCM115/FCM115.cpp
-SOURCES += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCMarlinController/FCMarlinController.cpp
+SOURCES += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCGCodeController/FCGCodeController.cpp
+SOURCES += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCGCodeController/FCM115/FCM115.cpp
 SOURCES += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCSerialDevice.cpp
 SOURCES += $$PWD/FCPlotter/FCPlotterCommandQueue/FCPlotterCommandQueue.cpp
 SOURCES += $$PWD/FCPlotter/FCPlotter.cpp
 SOURCES += $$PWD/FCPlotter/FCPlotterGCodeEngine/FCPlotterGCodeEngine.cpp
-SOURCES += $$PWD/FCPlotter/FCPlotterHardware/FCPlotterHardware.cpp
 SOURCES += $$PWD/FCPlotter/FCPlotterTestSuite/FCPlotterTestSuite.cpp
 SOURCES += $$PWD/FCSSI/FCI2CBus/FCI2CBus.cpp
 SOURCES += $$PWD/FCSVGImage/FCSVGImageCoder/FCSVGImageCoder.cpp
@@ -87,7 +85,7 @@ SOURCES += $$PWD/FCTypes/FCSpeed/FCSpeed.cpp
 SOURCES += $$PWD/FCTypes/FCState/FCState.cpp
 SOURCES += $$PWD/main.cpp
 
-# HEADERS (42 элементов)
+# HEADERS (41 элементов)
 HEADERS += $$PWD/FCConfigFile/FCConfigFile.h
 HEADERS += $$PWD/FCDisplay/FCDisplay.h
 HEADERS += $$PWD/FCDisplay/FCErrorDialog/FCErrorDialog.h
@@ -102,13 +100,12 @@ HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCI2CPacket/FCI2CPacket.h
 HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/FCLM75AThermometer/FCLM75AThermometer.h
 HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/LM75A.h
 HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCPumpRamp/FCPumpRamp.h
-HEADERS += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCMarlinController/FCM115/FCM115.h
-HEADERS += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCMarlinController/FCMarlinController.h
+HEADERS += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCGCodeController/FCGCodeController.h
+HEADERS += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCGCodeController/FCM115/FCM115.h
 HEADERS += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCSerialDevice.h
 HEADERS += $$PWD/FCPlotter/FCPlotterCommandQueue/FCPlotterCommandQueue.h
 HEADERS += $$PWD/FCPlotter/FCPlotterGCodeEngine/FCPlotterGCodeEngine.h
 HEADERS += $$PWD/FCPlotter/FCPlotter.h
-HEADERS += $$PWD/FCPlotter/FCPlotterHardware/FCPlotterHardware.h
 HEADERS += $$PWD/FCPlotter/FCPlotterTestSuite/FCPlotterTestSuite.h
 HEADERS += $$PWD/FCSSI/FCI2CBus/FCI2CBus.h
 HEADERS += $$PWD/FCSVGImage/FCSVGImageCoder/FCSVGImageCoder.h

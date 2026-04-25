@@ -9,18 +9,30 @@ FCCanDevice::FCCanDevice(const QString &name, QObject *parent)
 bool FCCanDevice::init()
 {
     _device = QCanBus::instance()->createDevice("socketcan", objectName());
+
+//    if(_device->connectDevice())
+//    {
+//        connect(_device, &QCanBusDevice::framesReceived, this, [this]()
+//        {
+//            state().set(FCReadyState::NotReady);
+//            while(_device->framesAvailable())
+//            {
+//                QCanBusFrame frame = _device->readFrame();
+//            }
+//            state().set(FCReadyState::Ready);
+//        });
+
+//        state().set(FCReadyState::Ready);
+//        return true;
+//    }
+//    else
+//    {
+//        state().set(FCReadyState::NotReady);
+//        return false;
+//    }
+
     if(_device->connectDevice())
     {
-        connect(_device, &QCanBusDevice::framesReceived, this, [this]()
-        {
-            state().set(FCReadyState::NotReady);
-            while(_device->framesAvailable())
-            {
-                QCanBusFrame frame = _device->readFrame();
-            }
-            state().set(FCReadyState::Ready);
-        });
-
         state().set(FCReadyState::Ready);
         return true;
     }
@@ -37,22 +49,29 @@ bool FCCanDevice::init()
 // 0x600–0x7FF : диагностика/OBD-like
 bool FCCanDevice::send(uint8_t command, const QByteArray &data)
 {
-    QCanBusFrame frame;
-    frame.setFrameId(0x400); // 0x400–0x5FF : команды управления
-    frame.setFrameType(QCanBusFrame::DataFrame);
+    bool result = false;
 
-    QByteArray _data;
-    _data.append(command);
-    _data.append(data);
+    if(state().is(FCReadyState::Ready))
+    {
+        QCanBusFrame frame;
+        frame.setFrameId(0x400); // 0x400–0x5FF : команды управления
+        frame.setFrameType(QCanBusFrame::DataFrame);
 
-    frame.setPayload(_data);
+        QByteArray _data;
+        _data.append(command);
+        _data.append(data);
 
-    return _device->writeFrame(frame);
+        frame.setPayload(_data);
+
+        result = _device->writeFrame(frame);
+    }
+
+    return result;
 }
 
 const QByteArray FCCanDevice::receive()
 {
-    return _device->readFrame().payload();
+    return state().is(FCReadyState::Ready) ? _device->readFrame().payload() : QByteArray{};
 }
 
 QByteArray FCCanDevice::exchange(uint8_t command, const QByteArray &data)
@@ -64,4 +83,3 @@ QByteArray FCCanDevice::exchange(uint8_t command, const QByteArray &data)
 
     return QByteArray{};
 }
-

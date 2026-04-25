@@ -29,6 +29,8 @@ public:
 protected:
     bool init();
 
+    QCanBusDevice* device() { return _device;  }
+
 private:
     QCanBusDevice *_device = nullptr;
 //    QByteArray _buffer;
