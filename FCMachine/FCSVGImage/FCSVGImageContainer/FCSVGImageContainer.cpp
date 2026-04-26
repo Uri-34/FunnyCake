@@ -91,13 +91,11 @@ namespace
     }
 }
 
-// ============================================================================
 // BinaryFigure
-// ============================================================================
-
 void FCSVGImageContainer::BinaryFigure::recalculateMetrics()
 {
-    if (points.isEmpty()) {
+    if(points.isEmpty())
+    {
         boundingBoxMin = FC2DPoint(0, 0);
         boundingBoxMax = FC2DPoint(0, 0);
         length = 0.0;
@@ -109,10 +107,7 @@ void FCSVGImageContainer::BinaryFigure::recalculateMetrics()
     area = (isFilled && points.size() >= 3) ? calculatePolygonArea(points) : 0.0;
 }
 
-// ============================================================================
 // BinaryLayer
-// ============================================================================
-
 quint32 FCSVGImageContainer::BinaryLayer::appendFigure(const BinaryFigure &figure)
 {
     BinaryFigure fig = figure;
@@ -121,10 +116,7 @@ quint32 FCSVGImageContainer::BinaryLayer::appendFigure(const BinaryFigure &figur
     return static_cast<quint32>(figures.size()) - 1;
 }
 
-// ============================================================================
 // FCSVGImageContainer
-// ============================================================================
-
 FCSVGImageContainer::FCSVGImageContainer(QObject *parent)
     : QObject(parent),
       _layers(),
@@ -134,7 +126,7 @@ FCSVGImageContainer::FCSVGImageContainer(QObject *parent)
       _writeInProgress(0),
       _figureCounter(1),
       _viewBox(),
-      _state{FCReadyState::NotReady, FCPlayState::Stop, FCErrorType::None}  // ✅ ИСПРАВЛЕНО
+      _state{FCReadyState::NotReady, FCPlayState::Stop, FCErrorType::None}
 {
     setObjectName(QStringLiteral("SVGContainer"));
 }
@@ -161,13 +153,11 @@ FCSVGImageContainer::FCSVGImageContainer(const FCSVGImageContainer &other, QObje
 
 FCSVGImageContainer::~FCSVGImageContainer() = default;
 
-// ============================================================================
 // УПРАВЛЕНИЕ ЗАПИСЬЮ
-// ============================================================================
-
 bool FCSVGImageContainer::beginWrite()
 {
-    if (_lock.tryLockForWrite()) {
+    if(_lock.tryLockForWrite())
+    {
         _writeInProgress.storeRelaxed(1);
         return true;
     }
@@ -206,8 +196,10 @@ quint32 FCSVGImageContainer::addLayerInternal(const BinaryLayer &layer)
 bool FCSVGImageContainer::appendFigure(quint32 layerIndex, const BinaryFigure &figure)
 {
     QWriteLocker lock(&_lock);
-    if (layerIndex >= static_cast<quint32>(_layers.size()))
+    if(layerIndex >= static_cast<quint32>(_layers.size()))
+    {
         return false;
+    }
 
     BinaryFigure fig = figure;
     fig.id = generateFigureId();
@@ -228,7 +220,8 @@ FCSVGImageContainer::BinaryLayer &FCSVGImageContainer::layerRef(quint32 layerInd
 
 FCSVGImageContainer::BinaryLayer &FCSVGImageContainer::defaultLayer()
 {
-    if (_layers.isEmpty()) {
+    if(_layers.isEmpty())
+    {
         BinaryLayer defaultLayer;
         defaultLayer.index = 0;
         defaultLayer.name = QStringLiteral("default");
@@ -273,8 +266,6 @@ void FCSVGImageContainer::setReady()
 }
 
 // ЧТЕНИЕ ДАННЫХ
-// ============================================================================
-
 FCSVGImageContainer::BinaryLayer FCSVGImageContainer::layer(quint32 index) const
 {
     QReadLocker lock(&_lock);
@@ -312,17 +303,20 @@ FCSVGImageContainer::Metadata FCSVGImageContainer::metadata() const noexcept
 
 bool FCSVGImageContainer::isValid() const noexcept
 {
-    // ✅ ИСПРАВЛЕНО: FCErrorType::None вместо ErrorType::NoError
-    if (!isReady() || !_state.is(FCErrorState::None))
+    if (!isReady() || !_state.is(FCErrorState::None) || _layers.isEmpty())
+    {
         return false;
-    if (_layers.isEmpty())
-        return false;
+    }
 
     QReadLocker lock(&_lock);
-    for (const auto &layer : _layers) {
-        if (layer.isVisible && !layer.figures.isEmpty())
+    for(const auto &layer : _layers)
+    {
+        if(layer.isVisible && !layer.figures.isEmpty())
+        {
             return true;
+        }
     }
+
     return false;
 }
 
@@ -331,13 +325,18 @@ quint64 FCSVGImageContainer::memorySize() const noexcept
     QReadLocker lock(&_lock);
     quint64 size = 0;
     size += static_cast<quint64>(_layers.capacity()) * sizeof(BinaryLayer);
-    for (const auto &layer : _layers) {
+    for(const auto &layer : _layers)
+    {
         size += static_cast<quint64>(layer.figures.capacity()) * sizeof(BinaryFigure);
-        for (const auto &fig : layer.figures) {
+        for(const auto &fig : layer.figures)
+        {
             size += static_cast<quint64>(fig.points.capacity()) * sizeof(FC3DPoint);
             size += static_cast<quint64>(fig.pointTypes.capacity()) * sizeof(quint8);
-            if (!fig.fillPath.isEmpty())
+            if(!fig.fillPath.isEmpty())
+            {
                 size += static_cast<quint64>(fig.fillPath.capacity()) * sizeof(FC2DPoint);
+            }
+
             size += static_cast<quint64>(fig.pathData.capacity()) * sizeof(QChar);
         }
         size += static_cast<quint64>(layer.name.capacity()) * sizeof(QChar);
@@ -367,9 +366,12 @@ QSharedPointer<FCSVGImageContainer> FCSVGImageContainer::snapshot() const
 qint32 FCSVGImageContainer::findLayerByName(const QString &name) const
 {
     QReadLocker lock(&_lock);
-    for (const auto &layer : _layers) {
+    for(const auto &layer : _layers)
+    {
         if (layer.name == name)
+        {
             return static_cast<qint32>(layer.index);
+        }
     }
     return -1;
 }
@@ -379,12 +381,20 @@ QVector<QPair<quint32, quint32>> FCSVGImageContainer::findFiguresByColor(const Q
     QVector<QPair<quint32, quint32>> result;
     QReadLocker lock(&_lock);
     quint32 li = 0;
-    for (const auto &layer : _layers) {
-        if (!layer.isVisible) continue;
+    for(const auto &layer : _layers)
+    {
+        if(!layer.isVisible)
+        {
+            continue;
+        }
+
         quint32 fi = 0;
-        for (const auto &fig : layer.figures) {
+        for(const auto &fig : layer.figures)
+        {
             if (colorsMatch(fig.color, color, tolerance))
+            {
                 result.append(qMakePair(li, fi));
+            }
             ++fi;
         }
         ++li;
@@ -406,9 +416,15 @@ void FCSVGImageContainer::calculateStatistics()
     qreal totalLength = 0.0;
     qreal totalArea = 0.0;
 
-    for (const auto &layer : _layers) {
-        if (!layer.isVisible) continue;
-        for (const auto &fig : layer.figures) {
+    for(const auto &layer : _layers)
+    {
+        if(!layer.isVisible)
+        {
+            continue;
+        }
+
+        for(const auto &fig : layer.figures)
+        {
             totalFigures++;
             totalPoints += static_cast<quint64>(fig.points.size());
             totalLength += fig.length;
@@ -419,17 +435,26 @@ void FCSVGImageContainer::calculateStatistics()
     _metadata.figureCount = totalFigures;
     _metadata.totalPoints = totalPoints;
 
-    if (totalArea > 0.0) {
+    if(totalArea > 0.0)
+    {
         constexpr qreal avgThickness = 0.4;
         qreal coverage = (totalLength * avgThickness) / totalArea;
         _metadata.inkCoverage = qBound(0.0, coverage, 1.0);
-    } else {
+    }
+    else
+    {
         _metadata.inkCoverage = 0.0;
     }
 
-    if (totalFigures > 0) {
-        for (const auto &layer : _layers) {
-            if (!layer.isVisible || layer.figures.isEmpty()) continue;
+    if(totalFigures > 0)
+    {
+        for(const auto &layer : _layers)
+        {
+            if(!layer.isVisible || layer.figures.isEmpty())
+            {
+                continue;
+            }
+
             _metadata.dominantColor = layer.figures.first().color;
             break;
         }

@@ -52,7 +52,7 @@
  * @see FCDisplay (источник команд), FCPlotterHardware (аппаратный слой)
  */
 class FCPlotter
-    : public FCDevice
+    : protected FCDevice
 {
 Q_OBJECT
 Q_DISABLE_COPY_MOVE(FCPlotter)
@@ -66,7 +66,6 @@ public:
 
     // --- Доступ к свойствам ---
     [[nodiscard]] inline QString serialNumber() const noexcept { return _serialNumber; }
-    [[nodiscard]] bool isThreadRunning() const noexcept;
 
     // --- Управление потоком ---
     bool startThread();
@@ -136,19 +135,19 @@ signals:
 
     /// @brief Операция успешно запущена
     /// @param name Имя источника (serialNumber())
-    void started(const QString &name);
+    void started(const QString &name, const FCPlotterState &state);
 
     /// @brief Операция успешно остановлена
     /// @param name Имя источника
-    void stopped(const QString &name);
+    void stopped(const QString &name, const FCPlotterState &state);
 
     /// @brief Операция приостановлена
     /// @param name Имя источника
-    void paused(const QString &name);
+    void paused(const QString &name, const FCPlotterState &state);
 
     /// @brief Сброс завершён
     /// @param name Имя источника
-    void resetCompleted(const QString &name);
+    void reseted(const QString &name, const FCPlotterState &state);
 
     /// @brief Очистка завершена
     /// @param name Имя источника
@@ -160,7 +159,7 @@ signals:
 
     /// @brief Ошибка в работе плоттера
     /// @param name Источник, @param text Описание ошибки
-    void error(const QString &name, const QString &text);
+    void error(const QString &name, const FCPlotterState &state, const QString &text);
 
     /// @brief Обновление прогресса выполнения
     /// @param name Источник, @param percent [0;100], @param layer номер слоя
@@ -168,30 +167,29 @@ signals:
 
     /// @brief Результат операции (успех/неудача)
     /// @param name Имя операции, @param success результат, @param details подробности
-    void result(const QString &name, bool success, const QString &details);
+//    void result(const QString &name, bool success, const QString &details);
 
     /// @brief Результат диагностического теста
     /// @param testName "short" или "long", @param success результат, @param details отчёт
     void test(const QString &testName, bool success, const QString &details);
 
 private:
-    // --- Виртуальные методы инициализации (из FCDevice) ---
+    // виртуальные методы инициализации (из FCDevice) ---
     bool init();
     bool final();
 
-    // установка состояния готовности и генерация сигнала состояния
-    void setStartCondition(const FCPlotterState state)
+    inline bool hardwareDevicesIsReady()
     {
-        emit condition(FCDevice::state().set(state));
-        emit started(objectName());
+        return state().isReady() &&
+               _container.isValid() &&
+               (_bus && _bus->isOpen()) &&
+               (_controller && _controller->checkConnection()) &&
+               (_ramp && _ramp->isOpen()) &&
+               (_head && _head->state().isReady());
     }
 
-    // установка состояния ошибки и генерация сигнала состояния
-    void emitErrorCondition(const FCPlotterState &state, const QString &message)
-    {
-        emit condition(FCDevice::state().set(state));
-        emit error(objectName(), message);
-    }
+    // проверка: запущен ли поток
+    bool isThreadRunning() const noexcept;
 
     inline bool isSecretCheck() { return _head->isSecretCheck() && _controller->isSecretCheck(); }
 
@@ -212,15 +210,15 @@ private:
     [[nodiscard]] int estimateCurrentLayer(int cmdIdx, int totalCmds, int totalLayers) const;
 
     // --- Члены данных ---
-    QString _serialNumber;                           ///< уникальный идентификатор плоттера
-    FCSVGImageContainer _container;                  ///< контейнер с данными для печати
-    FCI2CBus *_bus = nullptr;                        ///< указатель на I2C шину
+    QString _serialNumber;                     ///< уникальный идентификатор плоттера
+    FCSVGImageContainer _container;            ///< контейнер с данными для печати
+    FCI2CBus *_bus = nullptr;                  ///< указатель на I2C шину
     FCGCodeController *_controller = nullptr;  ///< указатель на контроллер
-    FCPumpRamp *_ramp = nullptr;                     ///< указатель на рампу насосов
-    FCCanHead *_head = nullptr;                      ///< указатель на прокси головки
+    FCPumpRamp *_ramp = nullptr;               ///< указатель на рампу насосов
+    FCCanHead *_head = nullptr;                ///< указатель на прокси головки
 
-    QThread *_workerThread = nullptr;                ///< Рабочий поток выполнения
-    bool _stopRequested = false;                     ///< Флаг запроса завершения
+    QThread *_workerThread = nullptr; ///< Рабочий поток выполнения
+    bool _stopRequested = false;      ///< Флаг запроса завершения
 
     // --- Константы ---
     static constexpr int PROGRESS_UPDATE_MS = 500;   ///< Интервал обновления прогресса

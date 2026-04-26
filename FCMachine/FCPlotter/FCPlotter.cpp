@@ -3,6 +3,7 @@
 #include <QRandomGenerator>
 
 #include "FCPlotter.h"
+#include "FCPlotterGCodeEngine.h"
 
 #include <QDebug>
 
@@ -16,10 +17,7 @@ FCPlotter::FCPlotter(QString &portName, FCI2CBus *bus, QObject *parent)
       _bus{bus},
       _controller{new FCGCodeController{portName, this}},
       _ramp{new FCPumpRamp{bus, this}},
-      _head{new FCCanHead{this}},
-
-      _workerThread{nullptr},
-      _stopRequested{false}
+      _head{new FCCanHead{this}}
 {
     init();
 }
@@ -34,19 +32,13 @@ FCPlotter::~FCPlotter()
     // _bus + _controller + _ramp + _head удалятся автоматически через механизм родитель-потомок
 }
 
-// ============================================================================
 // ДОСТУП К СВОЙСТВАМ
-// ============================================================================
-
 bool FCPlotter::isThreadRunning() const noexcept
 {
     return _workerThread && _workerThread->isRunning() && !_stopRequested;
 }
 
-// ============================================================================
 // УПРАВЛЕНИЕ ПОТОКОМ
-// ============================================================================
-
 bool FCPlotter::startThread()
 {
     // Защита от повторного запуска
@@ -68,7 +60,7 @@ bool FCPlotter::startThread()
     connect(_workerThread, &QThread::started, this, &FCPlotter::run, Qt::DirectConnection);  // run() выполняется в контексте _workerThread
 
     // Сигнал завершения для очистки
-    connect(_workerThread, &QThread::finished, this, [this](){ emit stopped(objectName()); }, Qt::QueuedConnection);  // Обработка в основном потоке
+    connect(_workerThread, &QThread::finished, this, &FCPlotter::stop, Qt::QueuedConnection);  // Обработка в основном потоке
 
     _workerThread->start();
     return true;
@@ -90,7 +82,7 @@ bool FCPlotter::stopThread()
     _workerThread->quit();
     if(!_workerThread->wait(THREAD_STOP_TIMEOUT_MS))
     {
-        qWarning() << objectName() << ": поток не завершился за" << THREAD_STOP_TIMEOUT_MS << "мс";
+        qWarning() << objectName() << ": ошибка завершения потока за " << THREAD_STOP_TIMEOUT_MS << "мс";
         _workerThread->terminate();
         _workerThread->wait();
     }
@@ -98,97 +90,79 @@ bool FCPlotter::stopThread()
     _workerThread = nullptr;
 
     // Сброс состояния
-    state().set(FCPlotterState{FCReadyState::NotReady, FCErrorType::None});
+    emit condition(state().set(FCPlotterState{FCReadyState::NotReady, FCPlayState::Stop, FCErrorType::Close}));
     return true;
 }
 
-// ============================================================================
 // ПУБЛИЧНЫЕ СЛОТЫ: Приём команд от UI (вызываются из любого потока)
-// ============================================================================
-
 void FCPlotter::start(const FCSVGImageContainer &container)
 {
-    if(_stopRequested)
+    if(!hardwareDevicesIsReady())
     {
-        emitErrorCondition(FCPlotterState{FCReadyState::NotReady, FCErrorType::Destroy}, QStringLiteral("Запрос остановки активен"));
-        return;
-    }
-
-    if(!state().isReady())
-    {
-        emitErrorCondition(FCPlotterState{FCReadyState::NotReady, FCErrorType::Connection}, QStringLiteral("Оборудование не готово"));
+        emit error(objectName(), state().set(FCPlotterState{FCReadyState::NotReady, FCPlayState::Stop, FCErrorType::Destroy}), QStringLiteral("оборудование не готово"));
         return;
     }
 
     if(!container.isValid())
     {
-        emitErrorCondition(FCPlotterState{FCReadyState::NotReady, FCErrorType::Parse}, QStringLiteral("Невалидный контейнер"));
+        emit error(objectName(), state().set(FCPlotterState{FCReadyState::NotReady, FCPlayState::Stop, FCErrorType::Parse}), QStringLiteral("контейнер не готов"));
         return;
     }
 
     // копирование контейнера (безопасно для кросс-поточного использования)
     _container = container;
 
-    // обновление состояния и запуск обработки
-    setStartCondition(FCPlotterState{FCPlayState::Start, FCErrorType::None});
+    // установка состояния в start обновление состояния
+//    emit condition();
+    emit started(objectName(), state().set(FCPlotterState{FCReadyState::Ready, FCPlayState::Start, FCErrorType::None}));
 
     // Непосредственный запуск обработки (выполнится в рабочем потоке)
     // Благодаря moveToThread(), этот вызов будет выполнен в контексте _workerThread
-    QMetaObject::invokeMethod(this, &::FCPlotter::processStartCommand, Qt::QueuedConnection);
+    QMetaObject::invokeMethod(this, &FCPlotter::processStartCommand, Qt::QueuedConnection);
 }
 
 void FCPlotter::stop()
 {
-    if(_stopRequested)
+    if(state().is(FCPlayState::Stop))
     {
         return;
     }
 
     // Немедленная аварийная остановка оборудования
-    _controller->emergencyStop();
-
+    _controller->stop();
     // Обновление состояния
-    set(FCPlayState::Stop, FCChangedState::Changed);
-    emit stopped(objectName());
+    emit stopped(objectName(), state().set(FCReadyState::Ready, FCPlayState::Stop, FCErrorType::None));
 }
 
 void FCPlotter::pause()
 {
-    if (_stopRequested)
+    if(state().is(FCPlayState::Pause))
     {
         return;
     }
 
     // Приостановка выполнения
-    set(FCPlayState::Pause, FCChangedState::Changed);
-    emit paused(objectName());
+    emit paused(objectName(), state().set(FCReadyState::Ready, FCPlayState::Pause, FCErrorType::None));
 }
 
 void FCPlotter::reset()
 {
-    if (_stopRequested)
+    if(_controller)
     {
-        return;
+        _controller->reboot();
     }
 
-    // Сброс контроллера и рампы
-    auto *controller = _hardware.controller();
-    auto *ramp = _hardware.ramp();
-
-    if (controller)
+    if(_ramp)
     {
-        controller->reboot();
+        _ramp->reset();
     }
 
-    if(ramp)
+    if(_ramp)
     {
-        ramp->reset();
+        _ramp->reset();
     }
 
-    // Сброс состояния
-    set(FCReadyState::NotReady, FCPlayState::Stop, FCChangedState::Changed, FCErrorType::None);
-
-    emit resetCompleted(objectName());
+    emit reseted(objectName(), state().set(FCReadyState::Ready, FCPlayState::Stop, FCErrorType::None));
 }
 
 void FCPlotter::clear()
@@ -249,24 +223,20 @@ void FCPlotter::run()
     // Инициализация оборудования
     if(!init() || !state().isReady())
     {
-        emit error(objectName(), QStringLiteral("Не удалось инициализировать оборудование"));
-        emit condition(state().set(FCReadyState::NotReady, FCErrorType::Connection));
+        emit error(objectName(), state().set(FCPlotterState{FCReadyState::NotReady, FCErrorType::Connection}), QStringLiteral("Не удалось инициализировать оборудование"));
         return;
     }
 
     // Оборудование готово
-    set(FCReadyState::Ready, FCErrorType::None);
-    emit condition(state());
+    emit condition(state().set(FCReadyState::Ready, FCErrorType::None));
 }
 
 void FCPlotter::processStartCommand()
 {
     // Проверка готовности
-    if(!state().isReady() || !_container.isValid())
+    if(!hardwareDevicesIsReady())
     {
-        emit error(objectName(), QStringLiteral("Невозможно начать операцию"));
-        set(FCReadyState::NotReady, FCErrorState::Critical, FCErrorType::Connection);
-        emit result(objectName(), false, QStringLiteral("Ошибка подготовки"));
+        emit error(objectName(), state().set(FCReadyState::NotReady, FCErrorType::Connection), QStringLiteral("Оборудование не готово"));
         return;
     }
 

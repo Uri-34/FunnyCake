@@ -736,19 +736,19 @@ private:
 using FCDisplayState = FCStateT<FCReadyState, FCPlayState, FCErrorType, FCPanelState, FCVisibilityState>;
 
 /// @brief Состояние устройства (стандартный набор для логики — БЕЗ FCErrorState!)
-using FCDeviceState = FCStateT<FCReadyState, FCErrorType>;
+using FCDeviceState = FCStateT<FCReadyState, FCPlayState, FCErrorType>;
 
 /// @brief Состояние контейнера SVG (только логические типы)
 using FCSVGImageContainerState = FCStateT<FCReadyState, FCPlayState, FCErrorType>;
 
-/// @brief Состояние аппаратного слоя плоттера (только логические типы)
-using FCPlotterHardwareState = FCStateT<FCReadyState, FCPlayState, FCErrorType>;
+///// @brief Состояние аппаратного слоя плоттера (только логические типы)
+//using FCPlotterHardwareState = FCStateT<FCReadyState, FCPlayState, FCErrorType>;
 
 /// @brief Состояние плоттера (алиас на стандартное состояние устройства)
 using FCPlotterState = FCDeviceState;
 
 /// @brief Состояние контроллера Marlin (только логические типы)
-using FCMarlinControllerState = FCStateT<FCReadyState, FCPlayState, FCErrorType>;
+using FCMarlinControllerState = FCDeviceState;
 
 /// @brief Состояние очереди команд плоттера
 using FCQueueCondition = FCStateT<FCReadyState, FCPlayState>;

@@ -21,7 +21,7 @@
  *   - Состояние головки (state).
  */
 class FCCanHead
-    : protected FCCanDevice
+    : public FCCanDevice
 {
 Q_OBJECT
 Q_DISABLE_COPY_MOVE(FCCanHead)
@@ -48,7 +48,7 @@ public:
 
     ~FCCanHead() override = default;
 
-    /// получение серретного кода
+    /// получение секретного кода
     inline bool isSecretCheck() { return exchange(GetSecurityCode) == SecurityCode; }
 
 public slots:
