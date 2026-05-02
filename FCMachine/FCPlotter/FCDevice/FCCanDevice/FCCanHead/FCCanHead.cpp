@@ -2,7 +2,7 @@
 
 bool FCCanHead::init()
 {
-    if(!device()->connectDevice() && securityCode() != SecurityCode)
+    if(!device()->connectDevice() && isSecretCheck())
     {
         state().set(FCReadyState::NotReady);
         return false;

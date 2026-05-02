@@ -1,5 +1,5 @@
-#ifndef FC_SVG_IMAGE_CODER_H
-#define FC_SVG_IMAGE_CODER_H
+#ifndef FC_GCODE_MAKER_H
+#define FC_GCODE_MAKER_H
 
 #include <QObject>
 #include <QThread>
@@ -11,14 +11,14 @@
 #include <QFile>
 #include <QByteArray>
 
-#include "FCDevice.h"
-#include "FCSVGImageContainer.h"
+#include "FCState.h"
+#include "FCImageBinaryContainer.h"
 #include "FCSVGImageParser.h"
 
 /**
  * @brief Класс кодирования и декодирования векторных изображений формата SVG.
  *
- * Предназначен для преобразования SVG-файлов во внутренний формат FCSVGImageContainer
+ * Предназначен для преобразования SVG-файлов во внутренний формат FCImageBinaryContainer
  * и обратно. Работает в отдельном потоке для предотвращения блокировок интерфейса
  * при обработке больших файлов.
  *
@@ -41,14 +41,14 @@
  *          - При уничтожении объекта завершить поток через stopThread(),
  *          - SVG-файлы должны быть валидными (проверка через FCSVGImageParser).
  * @see FCSVGImageParser для низкоуровневого парсинга SVG
- * @see FCSVGImageContainer для хранения распарсенных данных
+ * @see FCImageBinaryContainer для хранения распарсенных данных
  * @see FCPlotter для использования закодированных данных
  */
-class FCSVGImageCoder
-    : public FCDevice
+class FCGCodeMaker
+    : public FCState
 {
 Q_OBJECT
-Q_DISABLE_COPY_MOVE(FCSVGImageCoder)
+Q_DISABLE_COPY_MOVE(FCGCodeMaker)
 public:
     // Константы (мс)
     static constexpr int CODER_THREAD_STOP_TIMEOUT_MS = 5000;      ///< Таймаут ожидания завершения потока
@@ -65,7 +65,7 @@ public:
      *       - Объект перемещается в рабочий поток через moveToThread(),
      *       - Инициализируется парсер SVG (FCSVGImageParser).
      */
-    explicit FCSVGImageCoder(const QString &name, QObject *parent = nullptr);
+    explicit FCGCodeMaker(const QString &name, QObject *parent = nullptr);
 
     /**
      * @brief Деструктор кодера с корректным завершением рабочего потока
@@ -75,7 +75,7 @@ public:
      *       - Принудительное завершение потока при таймауте.
      * @warning Блокирует вызывающий поток на время ожидания (до 5 секунд).
      */
-    ~FCSVGImageCoder() override;
+    ~FCGCodeMaker() override;
 
     // Управление потоком выполнения
     /**
@@ -106,7 +106,7 @@ public:
      * @param outputFilePath Путь для сохранения SVG-файла
      * @note Метод неблокирующий — задача ставится в очередь рабочего потока.
      */
-    Q_INVOKABLE void encode(const FCSVGImageContainer &container, const QString &outputFilePath);
+    Q_INVOKABLE void encode(const FCImageBinaryContainer &container, const QString &outputFilePath);
 
     /**
      * @brief Отменяет текущую операцию кодирования/декодирования
@@ -125,7 +125,7 @@ public:
      * @param timeoutMs Таймаут ожидания ответа (мс)
      * @return Код безопасности или пустая строка при ошибке.
      */
-    [[nodiscard]] QString securityCode(int timeoutMs) override;
+    [[nodiscard]] QString securityCode(int timeoutMs);
 
 signals:
     /**
@@ -134,7 +134,7 @@ signals:
      * @param success Результат операции (true = успешно)
      * @param details Детали результата (ошибки или статистика)
      */
-    void decoded(const FCSVGImageContainer &container, bool success, const QString &details);
+    void decoded(const FCImageBinaryContainer &container, bool success, const QString &details);
 
     /**
      * @brief Сигнал завершения кодирования
@@ -182,7 +182,7 @@ private:
 
     // Операции кодирования/декодирования
     [[nodiscard]] bool performDecode(const QString &svgFilePath);
-    [[nodiscard]] bool performEncode(const FCSVGImageContainer &container, const QString &outputFilePath);
+    [[nodiscard]] bool performEncode(const FCImageBinaryContainer &container, const QString &outputFilePath);
 
     // Инициализация и финализация
     [[nodiscard]] bool initializeParser();
@@ -205,7 +205,7 @@ private:
     QString _svgFilePath;
 
     /// Контейнер для кодирования в SVG.
-    FCSVGImageContainer _currentContainer;
+    FCImageBinaryContainer _currentContainer;
 
     /// Путь для сохранения закодированного SVG-файла.
     QString _outputFilePath;
@@ -222,6 +222,6 @@ private:
 
 // Псевдонимы типов
 /// Список указателей на кодеры для управления группой устройств.
-using FCSVGImageCoderPtrList = QList<FCSVGImageCoder*>;
+using FCGCodeMakerPtrList = QList<FCGCodeMaker*>;
 
-#endif // FC_SVG_IMAGE_CODER_H
+#endif // FC_GCODE_MAKER_H

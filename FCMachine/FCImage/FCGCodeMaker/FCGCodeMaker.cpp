@@ -12,9 +12,9 @@
 #include <QByteArray>
 #include <QStringList>
 
-#include "FCSVGImageCoder.h"
+#include "FCGCodeMaker.h"
 #include "FCSVGImageParser.h"
-#include "FCSVGImageContainer.h"
+#include "FCImageBinaryContainer.h"
 
 // ============================================================================
 // Конструкторы / Деструктор

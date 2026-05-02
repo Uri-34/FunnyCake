@@ -9,12 +9,6 @@
 #include "FCSerialDevice.h"
 #include "FCM115.h"
 
-/**
- * @brief Драйвер управления контроллером Marlin.
- * @details Парсит ответы, управляет RGB, предоставляет аварийные команды.
- *          ВАЖНО: Дублирующий _state удалён. Используется FCDevice::state().
- * @warning Блокирующие операции вызывать из рабочего потока.
- */
 class FCGCodeController
     : public FCSerialDevice
 {

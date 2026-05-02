@@ -48,6 +48,9 @@ class FCDisplay
 {
 Q_OBJECT
 public:
+    /// @brief Состояние дисплея (UI-слой — может включать FCErrorState)
+    using FCDisplayState = FCStateT<FCReadyState, FCPlayState, FCErrorType, FCPanelState, FCVisibilityState>;
+
     /**
      * @brief Конструктор класса.
      * @param parent Родительский виджет (по умолчанию nullptr).

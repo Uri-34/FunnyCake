@@ -8,7 +8,7 @@
 
 #include "FCDevice.h"
 #include "FCI2CBus.h"
-#include "FCSVGImageContainer.h"
+#include "FCImageBinaryContainer.h"
 #include "FCGCodeController.h"
 #include "FCPumpRamp.h"
 #include "FCCanHead.h"
@@ -72,10 +72,7 @@ public:
     bool stopThread();
 
 public slots:
-    // ========================================================================
     // СЛОТЫ ДЛЯ ПРИЁМА КОМАНД ОТ UI (FCDisplay)
-    // ========================================================================
-
     /**
      * @brief Запустить операцию нанесения (слот для сигнала play() от UI)
      * @param container Контейнер с данными для печати
@@ -129,10 +126,7 @@ public slots:
     void longTest();
 
 signals:
-    // ========================================================================
     // СИГНАЛЫ ОБРАТНОЙ СВЯЗИ ДЛЯ UI (FCDisplay)
-    // ========================================================================
-
     /// @brief Операция успешно запущена
     /// @param name Имя источника (serialNumber())
     void started(const QString &name, const FCPlotterState &state);
@@ -163,7 +157,7 @@ signals:
 
     /// @brief Обновление прогресса выполнения
     /// @param name Источник, @param percent [0;100], @param layer номер слоя
-    void progress(const QString &name, int percent, int layer);
+    void progress(int percent, const QString &name);
 
     /// @brief Результат операции (успех/неудача)
     /// @param name Имя операции, @param success результат, @param details подробности
@@ -182,7 +176,7 @@ private:
     {
         return state().isReady() &&
                _container.isValid() &&
-               (_bus && _bus->isOpen()) &&
+//               (_bus && _bus->isOpen()) &&
                (_controller && _controller->checkConnection()) &&
                (_ramp && _ramp->isOpen()) &&
                (_head && _head->state().isReady());
@@ -212,8 +206,8 @@ private:
     // --- Члены данных ---
     QString _serialNumber;                     ///< уникальный идентификатор плоттера
     FCSVGImageContainer _container;            ///< контейнер с данными для печати
-    FCI2CBus *_bus = nullptr;                  ///< указатель на I2C шину
     FCGCodeController *_controller = nullptr;  ///< указатель на контроллер
+//    FCI2CBus *_bus = nullptr;                  ///< указатель на I2C шину
     FCPumpRamp *_ramp = nullptr;               ///< указатель на рампу насосов
     FCCanHead *_head = nullptr;                ///< указатель на прокси головки
 

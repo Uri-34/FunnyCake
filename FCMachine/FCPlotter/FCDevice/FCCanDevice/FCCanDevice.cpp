@@ -38,7 +38,7 @@ bool FCCanDevice::init()
     }
     else
     {
-        state().set(FCReadyState::NotReady);
+        state().set(FCReadyState::NotReady, FCErrorType::Connection);
         return false;
     }
 }
@@ -71,7 +71,18 @@ bool FCCanDevice::send(uint8_t command, const QByteArray &data)
 
 const QByteArray FCCanDevice::receive()
 {
-    return state().is(FCReadyState::Ready) ? _device->readFrame().payload() : QByteArray{};
+    QByteArray answer;
+    if(state().is(FCErrorType::None))
+    {
+        answer = _device->readFrame().payload();
+    }
+    else
+    {
+        state().set(FCErrorType::Read);
+        answer = QByteArray{};
+    }
+
+    return answer;
 }
 
 QByteArray FCCanDevice::exchange(uint8_t command, const QByteArray &data)

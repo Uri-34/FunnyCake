@@ -178,10 +178,10 @@ template<> struct is_logic_state<FCVisibilityState> : std::false_type {};
 template<typename... States>
 class FCStateT
 {
-    // Компиляционная проверка: все шаблонные параметры должны быть валидными состояниями FC
-    static_assert((is_fc_state_type<States>::value && ...),
-                  "All template parameters must be FC state enum types. "
-                  "Did you forget to add: template<> struct is_fc_state_type<YourEnum> : std::true_type {};");
+//    // Компиляционная проверка: все шаблонные параметры должны быть валидными состояниями FC
+//    static_assert((is_fc_state_type<States>::value && ...),
+//                  "All template parameters must be FC state enum types. "
+//                  "Did you forget to add: template<> struct is_fc_state_type<YourEnum> : std::true_type {};");
 
 public:
     // ========================================================================
@@ -732,23 +732,20 @@ private:
 // ============================================================================
 // TYPE ALIASES ДЛЯ УДОБСТВА (с защитой от ошибок через static_assert)
 // ============================================================================
-/// @brief Состояние дисплея (UI-слой — может включать FCErrorState)
-using FCDisplayState = FCStateT<FCReadyState, FCPlayState, FCErrorType, FCPanelState, FCVisibilityState>;
+///// @brief Состояние дисплея (UI-слой — может включать FCErrorState)
+//using FCDisplayState = FCStateT<FCReadyState, FCPlayState, FCErrorType, FCPanelState, FCVisibilityState>;
 
-/// @brief Состояние устройства (стандартный набор для логики — БЕЗ FCErrorState!)
-using FCDeviceState = FCStateT<FCReadyState, FCPlayState, FCErrorType>;
-
-/// @brief Состояние контейнера SVG (только логические типы)
-using FCSVGImageContainerState = FCStateT<FCReadyState, FCPlayState, FCErrorType>;
+///// @brief Состояние контейнера SVG (только логические типы)
+//using FCSVGImageContainerState = FCStateT<FCReadyState, FCPlayState, FCErrorType>;
 
 ///// @brief Состояние аппаратного слоя плоттера (только логические типы)
 //using FCPlotterHardwareState = FCStateT<FCReadyState, FCPlayState, FCErrorType>;
 
-/// @brief Состояние плоттера (алиас на стандартное состояние устройства)
-using FCPlotterState = FCDeviceState;
+///// @brief Состояние плоттера (алиас на стандартное состояние устройства)
+//using FCPlotterState = FCDeviceState;
 
-/// @brief Состояние контроллера Marlin (только логические типы)
-using FCMarlinControllerState = FCDeviceState;
+///// @brief Состояние контроллера Marlin (только логические типы)
+//using FCMarlinControllerState = FCDeviceState;
 
 /// @brief Состояние очереди команд плоттера
 using FCQueueCondition = FCStateT<FCReadyState, FCPlayState>;

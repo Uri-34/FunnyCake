@@ -1,5 +1,5 @@
-#ifndef FC_SVG_IMAGE_CONTAINER_H
-#define FC_SVG_IMAGE_CONTAINER_H
+#ifndef FC_IMAGE_BINARI_CONTAINER_H
+#define FC_IMAGE_BINARI_CONTAINER_H
 
 #include <QObject>
 #include <QVector>
@@ -24,12 +24,12 @@
  * @note Сигналы эмитятся в классах-владельцах (FCDisplay, FCMachine)
  * @threadsafe
  */
-class FCSVGImageContainer
+class FCImageBinaryContainer
     : public QObject
 {
 Q_OBJECT
 public:
-    const FCSVGImageContainerState FCSVGImageContainerDefaultState {FCReadyState::NotReady, FCPlayState::Stop, FCErrorType::None};
+    using FCImageBinaryContainerState = FCStateT<FCReadyState, FCPlayState, FCErrorType>;
 
     // СТРУКТУРЫ ДАННЫХ
     struct Metadata
@@ -88,19 +88,13 @@ public:
         quint32 appendFigure(const BinaryFigure &figure);
     };
 
-    // ========================================================================
     // КОНСТРУКТОРЫ / ДЕСТРУКТОР
-    // ========================================================================
+    explicit FCImageBinaryContainer(QObject *parent = nullptr);
+    explicit FCImageBinaryContainer(const QString &name, QObject *parent = nullptr);
+    FCImageBinaryContainer(const FCImageBinaryContainer &other, QObject *parent = nullptr);
+    ~FCImageBinaryContainer() override;
 
-    explicit FCSVGImageContainer(QObject *parent = nullptr);
-    explicit FCSVGImageContainer(const QString &name, QObject *parent = nullptr);
-    FCSVGImageContainer(const FCSVGImageContainer &other, QObject *parent = nullptr);
-    ~FCSVGImageContainer() override;
-
-    // ========================================================================
     // УПРАВЛЕНИЕ ЗАПИСЬЮ
-    // ========================================================================
-
     [[nodiscard]] bool beginWrite();
     void endWrite();
     [[nodiscard]] QWriteLocker writeLocker();
@@ -116,10 +110,7 @@ public:
     void clear();
     void setReady();
 
-    // ========================================================================
     // ЧТЕНИЕ ДАННЫХ (const-методы, потокобезопасные)
-    // ========================================================================
-
     [[nodiscard]] quint32 layerCount() const noexcept;
     [[nodiscard]] BinaryLayer layer(quint32 index) const;
     [[nodiscard]] QVector<BinaryLayer> layers() const;
@@ -133,15 +124,12 @@ public:
     [[nodiscard]] quint32 totalFigures() const noexcept;
     [[nodiscard]] quint64 memorySize() const noexcept;
 
-    // ========================================================================
     // УПРАВЛЕНИЕ СОСТОЯНИЕМ (FCStateT<>)
-    // ========================================================================
-
     /// @brief Получить текущее состояние контейнера
-    [[nodiscard]] inline FCSVGImageContainerState state() const noexcept { return _state; }
+    [[nodiscard]] inline FCImageBinaryContainerState state() const noexcept { return _state; }
 
     /// @brief Установить состояние контейнера
-    inline void setState(const FCSVGImageContainerState &state) { _state = state; }
+    inline void setState(const FCImageBinaryContainerState &state) { _state = state; }
 
     /// @brief Установить одно или несколько состояний (вариативный шаблон)
     template<typename First, typename... Rest>
@@ -160,11 +148,11 @@ public:
     // УТИЛИТЫ
     [[nodiscard]] QReadLocker readLocker() const;
     [[nodiscard]] bool canRead() const noexcept;
-    QSharedPointer<FCSVGImageContainer> snapshot() const;
+    QSharedPointer<FCImageBinaryContainer> snapshot() const;
     [[nodiscard]] qint32 findLayerByName(const QString &name) const;
     [[nodiscard]] QVector<QPair<quint32, quint32>> findFiguresByColor(const QColor &color, quint8 tolerance = 0) const;
     [[nodiscard]] inline FC2DSize imageSize() const noexcept { return _metadata.imageSize; }
-    FCSVGImageContainer& operator=(const FCSVGImageContainer &other);
+    FCImageBinaryContainer& operator=(const FCImageBinaryContainer &other);
 
 signals:
 //    void containerReady();
@@ -174,7 +162,7 @@ signals:
     void figureAdded(quint32 layerIndex, quint32 figureIndex);
 
     /// @brief Сигнал изменения состояния (использует FCStateT<>)
-    void condition(const FCSVGImageContainerState &state, const QString &details = QString());
+    void condition(const FCImageBinaryContainer::FCImageBinaryContainerState &state, const QString &details = QString());
 
 private:
     QVector<BinaryLayer> _layers;
@@ -186,7 +174,7 @@ private:
     FC2DSize _viewBox;
 
     /// @brief Состояние контейнера (FCStateT<>)
-    FCSVGImageContainerState _state;
+    FCImageBinaryContainerState _state;
 
     void validateLayerIndex(quint32 index) const;
     void calculateStatistics();
@@ -195,13 +183,13 @@ private:
 };
 
 // INLINE РЕАЛИЗАЦИИ
-inline quint32 FCSVGImageContainer::layerCount() const noexcept { return static_cast<quint32>(_layers.size()); }
-inline bool FCSVGImageContainer::isReady() const noexcept { return _state.is(FCReadyState::Ready); }
-inline bool FCSVGImageContainer::canRead() const noexcept { return _writeInProgress.loadRelaxed() == 0; }
-inline quint32 FCSVGImageContainer::totalFigures() const noexcept { return _metadata.figureCount; }
-inline FC2DSize FCSVGImageContainer::viewBox() const noexcept { return _viewBox; }
-inline const QVector<FCSVGImageContainer::BinaryLayer>& FCSVGImageContainer::layersRef() const { return _layers; }
-inline QReadLocker FCSVGImageContainer::readLocker() const { return QReadLocker(&_lock); }
-inline QWriteLocker FCSVGImageContainer::writeLocker() { return QWriteLocker(&_lock); }
+inline quint32 FCImageBinaryContainer::layerCount() const noexcept { return static_cast<quint32>(_layers.size()); }
+inline bool FCImageBinaryContainer::isReady() const noexcept { return _state.is(FCReadyState::Ready); }
+inline bool FCImageBinaryContainer::canRead() const noexcept { return _writeInProgress.loadRelaxed() == 0; }
+inline quint32 FCImageBinaryContainer::totalFigures() const noexcept { return _metadata.figureCount; }
+inline FC2DSize FCImageBinaryContainer::viewBox() const noexcept { return _viewBox; }
+inline const QVector<FCImageBinaryContainer::BinaryLayer>& FCImageBinaryContainer::layersRef() const { return _layers; }
+inline QReadLocker FCImageBinaryContainer::readLocker() const { return QReadLocker(&_lock); }
+inline QWriteLocker FCImageBinaryContainer::writeLocker() { return QWriteLocker(&_lock); }
 
-#endif // FC_SVG_IMAGE_CONTAINER_H
+#endif // FC_IMAGE_BINARI_CONTAINER_H

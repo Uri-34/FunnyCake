@@ -7,14 +7,10 @@
 
 #include <QDebug>
 
-// ============================================================================
 // КОНСТРУКТОРЫ И ДЕСТРУКТОР
-// ============================================================================
-
 FCPlotter::FCPlotter(QString &portName, FCI2CBus *bus, QObject *parent)
     : FCDevice(QStringLiteral("Plotter-") + portName, parent),
       _serialNumber{QStringLiteral("PLOT-%1-%2").arg(portName.replace('/', '_')).arg(QRandomGenerator::global()->bounded(10000, 99999))},
-      _bus{bus},
       _controller{new FCGCodeController{portName, this}},
       _ramp{new FCPumpRamp{bus, this}},
       _head{new FCCanHead{this}}
@@ -173,17 +169,18 @@ void FCPlotter::clear()
     }
 
     // Очистка головки
-    auto *ramp = _hardware.ramp();
-    if (ramp) ramp->reset();
+    if(_ramp)
+    {
+        _ramp->reset();
+    }
 
     // Пауза для стекания чернил
     QThread::msleep(CLEAR_DURATION_MS);
 
     // Возврат в парковочную позицию
-    auto *controller = _hardware.controller();
-    if(controller)
+    if(_controller)
     {
-        controller->send("G1 X0 Y0 Z10");
+        _controller->send("G1 X0 Y0 Z10");
     }
 
     emit cleared(objectName());
@@ -212,10 +209,7 @@ void FCPlotter::longTest()
     emit test(QStringLiteral("long"), true, QStringLiteral("Тест запущен"));
 }
 
-// ============================================================================
 // ПРИВАТНЫЕ СЛОТЫ: Выполнение команд в рабочем потоке
-// ============================================================================
-
 void FCPlotter::run()
 {
     // Этот слот выполняется в контексте _workerThread
@@ -242,13 +236,12 @@ void FCPlotter::processStartCommand()
 
     // Генерация G-кода
     FCPlotterGCodeEngine gcodeEngine;
-    QStringList gcodeList = gcodeEngine.generate(_currentContainer);
+    QStringList gcodeList = gcodeEngine.generate(_container);
 
     if(gcodeList.isEmpty())
     {
-        emit error(objectName(), QStringLiteral("Не удалось сгенерировать G-код"));
-        set(FCReadyState::NotReady, FCErrorState::Critical, FCErrorType::Parse);
-        emit result(objectName(), false, QStringLiteral("Ошибка генерации"));
+        state().set(FCReadyState::NotReady, FCErrorState::Critical, FCErrorType::Parse);
+        emit error(objectName(), state(), QStringLiteral("Не удалось сгенерировать G-код"));
         return;
     }
 
@@ -267,14 +260,14 @@ void FCPlotter::processStartCommand()
         }
 
         // Отправка команды оборудованию
-        auto *controller = _hardware.controller();
-        if(controller)
+        if(_controller)
         {
-            bool success = controller->sendCommand(cmd.toUtf8());
+            bool success = _controller->send(cmd.toUtf8());
             if(!success)
             {
-                emit error(objectName(), QStringLiteral("Ошибка отправки: ") + cmd);
-                set(FCReadyState::NotReady, FCErrorState::Critical, FCErrorType::Write);
+                emit error(objectName(),
+                           state().set(FCReadyState::NotReady, FCErrorState::Critical, FCErrorType::Write),
+                           QStringLiteral("Ошибка отправки: ") + cmd);
                 break;
             }
         }
@@ -286,8 +279,8 @@ void FCPlotter::processStartCommand()
         if(now - lastProgressUpdate >= PROGRESS_UPDATE_MS)
         {
             int percent = (processedCommands * 100) / totalCommands;
-            int currentLayer = estimateCurrentLayer(processedCommands, totalCommands, totalLayers);
-            emit progress(objectName(), percent, currentLayer);
+//            int currentLayer = estimateCurrentLayer(processedCommands, totalCommands, totalLayers);
+            emit progress(percent, objectName());
             lastProgressUpdate = now;
         }
     }
@@ -295,77 +288,66 @@ void FCPlotter::processStartCommand()
     // Завершение операции
     if (!_stopRequested)
     {
-        set(FCPlayState::Stop, FCChangedState::Unchanged, FCErrorType::None);
-        emit result(objectName(), true, QStringLiteral("Операция завершена"));
+        emit message(objectName(), QStringLiteral("Операция завершена"));
     }
     else
     {
-        emit result(objectName(), false, QStringLiteral("Операция прервана"));
+        emit error(objectName(), state().set(FCPlayState::Stop, FCChangedState::Unchanged, FCErrorType::None), QStringLiteral("Операция прервана"));
     }
 }
 
 void FCPlotter::processStopCommand()
 {
-    _hardware.emergencyStop();
+    stop();
 
     // Возврат в безопасную позицию
-    auto *controller = _hardware.controller();
-    if(controller)
+    if(_controller)
     {
-        controller->sendCommand("G1 Z10");
-        controller->sendCommand("G28 X Y");
+        _controller->send("G1 Z10");
+        _controller->send("G28 X Y");
     }
 
-    set(FCPlayState::Stop, FCChangedState::Changed);
-    emit stopped(objectName());
+    emit stopped(objectName(), state().set(FCPlayState::Stop, FCChangedState::Changed));
 }
 
 void FCPlotter::processPauseCommand()
 {
-    auto *controller = _hardware.controller();
-    if(controller)
+    if(_controller)
     {
-        controller->sendCommand("M25");  // Пауза в Marlin
-        controller->sendCommand("G1 Z5");
+        _controller->send("M25");  // Пауза в Marlin
+        _controller->send("G1 Z5");
     }
 
-    set(FCPlayState::Pause, FCChangedState::Changed);
-    emit paused(objectName());
+    emit paused(objectName(), state().set(FCPlayState::Pause, FCChangedState::Changed));
 }
 
 void FCPlotter::processResetCommand()
 {
-    auto *controller = _hardware.controller();
-    auto *ramp = _hardware.ramp();
-
-    if(controller)
+    if(_controller)
     {
-        controller->reboot();
+        _controller->reboot();
     }
 
-    if(ramp)
+    if(_ramp)
     {
-        ramp->reset();
+        _ramp->reset();
     }
 
-    set(FCReadyState::NotReady, FCPlayState::Stop, FCChangedState::Changed, FCErrorType::None);
-    emit resetCompleted(objectName());
+    emit reseted(objectName(), state().set(FCReadyState::NotReady, FCPlayState::Stop, FCChangedState::Changed, FCErrorType::None));
 }
 
 void FCPlotter::processClearCommand()
 {
-    auto *ramp = _hardware.ramp();
-    if(ramp)
+    if(_ramp)
     {
-        ramp->reset();
+        _ramp->reset();
     }
 
     QThread::msleep(CLEAR_DURATION_MS);
 
-    auto *controller = _hardware.controller();
-    if(controller)
+    if(_controller)
     {
-        controller->sendCommand("G1 X0 Y0 Z10");
+        _controller->send("G1 X0 Y0 Z10");
     }
 
     emit cleared(objectName());
@@ -383,75 +365,64 @@ void FCPlotter::processLongTestCommand()
     emit test(QStringLiteral("long"), true, QStringLiteral("Расширенный тест пройден"));
 }
 
-// ============================================================================
 // ВИРТУАЛЬНЫЕ МЕТОДЫ ИНИЦИАЛИЗАЦИИ
-// ============================================================================
-
 bool FCPlotter::init()
 {
     bool returnCode = false;
+
     // определение состояния плоттера в зависимости от состояний всех устройств
-    if((_bus && _bus->isOpen()) &&
-        _controller && _controller->)
+    if(_controller && _controller->checkConnection() && _controller->isSecretCheck() &&
+       _ramp && _ramp->isOpen() &&
+       _head && _head->isSecretCheck())
     {
-        connect(&_bus, &FCI2CBus::condition,
-                this, [this](const FCPlotterHardwareState &state)
+        // состояние g-code контроллера
+        connect(_controller, &FCGCodeController::condition,
+                this, [this](const FCDeviceState &deviceState, const QString &details)
                 {
-                    bool ready = state.isReady();
-                    if(ready)
-                    {
-                        set(FCReadyState::Ready);
-                    }
-
-                    emit hardwareReady(ready);
+                    Q_UNUSED(details);
+                    state() &= deviceState;
                 },
                 Qt::QueuedConnection
         );
 
-        // Ошибки оборудования
-        connect(&_hardware, &FCPlotterHardware::condition,
-                this, [this](const FCPlotterHardwareState &hardwareState)
+        // состояние рампы насосов
+        connect(_ramp, &FCPumpRamp::condition,
+                this, [this](const FCDeviceState &deviceState, const QString &details)
                 {
-                    state() &= hardwareState;
+                    Q_UNUSED(details);
+                    state() &= deviceState;  // Объединение через operator&=
                 },
                 Qt::QueuedConnection
         );
 
-        // Изменение состояния оборудования → обновление состояния плоттера
-        connect(&_hardware, &FCPlotterHardware::condition,
-                this, [this](const FCPlotterHardwareState &hardwareState)
+        // состояние головки рисования
+        connect(_head, &FCPumpRamp::condition,
+                this, [this](const FCDeviceState &deviceState, const QString &details)
                 {
-                    state() &= hardwareState;  // Объединение через operator&=
-                    emit condition(state(), objectName());
+                    Q_UNUSED(details);
+                    state() &= deviceState;  // Объединение через operator&=
                 },
                 Qt::QueuedConnection
         );
-
-        state() &= _hardware.state();
         returnCode = true;
     }
     else
     {
-        state().set(FCReadyState::NotReady, FCErrorState::Critical, FCErrorType::Connection);
+        state().set(FCReadyState::NotReady, FCErrorType::Connection);
         returnCode = false;
     }
 
-    emit condition(state());
+//    emit condition(state());
 
     return returnCode;
 }
 
 bool FCPlotter::final()
 {
-    // отключать connect() нет смысла потому что метод FCPlotter::final() не вызывается циклически
-
-    return _hardware.final();
+    return true;
 }
 
-// ============================================================================
 // ПРИВАТНЫЕ МЕТОДЫ
-// ============================================================================
-
 int FCPlotter::estimateCurrentLayer(int commandIndex, int totalCommands, int totalLayers) const
 {
     if (totalLayers <= 0 || totalCommands <= 0) return -1;

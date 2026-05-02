@@ -5,7 +5,7 @@
 #include <QStringList>
 
 #include "FCSVGImageContainer.h"
-#include "FCMarlinController.h"
+#include "FCGCodeController.h"
 #include "FCPumpRamp.h"
 
 /**
@@ -18,7 +18,7 @@ Q_OBJECT
 public:
     explicit FCPlotterGCodeEngine(QObject *parent = nullptr);
     
-    void setHardware(FCMarlinController *controller, FCPumpRamp *ramp);
+    void setHardware(FCGCodeController *controller, FCPumpRamp *ramp);
     
     [[nodiscard]] QStringList generate(const FCSVGImageContainer &container);
     [[nodiscard]] bool execute(const QString &command);
@@ -32,7 +32,7 @@ signals:
     void executionError(const QString &command, const QString &error);
 
 private:
-    FCMarlinController *_controller = nullptr;
+    FCGCodeController *_controller = nullptr;
     FCPumpRamp *_ramp = nullptr;
 };
 

@@ -34,7 +34,7 @@ class FC3DArea
 {
 public:
     /// Тип данных, используемый для арифметических операций (для согласованности с геометрическими примитивами).
-    using _type = float;
+    using _type = qreal;
 
     // --- конструкторы ---
     /// @brief Конструктор по умолчанию. Создаёт область 1×1×1 ячейку размером 1×1×1 с началом в (0, 0, 0).
@@ -56,9 +56,9 @@ public:
         : _startPoint{startPoint}
         , _areaSize{areaSize}
         , _cellCounts{
-            std::max(1.0f, cellCounts.x()),
-            std::max(1.0f, cellCounts.y()),
-            std::max(1.0f, cellCounts.z())
+            std::max(qreal(1.0f), cellCounts.x()),
+            std::max(qreal(1.0f), cellCounts.y()),
+            std::max(qreal(1.0f), cellCounts.z())
           }
     {}
 
@@ -80,9 +80,9 @@ public:
             static_cast<float>(height)
           }
         , _cellCounts{
-            std::max(1.0f, cellCounts.x()),
-            std::max(1.0f, cellCounts.y()),
-            std::max(1.0f, cellCounts.z())
+              std::max(qreal(1.0f), cellCounts.x()),
+              std::max(qreal(1.0f), cellCounts.y()),
+              std::max(qreal(1.0f), cellCounts.z())
           }
     {
         Q_UNUSED(maxZ); // maxZ используется для валидации в вызывающем коде

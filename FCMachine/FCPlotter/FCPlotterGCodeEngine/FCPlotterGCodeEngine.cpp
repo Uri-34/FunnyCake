@@ -8,8 +8,7 @@ FCPlotterGCodeEngine::FCPlotterGCodeEngine(QObject *parent)
 {
 }
 
-void FCPlotterGCodeEngine::setHardware(FCMarlinController *controller, 
-                                        FCPumpRamp *ramp)
+void FCPlotterGCodeEngine::setHardware(FCGCodeController *controller, FCPumpRamp *ramp)
 {
     _controller = controller;
     _ramp = ramp;
@@ -88,7 +87,8 @@ bool FCPlotterGCodeEngine::execute(const QString &command)
         return false;
     }
 
-    if (!_controller->is(FCReadyState::Ready)) {
+    if(!_controller->state().is(FCReadyState::Ready))
+    {
         emit executionError(command, QStringLiteral("Потеряно соединение"));
         return false;
     }

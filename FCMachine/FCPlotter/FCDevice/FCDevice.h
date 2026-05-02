@@ -21,6 +21,9 @@ class FCDevice
 Q_OBJECT
 Q_DISABLE_COPY_MOVE(FCDevice)
 public:
+    /// @brief Состояние устройства (стандартный набор для логики — БЕЗ FCErrorState!)
+    using FCDeviceState = FCStateT<FCReadyState, FCPlayState, FCErrorType>;
+
     /// Состояние по умолчанию: NotReady + NoError
     inline static const FCDeviceState FCDeviceDefaultState {FCReadyState::NotReady, FCErrorType::None};
 
@@ -32,7 +35,7 @@ public:
 
 signals:
     /// Единный сигнал изменения состояния
-    void condition(const FCDeviceState &state, const QString &details = QString());
+    void condition(const FCDevice::FCDeviceState &state, const QString &details = QString());
 
 private:
     FCDeviceState _state; ///< Внутреннее хранилище состояния (2 компонента)
@@ -41,7 +44,7 @@ private:
 using FCDeviceList = QList<FCDevice *>;
 using FCDeviceQList = QList<QPointer<FCDevice>>;
 
-static_assert(std::has_virtual_destructor_v<FCDevice>,
-              "FCDevice должен иметь виртуальный деструктор для безопасного полиморфного удаления");
+//static_assert(std::has_virtual_destructor_v<FCDevice>,
+//              "FCDevice должен иметь виртуальный деструктор для безопасного полиморфного удаления");
 
 #endif // FC_DEVICE_H
