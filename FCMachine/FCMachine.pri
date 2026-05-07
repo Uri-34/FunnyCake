@@ -1,29 +1,31 @@
-# Автосгенерировано: Сб 02 мая 2026 13:37:26 MSK
+# Автосгенерировано: Ср 06 мая 2026 12:20:22 MSK
 # Скриптом: ./doxygen/scripts/generate.pri.sh
 
 # Include directories (from header locations)
-# INCLUDEPATH (34 элементов)
-INCLUDEPATH += $$PWD/FCConfigFile
-INCLUDEPATH += $$PWD/FCDisplay
-INCLUDEPATH += $$PWD/FCDisplay/FCErrorDialog
-INCLUDEPATH += $$PWD/FCDisplay/FCYesNoDialog
-INCLUDEPATH += $$PWD/FCImage/FCGCodeMaker
-INCLUDEPATH += $$PWD/FCImage/FCImageBinaryContainer
-INCLUDEPATH += $$PWD/FCImage/FCSVGImageParser
-INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCCanDevice
-INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCCanDevice/FCCanHead
-INCLUDEPATH += $$PWD/FCPlotter/FCDevice
-INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice
-INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/FCLM75AThermometer
-INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A
-INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCPumpRamp
-INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCGCodeController
-INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCGCodeController/FCM115
-INCLUDEPATH += $$PWD/FCPlotter/FCDevice/FCSerialDevice
-INCLUDEPATH += $$PWD/FCPlotter/FCPlotterCommandQueue
-INCLUDEPATH += $$PWD/FCPlotter/FCPlotterGCodeEngine
-INCLUDEPATH += $$PWD/FCPlotter
-INCLUDEPATH += $$PWD/FCSSI/FCI2CBus
+# INCLUDEPATH (37 элементов)
+INCLUDEPATH += $$PWD/FCDevice/FCCanDevice
+INCLUDEPATH += $$PWD/FCDevice/FCCanDevice/FCCanHead
+INCLUDEPATH += $$PWD/FCDevice
+INCLUDEPATH += $$PWD/FCDevice/FCDisplay
+INCLUDEPATH += $$PWD/FCDevice/FCDisplay/FCErrorDialog
+INCLUDEPATH += $$PWD/FCDevice/FCDisplay/FCYesNoDialog
+INCLUDEPATH += $$PWD/FCDevice/FCI2CDevice/FCI2CBus
+INCLUDEPATH += $$PWD/FCDevice/FCI2CDevice
+INCLUDEPATH += $$PWD/FCDevice/FCI2CDevice/FCLM75A/FCLM75AThermometer
+INCLUDEPATH += $$PWD/FCDevice/FCI2CDevice/FCLM75A
+INCLUDEPATH += $$PWD/FCDevice/FCI2CDevice/FCPumpRamp
+INCLUDEPATH += $$PWD/FCDevice/FCPlotterCommandQueue
+INCLUDEPATH += $$PWD/FCDevice/FCPlotter
+INCLUDEPATH += $$PWD/FCDevice/FCScaner
+INCLUDEPATH += $$PWD/FCDevice/FCSerialDevice/FCGCodeController
+INCLUDEPATH += $$PWD/FCDevice/FCSerialDevice/FCGCodeController/FCM115
+INCLUDEPATH += $$PWD/FCDevice/FCSerialDevice
+INCLUDEPATH += $$PWD/FCService/FCConfigFile
+INCLUDEPATH += $$PWD/FCService/FCImage/FCImageBinaryContainer
+INCLUDEPATH += $$PWD/FCService/FCImage/FCSVGImageParser
+INCLUDEPATH += $$PWD/FCService/FCPlotterCommandQueue
+INCLUDEPATH += $$PWD/FCService/FCPlotterGCodeEngine
+INCLUDEPATH += $$PWD/FCService
 INCLUDEPATH += $$PWD/FCTypes/FC2DArea
 INCLUDEPATH += $$PWD/FCTypes/FC2DArea/FC2DCell
 INCLUDEPATH += $$PWD/FCTypes/FC2DArea/FC2DPoint
@@ -36,31 +38,34 @@ INCLUDEPATH += $$PWD/FCTypes/FCCommand
 INCLUDEPATH += $$PWD/FCTypes/FCRange
 INCLUDEPATH += $$PWD/FCTypes/FCSpeed
 INCLUDEPATH += $$PWD/FCTypes/FCState
+INCLUDEPATH += $$PWD/FCTypes/FCState/FCStateType
 INCLUDEPATH += $$PWD/FCTypes/FCTransformations
 
-# SOURCES (34 элементов)
-SOURCES += $$PWD/FCConfigFile/FCConfigFile.cpp
-SOURCES += $$PWD/FCDisplay/FCDisplay.cpp
-SOURCES += $$PWD/FCDisplay/FCErrorDialog/FCErrorDialog.cpp
-SOURCES += $$PWD/FCDisplay/FCYesNoDialog/FCYesNoDialog.cpp
-SOURCES += $$PWD/FCImage/FCGCodeMaker/FCGCodeMaker.cpp
-SOURCES += $$PWD/FCImage/FCImageBinaryContainer/FCImageBinaryContainer.cpp
-SOURCES += $$PWD/FCImage/FCSVGImageParser/FCSVGImageParser.cpp
+# SOURCES (36 элементов)
+SOURCES += $$PWD/FCDevice/FCCanDevice/FCCanDevice.cpp
+SOURCES += $$PWD/FCDevice/FCCanDevice/FCCanHead/FCCanHead.cpp
+SOURCES += $$PWD/FCDevice/FCDevice.cpp
+SOURCES += $$PWD/FCDevice/FCDisplay/FCDisplay.cpp
+SOURCES += $$PWD/FCDevice/FCDisplay/FCErrorDialog/FCErrorDialog.cpp
+SOURCES += $$PWD/FCDevice/FCDisplay/FCYesNoDialog/FCYesNoDialog.cpp
+SOURCES += $$PWD/FCDevice/FCI2CDevice/FCI2CBus/FCI2CBus.cpp
+SOURCES += $$PWD/FCDevice/FCI2CDevice/FCI2CDevice.cpp
+SOURCES += $$PWD/FCDevice/FCI2CDevice/FCLM75A/FCLM75AThermometer/FCLM75AThermometer.cpp
+SOURCES += $$PWD/FCDevice/FCI2CDevice/FCLM75A/LM75A.cpp
+SOURCES += $$PWD/FCDevice/FCI2CDevice/FCPumpRamp/FCPumpRamp.cpp
+SOURCES += $$PWD/FCDevice/FCPlotterCommandQueue/FCPlotterCommandQueue.cpp
+SOURCES += $$PWD/FCDevice/FCPlotter/FCPlotter.cpp
+SOURCES += $$PWD/FCDevice/FCScaner/FCScaner.cpp
+SOURCES += $$PWD/FCDevice/FCSerialDevice/FCGCodeController/FCGCodeController.cpp
+SOURCES += $$PWD/FCDevice/FCSerialDevice/FCGCodeController/FCM115/FCM115.cpp
+SOURCES += $$PWD/FCDevice/FCSerialDevice/FCSerialDevice.cpp
 SOURCES += $$PWD/FCMachine.cpp
-SOURCES += $$PWD/FCPlotter/FCDevice/FCCanDevice/FCCanDevice.cpp
-SOURCES += $$PWD/FCPlotter/FCDevice/FCCanDevice/FCCanHead/FCCanHead.cpp
-SOURCES += $$PWD/FCPlotter/FCDevice/FCDevice.cpp
-SOURCES += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCI2CDevice.cpp
-SOURCES += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/FCLM75AThermometer/FCLM75AThermometer.cpp
-SOURCES += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/LM75A.cpp
-SOURCES += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCPumpRamp/FCPumpRamp.cpp
-SOURCES += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCGCodeController/FCGCodeController.cpp
-SOURCES += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCGCodeController/FCM115/FCM115.cpp
-SOURCES += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCSerialDevice.cpp
-SOURCES += $$PWD/FCPlotter/FCPlotterCommandQueue/FCPlotterCommandQueue.cpp
-SOURCES += $$PWD/FCPlotter/FCPlotter.cpp
-SOURCES += $$PWD/FCPlotter/FCPlotterGCodeEngine/FCPlotterGCodeEngine.cpp
-SOURCES += $$PWD/FCSSI/FCI2CBus/FCI2CBus.cpp
+SOURCES += $$PWD/FCService/FCConfigFile/FCConfigFile.cpp
+SOURCES += $$PWD/FCService/FCImage/FCImageBinaryContainer/FCImageBinaryContainer.cpp
+SOURCES += $$PWD/FCService/FCImage/FCSVGImageParser/FCSVGImageParser.cpp
+SOURCES += $$PWD/FCService/FCPlotterCommandQueue/FCPlotterCommandQueue.cpp
+SOURCES += $$PWD/FCService/FCPlotterGCodeEngine/FCPlotterGCodeEngine.cpp
+SOURCES += $$PWD/FCService/FCService.cpp
 SOURCES += $$PWD/FCTypes/FC2DArea/FC2DArea.cpp
 SOURCES += $$PWD/FCTypes/FC2DArea/FC2DCell/FC2DCell.cpp
 SOURCES += $$PWD/FCTypes/FC2DArea/FC2DPoint/FC2DPoint.cpp
@@ -74,29 +79,31 @@ SOURCES += $$PWD/FCTypes/FCSpeed/FCSpeed.cpp
 SOURCES += $$PWD/FCTypes/FCState/FCState.cpp
 SOURCES += $$PWD/main.cpp
 
-# HEADERS (35 элементов)
-HEADERS += $$PWD/FCConfigFile/FCConfigFile.h
-HEADERS += $$PWD/FCDisplay/FCDisplay.h
-HEADERS += $$PWD/FCDisplay/FCErrorDialog/FCErrorDialog.h
-HEADERS += $$PWD/FCDisplay/FCYesNoDialog/FCYesNoDialog.h
-HEADERS += $$PWD/FCImage/FCGCodeMaker/FCGCodeMaker.h
-HEADERS += $$PWD/FCImage/FCImageBinaryContainer/FCImageBinaryContainer.h
-HEADERS += $$PWD/FCImage/FCSVGImageParser/FCSVGImageParser.h
+# HEADERS (38 элементов)
+HEADERS += $$PWD/FCDevice/FCCanDevice/FCCanDevice.h
+HEADERS += $$PWD/FCDevice/FCCanDevice/FCCanHead/FCCanHead.h
+HEADERS += $$PWD/FCDevice/FCDevice.h
+HEADERS += $$PWD/FCDevice/FCDisplay/FCDisplay.h
+HEADERS += $$PWD/FCDevice/FCDisplay/FCErrorDialog/FCErrorDialog.h
+HEADERS += $$PWD/FCDevice/FCDisplay/FCYesNoDialog/FCYesNoDialog.h
+HEADERS += $$PWD/FCDevice/FCI2CDevice/FCI2CBus/FCI2CBus.h
+HEADERS += $$PWD/FCDevice/FCI2CDevice/FCI2CDevice.h
+HEADERS += $$PWD/FCDevice/FCI2CDevice/FCLM75A/FCLM75AThermometer/FCLM75AThermometer.h
+HEADERS += $$PWD/FCDevice/FCI2CDevice/FCLM75A/LM75A.h
+HEADERS += $$PWD/FCDevice/FCI2CDevice/FCPumpRamp/FCPumpRamp.h
+HEADERS += $$PWD/FCDevice/FCPlotterCommandQueue/FCPlotterCommandQueue.h
+HEADERS += $$PWD/FCDevice/FCPlotter/FCPlotter.h
+HEADERS += $$PWD/FCDevice/FCScaner/FCScaner.h
+HEADERS += $$PWD/FCDevice/FCSerialDevice/FCGCodeController/FCGCodeController.h
+HEADERS += $$PWD/FCDevice/FCSerialDevice/FCGCodeController/FCM115/FCM115.h
+HEADERS += $$PWD/FCDevice/FCSerialDevice/FCSerialDevice.h
 HEADERS += $$PWD/FCMachine.h
-HEADERS += $$PWD/FCPlotter/FCDevice/FCCanDevice/FCCanDevice.h
-HEADERS += $$PWD/FCPlotter/FCDevice/FCCanDevice/FCCanHead/FCCanHead.h
-HEADERS += $$PWD/FCPlotter/FCDevice/FCDevice.h
-HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCI2CDevice.h
-HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/FCLM75AThermometer/FCLM75AThermometer.h
-HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCLM75A/LM75A.h
-HEADERS += $$PWD/FCPlotter/FCDevice/FCI2CDevice/FCPumpRamp/FCPumpRamp.h
-HEADERS += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCGCodeController/FCGCodeController.h
-HEADERS += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCGCodeController/FCM115/FCM115.h
-HEADERS += $$PWD/FCPlotter/FCDevice/FCSerialDevice/FCSerialDevice.h
-HEADERS += $$PWD/FCPlotter/FCPlotterCommandQueue/FCPlotterCommandQueue.h
-HEADERS += $$PWD/FCPlotter/FCPlotterGCodeEngine/FCPlotterGCodeEngine.h
-HEADERS += $$PWD/FCPlotter/FCPlotter.h
-HEADERS += $$PWD/FCSSI/FCI2CBus/FCI2CBus.h
+HEADERS += $$PWD/FCService/FCConfigFile/FCConfigFile.h
+HEADERS += $$PWD/FCService/FCImage/FCImageBinaryContainer/FCImageBinaryContainer.h
+HEADERS += $$PWD/FCService/FCImage/FCSVGImageParser/FCSVGImageParser.h
+HEADERS += $$PWD/FCService/FCPlotterCommandQueue/FCPlotterCommandQueue.h
+HEADERS += $$PWD/FCService/FCPlotterGCodeEngine/FCPlotterGCodeEngine.h
+HEADERS += $$PWD/FCService/FCService.h
 HEADERS += $$PWD/FCTypes/FC2DArea/FC2DArea.h
 HEADERS += $$PWD/FCTypes/FC2DArea/FC2DCell/FC2DCell.h
 HEADERS += $$PWD/FCTypes/FC2DArea/FC2DPoint/FC2DPoint.h
@@ -109,12 +116,13 @@ HEADERS += $$PWD/FCTypes/FCCommand/FCCommand.h
 HEADERS += $$PWD/FCTypes/FCRange/FCRange.h
 HEADERS += $$PWD/FCTypes/FCSpeed/FCSpeed.h
 HEADERS += $$PWD/FCTypes/FCState/FCState.h
+HEADERS += $$PWD/FCTypes/FCState/FCStateType/FCStateType.h
 HEADERS += $$PWD/FCTypes/FCTransformations/FCCelsiusFahrenheit.h
 
 # FORMS (3 элементов)
-FORMS += $$PWD/FCDisplay/FCDisplay.ui
-FORMS += $$PWD/FCDisplay/FCErrorDialog/FCErrorDialog.ui
-FORMS += $$PWD/FCDisplay/FCYesNoDialog/FCYesNoDialog.ui
+FORMS += $$PWD/FCDevice/FCDisplay/FCDisplay.ui
+FORMS += $$PWD/FCDevice/FCDisplay/FCErrorDialog/FCErrorDialog.ui
+FORMS += $$PWD/FCDevice/FCDisplay/FCYesNoDialog/FCYesNoDialog.ui
 
 # RESOURCES (1 элементов)
 RESOURCES += $$PWD/FCMachine.qrc

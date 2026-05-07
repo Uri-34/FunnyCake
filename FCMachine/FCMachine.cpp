@@ -12,11 +12,11 @@
 /// КОНСТРУКТОР / ДЕСТРУКТОР
 FCMachine::FCMachine(int argc, char **argv)
 : QApplication(argc, argv),
+  _i2c{new FCI2CBus("", this)},
   _state{FCReadyState::NotReady, FCErrorType::None},
-  _display{},
-  _parser{this},
-  _plotterList{},
-  _initialized{false}
+  _parser{new FCSVGImageParser(this)},
+  _plotter{new FCPlotter("", _i2c, this)}
+//  _initialized{false}
 {
     setStyleSheet(StyleSheetMachine);
     setOrganizationName("K-Service");

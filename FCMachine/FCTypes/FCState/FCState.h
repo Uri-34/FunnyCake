@@ -52,6 +52,12 @@
 // ============================================================================
 
 /**
+ * @enum FCOpenState
+ * @brief изменение аппаратного состояния
+ */
+enum class FCOpenState { Open, Close };
+
+/**
  * @enum FCReadyState
  * @brief Состояния готовности системы к работе
  * @details Определяет, готово ли устройство/модуль к выполнению команд.
@@ -64,13 +70,6 @@ enum class FCReadyState { NotReady, Ready };
  * @details Отслеживает текущий фазовый режим выполнения задачи.
  */
 enum class FCPlayState { Stop, Start, Pause };
-
-/**
- * @enum FCChangedState
- * @brief Состояния изменения конфигурации или данных
- * @details Фиксирует факт модификации внутренних настроек или буферов данных.
- */
-enum class FCChangedState { Unchanged, Changed };
 
 /**
  * @enum FCErrorState
@@ -728,24 +727,6 @@ private:
     /// @details Tuple упорядочен по типам шаблонных параметров States...
     std::tuple<States...> _values;
 };
-
-// ============================================================================
-// TYPE ALIASES ДЛЯ УДОБСТВА (с защитой от ошибок через static_assert)
-// ============================================================================
-///// @brief Состояние дисплея (UI-слой — может включать FCErrorState)
-//using FCDisplayState = FCStateT<FCReadyState, FCPlayState, FCErrorType, FCPanelState, FCVisibilityState>;
-
-///// @brief Состояние контейнера SVG (только логические типы)
-//using FCSVGImageContainerState = FCStateT<FCReadyState, FCPlayState, FCErrorType>;
-
-///// @brief Состояние аппаратного слоя плоттера (только логические типы)
-//using FCPlotterHardwareState = FCStateT<FCReadyState, FCPlayState, FCErrorType>;
-
-///// @brief Состояние плоттера (алиас на стандартное состояние устройства)
-//using FCPlotterState = FCDeviceState;
-
-///// @brief Состояние контроллера Marlin (только логические типы)
-//using FCMarlinControllerState = FCDeviceState;
 
 /// @brief Состояние очереди команд плоттера
 using FCQueueCondition = FCStateT<FCReadyState, FCPlayState>;

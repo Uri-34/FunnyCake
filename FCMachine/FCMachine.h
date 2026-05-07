@@ -11,9 +11,8 @@
 #include "FCConfigFile.h"
 #include "FCDisplay.h"
 #include "FCSVGImageParser.h"
-#include "FCSVGImageContainer.h"
-// #include "FCSVGImageCoder.h"
-// #include "FCPlotter.h"
+#include "FCImageBinaryContainer.h"
+#include "FCScaner.h"
 
 /// @brief Набор состояний для машины
 using FCMachineState = FCStateT<FCReadyState, FCErrorType>;
@@ -298,21 +297,26 @@ signals:
     void visibilityStateChanged(FCVisibilityState state);
 
 private:
-    // ЧЛЕНЫ ДАННЫХ
-    /// @brief Централизованное хранилище состояний класса
+    /// @brief шина i2c
+    FCI2CBus *_i2c = nullptr;
+
+    /// @brief централизованное хранилище состояний класса
     FCMachineState _state;
 
-    /// @brief Главный дисплей для управления и диагностики
+    /// @brief главный дисплей для управления и диагностики
     FCDisplay _display;
 
-    /// @brief Парсер SVG файлов
-    FCSVGImageParser _parser;
+    /// @brief парсер SVG файлов
+    FCSVGImageParser *_parser = nullptr;
 
-    /// @brief Список плоттеров
-    FCPlotterPtrList _plotterList;
+    /// @brief плоттер
+    FCPlotter *_plotter = nullptr;
+
+    /// @brief сканер
+    FCScaner *_scaner = nullptr;
 
     /// @brief Флаг успешной инициализации
-    bool _initialized = false;
+//    bool _initialized = false;
 };
 
 #endif // FC_MACHINE_H
