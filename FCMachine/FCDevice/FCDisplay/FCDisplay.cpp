@@ -788,7 +788,7 @@ void FCDisplay::onPlayPausePressed()
 }
 
 // ПРОГРЕСС ПАРСИНГА
-void FCDisplay::onParsingProcess(int percent)
+void FCDisplay::onProgress(int percent)
 {
     _screenSaverTimer->start();
     if(percent > 0 && !_ui->progressBar->isVisible())

@@ -19,7 +19,7 @@ void FCI2CDevice::init()
         state().set(FCOpenState::Open, FCReadyState::Ready, FCErrorType::None);
     }
 
-    condition(state(), this);
+    emit condition(state(), this);
 }
 
 void FCI2CDevice::final()
@@ -29,7 +29,8 @@ void FCI2CDevice::final()
         _bus->close();
     }
 
-    condition(state().set(FCOpenState::Close, FCReadyState::NotReady), this);
+    state().set(FCOpenState::Close, FCReadyState::NotReady);
+    emit condition(state(), this);
 }
 
 QByteArray FCI2CDevice::buildPacket(uint8_t command, const QByteArray &data)

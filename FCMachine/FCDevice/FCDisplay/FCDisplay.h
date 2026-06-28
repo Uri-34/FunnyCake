@@ -45,8 +45,7 @@ namespace Ui { class FCDisplay; }
  */
 
 class FCDisplay
-    : public QMainWindow,
-      public FCDevice
+    : public QMainWindow
 {
 Q_OBJECT
 public:
@@ -232,7 +231,7 @@ public slots:
      * @note Показывает/скрывает progressBar при необходимости.
      * @note Автоматически скрывает прогресс-бар после завершения (100%).
      */
-    void onParsingProcess(int percent);
+    void onProgress(int percent);
 
 private slots:
     /**

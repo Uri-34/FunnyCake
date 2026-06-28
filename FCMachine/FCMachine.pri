@@ -1,8 +1,9 @@
-# Автосгенерировано: Ср 06 мая 2026 12:20:22 MSK
+# Автосгенерировано: Вс 28 июн 2026 12:39:08 MSK
 # Скриптом: ./doxygen/scripts/generate.pri.sh
 
 # Include directories (from header locations)
-# INCLUDEPATH (37 элементов)
+# INCLUDEPATH (36 элементов)
+INCLUDEPATH += $$PWD/FCConfigFile
 INCLUDEPATH += $$PWD/FCDevice/FCCanDevice
 INCLUDEPATH += $$PWD/FCDevice/FCCanDevice/FCCanHead
 INCLUDEPATH += $$PWD/FCDevice
@@ -20,7 +21,6 @@ INCLUDEPATH += $$PWD/FCDevice/FCScaner
 INCLUDEPATH += $$PWD/FCDevice/FCSerialDevice/FCGCodeController
 INCLUDEPATH += $$PWD/FCDevice/FCSerialDevice/FCGCodeController/FCM115
 INCLUDEPATH += $$PWD/FCDevice/FCSerialDevice
-INCLUDEPATH += $$PWD/FCService/FCConfigFile
 INCLUDEPATH += $$PWD/FCService/FCImage/FCImageBinaryContainer
 INCLUDEPATH += $$PWD/FCService/FCImage/FCSVGImageParser
 INCLUDEPATH += $$PWD/FCService/FCPlotterCommandQueue
@@ -38,10 +38,10 @@ INCLUDEPATH += $$PWD/FCTypes/FCCommand
 INCLUDEPATH += $$PWD/FCTypes/FCRange
 INCLUDEPATH += $$PWD/FCTypes/FCSpeed
 INCLUDEPATH += $$PWD/FCTypes/FCState
-INCLUDEPATH += $$PWD/FCTypes/FCState/FCStateType
 INCLUDEPATH += $$PWD/FCTypes/FCTransformations
 
 # SOURCES (36 элементов)
+SOURCES += $$PWD/FCConfigFile/FCConfigFile.cpp
 SOURCES += $$PWD/FCDevice/FCCanDevice/FCCanDevice.cpp
 SOURCES += $$PWD/FCDevice/FCCanDevice/FCCanHead/FCCanHead.cpp
 SOURCES += $$PWD/FCDevice/FCDevice.cpp
@@ -60,7 +60,6 @@ SOURCES += $$PWD/FCDevice/FCSerialDevice/FCGCodeController/FCGCodeController.cpp
 SOURCES += $$PWD/FCDevice/FCSerialDevice/FCGCodeController/FCM115/FCM115.cpp
 SOURCES += $$PWD/FCDevice/FCSerialDevice/FCSerialDevice.cpp
 SOURCES += $$PWD/FCMachine.cpp
-SOURCES += $$PWD/FCService/FCConfigFile/FCConfigFile.cpp
 SOURCES += $$PWD/FCService/FCImage/FCImageBinaryContainer/FCImageBinaryContainer.cpp
 SOURCES += $$PWD/FCService/FCImage/FCSVGImageParser/FCSVGImageParser.cpp
 SOURCES += $$PWD/FCService/FCPlotterCommandQueue/FCPlotterCommandQueue.cpp
@@ -79,7 +78,8 @@ SOURCES += $$PWD/FCTypes/FCSpeed/FCSpeed.cpp
 SOURCES += $$PWD/FCTypes/FCState/FCState.cpp
 SOURCES += $$PWD/main.cpp
 
-# HEADERS (38 элементов)
+# HEADERS (37 элементов)
+HEADERS += $$PWD/FCConfigFile/FCConfigFile.h
 HEADERS += $$PWD/FCDevice/FCCanDevice/FCCanDevice.h
 HEADERS += $$PWD/FCDevice/FCCanDevice/FCCanHead/FCCanHead.h
 HEADERS += $$PWD/FCDevice/FCDevice.h
@@ -98,7 +98,6 @@ HEADERS += $$PWD/FCDevice/FCSerialDevice/FCGCodeController/FCGCodeController.h
 HEADERS += $$PWD/FCDevice/FCSerialDevice/FCGCodeController/FCM115/FCM115.h
 HEADERS += $$PWD/FCDevice/FCSerialDevice/FCSerialDevice.h
 HEADERS += $$PWD/FCMachine.h
-HEADERS += $$PWD/FCService/FCConfigFile/FCConfigFile.h
 HEADERS += $$PWD/FCService/FCImage/FCImageBinaryContainer/FCImageBinaryContainer.h
 HEADERS += $$PWD/FCService/FCImage/FCSVGImageParser/FCSVGImageParser.h
 HEADERS += $$PWD/FCService/FCPlotterCommandQueue/FCPlotterCommandQueue.h
@@ -116,7 +115,6 @@ HEADERS += $$PWD/FCTypes/FCCommand/FCCommand.h
 HEADERS += $$PWD/FCTypes/FCRange/FCRange.h
 HEADERS += $$PWD/FCTypes/FCSpeed/FCSpeed.h
 HEADERS += $$PWD/FCTypes/FCState/FCState.h
-HEADERS += $$PWD/FCTypes/FCState/FCStateType/FCStateType.h
 HEADERS += $$PWD/FCTypes/FCTransformations/FCCelsiusFahrenheit.h
 
 # FORMS (3 элементов)

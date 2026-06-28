@@ -8,7 +8,7 @@
 #include <QDebug>
 
 // КОНСТРУКТОРЫ И ДЕСТРУКТОР
-FCPlotter::FCPlotter(QString &serialPortName, FCI2CBus *bus, QObject *parent)
+FCPlotter::FCPlotter(const QString &serialPortName, FCI2CBus *bus, QObject *parent)
     : FCDevice(QStringLiteral("Plotter-") + serialPortName, parent),
 //      _serialNumber{QStringLiteral("PLOT-%1-%2").arg(serialPortName.replace('/', '_')).arg(QRandomGenerator::global()->bounded(10000, 99999))},
       _controller{new FCGCodeController{serialPortName, this}},

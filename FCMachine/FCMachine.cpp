@@ -13,7 +13,7 @@
 FCMachine::FCMachine(int argc, char **argv)
 : QApplication(argc, argv),
   _i2c{new FCI2CBus("", this)},
-  _state{FCReadyState::NotReady, FCErrorType::None},
+//  _state{FCReadyState::NotReady, FCPlayState::Stop, FCErrorType::None},
   _parser{new FCSVGImageParser(this)},
   _plotter{new FCPlotter("", _i2c, this)}
 //  _initialized{false}
@@ -27,7 +27,7 @@ FCMachine::FCMachine(int argc, char **argv)
 
     if(cla())
     {
-        _initialized = init();
+        init();
 
         // Инициализация состояния через _state
         set(FCReadyState::Ready);
@@ -52,7 +52,7 @@ int FCMachine::exec()
 bool FCMachine::init()
 {
     // СВЯЗИ: FCDisplay ↔ FCSVGImageParser
-    connect(&_display, &FCDisplay::play, &_parser, &FCSVGImageParser::parseAsync);
+    connect(&_display, &FCDisplay::play, _parser, &FCSVGImageParser::parseAsync);
 
     // ОТЛАДКА (временные заглушки)
     connect(&_display, &FCDisplay::play, this, [](const QString &model) { qDebug() << QString("SELECTED %1 & PLAY PRESSED ...").arg(model); });
@@ -60,12 +60,12 @@ bool FCMachine::init()
     connect(&_display, &FCDisplay::stop, this, []() { qDebug() << "STOP PRESSED ..."; });
 
     // СВЯЗИ: FCSVGImageParser ↔ FCMachine
-    connect(&_parser, &FCSVGImageParser::finished, this, &FCMachine::onParsingFinished);
-    connect(&_parser, &FCSVGImageParser::progress, this, &FCMachine::onProgress);
-    connect(&_parser, &FCSVGImageParser::error, &_display, &FCDisplay::onMessage);
+    connect(_parser, &FCSVGImageParser::finished, this, &FCDisplay::onProgressFinished);
+    connect(_parser, &FCSVGImageParser::progress, &_display, &FCDisplay::onProgress);
+    connect(_parser, &FCSVGImageParser::error, &_display, &FCDisplay::onMessage);
 
     // Подключение сигналов состояний от парсера
-    connect(&_parser, &FCSVGImageParser::readyStateChanged, this, &FCMachine::onReadyStateChanged);
+//    connect(&_parser, &FCSVGImageParser::condition, this, &FCMachine::onReadyStateChanged);
 //    connect(&_parser, &FCSVGImageParser::playStateChanged, this, &FCMachine::onReadyStateChanged);
 //    connect(&_parser, &FCSVGImageParser::changedStateChanged, this, &FCMachine::onChangedStateChanged);
 //    connect(&_parser, &FCSVGImageParser::errorTypeChanged, this, &FCMachine::onErrorTypeChanged);

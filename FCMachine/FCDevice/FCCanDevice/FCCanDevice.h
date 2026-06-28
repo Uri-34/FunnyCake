@@ -16,15 +16,19 @@ Q_OBJECT
 Q_DISABLE_COPY_MOVE(FCCanDevice)
 public:
 //    static const int FCCanDeviceTimeOut = 100;
-    explicit FCCanDevice(const QString &name = QString(), QObject *parent = nullptr);
+    explicit FCCanDevice(const QString &name, QObject *parent = nullptr);
     ~FCCanDevice() override = default;
 
     // отправка данных на устройство
-    bool send(uint8_t command, const QByteArray &data = QByteArray{});
+    bool send(uint8_t command, const QByteArray &data = {});
     // получение данных с устройства
     const QByteArray receive();
     // обмен данными с устройством send(...) & receive(...)
     QByteArray exchange(uint8_t command, const QByteArray &data = QByteArray{});
+
+signals:
+    void received(const QCanBusFrame &frame);
+    void written(qint64 count);
 
 protected:
     void init();
@@ -36,7 +40,7 @@ private:
 //    QByteArray _buffer;
 };
 
-using FCCanDeviceList = QList<FCCanDevice *>;
-using FCCanDeviceQList = QList<QPointer<FCCanDevice>>;
+//using FCCanDeviceList = QList<FCCanDevice *>;
+//using FCCanDeviceQList = QList<QPointer<FCCanDevice>>;
 
 #endif // FC_CAN_DEVICE_H

@@ -56,10 +56,13 @@ public slots:
 
     /// отправить все фидеры в верхнее положение
     inline void feedersToHomePosition() { send(FeedersToHome); }
+
     /// переключить на конкретный фидер
     void switchToFeeder(uint8_t number) { send(SwitchToFeeder, QByteArray{1, static_cast<uint8_t>(FCRange<uint8_t>(0, _feedersCount).clamped(number))}); }
+
     /// переместить головку в парковочное положение
     inline void headToHomePosition() { send(HeadToHome); }
+
     /// переместить головку в рабочее положение ()
     inline void headToWorkPosition() { send(HeadToWork); }
 

@@ -24,7 +24,7 @@ public:
 //    static const int FCI2CDeviceTimeOut = 100;
 
     explicit FCI2CDevice(FCI2CBus *bus, uint8_t address, const QString &name = QString(), QObject *parent = nullptr);
-    ~FCI2CDevice() override = default;
+//    ~FCI2CDevice() override = default;
 
     [[nodiscard]] inline QString path() const { return _bus ? _bus->path() : QString(); }
     [[nodiscard]] inline bool isOpen() const { return _bus ? _bus->isOpen() : false; }

@@ -23,7 +23,7 @@ public:
     /// @brief Таймаут ожидания завершения рабочего потока (мс)
     static constexpr int THREAD_STOP_TIMEOUT_MS = 5000;
 
-    explicit FCPlotter(QString &serialPortName, FCI2CBus *bus, QObject *parent = nullptr);
+    explicit FCPlotter(const QString &serialPortName, FCI2CBus *bus, QObject *parent = nullptr);
     ~FCPlotter() override;
 
     inline bool readiness() override

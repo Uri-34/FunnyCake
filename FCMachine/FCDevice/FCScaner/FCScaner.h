@@ -24,10 +24,10 @@ public:
     inline bool readiness() override { return state().is(FCOpenState::Open, FCReadyState::Ready) && isThreadRunning(); }
 
 public slots:
-    void onStart(const QString &model);
-    void onStop();
-    void onPause();
-    void onReset();
+    void onStart(const QString &model) override;
+    void onStop() override;
+    void onPause() override;
+    void onReset() override;
 
 signals:
     void started(const QString &text, QObject *object = nullptr);
